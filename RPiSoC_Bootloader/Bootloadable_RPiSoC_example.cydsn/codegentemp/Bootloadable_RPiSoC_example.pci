@@ -1,0 +1,4 @@
+# Bootloadable_RPiSoC_example
+# 2014-07-18 01:03:02Z
+
+set_io "LED(0)" iocell 12 0

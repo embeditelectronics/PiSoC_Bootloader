@@ -1,0 +1,22 @@
+# Bootloader_RPiSoC
+# 2014-07-17 23:52:14Z
+
+# IO_0@[IOP=(1)][IoId=(0)] is reserved: SWDDebugEnabled
+dont_use_io iocell 1 0
+# IO_1@[IOP=(1)][IoId=(1)] is reserved: SWDDebugEnabled
+dont_use_io iocell 1 1
+set_io "BL_wait(0)" iocell 4 7
+set_location "ClockBlock" clockblockcell -1 -1 0
+set_io "LED(0)" iocell 12 0
+set_io "\USBFS:Dm(0)\" iocell 15 7
+set_io "\USBFS:Dp(0)\" iocell 15 6
+set_location "\USBFS:Dp\" logicalport -1 -1 15
+set_location "\USBFS:USB\" usbcell -1 -1 0
+set_location "\USBFS:arb_int\" interrupt -1 -1 22
+set_location "\USBFS:bus_reset\" interrupt -1 -1 23
+set_location "\USBFS:dp_int\" interrupt -1 -1 12
+set_location "\USBFS:ep_0\" interrupt -1 -1 24
+set_location "\USBFS:ep_1\" interrupt -1 -1 0
+set_location "\USBFS:ep_2\" interrupt -1 -1 1
+set_location "\USBFS:sof_int\" interrupt -1 -1 21
+set_location "__ONE__" 1 3 0 0

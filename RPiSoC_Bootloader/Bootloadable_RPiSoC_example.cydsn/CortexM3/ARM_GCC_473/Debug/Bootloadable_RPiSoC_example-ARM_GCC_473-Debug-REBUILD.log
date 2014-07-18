@@ -1,0 +1,71 @@
+--------------- Rebuild Started: 07/17/2014 21:02:55 Project: Bootloadable_RPiSoC_example, Configuration: ARM GCC 4.7.3 Debug ---------------
+Deleting file ".\CortexM3\ARM_GCC_473\Debug\main.o"
+Deleting file ".\CortexM3\ARM_GCC_473\Debug\cyfitter_cfg.o"
+Deleting file ".\CortexM3\ARM_GCC_473\Debug\cybootloader.o"
+Deleting file ".\CortexM3\ARM_GCC_473\Debug\cymetadata.o"
+Deleting file ".\CortexM3\ARM_GCC_473\Debug\Bootloadable_1.o"
+Deleting file ".\CortexM3\ARM_GCC_473\Debug\Cm3Start.o"
+Deleting file ".\CortexM3\ARM_GCC_473\Debug\CyBootAsmGnu.o"
+Deleting file ".\CortexM3\ARM_GCC_473\Debug\CyDmac.o"
+Deleting file ".\CortexM3\ARM_GCC_473\Debug\CyFlash.o"
+Deleting file ".\CortexM3\ARM_GCC_473\Debug\CyLib.o"
+Deleting file ".\CortexM3\ARM_GCC_473\Debug\cyPm.o"
+Deleting file ".\CortexM3\ARM_GCC_473\Debug\CySpc.o"
+Deleting file ".\CortexM3\ARM_GCC_473\Debug\cyutils.o"
+Deleting file ".\CortexM3\ARM_GCC_473\Debug\PWM_1.o"
+Deleting file ".\CortexM3\ARM_GCC_473\Debug\PWM_1_PM.o"
+Deleting file ".\CortexM3\ARM_GCC_473\Debug\Clock_1.o"
+Deleting file ".\CortexM3\ARM_GCC_473\Debug\LED.o"
+Deleting file ".\CortexM3\ARM_GCC_473\Debug\Bootloadable_RPiSoC_example.hex"
+Deleting file ".\CortexM3\ARM_GCC_473\Debug\Bootloadable_RPiSoC_example.elf"
+Deleting file ".\CortexM3\ARM_GCC_473\Debug\Bootloadable_RPiSoC_example.map"
+Deleting file ".\CortexM3\ARM_GCC_473\Debug\Bootloadable_RPiSoC_example.cyacd"
+Deleting file ".\Bootloadable_RPiSoC_example.cycdx"
+Deleting file ".\Bootloadable_RPiSoC_example.svd"
+Deleting file ".\Bootloadable_RPiSoC_example.rpt"
+Deleting file ".\Bootloadable_RPiSoC_example_timing.html"
+Deleting file ".\CortexM3\ARM_GCC_473\Debug\.deps\C_FILE.P"
+Deleting file ".\CortexM3\ARM_GCC_473\Debug\.deps\ARM_C_FILE.P"
+Deleting file ".\CortexM3\ARM_GCC_473\Debug\.deps\GNU_ARM_ASM_FILE.P"
+cydsfit.exe "-.appdatapath" "C:\Users\Robert\AppData\Local\Cypress Semiconductor\PSoC Creator\3.0" "-.fdsnotice" "-.fdswarpdepfile=warp_dependencies.txt" "-.fdselabdepfile=elab_dependencies.txt" "-.fdsbldfile=generated_files.txt" "-p" "C:\Users\Robert\workspace\Embedit_git_projects\Bootloader_RPiSoC\Bootloadable_RPiSoC_example.cydsn\Bootloadable_RPiSoC_example.cyprj" "-d" "CY8C5868AXI-LP035" "-s" "C:\Users\Robert\workspace\Embedit_git_projects\Bootloader_RPiSoC\Bootloadable_RPiSoC_example.cydsn\Generated_Source\PSoC5" "--" "-yv2" "-v3" "-ygs" "-q10" "-o2" "-.fftcfgtype=LE"
+Elaborating Design...
+HDL Generation ...
+Synthesis ...
+Place and Route ...
+Tech mapping ...
+Info: mpr.M0037: Unused pieces of the design have been optimized out. See the Tech mapping section of the report file for details. (App=cydsfit)
+Analog Placement ...
+Analog Routing ...
+Analog Code Generation ...
+Digital Placement ...
+Digital Routing ...
+Bitstream Generation ...
+Static timing analysis ...
+API Generation ...
+Dependency Generation ...
+Clean Temporary Files ...
+arm-none-eabi-gcc.exe -I. -I./Generated_Source/PSoC5 -Wno-main -mcpu=cortex-m3 -mthumb -Wall -g -D DEBUG -Wa,-alh=.\CortexM3\ARM_GCC_473\Debug\main.lst -ffunction-sections -c .\main.c -o .\CortexM3\ARM_GCC_473\Debug\main.o
+arm-none-eabi-gcc.exe -I. -I./Generated_Source/PSoC5 -Wno-main -mcpu=cortex-m3 -mthumb -Wall -g -D DEBUG -Wa,-alh=.\CortexM3\ARM_GCC_473\Debug\cyfitter_cfg.lst -ffunction-sections -c .\Generated_Source\PSoC5\cyfitter_cfg.c -o .\CortexM3\ARM_GCC_473\Debug\cyfitter_cfg.o
+arm-none-eabi-gcc.exe -I. -I./Generated_Source/PSoC5 -Wno-main -mcpu=cortex-m3 -mthumb -Wall -g -D DEBUG -Wa,-alh=.\CortexM3\ARM_GCC_473\Debug\cybootloader.lst -ffunction-sections -c .\Generated_Source\PSoC5\cybootloader.c -o .\CortexM3\ARM_GCC_473\Debug\cybootloader.o
+arm-none-eabi-gcc.exe -I. -I./Generated_Source/PSoC5 -Wno-main -mcpu=cortex-m3 -mthumb -Wall -g -D DEBUG -Wa,-alh=.\CortexM3\ARM_GCC_473\Debug\cymetadata.lst -ffunction-sections -c .\Generated_Source\PSoC5\cymetadata.c -o .\CortexM3\ARM_GCC_473\Debug\cymetadata.o
+arm-none-eabi-gcc.exe -I. -I./Generated_Source/PSoC5 -Wno-main -mcpu=cortex-m3 -mthumb -Wall -g -D DEBUG -Wa,-alh=.\CortexM3\ARM_GCC_473\Debug\Bootloadable_1.lst -ffunction-sections -c .\Generated_Source\PSoC5\Bootloadable_1.c -o .\CortexM3\ARM_GCC_473\Debug\Bootloadable_1.o
+arm-none-eabi-gcc.exe -I. -I./Generated_Source/PSoC5 -Wno-main -mcpu=cortex-m3 -mthumb -Wall -g -D DEBUG -Wa,-alh=.\CortexM3\ARM_GCC_473\Debug\Cm3Start.lst -ffunction-sections -c .\Generated_Source\PSoC5\Cm3Start.c -o .\CortexM3\ARM_GCC_473\Debug\Cm3Start.o
+arm-none-eabi-as.exe -I. -I./Generated_Source/PSoC5 -mcpu=cortex-m3 -mthumb -g -alh=.\CortexM3\ARM_GCC_473\Debug/CyBootAsmGnu.lst -o .\CortexM3\ARM_GCC_473\Debug\CyBootAsmGnu.o .\Generated_Source\PSoC5\CyBootAsmGnu.s
+arm-none-eabi-gcc.exe -I. -I./Generated_Source/PSoC5 -Wno-main -mcpu=cortex-m3 -mthumb -Wall -g -D DEBUG -Wa,-alh=.\CortexM3\ARM_GCC_473\Debug\CyDmac.lst -ffunction-sections -c .\Generated_Source\PSoC5\CyDmac.c -o .\CortexM3\ARM_GCC_473\Debug\CyDmac.o
+arm-none-eabi-gcc.exe -I. -I./Generated_Source/PSoC5 -Wno-main -mcpu=cortex-m3 -mthumb -Wall -g -D DEBUG -Wa,-alh=.\CortexM3\ARM_GCC_473\Debug\CyFlash.lst -ffunction-sections -c .\Generated_Source\PSoC5\CyFlash.c -o .\CortexM3\ARM_GCC_473\Debug\CyFlash.o
+arm-none-eabi-gcc.exe -I. -I./Generated_Source/PSoC5 -Wno-main -mcpu=cortex-m3 -mthumb -Wall -g -D DEBUG -Wa,-alh=.\CortexM3\ARM_GCC_473\Debug\CyLib.lst -ffunction-sections -c .\Generated_Source\PSoC5\CyLib.c -o .\CortexM3\ARM_GCC_473\Debug\CyLib.o
+arm-none-eabi-gcc.exe -I. -I./Generated_Source/PSoC5 -Wno-main -mcpu=cortex-m3 -mthumb -Wall -g -D DEBUG -Wa,-alh=.\CortexM3\ARM_GCC_473\Debug\cyPm.lst -ffunction-sections -c .\Generated_Source\PSoC5\cyPm.c -o .\CortexM3\ARM_GCC_473\Debug\cyPm.o
+arm-none-eabi-gcc.exe -I. -I./Generated_Source/PSoC5 -Wno-main -mcpu=cortex-m3 -mthumb -Wall -g -D DEBUG -Wa,-alh=.\CortexM3\ARM_GCC_473\Debug\CySpc.lst -ffunction-sections -c .\Generated_Source\PSoC5\CySpc.c -o .\CortexM3\ARM_GCC_473\Debug\CySpc.o
+arm-none-eabi-gcc.exe -I. -I./Generated_Source/PSoC5 -Wno-main -mcpu=cortex-m3 -mthumb -Wall -g -D DEBUG -Wa,-alh=.\CortexM3\ARM_GCC_473\Debug\cyutils.lst -ffunction-sections -c .\Generated_Source\PSoC5\cyutils.c -o .\CortexM3\ARM_GCC_473\Debug\cyutils.o
+arm-none-eabi-gcc.exe -I. -I./Generated_Source/PSoC5 -Wno-main -mcpu=cortex-m3 -mthumb -Wall -g -D DEBUG -Wa,-alh=.\CortexM3\ARM_GCC_473\Debug\PWM_1.lst -ffunction-sections -c .\Generated_Source\PSoC5\PWM_1.c -o .\CortexM3\ARM_GCC_473\Debug\PWM_1.o
+arm-none-eabi-gcc.exe -I. -I./Generated_Source/PSoC5 -Wno-main -mcpu=cortex-m3 -mthumb -Wall -g -D DEBUG -Wa,-alh=.\CortexM3\ARM_GCC_473\Debug\PWM_1_PM.lst -ffunction-sections -c .\Generated_Source\PSoC5\PWM_1_PM.c -o .\CortexM3\ARM_GCC_473\Debug\PWM_1_PM.o
+arm-none-eabi-gcc.exe -I. -I./Generated_Source/PSoC5 -Wno-main -mcpu=cortex-m3 -mthumb -Wall -g -D DEBUG -Wa,-alh=.\CortexM3\ARM_GCC_473\Debug\Clock_1.lst -ffunction-sections -c .\Generated_Source\PSoC5\Clock_1.c -o .\CortexM3\ARM_GCC_473\Debug\Clock_1.o
+arm-none-eabi-gcc.exe -I. -I./Generated_Source/PSoC5 -Wno-main -mcpu=cortex-m3 -mthumb -Wall -g -D DEBUG -Wa,-alh=.\CortexM3\ARM_GCC_473\Debug\LED.lst -ffunction-sections -c .\Generated_Source\PSoC5\LED.c -o .\CortexM3\ARM_GCC_473\Debug\LED.o
+arm-none-eabi-ar.exe -rs .\CortexM3\ARM_GCC_473\Debug\Bootloadable_RPiSoC_example.a .\CortexM3\ARM_GCC_473\Debug\cyfitter_cfg.o .\CortexM3\ARM_GCC_473\Debug\Bootloadable_1.o .\CortexM3\ARM_GCC_473\Debug\CyBootAsmGnu.o .\CortexM3\ARM_GCC_473\Debug\CyDmac.o .\CortexM3\ARM_GCC_473\Debug\CyFlash.o .\CortexM3\ARM_GCC_473\Debug\CyLib.o .\CortexM3\ARM_GCC_473\Debug\cyPm.o .\CortexM3\ARM_GCC_473\Debug\CySpc.o .\CortexM3\ARM_GCC_473\Debug\cyutils.o .\CortexM3\ARM_GCC_473\Debug\PWM_1.o .\CortexM3\ARM_GCC_473\Debug\PWM_1_PM.o .\CortexM3\ARM_GCC_473\Debug\Clock_1.o .\CortexM3\ARM_GCC_473\Debug\LED.o
+arm-none-eabi-ar.exe: creating .\CortexM3\ARM_GCC_473\Debug\Bootloadable_RPiSoC_example.a
+arm-none-eabi-gcc.exe -mthumb -march=armv7-m -mfix-cortex-m3-ldrd -T .\Generated_Source\PSoC5\cm3gcc.ld -g -Wl,-Map,.\CortexM3\ARM_GCC_473\Debug\Bootloadable_RPiSoC_example.map -specs=nano.specs -Wl,--gc-sections -Wl,--start-group -o .\CortexM3\ARM_GCC_473\Debug\Bootloadable_RPiSoC_example.elf .\CortexM3\ARM_GCC_473\Debug\main.o .\CortexM3\ARM_GCC_473\Debug\cybootloader.o .\CortexM3\ARM_GCC_473\Debug\cymetadata.o .\CortexM3\ARM_GCC_473\Debug\Cm3Start.o .\CortexM3\ARM_GCC_473\Debug\Bootloadable_RPiSoC_example.a "C:\Program Files (x86)\Cypress\PSoC Creator\3.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CortexM3\ARM_GCC_473\Debug\CyComponentLibrary.a" -Wl,--end-group
+cyelftool.exe -B C:\Users\Robert\workspace\Embedit_git_projects\Bootloader_RPiSoC\Bootloadable_RPiSoC_example.cydsn\CortexM3\ARM_GCC_473\Debug\Bootloadable_RPiSoC_example.elf --flash_row_size 256 --flash_size 262144 --flash_array_size 65536 --ee_array 64 --ee_row_size 16
+cyelftool.exe -S C:\Users\Robert\workspace\Embedit_git_projects\Bootloader_RPiSoC\Bootloadable_RPiSoC_example.cydsn\CortexM3\ARM_GCC_473\Debug\Bootloadable_RPiSoC_example.elf
+Flash used: 21550 of 262144 bytes (8.2 %).
+SRAM used: 20781 of 65536 bytes (31.7 %).
+--------------- Rebuild Succeeded: 07/17/2014 21:03:14 ---------------

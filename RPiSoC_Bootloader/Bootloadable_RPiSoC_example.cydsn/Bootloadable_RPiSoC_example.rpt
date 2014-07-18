@@ -1,0 +1,603 @@
+Loading plugins phase: Elapsed time ==> 0s.309ms
+Initializing data phase: Elapsed time ==> 2s.076ms
+<CYPRESSTAG name="CyDsfit arguments...">
+cydsfit arguments: -.fdsnotice -.fdswarpdepfile=warp_dependencies.txt -.fdselabdepfile=elab_dependencies.txt -.fdsbldfile=generated_files.txt -p C:\Users\Robert\workspace\Embedit_git_projects\Bootloader_RPiSoC\Bootloadable_RPiSoC_example.cydsn\Bootloadable_RPiSoC_example.cyprj -d CY8C5868AXI-LP035 -s C:\Users\Robert\workspace\Embedit_git_projects\Bootloader_RPiSoC\Bootloadable_RPiSoC_example.cydsn\Generated_Source\PSoC5 -- -yv2 -v3 -ygs -q10 -o2 -.fftcfgtype=LE</CYPRESSTAG>
+<CYPRESSTAG name="Design elaboration results...">
+</CYPRESSTAG>
+Elaboration phase: Elapsed time ==> 2s.787ms
+<CYPRESSTAG name="HDL generation results...">
+</CYPRESSTAG>
+HDL generation phase: Elapsed time ==> 0s.057ms
+<CYPRESSTAG name="Synthesis results...">
+
+     | | | | | | |
+   _________________
+  -|               |-
+  -|               |-
+  -|               |-
+  -|    CYPRESS    |-
+  -|               |-
+  -|               |-   Warp Verilog Synthesis Compiler: Version 6.3 IR 41
+  -|               |-   Copyright (C) 1991-2001 Cypress Semiconductor
+   |_______________|
+     | | | | | | |
+
+======================================================================
+Compiling:  Bootloadable_RPiSoC_example.v
+Program  :   C:\Program Files (x86)\Cypress\PSoC Creator\3.0\PSoC Creator\warp\bin/warp.exe
+Options  :    -yv2 -v3 -ygs -q10 -o2 -.fftcfgtype=LE -ya -.fftprj=C:\Users\Robert\workspace\Embedit_git_projects\Bootloader_RPiSoC\Bootloadable_RPiSoC_example.cydsn\Bootloadable_RPiSoC_example.cyprj -dcpsoc3 Bootloadable_RPiSoC_example.v -verilog
+======================================================================
+
+======================================================================
+Compiling:  Bootloadable_RPiSoC_example.v
+Program  :   C:\Program Files (x86)\Cypress\PSoC Creator\3.0\PSoC Creator\warp\bin/warp.exe
+Options  :    -yv2 -v3 -ygs -q10 -o2 -.fftcfgtype=LE -ya -.fftprj=C:\Users\Robert\workspace\Embedit_git_projects\Bootloader_RPiSoC\Bootloadable_RPiSoC_example.cydsn\Bootloadable_RPiSoC_example.cyprj -dcpsoc3 Bootloadable_RPiSoC_example.v -verilog
+======================================================================
+
+======================================================================
+Compiling:  Bootloadable_RPiSoC_example.v
+Program  :   vlogfe
+Options  :    -yv2 -v3 -ygs -q10 -o2 -.fftcfgtype=LE -ya -.fftprj=C:\Users\Robert\workspace\Embedit_git_projects\Bootloader_RPiSoC\Bootloadable_RPiSoC_example.cydsn\Bootloadable_RPiSoC_example.cyprj -dcpsoc3 -verilog Bootloadable_RPiSoC_example.v
+======================================================================
+
+vlogfe V6.3 IR 41:  Verilog parser
+Thu Jul 17 21:03:00 2014
+
+
+======================================================================
+Compiling:  Bootloadable_RPiSoC_example.v
+Program  :   vpp
+Options  :    -yv2 -q10 Bootloadable_RPiSoC_example.v
+======================================================================
+
+vpp V6.3 IR 41:  Verilog Pre-Processor
+Thu Jul 17 21:03:00 2014
+
+Flattening file 'C:\Program Files (x86)\Cypress\PSoC Creator\3.0\PSoC Creator\warp\..\psoc\content\cyprimitives\CyPrimitives.cylib\cy_virtualmux_v1_0\cy_virtualmux_v1_0.v'
+Flattening file 'C:\Program Files (x86)\Cypress\PSoC Creator\3.0\PSoC Creator\warp\..\psoc\content\cyprimitives\CyPrimitives.cylib\OneTerminal\OneTerminal.v'
+Flattening file 'C:\Program Files (x86)\Cypress\PSoC Creator\3.0\PSoC Creator\warp\..\psoc\content\cyprimitives\CyPrimitives.cylib\ZeroTerminal\ZeroTerminal.v'
+Flattening file 'C:\Program Files (x86)\Cypress\PSoC Creator\3.0\PSoC Creator\warp\..\psoc\content\cyprimitives\CyPrimitives.cylib\cy_constant_v1_0\cy_constant_v1_0.v'
+
+vpp:  No errors.
+
+Library 'work' => directory 'lcpsoc3'
+General_symbol_table
+General_symbol_table
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.0\PSoC Creator\warp\lib\common\std.vhd'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.0\PSoC Creator\warp\lib\common\cypress.vhd'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.0\PSoC Creator\warp\lib\common\work\cypress.vif'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.0\PSoC Creator\warp\lib\ieee\work\stdlogic.vif'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.0\PSoC Creator\warp\lib\common\stdlogic\lpmpkg.vif'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.0\PSoC Creator\warp\lib\common\stdlogic\rtlpkg.vif'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.0\PSoC Creator\warp\lib\common\stdlogic\mod_cnst.vif'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.0\PSoC Creator\warp\lib\common\stdlogic\mod_mthv.vif'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.0\PSoC Creator\warp\lib\common\stdlogic\mod_genv.vif'.
+Using control file 'Bootloadable_RPiSoC_example.ctl'.
+
+vlogfe:  No errors.
+
+
+======================================================================
+Compiling:  Bootloadable_RPiSoC_example.v
+Program  :   tovif
+Options  :    -yv2 -v3 -ygs -q10 -o2 -.fftcfgtype=LE -ya -.fftprj=C:\Users\Robert\workspace\Embedit_git_projects\Bootloader_RPiSoC\Bootloadable_RPiSoC_example.cydsn\Bootloadable_RPiSoC_example.cyprj -dcpsoc3 -verilog Bootloadable_RPiSoC_example.v
+======================================================================
+
+tovif V6.3 IR 41:  High-level synthesis
+Thu Jul 17 21:03:01 2014
+
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.0\PSoC Creator\warp\lib\common\std.vhd'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.0\PSoC Creator\warp\lib\common\cypress.vhd'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.0\PSoC Creator\warp\lib\common\work\cypress.vif'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.0\PSoC Creator\warp\lib\ieee\work\stdlogic.vif'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.0\PSoC Creator\warp\lib\common\stdlogic\lpmpkg.vif'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.0\PSoC Creator\warp\lib\common\stdlogic\rtlpkg.vif'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.0\PSoC Creator\warp\lib\common\stdlogic\mod_cnst.vif'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.0\PSoC Creator\warp\lib\common\stdlogic\mod_mthv.vif'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.0\PSoC Creator\warp\lib\common\stdlogic\mod_genv.vif'.
+Linking 'C:\Users\Robert\workspace\Embedit_git_projects\Bootloader_RPiSoC\Bootloadable_RPiSoC_example.cydsn\codegentemp\Bootloadable_RPiSoC_example.ctl'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.0\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\cy_virtualmux_v1_0\cy_virtualmux_v1_0.v'.
+Linking 'C:\Users\Robert\workspace\Embedit_git_projects\Bootloader_RPiSoC\Bootloadable_RPiSoC_example.cydsn\codegentemp\Bootloadable_RPiSoC_example.v'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.0\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\OneTerminal\OneTerminal.v'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.0\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\ZeroTerminal\ZeroTerminal.v'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.0\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\cy_constant_v1_0\cy_constant_v1_0.v'.
+
+tovif:  No errors.
+
+
+======================================================================
+Compiling:  Bootloadable_RPiSoC_example.v
+Program  :   topld
+Options  :    -yv2 -v3 -ygs -q10 -o2 -.fftcfgtype=LE -ya -.fftprj=C:\Users\Robert\workspace\Embedit_git_projects\Bootloader_RPiSoC\Bootloadable_RPiSoC_example.cydsn\Bootloadable_RPiSoC_example.cyprj -dcpsoc3 -verilog Bootloadable_RPiSoC_example.v
+======================================================================
+
+topld V6.3 IR 41:  Synthesis and optimization
+Thu Jul 17 21:03:01 2014
+
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.0\PSoC Creator\warp\lib\common\std.vhd'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.0\PSoC Creator\warp\lib\common\cypress.vhd'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.0\PSoC Creator\warp\lib\common\work\cypress.vif'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.0\PSoC Creator\warp\lib\ieee\work\stdlogic.vif'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.0\PSoC Creator\warp\lib\common\stdlogic\lpmpkg.vif'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.0\PSoC Creator\warp\lib\common\stdlogic\rtlpkg.vif'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.0\PSoC Creator\warp\lib\common\stdlogic\mod_cnst.vif'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.0\PSoC Creator\warp\lib\common\stdlogic\mod_mthv.vif'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.0\PSoC Creator\warp\lib\common\stdlogic\mod_genv.vif'.
+Linking 'C:\Users\Robert\workspace\Embedit_git_projects\Bootloader_RPiSoC\Bootloadable_RPiSoC_example.cydsn\codegentemp\Bootloadable_RPiSoC_example.ctl'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.0\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\cy_virtualmux_v1_0\cy_virtualmux_v1_0.v'.
+Linking 'C:\Users\Robert\workspace\Embedit_git_projects\Bootloader_RPiSoC\Bootloadable_RPiSoC_example.cydsn\codegentemp\Bootloadable_RPiSoC_example.v'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.0\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\OneTerminal\OneTerminal.v'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.0\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\ZeroTerminal\ZeroTerminal.v'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.0\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\cy_constant_v1_0\cy_constant_v1_0.v'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.0\PSoC Creator\warp\lib\lcpsoc3\stdlogic\cpsoc3.vif'.
+
+----------------------------------------------------------
+Detecting unused logic.
+----------------------------------------------------------
+    User names
+	Net_4
+	Net_1
+	\PWM_1:Net_114\
+
+
+Deleted 3 User equations/components.
+Deleted 0 Synthesized equations/components.
+
+------------------------------------------------------
+Alias Detection
+------------------------------------------------------
+Aliasing Net_20 to zero
+Aliasing Net_6 to zero
+Aliasing tmpOE__LED_net_0 to \PWM_1:Net_113\
+Aliasing one to \PWM_1:Net_113\
+Removing Lhs of wire \PWM_1:Net_107\[2] = zero[4]
+Removing Lhs of wire Net_20[5] = zero[4]
+Removing Rhs of wire Net_10[9] = \PWM_1:Net_57\[7]
+Removing Lhs of wire Net_6[12] = zero[4]
+Removing Rhs of wire tmpOE__LED_net_0[16] = \PWM_1:Net_113\[3]
+Removing Lhs of wire one[20] = tmpOE__LED_net_0[16]
+
+------------------------------------------------------
+Aliased 0 equations, 6 wires.
+------------------------------------------------------
+
+----------------------------------------------------------
+Circuit simplification
+----------------------------------------------------------
+
+Substituting virtuals - pass 1:
+
+
+----------------------------------------------------------
+Circuit simplification results:
+
+	Expanded 0 signals.
+	Turned 0 signals into soft nodes.
+	Maximum default expansion cost was set at 3.
+----------------------------------------------------------
+
+topld:  No errors.
+
+CYPRESS_DIR    : C:\Program Files (x86)\Cypress\PSoC Creator\3.0\PSoC Creator\warp
+Warp Program   : C:\Program Files (x86)\Cypress\PSoC Creator\3.0\PSoC Creator\warp\bin/warp.exe
+Warp Arguments : -yv2 -v3 -ygs -q10 -o2 -.fftcfgtype=LE -ya -.fftprj=C:\Users\Robert\workspace\Embedit_git_projects\Bootloader_RPiSoC\Bootloadable_RPiSoC_example.cydsn\Bootloadable_RPiSoC_example.cyprj -dcpsoc3 Bootloadable_RPiSoC_example.v -verilog
+</CYPRESSTAG>
+Warp synthesis phase: Elapsed time ==> 0s.484ms
+<CYPRESSTAG name="Fitter results...">
+<CYPRESSTAG name="Fitter startup details...">
+cyp3fit: V3.0.0.3023, Family: PSoC3, Started at: Thursday, 17 July 2014 21:03:01
+Options: -yv2 -v3 -ygs -q10 -o2 -.fftcfgtype=LE -ya -.fftprj=C:\Users\Robert\workspace\Embedit_git_projects\Bootloader_RPiSoC\Bootloadable_RPiSoC_example.cydsn\Bootloadable_RPiSoC_example.cyprj -d CY8C5868AXI-LP035 Bootloadable_RPiSoC_example.v -verilog
+</CYPRESSTAG>
+<CYPRESSTAG name="Design parsing">
+Design parsing phase: Elapsed time ==> 0s.013ms
+</CYPRESSTAG>
+<CYPRESSTAG name="Tech mapping">
+<CYPRESSTAG name="Initial Mapping" icon="FILE_RPT_TECHM">
+<CYPRESSTAG name="Global Clock Selection" icon="FILE_RPT_TECHM">
+    Digital Clock 0: Automatic-assigning  clock 'Clock_1'. Fanout=1, Signal=Net_21
+</CYPRESSTAG>
+<CYPRESSTAG name="UDB Clock/Enable Remapping Results">
+</CYPRESSTAG>
+
+Removing unused cells resulting from optimization
+    Removed unused cell/equation '__ZERO__:macrocell'
+Done removing unused cells.
+<CYPRESSTAG name="Duplicate Macrocell detection">
+</CYPRESSTAG>
+</CYPRESSTAG>
+<CYPRESSTAG name="Duplicate Macrocell detection">
+</CYPRESSTAG>
+<CYPRESSTAG name="Design Equations" icon="FILE_RPT_EQUATION">
+
+------------------------------------------------------------
+Design Equations
+------------------------------------------------------------
+    <CYPRESSTAG name="Pin listing">
+
+    ------------------------------------------------------------
+    Pin listing
+    ------------------------------------------------------------
+
+    Pin : Name = LED(0)
+        Attributes:
+            In Group/Port: True
+            In Sync Option: AUTO
+            Out Sync Option: NOSYNC
+            Interrupt generated: False
+            Interrupt mode: NONE
+            Drive mode: CMOS_OUT
+            VTrip: EITHER
+            Slew: FAST
+            Input Sync needed: False
+            Output Sync needed: False
+            SC shield enabled: False
+            POR State: ANY
+            LCD Mode: COMMON
+            Register Mode: RegComb
+            CaSense Mode: NEITHER
+            Treat as pin: True
+            Is OE Registered: False
+            Uses Analog: False
+            Can contain Digital: True
+            Is SIO: False
+            SIO Output Buf: NONREGULATED
+            SIO Input Buf: SINGLE_ENDED
+            SIO HiFreq: LOW
+            SIO Hyst: DISABLED
+            SIO Vtrip: MULTIPLIER_0_5
+            SIO RefSel: VCC_IO
+            Required Capabilitites: DIGITAL, ROUTABLE
+            Initial Value: 0
+            IO Voltage: 0
+        PORT MAP (
+            pa_out => LED(0)__PA ,
+            input => Net_10 ,
+            pad => LED(0)_PAD );
+        Properties:
+        {
+        }
+    </CYPRESSTAG>
+    <CYPRESSTAG name="Macrocell listing" icon="FILE_RPT_EQUATION">
+
+    ------------------------------------------------------------
+    Macrocell listing
+    ------------------------------------------------------------
+
+    MacroCell: Name=__ONE__, Mode=(Combinatorial)
+        Total # of inputs        : 0
+        Total # of product terms : 0
+            Clock Enable: True
+        Main Equation            : 0 pterms
+        !(
+            0
+        );
+        Output = __ONE__ (fanout=1)
+    </CYPRESSTAG>
+    <CYPRESSTAG name="Datapath listing">
+    </CYPRESSTAG>
+    <CYPRESSTAG name="Status register listing">
+    </CYPRESSTAG>
+    <CYPRESSTAG name="StatusI register listing">
+    </CYPRESSTAG>
+    <CYPRESSTAG name="Sync listing">
+    </CYPRESSTAG>
+    <CYPRESSTAG name="Control register listing">
+    </CYPRESSTAG>
+    <CYPRESSTAG name="Count7 listing">
+    </CYPRESSTAG>
+    <CYPRESSTAG name="DRQ listing">
+    </CYPRESSTAG>
+    <CYPRESSTAG name="Interrupt listing">
+    </CYPRESSTAG>
+</CYPRESSTAG>
+<CYPRESSTAG name="Technology mapping summary" expanded>
+
+------------------------------------------------------------
+Technology mapping summary
+------------------------------------------------------------
+
+Resource Type                 : Used : Free :  Max :  % Used
+============================================================
+Digital clock dividers        :    1 :    7 :    8 :  12.50%
+Analog clock dividers         :    0 :    4 :    4 :   0.00%
+Pins                          :    1 :   71 :   72 :   1.39%
+UDB Macrocells                :    1 :  191 :  192 :   0.52%
+UDB Unique Pterms             :    0 :  384 :  384 :   0.00%
+UDB Datapath Cells            :    0 :   24 :   24 :   0.00%
+UDB Status Cells              :    0 :   24 :   24 :   0.00%
+UDB Control Cells             :    0 :   24 :   24 :   0.00%
+DMA Channels                  :    0 :   24 :   24 :   0.00%
+Interrupts                    :    0 :   32 :   32 :   0.00%
+DSM Fixed Blocks              :    0 :    1 :    1 :   0.00%
+VIDAC Fixed Blocks            :    0 :    4 :    4 :   0.00%
+SC Fixed Blocks               :    0 :    4 :    4 :   0.00%
+Comparator Fixed Blocks       :    0 :    4 :    4 :   0.00%
+Opamp Fixed Blocks            :    0 :    4 :    4 :   0.00%
+CapSense Buffers              :    0 :    2 :    2 :   0.00%
+CAN Fixed Blocks              :    0 :    1 :    1 :   0.00%
+Decimator Fixed Blocks        :    0 :    1 :    1 :   0.00%
+I2C Fixed Blocks              :    0 :    1 :    1 :   0.00%
+Timer Fixed Blocks            :    1 :    3 :    4 :  25.00%
+DFB Fixed Blocks              :    0 :    1 :    1 :   0.00%
+USB Fixed Blocks              :    0 :    1 :    1 :   0.00%
+LCD Fixed Blocks              :    0 :    1 :    1 :   0.00%
+EMIF Fixed Blocks             :    0 :    1 :    1 :   0.00%
+LPF Fixed Blocks              :    0 :    2 :    2 :   0.00%
+SAR Fixed Blocks              :    0 :    2 :    2 :   0.00%
+</CYPRESSTAG>
+Technology Mapping: Elapsed time ==> 0s.221ms
+Info: mpr.M0037: Unused pieces of the design have been optimized out. See the Tech mapping section of the report file for details. (App=cydsfit)
+Tech mapping phase: Elapsed time ==> 0s.377ms
+</CYPRESSTAG>
+<CYPRESSTAG name="Analog Placement">
+Initial Analog Placement Results:
+IO_0@[IOP=(12)][IoId=(0)] : LED(0) (fixed)
+Analog Placement phase: Elapsed time ==> 0s.067ms
+</CYPRESSTAG>
+<CYPRESSTAG name="Analog Routing">
+Analog Routing phase: Elapsed time ==> 0s.000ms
+</CYPRESSTAG>
+<CYPRESSTAG name="Analog Code Generation">
+============ Analog Final Answer Routes ============
+Dump of CyAnalogRoutingResultsDB
+Map of net to items {
+}
+Map of item to net {
+}
+Mux Info {
+}
+Dump of CyP35AnalogRoutingResultsDB
+IsVddaHalfUsedForComp = False
+IsVddaHalfUsedForSar0 = False
+IsVddaHalfUsedForSar1 = False
+Analog Code Generation phase: Elapsed time ==> 0s.562ms
+</CYPRESSTAG>
+<CYPRESSTAG name="Digital Placement">
+<CYPRESSTAG name="Detailed placement messages">
+I2659: No Constrained paths were found. The placer will run in non-timing driven mode.
+I2076: Total run-time: 0.6 sec.
+
+</CYPRESSTAG>
+<CYPRESSTAG name="PLD Packing">
+<CYPRESSTAG name="PLD Packing Summary" expanded>
+
+------------------------------------------------------------
+PLD Packing Summary
+------------------------------------------------------------
+            Resource Type : Used : Free :  Max :  % Used
+    ====================================================
+                     PLDs :    1 :   47 :   48 :   2.08%
+
+<CYPRESSTAG name="PLD Statistics">
+
+        PLD Resource Type :     Average/LAB
+    =======================================
+                   Inputs :            0.00
+                   Pterms :            0.00
+               Macrocells :            1.00
+</CYPRESSTAG>
+<CYPRESSTAG name="Packed PLD Contents">
+Packed PLD Contents not displayed at this verbose level.</CYPRESSTAG>
+</CYPRESSTAG>
+PLD Packing: Elapsed time ==> 0s.001ms
+</CYPRESSTAG>
+<CYPRESSTAG name="Partitioning">
+<CYPRESSTAG name="Initial Partitioning Summary">
+Initial Partitioning Summary not displayed at this verbose level.</CYPRESSTAG>
+<CYPRESSTAG name="Final Partitioning Summary">
+Final Partitioning Summary not displayed at this verbose level.</CYPRESSTAG>
+Partitioning: Elapsed time ==> 0s.015ms
+</CYPRESSTAG>
+<CYPRESSTAG name="Simulated Annealing">
+Annealing: Elapsed time ==> 0s.002ms
+<CYPRESSTAG name="Simulated Annealing Results">
+The seed used for moves was 114161200.
+Inital cost was 6, final cost is 6 (0.00% improvement).</CYPRESSTAG>
+</CYPRESSTAG>
+<CYPRESSTAG name="Final Placement Summary">
+
+------------------------------------------------------------
+Final Placement Summary
+------------------------------------------------------------
+
+       Resource Type :      Count : Avg Inputs : Avg Outputs
+    ========================================================
+                 UDB :          1 :       0.00 :       1.00
+<CYPRESSTAG name="Final Placement Details">
+<CYPRESSTAG name="Component Details">
+
+------------------------------------------------------------
+Component Placement Details
+------------------------------------------------------------
+UDB [UDB=(0,0)] is empty.
+UDB [UDB=(0,1)] is empty.
+UDB [UDB=(0,2)] is empty.
+UDB [UDB=(0,3)] is empty.
+UDB [UDB=(0,4)] is empty.
+UDB [UDB=(0,5)] is empty.
+UDB [UDB=(1,0)] is empty.
+UDB [UDB=(1,1)] is empty.
+UDB [UDB=(1,2)] is empty.
+UDB [UDB=(1,3)] contents:
+LAB@[UDB=(1,3)][LB=0] #macrocells=1, #inputs=0, #pterms=0
+{
+    [McSlotId=0]:     MacroCell: Name=__ONE__, Mode=(Combinatorial) @ [UDB=(1,3)][LB=0][MC=0]
+        Total # of inputs        : 0
+        Total # of product terms : 0
+            Clock Enable: True
+        Main Equation            : 0 pterms
+        !(
+            0
+        );
+        Output = __ONE__ (fanout=1)
+        Properties               : 
+        {
+        }
+
+    [McSlotId=1]: (empty)
+    [McSlotId=2]: (empty)
+    [McSlotId=3]: (empty)
+}
+
+UDB [UDB=(1,4)] is empty.
+UDB [UDB=(1,5)] is empty.
+UDB [UDB=(2,0)] is empty.
+UDB [UDB=(2,1)] is empty.
+UDB [UDB=(2,2)] is empty.
+UDB [UDB=(2,3)] is empty.
+UDB [UDB=(2,4)] is empty.
+UDB [UDB=(2,5)] is empty.
+UDB [UDB=(3,0)] is empty.
+UDB [UDB=(3,1)] is empty.
+UDB [UDB=(3,2)] is empty.
+UDB [UDB=(3,3)] is empty.
+UDB [UDB=(3,4)] is empty.
+UDB [UDB=(3,5)] is empty.
+Intr hod @ [IntrHod=(0)]: empty
+Drq hod @ [DrqHod=(0)]: empty
+Port 0 is empty
+Port 1 is empty
+Port 2 is empty
+Port 3 is empty
+Port 4 is empty
+Port 5 is empty
+Port 6 is empty
+Port 12 contains the following IO cells:
+[IoId=0]: 
+Pin : Name = LED(0)
+    Attributes:
+        In Group/Port: True
+        In Sync Option: AUTO
+        Out Sync Option: NOSYNC
+        Interrupt generated: False
+        Interrupt mode: NONE
+        Drive mode: CMOS_OUT
+        VTrip: EITHER
+        Slew: FAST
+        Input Sync needed: False
+        Output Sync needed: False
+        SC shield enabled: False
+        POR State: ANY
+        LCD Mode: COMMON
+        Register Mode: RegComb
+        CaSense Mode: NEITHER
+        Treat as pin: True
+        Is OE Registered: False
+        Uses Analog: False
+        Can contain Digital: True
+        Is SIO: False
+        SIO Output Buf: NONREGULATED
+        SIO Input Buf: SINGLE_ENDED
+        SIO HiFreq: LOW
+        SIO Hyst: DISABLED
+        SIO Vtrip: MULTIPLIER_0_5
+        SIO RefSel: VCC_IO
+        Required Capabilitites: DIGITAL, ROUTABLE
+        Initial Value: 0
+        IO Voltage: 0
+    PORT MAP (
+        pa_out => LED(0)__PA ,
+        input => Net_10 ,
+        pad => LED(0)_PAD );
+    Properties:
+    {
+    }
+
+Port 15 is empty
+Fixed Function block hod @ [FFB(CAN,0)]: empty
+Fixed Function block hod @ [FFB(Cache,0)]: empty
+Fixed Function block hod @ [FFB(CapSense,0)]: empty
+Fixed Function block hod @ [FFB(Clock,0)]: 
+    Clock Block @ [FFB(Clock,0)]: 
+    clockblockcell: Name =ClockBlock
+        PORT MAP (
+            clk_bus_glb => ClockBlock_BUS_CLK ,
+            clk_bus => ClockBlock_BUS_CLK_local ,
+            clk_sync => ClockBlock_MASTER_CLK ,
+            clk_32k_xtal => ClockBlock_XTAL_32KHZ ,
+            xtal => ClockBlock_XTAL ,
+            ilo => ClockBlock_ILO ,
+            clk_100k => ClockBlock_100k ,
+            clk_1k => ClockBlock_1k ,
+            clk_32k => ClockBlock_32k ,
+            pllout => ClockBlock_PLL_OUT ,
+            imo => ClockBlock_IMO ,
+            dclk_glb_0 => Net_21 ,
+            dclk_0 => Net_21_local );
+        Properties:
+        {
+        }
+Fixed Function block hod @ [FFB(Comparator,0)]: empty
+Fixed Function block hod @ [FFB(DFB,0)]: empty
+Fixed Function block hod @ [FFB(DSM,0)]: empty
+Fixed Function block hod @ [FFB(Decimator,0)]: empty
+Fixed Function block hod @ [FFB(EMIF,0)]: empty
+Fixed Function block hod @ [FFB(I2C,0)]: empty
+Fixed Function block hod @ [FFB(LCD,0)]: empty
+Fixed Function block hod @ [FFB(LVD,0)]: empty
+Fixed Function block hod @ [FFB(PM,0)]: empty
+Fixed Function block hod @ [FFB(SC,0)]: empty
+Fixed Function block hod @ [FFB(SPC,0)]: empty
+Fixed Function block hod @ [FFB(Timer,0)]: 
+    Timer Block @ [FFB(Timer,0)]: 
+    timercell: Name =\PWM_1:PWMHW\
+        PORT MAP (
+            clock => Net_21 ,
+            enable => __ONE__ ,
+            tc => \PWM_1:Net_63\ ,
+            cmp => Net_10 ,
+            irq => \PWM_1:Net_54\ );
+        Properties:
+        {
+            cy_registers = ""
+        }
+Fixed Function block hod @ [FFB(USB,0)]: empty
+Fixed Function block hod @ [FFB(VIDAC,0)]: empty
+Fixed Function block hod @ [FFB(OpAmp,0)]: empty
+Fixed Function block hod @ [FFB(CsAbuf,0)]: empty
+Fixed Function block hod @ [FFB(Vref,0)]: empty
+Fixed Function block hod @ [FFB(LPF,0)]: empty
+Fixed Function block hod @ [FFB(SAR,0)]: empty
+</CYPRESSTAG>
+<CYPRESSTAG name="Port Configuration Details">
+
+------------------------------------------------------------
+Port Configuration report
+------------------------------------------------------------
+     |     |       | Interrupt |                  |        | 
+Port | Pin | Fixed |      Type |       Drive Mode |   Name | Connections
+-----+-----+-------+-----------+------------------+--------+------------
+  12 |   0 |     * |      NONE |         CMOS_OUT | LED(0) | In(Net_10)
+------------------------------------------------------------------------
+</CYPRESSTAG>
+</CYPRESSTAG>
+</CYPRESSTAG>
+Digital component placer commit/Report: Elapsed time ==> 0s.003ms
+Digital Placement phase: Elapsed time ==> 1s.035ms
+</CYPRESSTAG>
+<CYPRESSTAG name="Digital Routing">
+Routing successful.
+Digital Routing phase: Elapsed time ==> 1s.667ms
+</CYPRESSTAG>
+<CYPRESSTAG name="Bitstream and API generation">
+Bitstream and API generation phase: Elapsed time ==> 1s.432ms
+</CYPRESSTAG>
+<CYPRESSTAG name="Bitstream verification">
+Bitstream verification phase: Elapsed time ==> 0s.163ms
+</CYPRESSTAG>
+<CYPRESSTAG name="Static timing analysis">
+Timing report is in Bootloadable_RPiSoC_example_timing.html.
+Static timing analysis phase: Elapsed time ==> 0s.334ms
+</CYPRESSTAG>
+<CYPRESSTAG name="Data reporting">
+Data reporting phase: Elapsed time ==> 0s.000ms
+</CYPRESSTAG>
+<CYPRESSTAG name="Database update...">
+Design database save phase: Elapsed time ==> 0s.184ms
+</CYPRESSTAG>
+cydsfit: Elapsed time ==> 5s.856ms
+</CYPRESSTAG>
+Fitter phase: Elapsed time ==> 5s.905ms
+API generation phase: Elapsed time ==> 1s.200ms
+Dependency generation phase: Elapsed time ==> 0s.009ms
+Cleanup phase: Elapsed time ==> 0s.001ms

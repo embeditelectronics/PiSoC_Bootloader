@@ -1,0 +1,24 @@
+(DELAYFILE
+ (SDFVERSION "IEEE 1497 4.0")
+ (DATE "2014-07-18T01:03:07Z")
+ (DESIGN "Bootloadable_RPiSoC_example")
+ (VENDOR "Cypress Semiconductor")
+ (PROGRAM "cydsfit")
+ (VERSION "No Version Information Found")
+ (DIVIDER .)
+ (TIMESCALE 1 ns)
+ (CELL
+  (CELLTYPE "Bootloadable_RPiSoC_example")
+  (INSTANCE *)
+  (DELAY
+   (ABSOLUTE
+    (INTERCONNECT LED\(0\).pad_out LED\(0\).pad_in (0.000:0.000:0.000))
+    (INTERCONNECT \\PWM_1\:PWMHW\\.cmp LED\(0\).pin_input (3.000:3.000:3.000))
+    (INTERCONNECT __ONE__.q \\PWM_1\:PWMHW\\.enable (7.728:7.728:7.728))
+    (INTERCONNECT ClockBlock.dclk_glb_ff_0 \\PWM_1\:PWMHW\\.clock (0.000:0.000:0.000))
+    (INTERCONNECT LED\(0\).pad_out LED\(0\)_PAD (0.000:0.000:0.000))
+    (INTERCONNECT LED\(0\)_PAD LED\(0\).pad_in (0.000:0.000:0.000))
+   )
+  )
+ )
+)

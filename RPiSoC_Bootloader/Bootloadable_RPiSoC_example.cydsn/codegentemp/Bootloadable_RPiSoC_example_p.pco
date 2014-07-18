@@ -1,0 +1,5 @@
+set_location "__ONE__" macrocell 1 3 0 0
+set_location "ClockBlock" clockblockcell -1 -1 0
+set_location "\PWM_1:PWMHW\" timercell -1 -1 0
+# Note: port 12 is the logical name for port 7
+set_io "LED(0)" iocell 12 0
