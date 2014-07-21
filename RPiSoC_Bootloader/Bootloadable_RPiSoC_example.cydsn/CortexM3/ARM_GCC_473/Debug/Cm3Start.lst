@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Robert\AppData\Local\Temp\cc26jkkl.s 			page 1
+ARM GAS  C:\Users\Robert\AppData\Local\Temp\ccFGD2zT.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Robert\AppData\Local\Temp\cc26jkkl.s 			page 1
    8:.\Generated_Source\PSoC5/Cm3Start.c **** ********************************************************************************
    9:.\Generated_Source\PSoC5/Cm3Start.c **** * Copyright 2008-2014, Cypress Semiconductor Corporation. All rights reserved.
   10:.\Generated_Source\PSoC5/Cm3Start.c **** * You may use this file only in accordance with the license, terms, conditions,
-ARM GAS  C:\Users\Robert\AppData\Local\Temp\cc26jkkl.s 			page 2
+ARM GAS  C:\Users\Robert\AppData\Local\Temp\ccFGD2zT.s 			page 2
 
 
   11:.\Generated_Source\PSoC5/Cm3Start.c **** * disclaimers, and limitations in the end user license agreement accompanying
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Robert\AppData\Local\Temp\cc26jkkl.s 			page 1
   65:.\Generated_Source\PSoC5/Cm3Start.c ****     #pragma location=".ramvectors"
   66:.\Generated_Source\PSoC5/Cm3Start.c ****     #pragma data_alignment=256
   67:.\Generated_Source\PSoC5/Cm3Start.c **** #else
-ARM GAS  C:\Users\Robert\AppData\Local\Temp\cc26jkkl.s 			page 3
+ARM GAS  C:\Users\Robert\AppData\Local\Temp\ccFGD2zT.s 			page 3
 
 
   68:.\Generated_Source\PSoC5/Cm3Start.c ****     CY_SECTION(".ramvectors")
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Robert\AppData\Local\Temp\cc26jkkl.s 			page 1
   60              		.global	Reset
   61              		.thumb
   62              		.thumb_func
-ARM GAS  C:\Users\Robert\AppData\Local\Temp\cc26jkkl.s 			page 4
+ARM GAS  C:\Users\Robert\AppData\Local\Temp\ccFGD2zT.s 			page 4
 
 
   63              		.type	Reset, %function
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\Robert\AppData\Local\Temp\cc26jkkl.s 			page 1
  153:.\Generated_Source\PSoC5/Cm3Start.c ****     #endif /* (CYDEV_BOOTLOADER_ENABLE) */
  154:.\Generated_Source\PSoC5/Cm3Start.c **** 
  155:.\Generated_Source\PSoC5/Cm3Start.c ****     __main();
-ARM GAS  C:\Users\Robert\AppData\Local\Temp\cc26jkkl.s 			page 5
+ARM GAS  C:\Users\Robert\AppData\Local\Temp\ccFGD2zT.s 			page 5
 
 
  156:.\Generated_Source\PSoC5/Cm3Start.c **** }
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\Robert\AppData\Local\Temp\cc26jkkl.s 			page 1
  210:.\Generated_Source\PSoC5/Cm3Start.c **** extern const char __cy_region_num __attribute__((weak));
  211:.\Generated_Source\PSoC5/Cm3Start.c **** #define __cy_region_num ((size_t)&__cy_region_num)
  212:.\Generated_Source\PSoC5/Cm3Start.c **** 
-ARM GAS  C:\Users\Robert\AppData\Local\Temp\cc26jkkl.s 			page 6
+ARM GAS  C:\Users\Robert\AppData\Local\Temp\ccFGD2zT.s 			page 6
 
 
  213:.\Generated_Source\PSoC5/Cm3Start.c **** 
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\Robert\AppData\Local\Temp\cc26jkkl.s 			page 1
   83              		.section	.text._exit,"ax",%progbits
   84              		.align	2
   85              		.weak	_exit
-ARM GAS  C:\Users\Robert\AppData\Local\Temp\cc26jkkl.s 			page 7
+ARM GAS  C:\Users\Robert\AppData\Local\Temp\ccFGD2zT.s 			page 7
 
 
   86              		.thumb
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\Robert\AppData\Local\Temp\cc26jkkl.s 			page 1
  128              		.align	2
  129              		.global	Start_c
  130              		.thumb
-ARM GAS  C:\Users\Robert\AppData\Local\Temp\cc26jkkl.s 			page 8
+ARM GAS  C:\Users\Robert\AppData\Local\Temp\ccFGD2zT.s 			page 8
 
 
  131              		.thumb_func
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\Robert\AppData\Local\Temp\cc26jkkl.s 			page 1
  159 001a 40F20003 		movw	r3, #:lower16:__cy_region_num
  160 001e C0F20003 		movt	r3, #:upper16:__cy_region_num
  161 0022 7B61     		str	r3, [r7, #20]
-ARM GAS  C:\Users\Robert\AppData\Local\Temp\cc26jkkl.s 			page 9
+ARM GAS  C:\Users\Robert\AppData\Local\Temp\ccFGD2zT.s 			page 9
 
 
  162 0024 40F20003 		movw	r3, #:lower16:__cy_regions
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\Robert\AppData\Local\Temp\cc26jkkl.s 			page 1
  205 0070 EBD1     		bne	.L9
  297:.\Generated_Source\PSoC5/Cm3Start.c ****         }
  298:.\Generated_Source\PSoC5/Cm3Start.c ****         limit = rptr->zero_size;
-ARM GAS  C:\Users\Robert\AppData\Local\Temp\cc26jkkl.s 			page 10
+ARM GAS  C:\Users\Robert\AppData\Local\Temp\ccFGD2zT.s 			page 10
 
 
  206              		.loc 1 298 0 is_stmt 1
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\Robert\AppData\Local\Temp\cc26jkkl.s 			page 1
  305:.\Generated_Source\PSoC5/Cm3Start.c ****     /* Invoke static objects constructors */
  306:.\Generated_Source\PSoC5/Cm3Start.c ****     __libc_init_array();
  250              		.loc 1 306 0 is_stmt 1
-ARM GAS  C:\Users\Robert\AppData\Local\Temp\cc26jkkl.s 			page 11
+ARM GAS  C:\Users\Robert\AppData\Local\Temp\ccFGD2zT.s 			page 11
 
 
  251 00c0 FFF7FEFF 		bl	__libc_init_array
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\Robert\AppData\Local\Temp\cc26jkkl.s 			page 1
  334:.\Generated_Source\PSoC5/Cm3Start.c **** *    1 - initialize data sections;
  335:.\Generated_Source\PSoC5/Cm3Start.c **** *
  336:.\Generated_Source\PSoC5/Cm3Start.c **** *******************************************************************************/
-ARM GAS  C:\Users\Robert\AppData\Local\Temp\cc26jkkl.s 			page 12
+ARM GAS  C:\Users\Robert\AppData\Local\Temp\ccFGD2zT.s 			page 12
 
 
  337:.\Generated_Source\PSoC5/Cm3Start.c **** int __low_level_init(void)
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\Robert\AppData\Local\Temp\cc26jkkl.s 			page 1
  391:.\Generated_Source\PSoC5/Cm3Start.c ****     #endif  /* defined (__ICCARM__) */
  392:.\Generated_Source\PSoC5/Cm3Start.c ****     &IntDefaultHandler,      /* NMI handler            2 */
  393:.\Generated_Source\PSoC5/Cm3Start.c ****     &IntDefaultHandler,      /* Hard fault handler     3 */
-ARM GAS  C:\Users\Robert\AppData\Local\Temp\cc26jkkl.s 			page 13
+ARM GAS  C:\Users\Robert\AppData\Local\Temp\ccFGD2zT.s 			page 13
 
 
  394:.\Generated_Source\PSoC5/Cm3Start.c **** };
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\Robert\AppData\Local\Temp\cc26jkkl.s 			page 1
  299              		.loc 1 426 0
  300 0018 4EF61453 		movw	r3, #60692
  301 001c CEF20003 		movt	r3, 57344
-ARM GAS  C:\Users\Robert\AppData\Local\Temp\cc26jkkl.s 			page 14
+ARM GAS  C:\Users\Robert\AppData\Local\Temp\ccFGD2zT.s 			page 14
 
 
  302 0020 4EF61452 		movw	r2, #60692
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\Robert\AppData\Local\Temp\cc26jkkl.s 			page 1
  341              		.loc 1 439 0 is_stmt 1
  342 0072 47F2BC63 		movw	r3, #30396
  343 0076 C4F20003 		movt	r3, 16384
-ARM GAS  C:\Users\Robert\AppData\Local\Temp\cc26jkkl.s 			page 15
+ARM GAS  C:\Users\Robert\AppData\Local\Temp\ccFGD2zT.s 			page 15
 
 
  344 007a 1B78     		ldrb	r3, [r3, #0]
@@ -898,16 +898,16 @@ ARM GAS  C:\Users\Robert\AppData\Local\Temp\cc26jkkl.s 			page 1
  379              	.Ldebug_info0:
  380 0000 E6020000 		.4byte	0x2e6
  381 0004 0200     		.2byte	0x2
-ARM GAS  C:\Users\Robert\AppData\Local\Temp\cc26jkkl.s 			page 16
+ARM GAS  C:\Users\Robert\AppData\Local\Temp\ccFGD2zT.s 			page 16
 
 
  382 0006 00000000 		.4byte	.Ldebug_abbrev0
  383 000a 04       		.byte	0x4
  384 000b 01       		.uleb128 0x1
- 385 000c F7010000 		.4byte	.LASF39
+ 385 000c F0010000 		.4byte	.LASF39
  386 0010 01       		.byte	0x1
  387 0011 00000000 		.4byte	.LASF40
- 388 0015 AE000000 		.4byte	.LASF41
+ 388 0015 74000000 		.4byte	.LASF41
  389 0019 00000000 		.4byte	.Ldebug_ranges0+0
  390 001d 00000000 		.4byte	0
  391 0021 00000000 		.4byte	0
@@ -915,15 +915,15 @@ ARM GAS  C:\Users\Robert\AppData\Local\Temp\cc26jkkl.s 			page 1
  393 0029 02       		.uleb128 0x2
  394 002a 01       		.byte	0x1
  395 002b 06       		.byte	0x6
- 396 002c 57020000 		.4byte	.LASF0
+ 396 002c 50020000 		.4byte	.LASF0
  397 0030 02       		.uleb128 0x2
  398 0031 01       		.byte	0x1
  399 0032 08       		.byte	0x8
- 400 0033 95000000 		.4byte	.LASF1
+ 400 0033 F1000000 		.4byte	.LASF1
  401 0037 02       		.uleb128 0x2
  402 0038 02       		.byte	0x2
  403 0039 05       		.byte	0x5
- 404 003a ED010000 		.4byte	.LASF2
+ 404 003a E6010000 		.4byte	.LASF2
  405 003e 02       		.uleb128 0x2
  406 003f 02       		.byte	0x2
  407 0040 07       		.byte	0x7
@@ -931,19 +931,19 @@ ARM GAS  C:\Users\Robert\AppData\Local\Temp\cc26jkkl.s 			page 1
  409 0045 02       		.uleb128 0x2
  410 0046 04       		.byte	0x4
  411 0047 05       		.byte	0x5
- 412 0048 40020000 		.4byte	.LASF4
+ 412 0048 39020000 		.4byte	.LASF4
  413 004c 02       		.uleb128 0x2
  414 004d 04       		.byte	0x4
  415 004e 07       		.byte	0x7
- 416 004f 11010000 		.4byte	.LASF5
+ 416 004f 0A010000 		.4byte	.LASF5
  417 0053 02       		.uleb128 0x2
  418 0054 08       		.byte	0x8
  419 0055 05       		.byte	0x5
- 420 0056 DA010000 		.4byte	.LASF6
+ 420 0056 D3010000 		.4byte	.LASF6
  421 005a 02       		.uleb128 0x2
  422 005b 08       		.byte	0x8
  423 005c 07       		.byte	0x7
- 424 005d 87010000 		.4byte	.LASF7
+ 424 005d 80010000 		.4byte	.LASF7
  425 0061 03       		.uleb128 0x3
  426 0062 04       		.byte	0x4
  427 0063 05       		.byte	0x5
@@ -951,34 +951,34 @@ ARM GAS  C:\Users\Robert\AppData\Local\Temp\cc26jkkl.s 			page 1
  429 0068 02       		.uleb128 0x2
  430 0069 04       		.byte	0x4
  431 006a 07       		.byte	0x7
- 432 006b 7A010000 		.4byte	.LASF8
+ 432 006b 73010000 		.4byte	.LASF8
  433 006f 04       		.uleb128 0x4
- 434 0070 38010000 		.4byte	.LASF9
+ 434 0070 31010000 		.4byte	.LASF9
  435 0074 02       		.byte	0x2
  436 0075 5B       		.byte	0x5b
  437 0076 30000000 		.4byte	0x30
  438 007a 04       		.uleb128 0x4
-ARM GAS  C:\Users\Robert\AppData\Local\Temp\cc26jkkl.s 			page 17
+ARM GAS  C:\Users\Robert\AppData\Local\Temp\ccFGD2zT.s 			page 17
 
 
- 439 007b 73010000 		.4byte	.LASF10
+ 439 007b 6C010000 		.4byte	.LASF10
  440 007f 02       		.byte	0x2
  441 0080 5D       		.byte	0x5d
  442 0081 4C000000 		.4byte	0x4c
  443 0085 02       		.uleb128 0x2
  444 0086 04       		.byte	0x4
  445 0087 04       		.byte	0x4
- 446 0088 8A000000 		.4byte	.LASF11
+ 446 0088 E6000000 		.4byte	.LASF11
  447 008c 02       		.uleb128 0x2
  448 008d 08       		.byte	0x8
  449 008e 04       		.byte	0x4
- 450 008f 5C010000 		.4byte	.LASF12
+ 450 008f 55010000 		.4byte	.LASF12
  451 0093 02       		.uleb128 0x2
  452 0094 01       		.byte	0x1
  453 0095 08       		.byte	0x8
- 454 0096 E8010000 		.4byte	.LASF13
+ 454 0096 E1010000 		.4byte	.LASF13
  455 009a 04       		.uleb128 0x4
- 456 009b CC010000 		.4byte	.LASF14
+ 456 009b C5010000 		.4byte	.LASF14
  457 009f 02       		.byte	0x2
  458 00a0 F0       		.byte	0xf0
  459 00a1 A5000000 		.4byte	0xa5
@@ -992,7 +992,7 @@ ARM GAS  C:\Users\Robert\AppData\Local\Temp\cc26jkkl.s 			page 1
  467 00b5 05       		.uleb128 0x5
  468 00b6 7A000000 		.4byte	0x7a
  469 00ba 06       		.uleb128 0x6
- 470 00bb A4010000 		.4byte	.LASF16
+ 470 00bb 9D010000 		.4byte	.LASF16
  471 00bf 02       		.byte	0x2
  472 00c0 0201     		.2byte	0x102
  473 00c2 C6000000 		.4byte	0xc6
@@ -1004,7 +1004,7 @@ ARM GAS  C:\Users\Robert\AppData\Local\Temp\cc26jkkl.s 			page 1
  479 00ce 02       		.uleb128 0x2
  480 00cf 04       		.byte	0x4
  481 00d0 07       		.byte	0x7
- 482 00d1 D1010000 		.4byte	.LASF17
+ 482 00d1 CA010000 		.4byte	.LASF17
  483 00d5 09       		.uleb128 0x9
  484 00d6 93000000 		.4byte	0x93
  485 00da 04       		.uleb128 0x4
@@ -1013,15 +1013,15 @@ ARM GAS  C:\Users\Robert\AppData\Local\Temp\cc26jkkl.s 			page 1
  488 00e0 D5       		.byte	0xd5
  489 00e1 68000000 		.4byte	0x68
  490 00e5 04       		.uleb128 0x4
- 491 00e6 BB010000 		.4byte	.LASF19
+ 491 00e6 B4010000 		.4byte	.LASF19
  492 00ea 01       		.byte	0x1
  493 00eb C7       		.byte	0xc7
  494 00ec 30000000 		.4byte	0x30
  495 00f0 0A       		.uleb128 0xa
-ARM GAS  C:\Users\Robert\AppData\Local\Temp\cc26jkkl.s 			page 18
+ARM GAS  C:\Users\Robert\AppData\Local\Temp\ccFGD2zT.s 			page 18
 
 
- 496 00f1 78020000 		.4byte	.LASF42
+ 496 00f1 71020000 		.4byte	.LASF42
  497 00f5 10       		.byte	0x10
  498 00f6 01       		.byte	0x1
  499 00f7 C9       		.byte	0xc9
@@ -1035,7 +1035,7 @@ ARM GAS  C:\Users\Robert\AppData\Local\Temp\cc26jkkl.s 			page 1
  507 0108 23       		.byte	0x23
  508 0109 00       		.uleb128 0
  509 010a 0B       		.uleb128 0xb
- 510 010b 90000000 		.4byte	.LASF21
+ 510 010b EC000000 		.4byte	.LASF21
  511 010f 01       		.byte	0x1
  512 0110 CC       		.byte	0xcc
  513 0111 35010000 		.4byte	0x135
@@ -1043,7 +1043,7 @@ ARM GAS  C:\Users\Robert\AppData\Local\Temp\cc26jkkl.s 			page 1
  515 0116 23       		.byte	0x23
  516 0117 04       		.uleb128 0x4
  517 0118 0B       		.uleb128 0xb
- 518 0119 B1010000 		.4byte	.LASF22
+ 518 0119 AA010000 		.4byte	.LASF22
  519 011d 01       		.byte	0x1
  520 011e CD       		.byte	0xcd
  521 011f DA000000 		.4byte	0xda
@@ -1051,7 +1051,7 @@ ARM GAS  C:\Users\Robert\AppData\Local\Temp\cc26jkkl.s 			page 1
  523 0124 23       		.byte	0x23
  524 0125 08       		.uleb128 0x8
  525 0126 0B       		.uleb128 0xb
- 526 0127 7B000000 		.4byte	.LASF23
+ 526 0127 D7000000 		.4byte	.LASF23
  527 012b 01       		.byte	0x1
  528 012c CE       		.byte	0xce
  529 012d DA000000 		.4byte	0xda
@@ -1064,7 +1064,7 @@ ARM GAS  C:\Users\Robert\AppData\Local\Temp\cc26jkkl.s 			page 1
  536 0137 E5000000 		.4byte	0xe5
  537 013b 0C       		.uleb128 0xc
  538 013c 01       		.byte	0x1
- 539 013d 4A010000 		.4byte	.LASF24
+ 539 013d 43010000 		.4byte	.LASF24
  540 0141 01       		.byte	0x1
  541 0142 5C       		.byte	0x5c
  542 0143 01       		.byte	0x1
@@ -1074,11 +1074,11 @@ ARM GAS  C:\Users\Robert\AppData\Local\Temp\cc26jkkl.s 			page 1
  546 0150 01       		.byte	0x1
  547 0151 0D       		.uleb128 0xd
  548 0152 01       		.byte	0x1
- 549 0153 3E010000 		.4byte	.LASF25
+ 549 0153 37010000 		.4byte	.LASF25
  550 0157 01       		.byte	0x1
  551 0158 E5       		.byte	0xe5
  552 0159 01       		.byte	0x1
-ARM GAS  C:\Users\Robert\AppData\Local\Temp\cc26jkkl.s 			page 19
+ARM GAS  C:\Users\Robert\AppData\Local\Temp\ccFGD2zT.s 			page 19
 
 
  553 015a 00000000 		.4byte	.LFB1
@@ -1087,7 +1087,7 @@ ARM GAS  C:\Users\Robert\AppData\Local\Temp\cc26jkkl.s 			page 1
  556 0166 01       		.byte	0x1
  557 0167 0E       		.uleb128 0xe
  558 0168 01       		.byte	0x1
- 559 0169 44010000 		.4byte	.LASF26
+ 559 0169 3D010000 		.4byte	.LASF26
  560 016d 01       		.byte	0x1
  561 016e FD       		.byte	0xfd
  562 016f 01       		.byte	0x1
@@ -1097,7 +1097,7 @@ ARM GAS  C:\Users\Robert\AppData\Local\Temp\cc26jkkl.s 			page 1
  566 017c 01       		.byte	0x1
  567 017d 9D010000 		.4byte	0x19d
  568 0181 0F       		.uleb128 0xf
- 569 0182 74000000 		.4byte	.LASF43
+ 569 0182 D0000000 		.4byte	.LASF43
  570 0186 01       		.byte	0x1
  571 0187 FD       		.byte	0xfd
  572 0188 61000000 		.4byte	0x61
@@ -1125,7 +1125,7 @@ ARM GAS  C:\Users\Robert\AppData\Local\Temp\cc26jkkl.s 			page 1
  594 01b3 01       		.byte	0x1
  595 01b4 1D020000 		.4byte	0x21d
  596 01b8 12       		.uleb128 0x12
- 597 01b9 70020000 		.4byte	.LASF28
+ 597 01b9 69020000 		.4byte	.LASF28
  598 01bd 01       		.byte	0x1
  599 01be 1B01     		.2byte	0x11b
  600 01c0 68000000 		.4byte	0x68
@@ -1133,12 +1133,12 @@ ARM GAS  C:\Users\Robert\AppData\Local\Temp\cc26jkkl.s 			page 1
  602 01c5 91       		.byte	0x91
  603 01c6 74       		.sleb128 -12
  604 01c7 12       		.uleb128 0x12
- 605 01c8 85000000 		.4byte	.LASF29
+ 605 01c8 E1000000 		.4byte	.LASF29
  606 01cc 01       		.byte	0x1
  607 01cd 1C01     		.2byte	0x11c
  608 01cf 1D020000 		.4byte	0x21d
  609 01d3 02       		.byte	0x2
-ARM GAS  C:\Users\Robert\AppData\Local\Temp\cc26jkkl.s 			page 20
+ARM GAS  C:\Users\Robert\AppData\Local\Temp\ccFGD2zT.s 			page 20
 
 
  610 01d4 91       		.byte	0x91
@@ -1163,7 +1163,7 @@ ARM GAS  C:\Users\Robert\AppData\Local\Temp\cc26jkkl.s 			page 1
  629 01fb 91       		.byte	0x91
  630 01fc 68       		.sleb128 -24
  631 01fd 12       		.uleb128 0x12
- 632 01fe 9E010000 		.4byte	.LASF30
+ 632 01fe 97010000 		.4byte	.LASF30
  633 0202 01       		.byte	0x1
  634 0203 2301     		.2byte	0x123
  635 0205 68000000 		.4byte	0x68
@@ -1190,7 +1190,7 @@ ARM GAS  C:\Users\Robert\AppData\Local\Temp\cc26jkkl.s 			page 1
  656 022a 7A000000 		.4byte	0x7a
  657 022e 11       		.uleb128 0x11
  658 022f 01       		.byte	0x1
- 659 0230 63010000 		.4byte	.LASF32
+ 659 0230 5C010000 		.4byte	.LASF32
  660 0234 01       		.byte	0x1
  661 0235 A201     		.2byte	0x1a2
  662 0237 01       		.byte	0x1
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\Robert\AppData\Local\Temp\cc26jkkl.s 			page 1
  664 023c B4000000 		.4byte	.LFE4
  665 0240 C8000000 		.4byte	.LLST4
  666 0244 01       		.byte	0x1
-ARM GAS  C:\Users\Robert\AppData\Local\Temp\cc26jkkl.s 			page 21
+ARM GAS  C:\Users\Robert\AppData\Local\Temp\ccFGD2zT.s 			page 21
 
 
  667 0245 57020000 		.4byte	0x257
@@ -1212,7 +1212,7 @@ ARM GAS  C:\Users\Robert\AppData\Local\Temp\cc26jkkl.s 			page 1
  675 0255 74       		.sleb128 -12
  676 0256 00       		.byte	0
  677 0257 14       		.uleb128 0x14
- 678 0258 23010000 		.4byte	.LASF33
+ 678 0258 1C010000 		.4byte	.LASF33
  679 025c 01       		.byte	0x1
  680 025d 39       		.byte	0x39
  681 025e 7A000000 		.4byte	0x7a
@@ -1220,7 +1220,7 @@ ARM GAS  C:\Users\Robert\AppData\Local\Temp\cc26jkkl.s 			page 1
  683 0263 03       		.byte	0x3
  684 0264 00000000 		.4byte	cySysNoInitDataValid
  685 0268 15       		.uleb128 0x15
- 686 0269 49020000 		.4byte	.LASF34
+ 686 0269 42020000 		.4byte	.LASF34
  687 026d 04       		.byte	0x4
  688 026e 2D       		.byte	0x2d
  689 026f 6F000000 		.4byte	0x6f
@@ -1248,7 +1248,7 @@ ARM GAS  C:\Users\Robert\AppData\Local\Temp\cc26jkkl.s 			page 1
  711 02a0 19       		.uleb128 0x19
  712 02a1 00       		.byte	0
  713 02a2 15       		.uleb128 0x15
- 714 02a3 63020000 		.4byte	.LASF36
+ 714 02a3 5C020000 		.4byte	.LASF36
  715 02a7 01       		.byte	0x1
  716 02a8 D1       		.byte	0xd1
  717 02a9 AF020000 		.4byte	0x2af
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\Robert\AppData\Local\Temp\cc26jkkl.s 			page 1
  721 02b0 97020000 		.4byte	0x297
  722 02b4 15       		.uleb128 0x15
  723 02b5 5F000000 		.4byte	.LASF37
-ARM GAS  C:\Users\Robert\AppData\Local\Temp\cc26jkkl.s 			page 22
+ARM GAS  C:\Users\Robert\AppData\Local\Temp\ccFGD2zT.s 			page 22
 
 
  724 02b9 01       		.byte	0x1
@@ -1274,7 +1274,7 @@ ARM GAS  C:\Users\Robert\AppData\Local\Temp\cc26jkkl.s 			page 1
  734 02cf 03       		.byte	0x3
  735 02d0 00       		.byte	0
  736 02d1 1A       		.uleb128 0x1a
- 737 02d2 A3000000 		.4byte	.LASF38
+ 737 02d2 FF000000 		.4byte	.LASF38
  738 02d6 01       		.byte	0x1
  739 02d7 7F01     		.2byte	0x17f
  740 02d9 E4020000 		.4byte	0x2e4
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\Robert\AppData\Local\Temp\cc26jkkl.s 			page 1
  778 001c 03       		.uleb128 0x3
  779 001d 0E       		.uleb128 0xe
  780 001e 00       		.byte	0
-ARM GAS  C:\Users\Robert\AppData\Local\Temp\cc26jkkl.s 			page 23
+ARM GAS  C:\Users\Robert\AppData\Local\Temp\ccFGD2zT.s 			page 23
 
 
  781 001f 00       		.byte	0
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\Robert\AppData\Local\Temp\cc26jkkl.s 			page 1
  835 0055 08       		.uleb128 0x8
  836 0056 15       		.uleb128 0x15
  837 0057 00       		.byte	0
-ARM GAS  C:\Users\Robert\AppData\Local\Temp\cc26jkkl.s 			page 24
+ARM GAS  C:\Users\Robert\AppData\Local\Temp\ccFGD2zT.s 			page 24
 
 
  838 0058 27       		.uleb128 0x27
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\Robert\AppData\Local\Temp\cc26jkkl.s 			page 1
  892 008e 11       		.uleb128 0x11
  893 008f 01       		.uleb128 0x1
  894 0090 12       		.uleb128 0x12
-ARM GAS  C:\Users\Robert\AppData\Local\Temp\cc26jkkl.s 			page 25
+ARM GAS  C:\Users\Robert\AppData\Local\Temp\ccFGD2zT.s 			page 25
 
 
  895 0091 01       		.uleb128 0x1
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\Robert\AppData\Local\Temp\cc26jkkl.s 			page 1
  949 00ca 00       		.byte	0
  950 00cb 0F       		.uleb128 0xf
  951 00cc 05       		.uleb128 0x5
-ARM GAS  C:\Users\Robert\AppData\Local\Temp\cc26jkkl.s 			page 26
+ARM GAS  C:\Users\Robert\AppData\Local\Temp\ccFGD2zT.s 			page 26
 
 
  952 00cd 00       		.byte	0
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\Robert\AppData\Local\Temp\cc26jkkl.s 			page 1
  1006 0104 34       		.uleb128 0x34
  1007 0105 00       		.byte	0
  1008 0106 03       		.uleb128 0x3
-ARM GAS  C:\Users\Robert\AppData\Local\Temp\cc26jkkl.s 			page 27
+ARM GAS  C:\Users\Robert\AppData\Local\Temp\ccFGD2zT.s 			page 27
 
 
  1009 0107 0E       		.uleb128 0xe
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\Robert\AppData\Local\Temp\cc26jkkl.s 			page 1
  1063 013d 01       		.byte	0x1
  1064 013e 49       		.uleb128 0x49
  1065 013f 13       		.uleb128 0x13
-ARM GAS  C:\Users\Robert\AppData\Local\Temp\cc26jkkl.s 			page 28
+ARM GAS  C:\Users\Robert\AppData\Local\Temp\ccFGD2zT.s 			page 28
 
 
  1066 0140 01       		.uleb128 0x1
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\Robert\AppData\Local\Temp\cc26jkkl.s 			page 1
  1120              	.Ldebug_loc0:
  1121              	.LLST0:
  1122 0000 00000000 		.4byte	.LFB0
-ARM GAS  C:\Users\Robert\AppData\Local\Temp\cc26jkkl.s 			page 29
+ARM GAS  C:\Users\Robert\AppData\Local\Temp\ccFGD2zT.s 			page 29
 
 
  1123 0004 02000000 		.4byte	.LCFI0
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\Robert\AppData\Local\Temp\cc26jkkl.s 			page 1
  1177 0087 18       		.sleb128 24
  1178 0088 00000000 		.4byte	0
  1179 008c 00000000 		.4byte	0
-ARM GAS  C:\Users\Robert\AppData\Local\Temp\cc26jkkl.s 			page 30
+ARM GAS  C:\Users\Robert\AppData\Local\Temp\ccFGD2zT.s 			page 30
 
 
  1180              	.LLST3:
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\Robert\AppData\Local\Temp\cc26jkkl.s 			page 1
  1234 0010 00000000 		.4byte	.LFB0
  1235 0014 06000000 		.4byte	.LFE0-.LFB0
  1236 0018 00000000 		.4byte	.LFB1
-ARM GAS  C:\Users\Robert\AppData\Local\Temp\cc26jkkl.s 			page 31
+ARM GAS  C:\Users\Robert\AppData\Local\Temp\ccFGD2zT.s 			page 31
 
 
  1237 001c 08000000 		.4byte	.LFE1-.LFB1
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\Robert\AppData\Local\Temp\cc26jkkl.s 			page 1
  1276 004c 73686F72 		.ascii	"short unsigned int\000"
  1276      7420756E 
  1276      7369676E 
-ARM GAS  C:\Users\Robert\AppData\Local\Temp\cc26jkkl.s 			page 32
+ARM GAS  C:\Users\Robert\AppData\Local\Temp\ccFGD2zT.s 			page 32
 
 
  1276      65642069 
@@ -1871,169 +1871,168 @@ ARM GAS  C:\Users\Robert\AppData\Local\Temp\cc26jkkl.s 			page 1
  1279              	.LASF20:
  1280 006f 696E6974 		.ascii	"init\000"
  1280      00
- 1281              	.LASF43:
- 1282 0074 73746174 		.ascii	"status\000"
- 1282      757300
- 1283              	.LASF23:
- 1284 007b 7A65726F 		.ascii	"zero_size\000"
- 1284      5F73697A 
- 1284      6500
- 1285              	.LASF29:
- 1286 0085 72707472 		.ascii	"rptr\000"
- 1286      00
- 1287              	.LASF11:
- 1288 008a 666C6F61 		.ascii	"float\000"
- 1288      7400
- 1289              	.LASF21:
- 1290 0090 64617461 		.ascii	"data\000"
- 1290      00
- 1291              	.LASF1:
- 1292 0095 756E7369 		.ascii	"unsigned char\000"
- 1292      676E6564 
- 1292      20636861 
- 1292      7200
- 1293              	.LASF38:
- 1294 00a3 526F6D56 		.ascii	"RomVectors\000"
- 1294      6563746F 
- 1294      727300
- 1295              	.LASF41:
- 1296 00ae 433A5C55 		.ascii	"C:\\Users\\Robert\\workspace\\Embedit_git_projects\\"
- 1296      73657273 
- 1296      5C526F62 
- 1296      6572745C 
- 1296      776F726B 
- 1297 00dd 426F6F74 		.ascii	"Bootloader_RPiSoC\\Bootloadable_RPiSoC_example.cyds"
- 1297      6C6F6164 
- 1297      65725F52 
- 1297      5069536F 
- 1297      435C426F 
- 1298 010f 6E00     		.ascii	"n\000"
- 1299              	.LASF5:
- 1300 0111 6C6F6E67 		.ascii	"long unsigned int\000"
- 1300      20756E73 
- 1300      69676E65 
- 1300      6420696E 
- 1300      7400
- 1301              	.LASF33:
- 1302 0123 63795379 		.ascii	"cySysNoInitDataValid\000"
- 1302      734E6F49 
- 1302      6E697444 
-ARM GAS  C:\Users\Robert\AppData\Local\Temp\cc26jkkl.s 			page 33
+ 1281              	.LASF41:
+ 1282 0074 433A5C55 		.ascii	"C:\\Users\\Robert\\Dropbox\\RPiSoC\\Projects\\Bootl"
+ 1282      73657273 
+ 1282      5C526F62 
+ 1282      6572745C 
+ 1282      44726F70 
+ 1283 00a1 6F616465 		.ascii	"oader_RPiSoC\\Bootloadable_RPiSoC_example.cydsn\000"
+ 1283      725F5250 
+ 1283      69536F43 
+ 1283      5C426F6F 
+ 1283      746C6F61 
+ 1284              	.LASF43:
+ 1285 00d0 73746174 		.ascii	"status\000"
+ 1285      757300
+ 1286              	.LASF23:
+ 1287 00d7 7A65726F 		.ascii	"zero_size\000"
+ 1287      5F73697A 
+ 1287      6500
+ 1288              	.LASF29:
+ 1289 00e1 72707472 		.ascii	"rptr\000"
+ 1289      00
+ 1290              	.LASF11:
+ 1291 00e6 666C6F61 		.ascii	"float\000"
+ 1291      7400
+ 1292              	.LASF21:
+ 1293 00ec 64617461 		.ascii	"data\000"
+ 1293      00
+ 1294              	.LASF1:
+ 1295 00f1 756E7369 		.ascii	"unsigned char\000"
+ 1295      676E6564 
+ 1295      20636861 
+ 1295      7200
+ 1296              	.LASF38:
+ 1297 00ff 526F6D56 		.ascii	"RomVectors\000"
+ 1297      6563746F 
+ 1297      727300
+ 1298              	.LASF5:
+ 1299 010a 6C6F6E67 		.ascii	"long unsigned int\000"
+ 1299      20756E73 
+ 1299      69676E65 
+ 1299      6420696E 
+ 1299      7400
+ 1300              	.LASF33:
+ 1301 011c 63795379 		.ascii	"cySysNoInitDataValid\000"
+ 1301      734E6F49 
+ 1301      6E697444 
+ 1301      61746156 
+ARM GAS  C:\Users\Robert\AppData\Local\Temp\ccFGD2zT.s 			page 33
 
 
- 1302      61746156 
- 1302      616C6964 
- 1303              	.LASF9:
- 1304 0138 75696E74 		.ascii	"uint8\000"
- 1304      3800
- 1305              	.LASF25:
- 1306 013e 52657365 		.ascii	"Reset\000"
- 1306      7400
- 1307              	.LASF26:
- 1308 0144 5F657869 		.ascii	"_exit\000"
- 1308      7400
- 1309              	.LASF24:
- 1310 014a 496E7444 		.ascii	"IntDefaultHandler\000"
- 1310      65666175 
- 1310      6C744861 
- 1310      6E646C65 
- 1310      7200
- 1311              	.LASF12:
- 1312 015c 646F7562 		.ascii	"double\000"
- 1312      6C6500
- 1313              	.LASF32:
- 1314 0163 696E6974 		.ascii	"initialize_psoc\000"
- 1314      69616C69 
- 1314      7A655F70 
- 1314      736F6300 
- 1315              	.LASF10:
- 1316 0173 75696E74 		.ascii	"uint32\000"
- 1316      333200
- 1317              	.LASF8:
- 1318 017a 756E7369 		.ascii	"unsigned int\000"
- 1318      676E6564 
- 1318      20696E74 
- 1318      00
- 1319              	.LASF7:
- 1320 0187 6C6F6E67 		.ascii	"long long unsigned int\000"
- 1320      206C6F6E 
- 1320      6720756E 
- 1320      7369676E 
- 1320      65642069 
- 1321              	.LASF30:
- 1322 019e 6C696D69 		.ascii	"limit\000"
- 1322      7400
- 1323              	.LASF16:
- 1324 01a4 63796973 		.ascii	"cyisraddress\000"
- 1324      72616464 
- 1324      72657373 
- 1324      00
- 1325              	.LASF22:
- 1326 01b1 696E6974 		.ascii	"init_size\000"
- 1326      5F73697A 
- 1326      6500
- 1327              	.LASF19:
- 1328 01bb 5F5F6379 		.ascii	"__cy_byte_align8\000"
- 1328      5F627974 
- 1328      655F616C 
- 1328      69676E38 
- 1328      00
-ARM GAS  C:\Users\Robert\AppData\Local\Temp\cc26jkkl.s 			page 34
+ 1301      616C6964 
+ 1302              	.LASF9:
+ 1303 0131 75696E74 		.ascii	"uint8\000"
+ 1303      3800
+ 1304              	.LASF25:
+ 1305 0137 52657365 		.ascii	"Reset\000"
+ 1305      7400
+ 1306              	.LASF26:
+ 1307 013d 5F657869 		.ascii	"_exit\000"
+ 1307      7400
+ 1308              	.LASF24:
+ 1309 0143 496E7444 		.ascii	"IntDefaultHandler\000"
+ 1309      65666175 
+ 1309      6C744861 
+ 1309      6E646C65 
+ 1309      7200
+ 1310              	.LASF12:
+ 1311 0155 646F7562 		.ascii	"double\000"
+ 1311      6C6500
+ 1312              	.LASF32:
+ 1313 015c 696E6974 		.ascii	"initialize_psoc\000"
+ 1313      69616C69 
+ 1313      7A655F70 
+ 1313      736F6300 
+ 1314              	.LASF10:
+ 1315 016c 75696E74 		.ascii	"uint32\000"
+ 1315      333200
+ 1316              	.LASF8:
+ 1317 0173 756E7369 		.ascii	"unsigned int\000"
+ 1317      676E6564 
+ 1317      20696E74 
+ 1317      00
+ 1318              	.LASF7:
+ 1319 0180 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 1319      206C6F6E 
+ 1319      6720756E 
+ 1319      7369676E 
+ 1319      65642069 
+ 1320              	.LASF30:
+ 1321 0197 6C696D69 		.ascii	"limit\000"
+ 1321      7400
+ 1322              	.LASF16:
+ 1323 019d 63796973 		.ascii	"cyisraddress\000"
+ 1323      72616464 
+ 1323      72657373 
+ 1323      00
+ 1324              	.LASF22:
+ 1325 01aa 696E6974 		.ascii	"init_size\000"
+ 1325      5F73697A 
+ 1325      6500
+ 1326              	.LASF19:
+ 1327 01b4 5F5F6379 		.ascii	"__cy_byte_align8\000"
+ 1327      5F627974 
+ 1327      655F616C 
+ 1327      69676E38 
+ 1327      00
+ 1328              	.LASF14:
+ARM GAS  C:\Users\Robert\AppData\Local\Temp\ccFGD2zT.s 			page 34
 
 
- 1329              	.LASF14:
- 1330 01cc 72656738 		.ascii	"reg8\000"
- 1330      00
- 1331              	.LASF17:
- 1332 01d1 73697A65 		.ascii	"sizetype\000"
- 1332      74797065 
- 1332      00
- 1333              	.LASF6:
- 1334 01da 6C6F6E67 		.ascii	"long long int\000"
- 1334      206C6F6E 
- 1334      6720696E 
- 1334      7400
- 1335              	.LASF13:
- 1336 01e8 63686172 		.ascii	"char\000"
- 1336      00
- 1337              	.LASF2:
- 1338 01ed 73686F72 		.ascii	"short int\000"
- 1338      7420696E 
- 1338      7400
- 1339              	.LASF39:
- 1340 01f7 474E5520 		.ascii	"GNU C 4.7.3 20130312 (release) [ARM/embedded-4_7-br"
- 1340      4320342E 
- 1340      372E3320 
- 1340      32303133 
- 1340      30333132 
- 1341 022a 616E6368 		.ascii	"anch revision 196615]\000"
- 1341      20726576 
- 1341      6973696F 
- 1341      6E203139 
- 1341      36363135 
- 1342              	.LASF4:
- 1343 0240 6C6F6E67 		.ascii	"long int\000"
- 1343      20696E74 
- 1343      00
- 1344              	.LASF34:
- 1345 0249 43795265 		.ascii	"CyResetStatus\000"
- 1345      73657453 
- 1345      74617475 
- 1345      7300
- 1346              	.LASF0:
- 1347 0257 7369676E 		.ascii	"signed char\000"
- 1347      65642063 
- 1347      68617200 
- 1348              	.LASF36:
- 1349 0263 5F5F6379 		.ascii	"__cy_regions\000"
- 1349      5F726567 
- 1349      696F6E73 
- 1349      00
- 1350              	.LASF28:
- 1351 0270 72656769 		.ascii	"regions\000"
- 1351      6F6E7300 
- 1352              	.LASF42:
- 1353 0278 5F5F6379 		.ascii	"__cy_region\000"
- 1353      5F726567 
- 1353      696F6E00 
- 1354              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.7.3 20130312 (release) [ARM/embedded-4_7-br
+ 1329 01c5 72656738 		.ascii	"reg8\000"
+ 1329      00
+ 1330              	.LASF17:
+ 1331 01ca 73697A65 		.ascii	"sizetype\000"
+ 1331      74797065 
+ 1331      00
+ 1332              	.LASF6:
+ 1333 01d3 6C6F6E67 		.ascii	"long long int\000"
+ 1333      206C6F6E 
+ 1333      6720696E 
+ 1333      7400
+ 1334              	.LASF13:
+ 1335 01e1 63686172 		.ascii	"char\000"
+ 1335      00
+ 1336              	.LASF2:
+ 1337 01e6 73686F72 		.ascii	"short int\000"
+ 1337      7420696E 
+ 1337      7400
+ 1338              	.LASF39:
+ 1339 01f0 474E5520 		.ascii	"GNU C 4.7.3 20130312 (release) [ARM/embedded-4_7-br"
+ 1339      4320342E 
+ 1339      372E3320 
+ 1339      32303133 
+ 1339      30333132 
+ 1340 0223 616E6368 		.ascii	"anch revision 196615]\000"
+ 1340      20726576 
+ 1340      6973696F 
+ 1340      6E203139 
+ 1340      36363135 
+ 1341              	.LASF4:
+ 1342 0239 6C6F6E67 		.ascii	"long int\000"
+ 1342      20696E74 
+ 1342      00
+ 1343              	.LASF34:
+ 1344 0242 43795265 		.ascii	"CyResetStatus\000"
+ 1344      73657453 
+ 1344      74617475 
+ 1344      7300
+ 1345              	.LASF0:
+ 1346 0250 7369676E 		.ascii	"signed char\000"
+ 1346      65642063 
+ 1346      68617200 
+ 1347              	.LASF36:
+ 1348 025c 5F5F6379 		.ascii	"__cy_regions\000"
+ 1348      5F726567 
+ 1348      696F6E73 
+ 1348      00
+ 1349              	.LASF28:
+ 1350 0269 72656769 		.ascii	"regions\000"
+ 1350      6F6E7300 
+ 1351              	.LASF42:
+ 1352 0271 5F5F6379 		.ascii	"__cy_region\000"
+ 1352      5F726567 
+ 1352      696F6E00 
+ 1353              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.7.3 20130312 (release) [ARM/embedded-4_7-br
