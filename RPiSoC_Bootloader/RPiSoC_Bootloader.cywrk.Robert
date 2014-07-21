@@ -13,15 +13,15 @@
 <v>Output</v>
 </TreeKeys>
 <TreeStates>
-<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="Bootloader_RPiSoC\Bootloadable_RPiSoC_example">
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="Bootloader_RPiSoC\Bootloadable_RPiSoC_example\Generated_Source">
 <ExpandedNodeIds>
 <v>Bootloader_RPiSoC</v>
+<v>Bootloader_RPiSoC\Bootloadable_RPiSoC_example</v>
 <v>Bootloader_RPiSoC\Bootloadable_RPiSoC_example\TopDesign.cysch</v>
 <v>Bootloader_RPiSoC\Bootloadable_RPiSoC_example\Bootloadable_RPiSoC_example.cydwr</v>
 <v>Bootloader_RPiSoC\Bootloadable_RPiSoC_example\Header Files</v>
 <v>Bootloader_RPiSoC\Bootloadable_RPiSoC_example\Source Files</v>
 <v>Bootloader_RPiSoC\Bootloadable_RPiSoC_example\Source Files\main.c</v>
-<v>Bootloader_RPiSoC\Bootloadable_RPiSoC_example\Generated_Source</v>
 <v>Bootloader_RPiSoC\Bootloadable_RPiSoC_example\Generated_Source\PSoC5</v>
 <v>Bootloader_RPiSoC\Bootloadable_RPiSoC_example\Generated_Source\PSoC5\Bootloadable_1</v>
 <v>Bootloader_RPiSoC\Bootloadable_RPiSoC_example\Generated_Source\PSoC5\Bootloadable_1\Bootloadable_1.c</v>
@@ -81,7 +81,6 @@
 <v>Bootloader_RPiSoC\Bootloadable_RPiSoC_example\Generated_Source\PSoC5\cyfitterrv.inc</v>
 <v>Bootloader_RPiSoC\Bootloadable_RPiSoC_example\Generated_Source\PSoC5\cymetadata.c</v>
 <v>Bootloader_RPiSoC\Bootloadable_RPiSoC_example\Generated_Source\PSoC5\project.h</v>
-<v>Bootloader_RPiSoC\Bootloader_RPiSoC</v>
 <v>Bootloader_RPiSoC\Bootloader_RPiSoC\TopDesign.cysch</v>
 <v>Bootloader_RPiSoC\Bootloader_RPiSoC\Bootloader_RPiSoC.cydwr</v>
 <v>Bootloader_RPiSoC\Bootloader_RPiSoC\Header Files</v>
@@ -176,51 +175,13 @@
 <VisibleNodeIds>
 <v>Bootloader_RPiSoC</v>
 <v>Bootloader_RPiSoC\Bootloadable_RPiSoC_example</v>
+<v>Bootloader_RPiSoC\Bootloadable_RPiSoC_example\TopDesign.cysch</v>
+<v>Bootloader_RPiSoC\Bootloadable_RPiSoC_example\Bootloadable_RPiSoC_example.cydwr</v>
+<v>Bootloader_RPiSoC\Bootloadable_RPiSoC_example\Header Files</v>
+<v>Bootloader_RPiSoC\Bootloadable_RPiSoC_example\Source Files</v>
+<v>Bootloader_RPiSoC\Bootloadable_RPiSoC_example\Source Files\main.c</v>
+<v>Bootloader_RPiSoC\Bootloadable_RPiSoC_example\Generated_Source</v>
 <v>Bootloader_RPiSoC\Bootloader_RPiSoC</v>
-<v>Bootloader_RPiSoC\Bootloader_RPiSoC\TopDesign.cysch</v>
-<v>Bootloader_RPiSoC\Bootloader_RPiSoC\Bootloader_RPiSoC.cydwr</v>
-<v>Bootloader_RPiSoC\Bootloader_RPiSoC\Header Files</v>
-<v>Bootloader_RPiSoC\Bootloader_RPiSoC\Source Files</v>
-<v>Bootloader_RPiSoC\Bootloader_RPiSoC\Source Files\main.c</v>
-<v>Bootloader_RPiSoC\Bootloader_RPiSoC\Generated_Source</v>
-<v>Bootloader_RPiSoC\Bootloader_RPiSoC\Generated_Source\PSoC5</v>
-<v>Bootloader_RPiSoC\Bootloader_RPiSoC\Generated_Source\PSoC5\BL_wait</v>
-<v>Bootloader_RPiSoC\Bootloader_RPiSoC\Generated_Source\PSoC5\BL_wait\BL_wait.c</v>
-<v>Bootloader_RPiSoC\Bootloader_RPiSoC\Generated_Source\PSoC5\BL_wait\BL_wait.h</v>
-<v>Bootloader_RPiSoC\Bootloader_RPiSoC\Generated_Source\PSoC5\BL_wait\BL_wait_aliases.h</v>
-<v>Bootloader_RPiSoC\Bootloader_RPiSoC\Generated_Source\PSoC5\Bootloader_1</v>
-<v>Bootloader_RPiSoC\Bootloader_RPiSoC\Generated_Source\PSoC5\Bootloader_1\Bootloader_1.c</v>
-<v>Bootloader_RPiSoC\Bootloader_RPiSoC\Generated_Source\PSoC5\Bootloader_1\Bootloader_1.h</v>
-<v>Bootloader_RPiSoC\Bootloader_RPiSoC\Generated_Source\PSoC5\Bootloader_1\Bootloader_1_PVT.h</v>
-<v>Bootloader_RPiSoC\Bootloader_RPiSoC\Generated_Source\PSoC5\cy_boot</v>
-<v>Bootloader_RPiSoC\Bootloader_RPiSoC\Generated_Source\PSoC5\cy_boot\cm3gcc.ld</v>
-<v>Bootloader_RPiSoC\Bootloader_RPiSoC\Generated_Source\PSoC5\cy_boot\Cm3Iar.icf</v>
-<v>Bootloader_RPiSoC\Bootloader_RPiSoC\Generated_Source\PSoC5\cy_boot\Cm3RealView.scat</v>
-<v>Bootloader_RPiSoC\Bootloader_RPiSoC\Generated_Source\PSoC5\cy_boot\Cm3Start.c</v>
-<v>Bootloader_RPiSoC\Bootloader_RPiSoC\Generated_Source\PSoC5\cy_boot\core_cm3.h</v>
-<v>Bootloader_RPiSoC\Bootloader_RPiSoC\Generated_Source\PSoC5\cy_boot\core_cm3_psoc5.h</v>
-<v>Bootloader_RPiSoC\Bootloader_RPiSoC\Generated_Source\PSoC5\cy_boot\core_cmFunc.h</v>
-<v>Bootloader_RPiSoC\Bootloader_RPiSoC\Generated_Source\PSoC5\cy_boot\core_cmInstr.h</v>
-<v>Bootloader_RPiSoC\Bootloader_RPiSoC\Generated_Source\PSoC5\cy_boot\CyBootAsmGnu.s</v>
-<v>Bootloader_RPiSoC\Bootloader_RPiSoC\Generated_Source\PSoC5\cy_boot\CyBootAsmIar.s</v>
-<v>Bootloader_RPiSoC\Bootloader_RPiSoC\Generated_Source\PSoC5\cy_boot\CyBootAsmRv.s</v>
-<v>Bootloader_RPiSoC\Bootloader_RPiSoC\Generated_Source\PSoC5\cy_boot\CyDmac.c</v>
-<v>Bootloader_RPiSoC\Bootloader_RPiSoC\Generated_Source\PSoC5\cy_boot\CyDmac.h</v>
-<v>Bootloader_RPiSoC\Bootloader_RPiSoC\Generated_Source\PSoC5\cy_boot\CyFlash.c</v>
-<v>Bootloader_RPiSoC\Bootloader_RPiSoC\Generated_Source\PSoC5\cy_boot\CyFlash.h</v>
-<v>Bootloader_RPiSoC\Bootloader_RPiSoC\Generated_Source\PSoC5\cy_boot\CyLib.c</v>
-<v>Bootloader_RPiSoC\Bootloader_RPiSoC\Generated_Source\PSoC5\cy_boot\CyLib.h</v>
-<v>Bootloader_RPiSoC\Bootloader_RPiSoC\Generated_Source\PSoC5\cy_boot\cypins.h</v>
-<v>Bootloader_RPiSoC\Bootloader_RPiSoC\Generated_Source\PSoC5\cy_boot\cyPm.c</v>
-<v>Bootloader_RPiSoC\Bootloader_RPiSoC\Generated_Source\PSoC5\cy_boot\cyPm.h</v>
-<v>Bootloader_RPiSoC\Bootloader_RPiSoC\Generated_Source\PSoC5\cy_boot\CySpc.c</v>
-<v>Bootloader_RPiSoC\Bootloader_RPiSoC\Generated_Source\PSoC5\cy_boot\CySpc.h</v>
-<v>Bootloader_RPiSoC\Bootloader_RPiSoC\Generated_Source\PSoC5\cy_boot\cytypes.h</v>
-<v>Bootloader_RPiSoC\Bootloader_RPiSoC\Generated_Source\PSoC5\cy_boot\cyutils.c</v>
-<v>Bootloader_RPiSoC\Bootloader_RPiSoC\Generated_Source\PSoC5\LED</v>
-<v>Bootloader_RPiSoC\Bootloader_RPiSoC\Generated_Source\PSoC5\LED\LED.c</v>
-<v>Bootloader_RPiSoC\Bootloader_RPiSoC\Generated_Source\PSoC5\LED\LED.h</v>
-<v>Bootloader_RPiSoC\Bootloader_RPiSoC\Generated_Source\PSoC5\LED\LED_aliases.h</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 <CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
@@ -317,51 +278,9 @@
 <VisibleNodeIds>
 <v>Bootloader_RPiSoC</v>
 <v>Bootloader_RPiSoC\Bootloadable_RPiSoC_example</v>
-<v>Bootloader_RPiSoC\Bootloadable_RPiSoC_example\CortexM3</v>
-<v>Bootloader_RPiSoC\Bootloadable_RPiSoC_example\CortexM3\ARM_GCC_473</v>
-<v>Bootloader_RPiSoC\Bootloadable_RPiSoC_example\CortexM3\ARM_GCC_473\Debug</v>
-<v>Bootloader_RPiSoC\Bootloadable_RPiSoC_example\CortexM3\ARM_GCC_473\Debug\Listing Files</v>
-<v>Bootloader_RPiSoC\Bootloadable_RPiSoC_example\CortexM3\ARM_GCC_473\Debug\Listing Files\Bootloadable_1.lst</v>
-<v>Bootloader_RPiSoC\Bootloadable_RPiSoC_example\CortexM3\ARM_GCC_473\Debug\Listing Files\Clock_1.lst</v>
-<v>Bootloader_RPiSoC\Bootloadable_RPiSoC_example\CortexM3\ARM_GCC_473\Debug\Listing Files\Cm3Start.lst</v>
-<v>Bootloader_RPiSoC\Bootloadable_RPiSoC_example\CortexM3\ARM_GCC_473\Debug\Listing Files\CyBootAsmGnu.lst</v>
-<v>Bootloader_RPiSoC\Bootloadable_RPiSoC_example\CortexM3\ARM_GCC_473\Debug\Listing Files\cybootloader.lst</v>
-<v>Bootloader_RPiSoC\Bootloadable_RPiSoC_example\CortexM3\ARM_GCC_473\Debug\Listing Files\CyDmac.lst</v>
-<v>Bootloader_RPiSoC\Bootloadable_RPiSoC_example\CortexM3\ARM_GCC_473\Debug\Listing Files\cyfitter_cfg.lst</v>
-<v>Bootloader_RPiSoC\Bootloadable_RPiSoC_example\CortexM3\ARM_GCC_473\Debug\Listing Files\CyFlash.lst</v>
-<v>Bootloader_RPiSoC\Bootloadable_RPiSoC_example\CortexM3\ARM_GCC_473\Debug\Listing Files\CyLib.lst</v>
-<v>Bootloader_RPiSoC\Bootloadable_RPiSoC_example\CortexM3\ARM_GCC_473\Debug\Listing Files\cymetadata.lst</v>
-<v>Bootloader_RPiSoC\Bootloadable_RPiSoC_example\CortexM3\ARM_GCC_473\Debug\Listing Files\cyPm.lst</v>
-<v>Bootloader_RPiSoC\Bootloadable_RPiSoC_example\CortexM3\ARM_GCC_473\Debug\Listing Files\CySpc.lst</v>
-<v>Bootloader_RPiSoC\Bootloadable_RPiSoC_example\CortexM3\ARM_GCC_473\Debug\Listing Files\cyutils.lst</v>
-<v>Bootloader_RPiSoC\Bootloadable_RPiSoC_example\CortexM3\ARM_GCC_473\Debug\Listing Files\LED.lst</v>
-<v>Bootloader_RPiSoC\Bootloadable_RPiSoC_example\CortexM3\ARM_GCC_473\Debug\Listing Files\main.lst</v>
-<v>Bootloader_RPiSoC\Bootloadable_RPiSoC_example\CortexM3\ARM_GCC_473\Debug\Listing Files\PWM_1.lst</v>
-<v>Bootloader_RPiSoC\Bootloadable_RPiSoC_example\CortexM3\ARM_GCC_473\Debug\Listing Files\PWM_1_PM.lst</v>
-<v>Bootloader_RPiSoC\Bootloadable_RPiSoC_example\CortexM3\ARM_GCC_473\Debug\Bootloadable_RPiSoC_example.cyacd</v>
-<v>Bootloader_RPiSoC\Bootloadable_RPiSoC_example\CortexM3\ARM_GCC_473\Debug\Bootloadable_RPiSoC_example.elf</v>
-<v>Bootloader_RPiSoC\Bootloadable_RPiSoC_example\CortexM3\ARM_GCC_473\Debug\Bootloadable_RPiSoC_example.hex</v>
-<v>Bootloader_RPiSoC\Bootloadable_RPiSoC_example\CortexM3\ARM_GCC_473\Debug\Bootloadable_RPiSoC_example.map</v>
 <v>Bootloader_RPiSoC\Bootloadable_RPiSoC_example\Bootloadable_RPiSoC_example.rpt</v>
 <v>Bootloader_RPiSoC\Bootloadable_RPiSoC_example\Bootloadable_RPiSoC_example_timing.html</v>
 <v>Bootloader_RPiSoC\Bootloader_RPiSoC</v>
-<v>Bootloader_RPiSoC\Bootloader_RPiSoC\CortexM3</v>
-<v>Bootloader_RPiSoC\Bootloader_RPiSoC\CortexM3\ARM_GCC_473</v>
-<v>Bootloader_RPiSoC\Bootloader_RPiSoC\CortexM3\ARM_GCC_473\Debug</v>
-<v>Bootloader_RPiSoC\Bootloader_RPiSoC\CortexM3\ARM_GCC_473\Debug\Listing Files</v>
-<v>Bootloader_RPiSoC\Bootloader_RPiSoC\CortexM3\ARM_GCC_473\Debug\Listing Files\BL_wait.lst</v>
-<v>Bootloader_RPiSoC\Bootloader_RPiSoC\CortexM3\ARM_GCC_473\Debug\Listing Files\Bootloader_1.lst</v>
-<v>Bootloader_RPiSoC\Bootloader_RPiSoC\CortexM3\ARM_GCC_473\Debug\Listing Files\Cm3Start.lst</v>
-<v>Bootloader_RPiSoC\Bootloader_RPiSoC\CortexM3\ARM_GCC_473\Debug\Listing Files\CyBootAsmGnu.lst</v>
-<v>Bootloader_RPiSoC\Bootloader_RPiSoC\CortexM3\ARM_GCC_473\Debug\Listing Files\CyDmac.lst</v>
-<v>Bootloader_RPiSoC\Bootloader_RPiSoC\CortexM3\ARM_GCC_473\Debug\Listing Files\cyfitter_cfg.lst</v>
-<v>Bootloader_RPiSoC\Bootloader_RPiSoC\CortexM3\ARM_GCC_473\Debug\Listing Files\CyFlash.lst</v>
-<v>Bootloader_RPiSoC\Bootloader_RPiSoC\CortexM3\ARM_GCC_473\Debug\Listing Files\CyLib.lst</v>
-<v>Bootloader_RPiSoC\Bootloader_RPiSoC\CortexM3\ARM_GCC_473\Debug\Listing Files\cymetadata.lst</v>
-<v>Bootloader_RPiSoC\Bootloader_RPiSoC\CortexM3\ARM_GCC_473\Debug\Listing Files\cyPm.lst</v>
-<v>Bootloader_RPiSoC\Bootloader_RPiSoC\CortexM3\ARM_GCC_473\Debug\Listing Files\CySpc.lst</v>
-<v>Bootloader_RPiSoC\Bootloader_RPiSoC\CortexM3\ARM_GCC_473\Debug\Listing Files\cyutils.lst</v>
-<v>Bootloader_RPiSoC\Bootloader_RPiSoC\CortexM3\ARM_GCC_473\Debug\Listing Files\LED.lst</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 </TreeStates>
@@ -426,7 +345,6 @@
 <name v=".\Bootloadable_RPiSoC_example.cydsn\TopDesign\TopDesign.cysch" />
 <name v=".\Bootloadable_RPiSoC_example.cydsn\Bootloadable_RPiSoC_example.cydwr" />
 <name v=".\Bootloadable_RPiSoC_example.cydsn\main.c" />
-<name v=".\Bootloader_RPiSoC.cydsn\TopDesign\TopDesign.cysch" />
 </OpenDocs>
 <config v="" />
 <AutoUpdate v="true" />
