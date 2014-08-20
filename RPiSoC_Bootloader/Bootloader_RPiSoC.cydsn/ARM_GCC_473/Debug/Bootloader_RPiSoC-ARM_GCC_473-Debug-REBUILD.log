@@ -1,0 +1,61 @@
+--------------- Rebuild Started: 08/20/2014 14:42:00 Project: Bootloader_RPiSoC, Configuration: ARM GCC 4.7.3 Debug ---------------
+Deleting file ".\Bootloader_RPiSoC.cycdx"
+Deleting file ".\Bootloader_RPiSoC.svd"
+Deleting file ".\Bootloader_RPiSoC.rpt"
+Deleting file ".\Bootloader_RPiSoC_timing.html"
+cydsfit.exe "-.appdatapath" "C:\Users\Robert\AppData\Local\Cypress Semiconductor\PSoC Creator\3.0" "-.fdsnotice" "-.fdswarpdepfile=warp_dependencies.txt" "-.fdselabdepfile=elab_dependencies.txt" "-.fdsbldfile=generated_files.txt" "-p" "C:\Users\Robert\workspace\embedit_git\RPiSoC_Bootloader\RPiSoC_Bootloader\Bootloader_RPiSoC.cydsn\Bootloader_RPiSoC.cyprj" "-d" "CY8C5868AXI-LP035" "-s" "C:\Users\Robert\workspace\embedit_git\RPiSoC_Bootloader\RPiSoC_Bootloader\Bootloader_RPiSoC.cydsn\Generated_Source\PSoC5" "--" "-yv2" "-v3" "-ygs" "-q10" "-o2" "-.fftcfgtype=LE"
+Elaborating Design...
+ADD: pft.M0055: warning: Flash Security Warning:  One or more rows of flash have been configured to be read protected; however, debugging has been enabled in the System DWR Editor. This means that the read protected flash rows can still be read via SWD or JTAG. To protect these rows of flash, disable debugging in the System DWR Editor.
+ * C:\Users\Robert\workspace\embedit_git\RPiSoC_Bootloader\RPiSoC_Bootloader\Bootloader_RPiSoC.cydsn\Bootloader_RPiSoC.cydwr (Enable Device Protection)
+HDL Generation ...
+Synthesis ...
+Place and Route ...
+Tech mapping ...
+ADD: pft.M0040: information: The following 2 pin(s) will be assigned a location by the fitter: \USBFS:Dm(0)\, \USBFS:Dp(0)\
+Analog Placement ...
+Analog Routing ...
+Analog Code Generation ...
+Digital Placement ...
+Digital Routing ...
+Bitstream Generation ...
+Static timing analysis ...
+API Generation ...
+Dependency Generation ...
+Clean Temporary Files ...
+arm-none-eabi-gcc.exe -I. -I./Generated_Source/PSoC5 -Wno-main -mcpu=cortex-m3 -mthumb -Wall -g -D DEBUG -Wa,-alh=.\ARM_GCC_473\Debug\main.lst -ffunction-sections -c .\main.c -o .\ARM_GCC_473\Debug\main.o
+arm-none-eabi-gcc.exe -I. -I./Generated_Source/PSoC5 -Wno-main -mcpu=cortex-m3 -mthumb -Wall -g -D DEBUG -Wa,-alh=.\ARM_GCC_473\Debug\cyfitter_cfg.lst -ffunction-sections -c .\Generated_Source\PSoC5\cyfitter_cfg.c -o .\ARM_GCC_473\Debug\cyfitter_cfg.o
+arm-none-eabi-gcc.exe -I. -I./Generated_Source/PSoC5 -Wno-main -mcpu=cortex-m3 -mthumb -Wall -g -D DEBUG -Wa,-alh=.\ARM_GCC_473\Debug\cymetadata.lst -ffunction-sections -c .\Generated_Source\PSoC5\cymetadata.c -o .\ARM_GCC_473\Debug\cymetadata.o
+arm-none-eabi-gcc.exe -I. -I./Generated_Source/PSoC5 -Wno-main -mcpu=cortex-m3 -mthumb -Wall -g -D DEBUG -Wa,-alh=.\ARM_GCC_473\Debug\USBFS.lst -ffunction-sections -c .\Generated_Source\PSoC5\USBFS.c -o .\ARM_GCC_473\Debug\USBFS.o
+arm-none-eabi-gcc.exe -I. -I./Generated_Source/PSoC5 -Wno-main -mcpu=cortex-m3 -mthumb -Wall -g -D DEBUG -Wa,-alh=.\ARM_GCC_473\Debug\USBFS_audio.lst -ffunction-sections -c .\Generated_Source\PSoC5\USBFS_audio.c -o .\ARM_GCC_473\Debug\USBFS_audio.o
+arm-none-eabi-gcc.exe -I. -I./Generated_Source/PSoC5 -Wno-main -mcpu=cortex-m3 -mthumb -Wall -g -D DEBUG -Wa,-alh=.\ARM_GCC_473\Debug\USBFS_boot.lst -ffunction-sections -c .\Generated_Source\PSoC5\USBFS_boot.c -o .\ARM_GCC_473\Debug\USBFS_boot.o
+arm-none-eabi-gcc.exe -I. -I./Generated_Source/PSoC5 -Wno-main -mcpu=cortex-m3 -mthumb -Wall -g -D DEBUG -Wa,-alh=.\ARM_GCC_473\Debug\USBFS_cdc.lst -ffunction-sections -c .\Generated_Source\PSoC5\USBFS_cdc.c -o .\ARM_GCC_473\Debug\USBFS_cdc.o
+arm-none-eabi-gcc.exe -I. -I./Generated_Source/PSoC5 -Wno-main -mcpu=cortex-m3 -mthumb -Wall -g -D DEBUG -Wa,-alh=.\ARM_GCC_473\Debug\USBFS_cls.lst -ffunction-sections -c .\Generated_Source\PSoC5\USBFS_cls.c -o .\ARM_GCC_473\Debug\USBFS_cls.o
+arm-none-eabi-gcc.exe -I. -I./Generated_Source/PSoC5 -Wno-main -mcpu=cortex-m3 -mthumb -Wall -g -D DEBUG -Wa,-alh=.\ARM_GCC_473\Debug\USBFS_descr.lst -ffunction-sections -c .\Generated_Source\PSoC5\USBFS_descr.c -o .\ARM_GCC_473\Debug\USBFS_descr.o
+arm-none-eabi-gcc.exe -I. -I./Generated_Source/PSoC5 -Wno-main -mcpu=cortex-m3 -mthumb -Wall -g -D DEBUG -Wa,-alh=.\ARM_GCC_473\Debug\USBFS_drv.lst -ffunction-sections -c .\Generated_Source\PSoC5\USBFS_drv.c -o .\ARM_GCC_473\Debug\USBFS_drv.o
+arm-none-eabi-gcc.exe -I. -I./Generated_Source/PSoC5 -Wno-main -mcpu=cortex-m3 -mthumb -Wall -g -D DEBUG -Wa,-alh=.\ARM_GCC_473\Debug\USBFS_episr.lst -ffunction-sections -c .\Generated_Source\PSoC5\USBFS_episr.c -o .\ARM_GCC_473\Debug\USBFS_episr.o
+arm-none-eabi-gcc.exe -I. -I./Generated_Source/PSoC5 -Wno-main -mcpu=cortex-m3 -mthumb -Wall -g -D DEBUG -Wa,-alh=.\ARM_GCC_473\Debug\USBFS_hid.lst -ffunction-sections -c .\Generated_Source\PSoC5\USBFS_hid.c -o .\ARM_GCC_473\Debug\USBFS_hid.o
+arm-none-eabi-gcc.exe -I. -I./Generated_Source/PSoC5 -Wno-main -mcpu=cortex-m3 -mthumb -Wall -g -D DEBUG -Wa,-alh=.\ARM_GCC_473\Debug\USBFS_pm.lst -ffunction-sections -c .\Generated_Source\PSoC5\USBFS_pm.c -o .\ARM_GCC_473\Debug\USBFS_pm.o
+arm-none-eabi-gcc.exe -I. -I./Generated_Source/PSoC5 -Wno-main -mcpu=cortex-m3 -mthumb -Wall -g -D DEBUG -Wa,-alh=.\ARM_GCC_473\Debug\USBFS_std.lst -ffunction-sections -c .\Generated_Source\PSoC5\USBFS_std.c -o .\ARM_GCC_473\Debug\USBFS_std.o
+arm-none-eabi-gcc.exe -I. -I./Generated_Source/PSoC5 -Wno-main -mcpu=cortex-m3 -mthumb -Wall -g -D DEBUG -Wa,-alh=.\ARM_GCC_473\Debug\USBFS_vnd.lst -ffunction-sections -c .\Generated_Source\PSoC5\USBFS_vnd.c -o .\ARM_GCC_473\Debug\USBFS_vnd.o
+arm-none-eabi-gcc.exe -I. -I./Generated_Source/PSoC5 -Wno-main -mcpu=cortex-m3 -mthumb -Wall -g -D DEBUG -Wa,-alh=.\ARM_GCC_473\Debug\USBFS_midi.lst -ffunction-sections -c .\Generated_Source\PSoC5\USBFS_midi.c -o .\ARM_GCC_473\Debug\USBFS_midi.o
+arm-none-eabi-gcc.exe -I. -I./Generated_Source/PSoC5 -Wno-main -mcpu=cortex-m3 -mthumb -Wall -g -D DEBUG -Wa,-alh=.\ARM_GCC_473\Debug\Bootloader_1.lst -ffunction-sections -c .\Generated_Source\PSoC5\Bootloader_1.c -o .\ARM_GCC_473\Debug\Bootloader_1.o
+arm-none-eabi-gcc.exe -I. -I./Generated_Source/PSoC5 -Wno-main -mcpu=cortex-m3 -mthumb -Wall -g -D DEBUG -Wa,-alh=.\ARM_GCC_473\Debug\LED.lst -ffunction-sections -c .\Generated_Source\PSoC5\LED.c -o .\ARM_GCC_473\Debug\LED.o
+arm-none-eabi-gcc.exe -I. -I./Generated_Source/PSoC5 -Wno-main -mcpu=cortex-m3 -mthumb -Wall -g -D DEBUG -Wa,-alh=.\ARM_GCC_473\Debug\USBFS_Dm.lst -ffunction-sections -c .\Generated_Source\PSoC5\USBFS_Dm.c -o .\ARM_GCC_473\Debug\USBFS_Dm.o
+arm-none-eabi-gcc.exe -I. -I./Generated_Source/PSoC5 -Wno-main -mcpu=cortex-m3 -mthumb -Wall -g -D DEBUG -Wa,-alh=.\ARM_GCC_473\Debug\USBFS_Dp.lst -ffunction-sections -c .\Generated_Source\PSoC5\USBFS_Dp.c -o .\ARM_GCC_473\Debug\USBFS_Dp.o
+arm-none-eabi-gcc.exe -I. -I./Generated_Source/PSoC5 -Wno-main -mcpu=cortex-m3 -mthumb -Wall -g -D DEBUG -Wa,-alh=.\ARM_GCC_473\Debug\Cm3Start.lst -ffunction-sections -c .\Generated_Source\PSoC5\Cm3Start.c -o .\ARM_GCC_473\Debug\Cm3Start.o
+arm-none-eabi-as.exe -I. -I./Generated_Source/PSoC5 -mcpu=cortex-m3 -mthumb -g -alh=.\ARM_GCC_473\Debug/CyBootAsmGnu.lst -o .\ARM_GCC_473\Debug\CyBootAsmGnu.o .\Generated_Source\PSoC5\CyBootAsmGnu.s
+arm-none-eabi-gcc.exe -I. -I./Generated_Source/PSoC5 -Wno-main -mcpu=cortex-m3 -mthumb -Wall -g -D DEBUG -Wa,-alh=.\ARM_GCC_473\Debug\CyDmac.lst -ffunction-sections -c .\Generated_Source\PSoC5\CyDmac.c -o .\ARM_GCC_473\Debug\CyDmac.o
+arm-none-eabi-gcc.exe -I. -I./Generated_Source/PSoC5 -Wno-main -mcpu=cortex-m3 -mthumb -Wall -g -D DEBUG -Wa,-alh=.\ARM_GCC_473\Debug\CyFlash.lst -ffunction-sections -c .\Generated_Source\PSoC5\CyFlash.c -o .\ARM_GCC_473\Debug\CyFlash.o
+arm-none-eabi-gcc.exe -I. -I./Generated_Source/PSoC5 -Wno-main -mcpu=cortex-m3 -mthumb -Wall -g -D DEBUG -Wa,-alh=.\ARM_GCC_473\Debug\CyLib.lst -ffunction-sections -c .\Generated_Source\PSoC5\CyLib.c -o .\ARM_GCC_473\Debug\CyLib.o
+arm-none-eabi-gcc.exe -I. -I./Generated_Source/PSoC5 -Wno-main -mcpu=cortex-m3 -mthumb -Wall -g -D DEBUG -Wa,-alh=.\ARM_GCC_473\Debug\cyPm.lst -ffunction-sections -c .\Generated_Source\PSoC5\cyPm.c -o .\ARM_GCC_473\Debug\cyPm.o
+arm-none-eabi-gcc.exe -I. -I./Generated_Source/PSoC5 -Wno-main -mcpu=cortex-m3 -mthumb -Wall -g -D DEBUG -Wa,-alh=.\ARM_GCC_473\Debug\CySpc.lst -ffunction-sections -c .\Generated_Source\PSoC5\CySpc.c -o .\ARM_GCC_473\Debug\CySpc.o
+arm-none-eabi-gcc.exe -I. -I./Generated_Source/PSoC5 -Wno-main -mcpu=cortex-m3 -mthumb -Wall -g -D DEBUG -Wa,-alh=.\ARM_GCC_473\Debug\cyutils.lst -ffunction-sections -c .\Generated_Source\PSoC5\cyutils.c -o .\ARM_GCC_473\Debug\cyutils.o
+arm-none-eabi-gcc.exe -I. -I./Generated_Source/PSoC5 -Wno-main -mcpu=cortex-m3 -mthumb -Wall -g -D DEBUG -Wa,-alh=.\ARM_GCC_473\Debug\BL_wait.lst -ffunction-sections -c .\Generated_Source\PSoC5\BL_wait.c -o .\ARM_GCC_473\Debug\BL_wait.o
+arm-none-eabi-ar.exe -rs .\ARM_GCC_473\Debug\Bootloader_RPiSoC.a .\ARM_GCC_473\Debug\cyfitter_cfg.o .\ARM_GCC_473\Debug\USBFS.o .\ARM_GCC_473\Debug\USBFS_audio.o .\ARM_GCC_473\Debug\USBFS_boot.o .\ARM_GCC_473\Debug\USBFS_cdc.o .\ARM_GCC_473\Debug\USBFS_cls.o .\ARM_GCC_473\Debug\USBFS_descr.o .\ARM_GCC_473\Debug\USBFS_drv.o .\ARM_GCC_473\Debug\USBFS_episr.o .\ARM_GCC_473\Debug\USBFS_hid.o .\ARM_GCC_473\Debug\USBFS_pm.o .\ARM_GCC_473\Debug\USBFS_std.o .\ARM_GCC_473\Debug\USBFS_vnd.o .\ARM_GCC_473\Debug\USBFS_midi.o .\ARM_GCC_473\Debug\Bootloader_1.o .\ARM_GCC_473\Debug\LED.o .\ARM_GCC_473\Debug\USBFS_Dm.o .\ARM_GCC_473\Debug\USBFS_Dp.o .\ARM_GCC_473\Debug\CyBootAsmGnu.o .\ARM_GCC_473\Debug\CyDmac.o .\ARM_GCC_473\Debug\CyFlash.o .\ARM_GCC_473\Debug\CyLib.o .\ARM_GCC_473\Debug\cyPm.o .\ARM_GCC_473\Debug\CySpc.o .\ARM_GCC_473\Debug\cyutils.o .\ARM_GCC_473\Debug\BL_wait.o
+arm-none-eabi-ar.exe: creating .\ARM_GCC_473\Debug\Bootloader_RPiSoC.a
+arm-none-eabi-gcc.exe -mthumb -march=armv7-m -mfix-cortex-m3-ldrd -T .\Generated_Source\PSoC5\cm3gcc.ld -g -Wl,-Map,.\ARM_GCC_473\Debug\Bootloader_RPiSoC.map -specs=nano.specs -Wl,--gc-sections -Wl,--start-group -o .\ARM_GCC_473\Debug\Bootloader_RPiSoC.elf .\ARM_GCC_473\Debug\main.o .\ARM_GCC_473\Debug\cymetadata.o .\ARM_GCC_473\Debug\Cm3Start.o .\ARM_GCC_473\Debug\Bootloader_RPiSoC.a "C:\Program Files (x86)\Cypress\PSoC Creator\3.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CortexM3\ARM_GCC_473\Debug\CyComponentLibrary.a" -Wl,--end-group
+cyelftool.exe -P C:\Users\Robert\workspace\embedit_git\RPiSoC_Bootloader\RPiSoC_Bootloader\Bootloader_RPiSoC.cydsn\ARM_GCC_473\Debug\Bootloader_RPiSoC.elf --flash_row_size 256 --flash_size 262144 --size_var_name Bootloader_1_SizeBytes --checksum_var_name Bootloader_1_Checksum
+cyelftool.exe -S C:\Users\Robert\workspace\embedit_git\RPiSoC_Bootloader\RPiSoC_Bootloader\Bootloader_RPiSoC.cydsn\ARM_GCC_473\Debug\Bootloader_RPiSoC.elf
+Flash used: 19112 of 262144 bytes (7.3 %).
+SRAM used: 21133 of 65536 bytes (32.2 %).
+--------------- Rebuild Succeeded: 08/20/2014 14:42:14 ---------------

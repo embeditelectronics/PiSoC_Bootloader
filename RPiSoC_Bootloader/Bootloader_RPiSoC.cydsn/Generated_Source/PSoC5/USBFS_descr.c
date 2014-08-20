@@ -1,6 +1,6 @@
 /*******************************************************************************
 * File Name: USBFS_descr.c
-* Version 2.60
+* Version 2.70
 *
 * Description:
 *  USB descriptors and storage.
@@ -20,8 +20,7 @@
 
 /*****************************************************************************
 *  User supplied descriptors.  If you want to specify your own descriptors,
-*  remove the comments around the define USER_SUPPLIED_DESCRIPTORS below and
-*  add your descriptors.
+*  define USER_SUPPLIED_DESCRIPTORS below and add your descriptors.
 *****************************************************************************/
 /* `#START USER_DESCRIPTORS_DECLARATIONS` Place your declaration here */
 

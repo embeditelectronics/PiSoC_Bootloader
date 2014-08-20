@@ -1,5 +1,5 @@
--- Project:   C:\Users\Robert\workspace\Embedit_git_projects\Bootloader_RPiSoC\Bootloader_RPiSoC.cydsn\Bootloader_RPiSoC.cyprj
--- Generated: 07/17/2014 19:52:16
+-- Project:   C:\Users\Robert\workspace\embedit_git\RPiSoC_Bootloader\RPiSoC_Bootloader\Bootloader_RPiSoC.cydsn\Bootloader_RPiSoC.cyprj
+-- Generated: 08/20/2014 14:42:07
 -- 
 
 ENTITY Bootloader_RPiSoC IS

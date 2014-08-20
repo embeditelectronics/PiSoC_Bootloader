@@ -1,3 +1,3 @@
-# Component constraints for C:\Users\Robert\workspace\Embedit_git_projects\Bootloader_RPiSoC\Bootloadable_RPiSoC_example.cydsn\TopDesign\TopDesign.cysch
-# Project: C:\Users\Robert\workspace\Embedit_git_projects\Bootloader_RPiSoC\Bootloadable_RPiSoC_example.cydsn\Bootloadable_RPiSoC_example.cyprj
-# Date: Fri, 18 Jul 2014 01:03:00 GMT
+# Component constraints for C:\Users\Robert\workspace\embedit_git\RPiSoC_Bootloader\RPiSoC_Bootloader\Bootloadable_RPiSoC_example.cydsn\TopDesign\TopDesign.cysch
+# Project: C:\Users\Robert\workspace\embedit_git\RPiSoC_Bootloader\RPiSoC_Bootloader\Bootloadable_RPiSoC_example.cydsn\Bootloadable_RPiSoC_example.cyprj
+# Date: Wed, 20 Aug 2014 18:42:48 GMT

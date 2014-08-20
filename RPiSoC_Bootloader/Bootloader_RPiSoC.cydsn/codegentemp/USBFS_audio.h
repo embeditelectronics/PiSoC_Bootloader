@@ -1,9 +1,12 @@
 /*******************************************************************************
 * File Name: USBFS_audio.h
-* Version 2.60
+* Version 2.70
 *
 * Description:
-*  Header File for the USFS component. Contains prototypes and constant values.
+*  Header File for the USBFS component. Contains prototypes and constant values.
+*
+* Related Document:
+*  Universal Serial Bus Device Class Definition for Audio Devices Release 1.0
 *
 ********************************************************************************
 * Copyright 2008-2013, Cypress Semiconductor Corporation.  All rights reserved.
@@ -45,7 +48,7 @@
 #define USBFS_GET_MEM                    (0x85u)
 #define USBFS_GET_STAT                   (0xFFu)
 
-/* Endpoint Control Selectors (AUDIO Table A-19) */
+/* point Control Selectors (AUDIO Table A-19) */
 #define USBFS_EP_CONTROL_UNDEFINED       (0x00u)
 #define USBFS_SAMPLING_FREQ_CONTROL      (0x01u)
 #define USBFS_PITCH_CONTROL              (0x02u)
@@ -89,7 +92,7 @@ extern volatile uint8 USBFS_minimumVolume[USBFS_VOLUME_LEN];
 extern volatile uint8 USBFS_maximumVolume[USBFS_VOLUME_LEN];
 extern volatile uint8 USBFS_resolutionVolume[USBFS_VOLUME_LEN];
 
-#endif /* End CY_USBFS_USBFS_audio_H */
+#endif /*  CY_USBFS_USBFS_audio_H */
 
 
 /* [] END OF FILE */

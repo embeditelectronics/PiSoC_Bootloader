@@ -2,7 +2,7 @@
 --	Conversion of Bootloader_RPiSoC.v to vh2:
 --
 --	Cypress Semiconductor - WARP Version 6.3 IR 41
---	Thu Jul 17 19:52:11 2014
+--	Wed Aug 20 14:42:05 2014
 --
 
 USE cypress.cypress.all;
@@ -12,20 +12,49 @@ ATTRIBUTE part_name of top_RTL:TYPE IS "cpsoc3";
 END top_RTL;
 --------------------------------------------------------
 ARCHITECTURE R_T_L OF top_RTL IS
-TERMINAL \USBFS:Net_1000\ : bit;
-TERMINAL \USBFS:Net_597\ : bit;
-SIGNAL Net_18 : bit;
-SIGNAL \USBFS:Net_79\ : bit;
+SIGNAL \USBFS:dma_nrq_0\ : bit;
+SIGNAL \USBFS:Net_1800\ : bit;
+SIGNAL \USBFS:ept_int_0\ : bit;
+SIGNAL \USBFS:dma_nrq_3\ : bit;
+SIGNAL \USBFS:Net_1803\ : bit;
+SIGNAL \USBFS:Net_1801\ : bit;
+SIGNAL \USBFS:dma_nrq_1\ : bit;
+SIGNAL \USBFS:dma_nrq_4\ : bit;
+SIGNAL \USBFS:Net_1804\ : bit;
+SIGNAL \USBFS:dma_nrq_5\ : bit;
+SIGNAL \USBFS:Net_1805\ : bit;
+SIGNAL \USBFS:dma_nrq_6\ : bit;
+SIGNAL \USBFS:Net_1806\ : bit;
+SIGNAL \USBFS:dma_nrq_7\ : bit;
+SIGNAL \USBFS:Net_1807\ : bit;
 SIGNAL \USBFS:Net_81\ : bit;
+SIGNAL \USBFS:Net_79\ : bit;
+SIGNAL \USBFS:ept_int_2\ : bit;
+SIGNAL \USBFS:ept_int_1\ : bit;
+SIGNAL \USBFS:Net_1784\ : bit;
+SIGNAL \USBFS:dma_nrq_2\ : bit;
+SIGNAL \USBFS:Net_1802\ : bit;
+SIGNAL \USBFS:Net_1010\ : bit;
+SIGNAL \USBFS:tmpOE__Dm_net_0\ : bit;
+SIGNAL zero : bit;
+SIGNAL \USBFS:tmpFB_0__Dm_net_0\ : bit;
+TERMINAL \USBFS:Net_597\ : bit;
+SIGNAL \USBFS:tmpIO_0__Dm_net_0\ : bit;
+TERMINAL \USBFS:tmpSIOVREF__Dm_net_0\ : bit;
+SIGNAL one : bit;
+SIGNAL \USBFS:tmpINTERRUPT_0__Dm_net_0\ : bit;
+SIGNAL \USBFS:tmpOE__Dp_net_0\ : bit;
+SIGNAL \USBFS:tmpFB_0__Dp_net_0\ : bit;
+TERMINAL \USBFS:Net_1000\ : bit;
+SIGNAL \USBFS:tmpIO_0__Dp_net_0\ : bit;
+TERMINAL \USBFS:tmpSIOVREF__Dp_net_0\ : bit;
+SIGNAL Net_18 : bit;
 SIGNAL \USBFS:ept_int_8\ : bit;
 SIGNAL \USBFS:ept_int_7\ : bit;
 SIGNAL \USBFS:ept_int_6\ : bit;
 SIGNAL \USBFS:ept_int_5\ : bit;
 SIGNAL \USBFS:ept_int_4\ : bit;
 SIGNAL \USBFS:ept_int_3\ : bit;
-SIGNAL \USBFS:ept_int_2\ : bit;
-SIGNAL \USBFS:ept_int_1\ : bit;
-SIGNAL \USBFS:ept_int_0\ : bit;
 SIGNAL \USBFS:Net_95\ : bit;
 SIGNAL \USBFS:dma_req_7\ : bit;
 SIGNAL \USBFS:dma_req_6\ : bit;
@@ -36,19 +65,6 @@ SIGNAL \USBFS:dma_req_2\ : bit;
 SIGNAL \USBFS:dma_req_1\ : bit;
 SIGNAL \USBFS:dma_req_0\ : bit;
 SIGNAL \USBFS:Net_824\ : bit;
-SIGNAL \USBFS:tmpOE__Dm_net_0\ : bit;
-SIGNAL zero : bit;
-SIGNAL \USBFS:tmpFB_0__Dm_net_0\ : bit;
-SIGNAL \USBFS:tmpIO_0__Dm_net_0\ : bit;
-TERMINAL \USBFS:tmpSIOVREF__Dm_net_0\ : bit;
-SIGNAL one : bit;
-SIGNAL \USBFS:tmpINTERRUPT_0__Dm_net_0\ : bit;
-SIGNAL \USBFS:tmpOE__Dp_net_0\ : bit;
-SIGNAL \USBFS:tmpFB_0__Dp_net_0\ : bit;
-SIGNAL \USBFS:tmpIO_0__Dp_net_0\ : bit;
-TERMINAL \USBFS:tmpSIOVREF__Dp_net_0\ : bit;
-SIGNAL \USBFS:Net_1010\ : bit;
-SIGNAL \USBFS:Net_1099\ : bit;
 SIGNAL tmpOE__LED_net_0 : bit;
 SIGNAL Net_31 : bit;
 SIGNAL tmpFB_0__LED_net_0 : bit;
@@ -66,38 +82,34 @@ zero <=  ('0') ;
 
 one <=  ('1') ;
 
-\USBFS:USB\:cy_psoc3_usb_v1_0
-	GENERIC MAP(cy_registers=>"")
-	PORT MAP(dp=>\USBFS:Net_1000\,
-		dm=>\USBFS:Net_597\,
-		sof_int=>Net_18,
-		arb_int=>\USBFS:Net_79\,
-		usb_int=>\USBFS:Net_81\,
-		ept_int=>(\USBFS:ept_int_8\, \USBFS:ept_int_7\, \USBFS:ept_int_6\, \USBFS:ept_int_5\,
-			\USBFS:ept_int_4\, \USBFS:ept_int_3\, \USBFS:ept_int_2\, \USBFS:ept_int_1\,
-			\USBFS:ept_int_0\),
-		ord_int=>\USBFS:Net_95\,
-		dma_req=>(\USBFS:dma_req_7\, \USBFS:dma_req_6\, \USBFS:dma_req_5\, \USBFS:dma_req_4\,
-			\USBFS:dma_req_3\, \USBFS:dma_req_2\, \USBFS:dma_req_1\, \USBFS:dma_req_0\),
-		dma_termin=>\USBFS:Net_824\);
-\USBFS:sof_int\:cy_isr_v1_0
-	GENERIC MAP(int_type=>"10")
-	PORT MAP(int_signal=>Net_18);
-\USBFS:arb_int\:cy_isr_v1_0
-	GENERIC MAP(int_type=>"10")
-	PORT MAP(int_signal=>\USBFS:Net_79\);
-\USBFS:bus_reset\:cy_isr_v1_0
-	GENERIC MAP(int_type=>"10")
-	PORT MAP(int_signal=>\USBFS:Net_81\);
 \USBFS:ep_0\:cy_isr_v1_0
 	GENERIC MAP(int_type=>"10")
 	PORT MAP(int_signal=>\USBFS:ept_int_0\);
-\USBFS:ep_1\:cy_isr_v1_0
+\USBFS:bus_reset\:cy_isr_v1_0
 	GENERIC MAP(int_type=>"10")
-	PORT MAP(int_signal=>\USBFS:ept_int_1\);
+	PORT MAP(int_signal=>\USBFS:Net_81\);
+\USBFS:arb_int\:cy_isr_v1_0
+	GENERIC MAP(int_type=>"10")
+	PORT MAP(int_signal=>\USBFS:Net_79\);
 \USBFS:ep_2\:cy_isr_v1_0
 	GENERIC MAP(int_type=>"10")
 	PORT MAP(int_signal=>\USBFS:ept_int_2\);
+\USBFS:ep_1\:cy_isr_v1_0
+	GENERIC MAP(int_type=>"10")
+	PORT MAP(int_signal=>\USBFS:ept_int_1\);
+\USBFS:Clock_vbus\:cy_clock_v1_0
+	GENERIC MAP(cy_registers=>"",
+		id=>"3fd1b131-5956-40d5-8d56-1fed6f37de8d/03f503a7-085a-4304-b786-de885b1c2f21",
+		source_clock_id=>"75C2148C-3656-4d8a-846D-0CAE99AB6FF7",
+		divisor=>0,
+		period=>"0",
+		is_direct=>'1',
+		is_digital=>'1')
+	PORT MAP(clock_out=>\USBFS:Net_1784\,
+		dig_domain_out=>open);
+\USBFS:dp_int\:cy_isr_v1_0
+	GENERIC MAP(int_type=>"10")
+	PORT MAP(int_signal=>\USBFS:Net_1010\);
 \USBFS:Dm\:cy_psoc3_pins_v1_10
 	GENERIC MAP(id=>"3fd1b131-5956-40d5-8d56-1fed6f37de8d/8b77a6c4-10a0-4390-971c-672353e2a49c",
 		drive_mode=>"000",
@@ -228,19 +240,23 @@ one <=  ('1') ;
 		out_clock_en=>one,
 		out_reset=>zero,
 		interrupt=>\USBFS:Net_1010\);
-\USBFS:dp_int\:cy_isr_v1_0
+\USBFS:USB\:cy_psoc3_usb_v1_0
+	GENERIC MAP(cy_registers=>"")
+	PORT MAP(dp=>\USBFS:Net_1000\,
+		dm=>\USBFS:Net_597\,
+		sof_int=>Net_18,
+		arb_int=>\USBFS:Net_79\,
+		usb_int=>\USBFS:Net_81\,
+		ept_int=>(\USBFS:ept_int_8\, \USBFS:ept_int_7\, \USBFS:ept_int_6\, \USBFS:ept_int_5\,
+			\USBFS:ept_int_4\, \USBFS:ept_int_3\, \USBFS:ept_int_2\, \USBFS:ept_int_1\,
+			\USBFS:ept_int_0\),
+		ord_int=>\USBFS:Net_95\,
+		dma_req=>(\USBFS:dma_req_7\, \USBFS:dma_req_6\, \USBFS:dma_req_5\, \USBFS:dma_req_4\,
+			\USBFS:dma_req_3\, \USBFS:dma_req_2\, \USBFS:dma_req_1\, \USBFS:dma_req_0\),
+		dma_termin=>\USBFS:Net_824\);
+\USBFS:sof_int\:cy_isr_v1_0
 	GENERIC MAP(int_type=>"10")
-	PORT MAP(int_signal=>\USBFS:Net_1010\);
-\USBFS:Clock_vbus\:cy_clock_v1_0
-	GENERIC MAP(cy_registers=>"",
-		id=>"3fd1b131-5956-40d5-8d56-1fed6f37de8d/03f503a7-085a-4304-b786-de885b1c2f21",
-		source_clock_id=>"75C2148C-3656-4d8a-846D-0CAE99AB6FF7",
-		divisor=>0,
-		period=>"0",
-		is_direct=>'1',
-		is_digital=>'1')
-	PORT MAP(clock_out=>\USBFS:Net_1099\,
-		dig_domain_out=>open);
+	PORT MAP(int_signal=>Net_18);
 LED:cy_psoc3_pins_v1_10
 	GENERIC MAP(id=>"3dba336a-f6a5-43fb-aed3-de1e0b7bf362",
 		drive_mode=>"110",

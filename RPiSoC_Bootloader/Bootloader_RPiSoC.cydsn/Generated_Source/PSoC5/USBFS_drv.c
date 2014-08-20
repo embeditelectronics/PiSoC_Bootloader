@@ -1,6 +1,6 @@
 /*******************************************************************************
 * File Name: USBFS_drv.c
-* Version 2.60
+* Version 2.70
 *
 * Description:
 *  Endpoint 0 Driver for the USBFS Component.

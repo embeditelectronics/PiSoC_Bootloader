@@ -1,6 +1,8 @@
 RPiSoC_Bootloader
 =================
 
+CHANGES to v1.1: Changed intitial wait time to 100ms.
+
 Bootloader allowing for USB programming of the RPiSoC board
 
 Refer to the user guide for detailed instructions on using and programming the RPiSoC.

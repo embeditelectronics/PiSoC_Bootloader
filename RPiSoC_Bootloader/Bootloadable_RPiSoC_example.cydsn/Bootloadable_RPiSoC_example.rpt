@@ -1,13 +1,13 @@
-Loading plugins phase: Elapsed time ==> 0s.310ms
-Initializing data phase: Elapsed time ==> 2s.161ms
+Loading plugins phase: Elapsed time ==> 0s.162ms
+Initializing data phase: Elapsed time ==> 1s.201ms
 <CYPRESSTAG name="CyDsfit arguments...">
-cydsfit arguments: -.fdsnotice -.fdswarpdepfile=warp_dependencies.txt -.fdselabdepfile=elab_dependencies.txt -.fdsbldfile=generated_files.txt -p C:\Users\Robert\Dropbox\RPiSoC\Projects\Bootloader_RPiSoC\Bootloadable_RPiSoC_example.cydsn\Bootloadable_RPiSoC_example.cyprj -d CY8C5868AXI-LP035 -s C:\Users\Robert\Dropbox\RPiSoC\Projects\Bootloader_RPiSoC\Bootloadable_RPiSoC_example.cydsn\Generated_Source\PSoC5 -- -yv2 -v3 -ygs -q10 -o2 -.fftcfgtype=LE</CYPRESSTAG>
+cydsfit arguments: -.fdsnotice -.fdswarpdepfile=warp_dependencies.txt -.fdselabdepfile=elab_dependencies.txt -.fdsbldfile=generated_files.txt -p C:\Users\Robert\workspace\embedit_git\RPiSoC_Bootloader\RPiSoC_Bootloader\Bootloadable_RPiSoC_example.cydsn\Bootloadable_RPiSoC_example.cyprj -d CY8C5868AXI-LP035 -s C:\Users\Robert\workspace\embedit_git\RPiSoC_Bootloader\RPiSoC_Bootloader\Bootloadable_RPiSoC_example.cydsn\Generated_Source\PSoC5 -- -yv2 -v3 -ygs -q10 -o2 -.fftcfgtype=LE</CYPRESSTAG>
 <CYPRESSTAG name="Design elaboration results...">
 </CYPRESSTAG>
-Elaboration phase: Elapsed time ==> 2s.876ms
+Elaboration phase: Elapsed time ==> 1s.436ms
 <CYPRESSTAG name="HDL generation results...">
 </CYPRESSTAG>
-HDL generation phase: Elapsed time ==> 0s.056ms
+HDL generation phase: Elapsed time ==> 0s.033ms
 <CYPRESSTAG name="Synthesis results...">
 
      | | | | | | |
@@ -25,23 +25,23 @@ HDL generation phase: Elapsed time ==> 0s.056ms
 ======================================================================
 Compiling:  Bootloadable_RPiSoC_example.v
 Program  :   C:\Program Files (x86)\Cypress\PSoC Creator\3.0\PSoC Creator\warp\bin/warp.exe
-Options  :    -yv2 -v3 -ygs -q10 -o2 -.fftcfgtype=LE -ya -.fftprj=C:\Users\Robert\Dropbox\RPiSoC\Projects\Bootloader_RPiSoC\Bootloadable_RPiSoC_example.cydsn\Bootloadable_RPiSoC_example.cyprj -dcpsoc3 Bootloadable_RPiSoC_example.v -verilog
+Options  :    -yv2 -v3 -ygs -q10 -o2 -.fftcfgtype=LE -ya -.fftprj=C:\Users\Robert\workspace\embedit_git\RPiSoC_Bootloader\RPiSoC_Bootloader\Bootloadable_RPiSoC_example.cydsn\Bootloadable_RPiSoC_example.cyprj -dcpsoc3 Bootloadable_RPiSoC_example.v -verilog
 ======================================================================
 
 ======================================================================
 Compiling:  Bootloadable_RPiSoC_example.v
 Program  :   C:\Program Files (x86)\Cypress\PSoC Creator\3.0\PSoC Creator\warp\bin/warp.exe
-Options  :    -yv2 -v3 -ygs -q10 -o2 -.fftcfgtype=LE -ya -.fftprj=C:\Users\Robert\Dropbox\RPiSoC\Projects\Bootloader_RPiSoC\Bootloadable_RPiSoC_example.cydsn\Bootloadable_RPiSoC_example.cyprj -dcpsoc3 Bootloadable_RPiSoC_example.v -verilog
+Options  :    -yv2 -v3 -ygs -q10 -o2 -.fftcfgtype=LE -ya -.fftprj=C:\Users\Robert\workspace\embedit_git\RPiSoC_Bootloader\RPiSoC_Bootloader\Bootloadable_RPiSoC_example.cydsn\Bootloadable_RPiSoC_example.cyprj -dcpsoc3 Bootloadable_RPiSoC_example.v -verilog
 ======================================================================
 
 ======================================================================
 Compiling:  Bootloadable_RPiSoC_example.v
 Program  :   vlogfe
-Options  :    -yv2 -v3 -ygs -q10 -o2 -.fftcfgtype=LE -ya -.fftprj=C:\Users\Robert\Dropbox\RPiSoC\Projects\Bootloader_RPiSoC\Bootloadable_RPiSoC_example.cydsn\Bootloadable_RPiSoC_example.cyprj -dcpsoc3 -verilog Bootloadable_RPiSoC_example.v
+Options  :    -yv2 -v3 -ygs -q10 -o2 -.fftcfgtype=LE -ya -.fftprj=C:\Users\Robert\workspace\embedit_git\RPiSoC_Bootloader\RPiSoC_Bootloader\Bootloadable_RPiSoC_example.cydsn\Bootloadable_RPiSoC_example.cyprj -dcpsoc3 -verilog Bootloadable_RPiSoC_example.v
 ======================================================================
 
 vlogfe V6.3 IR 41:  Verilog parser
-Mon Jul 21 17:25:12 2014
+Wed Aug 20 14:42:48 2014
 
 
 ======================================================================
@@ -51,7 +51,7 @@ Options  :    -yv2 -q10 Bootloadable_RPiSoC_example.v
 ======================================================================
 
 vpp V6.3 IR 41:  Verilog Pre-Processor
-Mon Jul 21 17:25:12 2014
+Wed Aug 20 14:42:48 2014
 
 Flattening file 'C:\Program Files (x86)\Cypress\PSoC Creator\3.0\PSoC Creator\warp\..\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\B_PWM_v3_0\B_PWM_v3_0.v'
 Flattening file 'C:\Program Files (x86)\Cypress\PSoC Creator\3.0\PSoC Creator\warp\lib\common\cypress.v'
@@ -87,11 +87,11 @@ vlogfe:  No errors.
 ======================================================================
 Compiling:  Bootloadable_RPiSoC_example.v
 Program  :   tovif
-Options  :    -yv2 -v3 -ygs -q10 -o2 -.fftcfgtype=LE -ya -.fftprj=C:\Users\Robert\Dropbox\RPiSoC\Projects\Bootloader_RPiSoC\Bootloadable_RPiSoC_example.cydsn\Bootloadable_RPiSoC_example.cyprj -dcpsoc3 -verilog Bootloadable_RPiSoC_example.v
+Options  :    -yv2 -v3 -ygs -q10 -o2 -.fftcfgtype=LE -ya -.fftprj=C:\Users\Robert\workspace\embedit_git\RPiSoC_Bootloader\RPiSoC_Bootloader\Bootloadable_RPiSoC_example.cydsn\Bootloadable_RPiSoC_example.cyprj -dcpsoc3 -verilog Bootloadable_RPiSoC_example.v
 ======================================================================
 
 tovif V6.3 IR 41:  High-level synthesis
-Mon Jul 21 17:25:12 2014
+Wed Aug 20 14:42:48 2014
 
 Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.0\PSoC Creator\warp\lib\common\std.vhd'.
 Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.0\PSoC Creator\warp\lib\common\cypress.vhd'.
@@ -102,11 +102,11 @@ Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.0\PSoC Creator\warp\lib\c
 Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.0\PSoC Creator\warp\lib\common\stdlogic\mod_cnst.vif'.
 Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.0\PSoC Creator\warp\lib\common\stdlogic\mod_mthv.vif'.
 Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.0\PSoC Creator\warp\lib\common\stdlogic\mod_genv.vif'.
-Linking 'C:\Users\Robert\Dropbox\RPiSoC\Projects\Bootloader_RPiSoC\Bootloadable_RPiSoC_example.cydsn\codegentemp\Bootloadable_RPiSoC_example.ctl'.
+Linking 'C:\Users\Robert\workspace\embedit_git\RPiSoC_Bootloader\RPiSoC_Bootloader\Bootloadable_RPiSoC_example.cydsn\codegentemp\Bootloadable_RPiSoC_example.ctl'.
 Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\B_PWM_v3_0\B_PWM_v3_0.v'.
 Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.0\PSoC Creator\warp\lib\common\cypress.v'.
 Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.0\PSoC Creator\warp\lib\common\cy_psoc3_inc.v'.
-Linking 'C:\Users\Robert\Dropbox\RPiSoC\Projects\Bootloader_RPiSoC\Bootloadable_RPiSoC_example.cydsn\codegentemp\Bootloadable_RPiSoC_example.v'.
+Linking 'C:\Users\Robert\workspace\embedit_git\RPiSoC_Bootloader\RPiSoC_Bootloader\Bootloadable_RPiSoC_example.cydsn\codegentemp\Bootloadable_RPiSoC_example.v'.
 Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.0\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\cy_virtualmux_v1_0\cy_virtualmux_v1_0.v'.
 Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.0\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\OneTerminal\OneTerminal.v'.
 Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.0\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\ZeroTerminal\ZeroTerminal.v'.
@@ -121,11 +121,11 @@ tovif:  No errors.
 ======================================================================
 Compiling:  Bootloadable_RPiSoC_example.v
 Program  :   topld
-Options  :    -yv2 -v3 -ygs -q10 -o2 -.fftcfgtype=LE -ya -.fftprj=C:\Users\Robert\Dropbox\RPiSoC\Projects\Bootloader_RPiSoC\Bootloadable_RPiSoC_example.cydsn\Bootloadable_RPiSoC_example.cyprj -dcpsoc3 -verilog Bootloadable_RPiSoC_example.v
+Options  :    -yv2 -v3 -ygs -q10 -o2 -.fftcfgtype=LE -ya -.fftprj=C:\Users\Robert\workspace\embedit_git\RPiSoC_Bootloader\RPiSoC_Bootloader\Bootloadable_RPiSoC_example.cydsn\Bootloadable_RPiSoC_example.cyprj -dcpsoc3 -verilog Bootloadable_RPiSoC_example.v
 ======================================================================
 
 topld V6.3 IR 41:  Synthesis and optimization
-Mon Jul 21 17:25:14 2014
+Wed Aug 20 14:42:48 2014
 
 Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.0\PSoC Creator\warp\lib\common\std.vhd'.
 Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.0\PSoC Creator\warp\lib\common\cypress.vhd'.
@@ -136,11 +136,11 @@ Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.0\PSoC Creator\warp\lib\c
 Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.0\PSoC Creator\warp\lib\common\stdlogic\mod_cnst.vif'.
 Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.0\PSoC Creator\warp\lib\common\stdlogic\mod_mthv.vif'.
 Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.0\PSoC Creator\warp\lib\common\stdlogic\mod_genv.vif'.
-Linking 'C:\Users\Robert\Dropbox\RPiSoC\Projects\Bootloader_RPiSoC\Bootloadable_RPiSoC_example.cydsn\codegentemp\Bootloadable_RPiSoC_example.ctl'.
+Linking 'C:\Users\Robert\workspace\embedit_git\RPiSoC_Bootloader\RPiSoC_Bootloader\Bootloadable_RPiSoC_example.cydsn\codegentemp\Bootloadable_RPiSoC_example.ctl'.
 Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\B_PWM_v3_0\B_PWM_v3_0.v'.
 Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.0\PSoC Creator\warp\lib\common\cypress.v'.
 Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.0\PSoC Creator\warp\lib\common\cy_psoc3_inc.v'.
-Linking 'C:\Users\Robert\Dropbox\RPiSoC\Projects\Bootloader_RPiSoC\Bootloadable_RPiSoC_example.cydsn\codegentemp\Bootloadable_RPiSoC_example.v'.
+Linking 'C:\Users\Robert\workspace\embedit_git\RPiSoC_Bootloader\RPiSoC_Bootloader\Bootloadable_RPiSoC_example.cydsn\codegentemp\Bootloadable_RPiSoC_example.v'.
 Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.0\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\cy_virtualmux_v1_0\cy_virtualmux_v1_0.v'.
 Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.0\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\OneTerminal\OneTerminal.v'.
 Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.0\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\ZeroTerminal\ZeroTerminal.v'.
@@ -625,16 +625,16 @@ topld:  No errors.
 
 CYPRESS_DIR    : C:\Program Files (x86)\Cypress\PSoC Creator\3.0\PSoC Creator\warp
 Warp Program   : C:\Program Files (x86)\Cypress\PSoC Creator\3.0\PSoC Creator\warp\bin/warp.exe
-Warp Arguments : -yv2 -v3 -ygs -q10 -o2 -.fftcfgtype=LE -ya -.fftprj=C:\Users\Robert\Dropbox\RPiSoC\Projects\Bootloader_RPiSoC\Bootloadable_RPiSoC_example.cydsn\Bootloadable_RPiSoC_example.cyprj -dcpsoc3 Bootloadable_RPiSoC_example.v -verilog
+Warp Arguments : -yv2 -v3 -ygs -q10 -o2 -.fftcfgtype=LE -ya -.fftprj=C:\Users\Robert\workspace\embedit_git\RPiSoC_Bootloader\RPiSoC_Bootloader\Bootloadable_RPiSoC_example.cydsn\Bootloadable_RPiSoC_example.cyprj -dcpsoc3 Bootloadable_RPiSoC_example.v -verilog
 </CYPRESSTAG>
-Warp synthesis phase: Elapsed time ==> 2s.183ms
+Warp synthesis phase: Elapsed time ==> 1s.226ms
 <CYPRESSTAG name="Fitter results...">
 <CYPRESSTAG name="Fitter startup details...">
-cyp3fit: V3.0.0.3023, Family: PSoC3, Started at: Monday, 21 July 2014 17:25:14
-Options: -yv2 -v3 -ygs -q10 -o2 -.fftcfgtype=LE -ya -.fftprj=C:\Users\Robert\Dropbox\RPiSoC\Projects\Bootloader_RPiSoC\Bootloadable_RPiSoC_example.cydsn\Bootloadable_RPiSoC_example.cyprj -d CY8C5868AXI-LP035 Bootloadable_RPiSoC_example.v -verilog
+cyp3fit: V3.0.0.3023, Family: PSoC3, Started at: Wednesday, 20 August 2014 14:42:49
+Options: -yv2 -v3 -ygs -q10 -o2 -.fftcfgtype=LE -ya -.fftprj=C:\Users\Robert\workspace\embedit_git\RPiSoC_Bootloader\RPiSoC_Bootloader\Bootloadable_RPiSoC_example.cydsn\Bootloadable_RPiSoC_example.cyprj -d CY8C5868AXI-LP035 Bootloadable_RPiSoC_example.v -verilog
 </CYPRESSTAG>
 <CYPRESSTAG name="Design parsing">
-Design parsing phase: Elapsed time ==> 0s.015ms
+Design parsing phase: Elapsed time ==> 0s.010ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Tech mapping">
 <CYPRESSTAG name="Initial Mapping" icon="FILE_RPT_TECHM">
@@ -982,17 +982,17 @@ EMIF Fixed Blocks             :    0 :    1 :    1 :   0.00%
 LPF Fixed Blocks              :    0 :    2 :    2 :   0.00%
 SAR Fixed Blocks              :    0 :    2 :    2 :   0.00%
 </CYPRESSTAG>
-Technology Mapping: Elapsed time ==> 0s.283ms
+Technology Mapping: Elapsed time ==> 0s.132ms
 Info: mpr.M0037: Unused pieces of the design have been optimized out. See the Tech mapping section of the report file for details. (App=cydsfit)
-Tech mapping phase: Elapsed time ==> 0s.432ms
+Tech mapping phase: Elapsed time ==> 0s.205ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Analog Placement">
 Initial Analog Placement Results:
 IO_0@[IOP=(12)][IoId=(0)] : LED(0) (fixed)
-Analog Placement phase: Elapsed time ==> 0s.056ms
+Analog Placement phase: Elapsed time ==> 0s.026ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Analog Routing">
-Analog Routing phase: Elapsed time ==> 0s.001ms
+Analog Routing phase: Elapsed time ==> 0s.000ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Analog Code Generation">
 ============ Analog Final Answer Routes ============
@@ -1007,11 +1007,11 @@ Dump of CyP35AnalogRoutingResultsDB
 IsVddaHalfUsedForComp = False
 IsVddaHalfUsedForSar0 = False
 IsVddaHalfUsedForSar1 = False
-Analog Code Generation phase: Elapsed time ==> 0s.856ms
+Analog Code Generation phase: Elapsed time ==> 0s.361ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Digital Placement">
 <CYPRESSTAG name="Detailed placement messages">
-I2076: Total run-time: 0.7 sec.
+I2076: Total run-time: 0.4 sec.
 
 </CYPRESSTAG>
 <CYPRESSTAG name="PLD Packing">
@@ -1042,10 +1042,10 @@ PLD Packing: Elapsed time ==> 0s.001ms
 Initial Partitioning Summary not displayed at this verbose level.</CYPRESSTAG>
 <CYPRESSTAG name="Final Partitioning Summary">
 Final Partitioning Summary not displayed at this verbose level.</CYPRESSTAG>
-Partitioning: Elapsed time ==> 0s.017ms
+Partitioning: Elapsed time ==> 0s.010ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Simulated Annealing">
-Annealing: Elapsed time ==> 0s.002ms
+Annealing: Elapsed time ==> 0s.001ms
 <CYPRESSTAG name="Simulated Annealing Results">
 The seed used for moves was 114161200.
 Inital cost was 12, final cost is 12 (0.00% improvement).</CYPRESSTAG>
@@ -1405,31 +1405,31 @@ Port | Pin | Fixed |      Type |       Drive Mode |   Name | Connections
 </CYPRESSTAG>
 </CYPRESSTAG>
 Digital component placer commit/Report: Elapsed time ==> 0s.001ms
-Digital Placement phase: Elapsed time ==> 1s.000ms
+Digital Placement phase: Elapsed time ==> 0s.571ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Digital Routing">
 Routing successful.
-Digital Routing phase: Elapsed time ==> 1s.840ms
+Digital Routing phase: Elapsed time ==> 0s.969ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Bitstream and API generation">
-Bitstream and API generation phase: Elapsed time ==> 1s.495ms
+Bitstream and API generation phase: Elapsed time ==> 0s.862ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Bitstream verification">
-Bitstream verification phase: Elapsed time ==> 0s.169ms
+Bitstream verification phase: Elapsed time ==> 0s.095ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Static timing analysis">
 Timing report is in Bootloadable_RPiSoC_example_timing.html.
-Static timing analysis phase: Elapsed time ==> 0s.364ms
+Static timing analysis phase: Elapsed time ==> 0s.203ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Data reporting">
 Data reporting phase: Elapsed time ==> 0s.000ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Database update...">
-Design database save phase: Elapsed time ==> 0s.205ms
+Design database save phase: Elapsed time ==> 0s.183ms
 </CYPRESSTAG>
-cydsfit: Elapsed time ==> 6s.456ms
+cydsfit: Elapsed time ==> 3s.502ms
 </CYPRESSTAG>
-Fitter phase: Elapsed time ==> 6s.503ms
-API generation phase: Elapsed time ==> 1s.350ms
-Dependency generation phase: Elapsed time ==> 0s.011ms
-Cleanup phase: Elapsed time ==> 0s.002ms
+Fitter phase: Elapsed time ==> 3s.546ms
+API generation phase: Elapsed time ==> 0s.912ms
+Dependency generation phase: Elapsed time ==> 0s.005ms
+Cleanup phase: Elapsed time ==> 0s.001ms

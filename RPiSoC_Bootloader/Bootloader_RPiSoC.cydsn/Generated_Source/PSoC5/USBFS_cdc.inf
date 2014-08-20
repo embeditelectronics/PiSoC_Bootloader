@@ -1,6 +1,6 @@
 ;******************************************************************************
 ; File Name: USBFS_cdc.inf
-; Version 2.60
+; Version 2.70
 ;
 ; Description:
 ;  Windows USB CDC setup file for USBUART Device.

@@ -1,0 +1,654 @@
+ARM GAS  C:\Users\Robert\AppData\Local\Temp\ccImNo3Y.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 6
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.file	"cymetadata.c"
+  15              		.text
+  16              	.Ltext0:
+  17              		.cfi_sections	.debug_frame
+  18              		.global	cy_meta_loadable
+  19              		.section	.cyloadablemeta,"a",%progbits
+  20              		.align	2
+  21              		.type	cy_meta_loadable, %object
+  22              		.size	cy_meta_loadable, 64
+  23              	cy_meta_loadable:
+  24 0000 00       		.byte	0
+  25 0001 00       		.byte	0
+  26 0002 00       		.byte	0
+  27 0003 00       		.byte	0
+  28 0004 00       		.byte	0
+  29 0005 00       		.byte	0
+  30 0006 00       		.byte	0
+  31 0007 00       		.byte	0
+  32 0008 00       		.byte	0
+  33 0009 00       		.byte	0
+  34 000a 00       		.byte	0
+  35 000b 00       		.byte	0
+  36 000c 00       		.byte	0
+  37 000d 00       		.byte	0
+  38 000e 00       		.byte	0
+  39 000f 00       		.byte	0
+  40 0010 00       		.byte	0
+  41 0011 00       		.byte	0
+  42 0012 00       		.byte	0
+  43 0013 00       		.byte	0
+  44 0014 00       		.byte	0
+  45 0015 00       		.byte	0
+  46 0016 01       		.byte	1
+  47 0017 03       		.byte	3
+  48 0018 00       		.byte	0
+  49 0019 00       		.byte	0
+  50 001a 00       		.byte	0
+  51 001b 00       		.byte	0
+  52 001c 00       		.byte	0
+  53 001d 00       		.byte	0
+  54 001e 00       		.byte	0
+  55 001f 00       		.byte	0
+  56 0020 00       		.byte	0
+  57 0021 00       		.byte	0
+ARM GAS  C:\Users\Robert\AppData\Local\Temp\ccImNo3Y.s 			page 2
+
+
+  58 0022 00       		.byte	0
+  59 0023 00       		.byte	0
+  60 0024 00       		.byte	0
+  61 0025 00       		.byte	0
+  62 0026 00       		.byte	0
+  63 0027 00       		.byte	0
+  64 0028 00       		.byte	0
+  65 0029 00       		.byte	0
+  66 002a 00       		.byte	0
+  67 002b 00       		.byte	0
+  68 002c 00       		.byte	0
+  69 002d 00       		.byte	0
+  70 002e 00       		.byte	0
+  71 002f 00       		.byte	0
+  72 0030 00       		.byte	0
+  73 0031 00       		.byte	0
+  74 0032 00       		.byte	0
+  75 0033 00       		.byte	0
+  76 0034 00       		.byte	0
+  77 0035 00       		.byte	0
+  78 0036 00       		.byte	0
+  79 0037 00       		.byte	0
+  80 0038 00       		.byte	0
+  81 0039 00       		.byte	0
+  82 003a 00       		.byte	0
+  83 003b 00       		.byte	0
+  84 003c 00       		.byte	0
+  85 003d 00       		.byte	0
+  86 003e 00       		.byte	0
+  87 003f 00       		.byte	0
+  88              		.global	cy_meta_configecc
+  89              		.section	.cyconfigecc,"a",%progbits
+  90              		.align	2
+  91              		.type	cy_meta_configecc, %object
+  92              		.size	cy_meta_configecc, 196
+  93              	cy_meta_configecc:
+  94 0000 01       		.byte	1
+  95 0001 65       		.byte	101
+  96 0002 00       		.byte	0
+  97 0003 40       		.byte	64
+  98 0004 2D       		.byte	45
+  99 0005 14       		.byte	20
+ 100 0006 01       		.byte	1
+ 101 0007 40       		.byte	64
+ 102 0008 1F       		.byte	31
+ 103 0009 15       		.byte	21
+ 104 000a 01       		.byte	1
+ 105 000b 40       		.byte	64
+ 106 000c 04       		.byte	4
+ 107 000d 49       		.byte	73
+ 108 000e 01       		.byte	1
+ 109 000f 40       		.byte	64
+ 110 0010 02       		.byte	2
+ 111 0011 50       		.byte	80
+ 112 0012 01       		.byte	1
+ 113 0013 40       		.byte	64
+ 114 0014 85       		.byte	-123
+ARM GAS  C:\Users\Robert\AppData\Local\Temp\ccImNo3Y.s 			page 3
+
+
+ 115 0015 2F       		.byte	47
+ 116 0016 08       		.byte	8
+ 117 0017 01       		.byte	1
+ 118 0018 34       		.byte	52
+ 119 0019 01       		.byte	1
+ 120 001a 38       		.byte	56
+ 121 001b 08       		.byte	8
+ 122 001c 3E       		.byte	62
+ 123 001d 10       		.byte	16
+ 124 001e 58       		.byte	88
+ 125 001f 04       		.byte	4
+ 126 0020 5F       		.byte	95
+ 127 0021 01       		.byte	1
+ 128 0022 94       		.byte	-108
+ 129 0023 01       		.byte	1
+ 130 0024 9D       		.byte	-99
+ 131 0025 01       		.byte	1
+ 132 0026 9E       		.byte	-98
+ 133 0027 07       		.byte	7
+ 134 0028 A7       		.byte	-89
+ 135 0029 03       		.byte	3
+ 136 002a AE       		.byte	-82
+ 137 002b 0C       		.byte	12
+ 138 002c B0       		.byte	-80
+ 139 002d 01       		.byte	1
+ 140 002e B2       		.byte	-78
+ 141 002f 02       		.byte	2
+ 142 0030 B3       		.byte	-77
+ 143 0031 01       		.byte	1
+ 144 0032 B4       		.byte	-76
+ 145 0033 08       		.byte	8
+ 146 0034 B6       		.byte	-74
+ 147 0035 04       		.byte	4
+ 148 0036 B7       		.byte	-73
+ 149 0037 02       		.byte	2
+ 150 0038 C0       		.byte	-64
+ 151 0039 20       		.byte	32
+ 152 003a C1       		.byte	-63
+ 153 003b 05       		.byte	5
+ 154 003c C5       		.byte	-59
+ 155 003d D0       		.byte	-48
+ 156 003e C6       		.byte	-58
+ 157 003f 52       		.byte	82
+ 158 0040 C7       		.byte	-57
+ 159 0041 10       		.byte	16
+ 160 0042 C8       		.byte	-56
+ 161 0043 2E       		.byte	46
+ 162 0044 C9       		.byte	-55
+ 163 0045 FF       		.byte	-1
+ 164 0046 CA       		.byte	-54
+ 165 0047 FF       		.byte	-1
+ 166 0048 CB       		.byte	-53
+ 167 0049 FF       		.byte	-1
+ 168 004a CD       		.byte	-51
+ 169 004b A0       		.byte	-96
+ 170 004c CF       		.byte	-49
+ 171 004d 04       		.byte	4
+ARM GAS  C:\Users\Robert\AppData\Local\Temp\ccImNo3Y.s 			page 4
+
+
+ 172 004e D0       		.byte	-48
+ 173 004f 18       		.byte	24
+ 174 0050 D2       		.byte	-46
+ 175 0051 80       		.byte	-128
+ 176 0052 D4       		.byte	-44
+ 177 0053 27       		.byte	39
+ 178 0054 D8       		.byte	-40
+ 179 0055 04       		.byte	4
+ 180 0056 D9       		.byte	-39
+ 181 0057 04       		.byte	4
+ 182 0058 DA       		.byte	-38
+ 183 0059 04       		.byte	4
+ 184 005a DB       		.byte	-37
+ 185 005b 04       		.byte	4
+ 186 005c DF       		.byte	-33
+ 187 005d 01       		.byte	1
+ 188 005e E0       		.byte	-32
+ 189 005f 40       		.byte	64
+ 190 0060 E2       		.byte	-30
+ 191 0061 C0       		.byte	-64
+ 192 0062 E4       		.byte	-28
+ 193 0063 40       		.byte	64
+ 194 0064 E5       		.byte	-27
+ 195 0065 40       		.byte	64
+ 196 0066 E6       		.byte	-26
+ 197 0067 C0       		.byte	-64
+ 198 0068 E8       		.byte	-24
+ 199 0069 C0       		.byte	-64
+ 200 006a EA       		.byte	-22
+ 201 006b C0       		.byte	-64
+ 202 006c EC       		.byte	-20
+ 203 006d C0       		.byte	-64
+ 204 006e EE       		.byte	-18
+ 205 006f C0       		.byte	-64
+ 206 0070 00       		.byte	0
+ 207 0071 10       		.byte	16
+ 208 0072 0E       		.byte	14
+ 209 0073 20       		.byte	32
+ 210 0074 0F       		.byte	15
+ 211 0075 02       		.byte	2
+ 212 0076 17       		.byte	23
+ 213 0077 40       		.byte	64
+ 214 0078 18       		.byte	24
+ 215 0079 10       		.byte	16
+ 216 007a 19       		.byte	25
+ 217 007b 20       		.byte	32
+ 218 007c 1D       		.byte	29
+ 219 007d 20       		.byte	32
+ 220 007e 1E       		.byte	30
+ 221 007f 60       		.byte	96
+ 222 0080 1F       		.byte	31
+ 223 0081 80       		.byte	-128
+ 224 0082 26       		.byte	38
+ 225 0083 80       		.byte	-128
+ 226 0084 27       		.byte	39
+ 227 0085 20       		.byte	32
+ 228 0086 2F       		.byte	47
+ARM GAS  C:\Users\Robert\AppData\Local\Temp\ccImNo3Y.s 			page 5
+
+
+ 229 0087 20       		.byte	32
+ 230 0088 36       		.byte	54
+ 231 0089 80       		.byte	-128
+ 232 008a 45       		.byte	69
+ 233 008b 20       		.byte	32
+ 234 008c 4F       		.byte	79
+ 235 008d 81       		.byte	-127
+ 236 008e 57       		.byte	87
+ 237 008f 61       		.byte	97
+ 238 0090 5E       		.byte	94
+ 239 0091 40       		.byte	64
+ 240 0092 5F       		.byte	95
+ 241 0093 29       		.byte	41
+ 242 0094 65       		.byte	101
+ 243 0095 20       		.byte	32
+ 244 0096 77       		.byte	119
+ 245 0097 40       		.byte	64
+ 246 0098 83       		.byte	-125
+ 247 0099 48       		.byte	72
+ 248 009a 87       		.byte	-121
+ 249 009b 80       		.byte	-128
+ 250 009c C0       		.byte	-64
+ 251 009d 02       		.byte	2
+ 252 009e C2       		.byte	-62
+ 253 009f A0       		.byte	-96
+ 254 00a0 C4       		.byte	-60
+ 255 00a1 80       		.byte	-128
+ 256 00a2 CA       		.byte	-54
+ 257 00a3 40       		.byte	64
+ 258 00a4 CC       		.byte	-52
+ 259 00a5 10       		.byte	16
+ 260 00a6 D0       		.byte	-48
+ 261 00a7 20       		.byte	32
+ 262 00a8 D2       		.byte	-46
+ 263 00a9 10       		.byte	16
+ 264 00aa D6       		.byte	-42
+ 265 00ab F0       		.byte	-16
+ 266 00ac D8       		.byte	-40
+ 267 00ad 20       		.byte	32
+ 268 00ae 78       		.byte	120
+ 269 00af 40       		.byte	64
+ 270 00b0 84       		.byte	-124
+ 271 00b1 40       		.byte	64
+ 272 00b2 DC       		.byte	-36
+ 273 00b3 80       		.byte	-128
+ 274 00b4 E6       		.byte	-26
+ 275 00b5 10       		.byte	16
+ 276 00b6 10       		.byte	16
+ 277 00b7 01       		.byte	1
+ 278 00b8 1A       		.byte	26
+ 279 00b9 01       		.byte	1
+ 280 00ba 00       		.byte	0
+ 281 00bb 00       		.byte	0
+ 282 00bc 00       		.byte	0
+ 283 00bd 01       		.byte	1
+ 284 00be 01       		.byte	1
+ 285 00bf 00       		.byte	0
+ARM GAS  C:\Users\Robert\AppData\Local\Temp\ccImNo3Y.s 			page 6
+
+
+ 286 00c0 01       		.byte	1
+ 287 00c1 00       		.byte	0
+ 288 00c2 00       		.byte	0
+ 289 00c3 00       		.byte	0
+ 290              		.text
+ 291              	.Letext0:
+ 292              		.file 1 ".\\Generated_Source\\PSoC5\\cymetadata.c"
+ 293              		.file 2 ".\\Generated_Source\\PSoC5\\cytypes.h"
+ 294              		.section	.debug_info,"",%progbits
+ 295              	.Ldebug_info0:
+ 296 0000 D5000000 		.4byte	0xd5
+ 297 0004 0200     		.2byte	0x2
+ 298 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 299 000a 04       		.byte	0x4
+ 300 000b 01       		.uleb128 0x1
+ 301 000c 45010000 		.4byte	.LASF15
+ 302 0010 01       		.byte	0x1
+ 303 0011 00000000 		.4byte	.LASF16
+ 304 0015 9C000000 		.4byte	.LASF17
+ 305 0019 00000000 		.4byte	.Ldebug_line0
+ 306 001d 02       		.uleb128 0x2
+ 307 001e 01       		.byte	0x1
+ 308 001f 06       		.byte	0x6
+ 309 0020 97010000 		.4byte	.LASF0
+ 310 0024 02       		.uleb128 0x2
+ 311 0025 01       		.byte	0x1
+ 312 0026 08       		.byte	0x8
+ 313 0027 2C000000 		.4byte	.LASF1
+ 314 002b 02       		.uleb128 0x2
+ 315 002c 02       		.byte	0x2
+ 316 002d 05       		.byte	0x5
+ 317 002e 35010000 		.4byte	.LASF2
+ 318 0032 02       		.uleb128 0x2
+ 319 0033 02       		.byte	0x2
+ 320 0034 07       		.byte	0x7
+ 321 0035 4C000000 		.4byte	.LASF3
+ 322 0039 02       		.uleb128 0x2
+ 323 003a 04       		.byte	0x4
+ 324 003b 05       		.byte	0x5
+ 325 003c 8E010000 		.4byte	.LASF4
+ 326 0040 02       		.uleb128 0x2
+ 327 0041 04       		.byte	0x4
+ 328 0042 07       		.byte	0x7
+ 329 0043 3A000000 		.4byte	.LASF5
+ 330 0047 02       		.uleb128 0x2
+ 331 0048 08       		.byte	0x8
+ 332 0049 05       		.byte	0x5
+ 333 004a 22010000 		.4byte	.LASF6
+ 334 004e 02       		.uleb128 0x2
+ 335 004f 08       		.byte	0x8
+ 336 0050 07       		.byte	0x7
+ 337 0051 85000000 		.4byte	.LASF7
+ 338 0055 03       		.uleb128 0x3
+ 339 0056 04       		.byte	0x4
+ 340 0057 05       		.byte	0x5
+ 341 0058 696E7400 		.ascii	"int\000"
+ 342 005c 02       		.uleb128 0x2
+ARM GAS  C:\Users\Robert\AppData\Local\Temp\ccImNo3Y.s 			page 7
+
+
+ 343 005d 04       		.byte	0x4
+ 344 005e 07       		.byte	0x7
+ 345 005f 78000000 		.4byte	.LASF8
+ 346 0063 04       		.uleb128 0x4
+ 347 0064 3F010000 		.4byte	.LASF18
+ 348 0068 02       		.byte	0x2
+ 349 0069 5B       		.byte	0x5b
+ 350 006a 24000000 		.4byte	0x24
+ 351 006e 02       		.uleb128 0x2
+ 352 006f 04       		.byte	0x4
+ 353 0070 04       		.byte	0x4
+ 354 0071 26000000 		.4byte	.LASF9
+ 355 0075 02       		.uleb128 0x2
+ 356 0076 08       		.byte	0x8
+ 357 0077 04       		.byte	0x4
+ 358 0078 5F000000 		.4byte	.LASF10
+ 359 007c 02       		.uleb128 0x2
+ 360 007d 01       		.byte	0x1
+ 361 007e 08       		.byte	0x8
+ 362 007f 30010000 		.4byte	.LASF11
+ 363 0083 05       		.uleb128 0x5
+ 364 0084 63000000 		.4byte	0x63
+ 365 0088 93000000 		.4byte	0x93
+ 366 008c 06       		.uleb128 0x6
+ 367 008d 93000000 		.4byte	0x93
+ 368 0091 3F       		.byte	0x3f
+ 369 0092 00       		.byte	0
+ 370 0093 02       		.uleb128 0x2
+ 371 0094 04       		.byte	0x4
+ 372 0095 07       		.byte	0x7
+ 373 0096 19010000 		.4byte	.LASF12
+ 374 009a 07       		.uleb128 0x7
+ 375 009b 08010000 		.4byte	.LASF13
+ 376 009f 01       		.byte	0x1
+ 377 00a0 1C       		.byte	0x1c
+ 378 00a1 AC000000 		.4byte	0xac
+ 379 00a5 01       		.byte	0x1
+ 380 00a6 05       		.byte	0x5
+ 381 00a7 03       		.byte	0x3
+ 382 00a8 00000000 		.4byte	cy_meta_loadable
+ 383 00ac 08       		.uleb128 0x8
+ 384 00ad 83000000 		.4byte	0x83
+ 385 00b1 05       		.uleb128 0x5
+ 386 00b2 63000000 		.4byte	0x63
+ 387 00b6 C1000000 		.4byte	0xc1
+ 388 00ba 06       		.uleb128 0x6
+ 389 00bb 93000000 		.4byte	0x93
+ 390 00bf C3       		.byte	0xc3
+ 391 00c0 00       		.byte	0
+ 392 00c1 07       		.uleb128 0x7
+ 393 00c2 66000000 		.4byte	.LASF14
+ 394 00c6 01       		.byte	0x1
+ 395 00c7 2E       		.byte	0x2e
+ 396 00c8 D3000000 		.4byte	0xd3
+ 397 00cc 01       		.byte	0x1
+ 398 00cd 05       		.byte	0x5
+ 399 00ce 03       		.byte	0x3
+ARM GAS  C:\Users\Robert\AppData\Local\Temp\ccImNo3Y.s 			page 8
+
+
+ 400 00cf 00000000 		.4byte	cy_meta_configecc
+ 401 00d3 08       		.uleb128 0x8
+ 402 00d4 B1000000 		.4byte	0xb1
+ 403 00d8 00       		.byte	0
+ 404              		.section	.debug_abbrev,"",%progbits
+ 405              	.Ldebug_abbrev0:
+ 406 0000 01       		.uleb128 0x1
+ 407 0001 11       		.uleb128 0x11
+ 408 0002 01       		.byte	0x1
+ 409 0003 25       		.uleb128 0x25
+ 410 0004 0E       		.uleb128 0xe
+ 411 0005 13       		.uleb128 0x13
+ 412 0006 0B       		.uleb128 0xb
+ 413 0007 03       		.uleb128 0x3
+ 414 0008 0E       		.uleb128 0xe
+ 415 0009 1B       		.uleb128 0x1b
+ 416 000a 0E       		.uleb128 0xe
+ 417 000b 10       		.uleb128 0x10
+ 418 000c 06       		.uleb128 0x6
+ 419 000d 00       		.byte	0
+ 420 000e 00       		.byte	0
+ 421 000f 02       		.uleb128 0x2
+ 422 0010 24       		.uleb128 0x24
+ 423 0011 00       		.byte	0
+ 424 0012 0B       		.uleb128 0xb
+ 425 0013 0B       		.uleb128 0xb
+ 426 0014 3E       		.uleb128 0x3e
+ 427 0015 0B       		.uleb128 0xb
+ 428 0016 03       		.uleb128 0x3
+ 429 0017 0E       		.uleb128 0xe
+ 430 0018 00       		.byte	0
+ 431 0019 00       		.byte	0
+ 432 001a 03       		.uleb128 0x3
+ 433 001b 24       		.uleb128 0x24
+ 434 001c 00       		.byte	0
+ 435 001d 0B       		.uleb128 0xb
+ 436 001e 0B       		.uleb128 0xb
+ 437 001f 3E       		.uleb128 0x3e
+ 438 0020 0B       		.uleb128 0xb
+ 439 0021 03       		.uleb128 0x3
+ 440 0022 08       		.uleb128 0x8
+ 441 0023 00       		.byte	0
+ 442 0024 00       		.byte	0
+ 443 0025 04       		.uleb128 0x4
+ 444 0026 16       		.uleb128 0x16
+ 445 0027 00       		.byte	0
+ 446 0028 03       		.uleb128 0x3
+ 447 0029 0E       		.uleb128 0xe
+ 448 002a 3A       		.uleb128 0x3a
+ 449 002b 0B       		.uleb128 0xb
+ 450 002c 3B       		.uleb128 0x3b
+ 451 002d 0B       		.uleb128 0xb
+ 452 002e 49       		.uleb128 0x49
+ 453 002f 13       		.uleb128 0x13
+ 454 0030 00       		.byte	0
+ 455 0031 00       		.byte	0
+ 456 0032 05       		.uleb128 0x5
+ARM GAS  C:\Users\Robert\AppData\Local\Temp\ccImNo3Y.s 			page 9
+
+
+ 457 0033 01       		.uleb128 0x1
+ 458 0034 01       		.byte	0x1
+ 459 0035 49       		.uleb128 0x49
+ 460 0036 13       		.uleb128 0x13
+ 461 0037 01       		.uleb128 0x1
+ 462 0038 13       		.uleb128 0x13
+ 463 0039 00       		.byte	0
+ 464 003a 00       		.byte	0
+ 465 003b 06       		.uleb128 0x6
+ 466 003c 21       		.uleb128 0x21
+ 467 003d 00       		.byte	0
+ 468 003e 49       		.uleb128 0x49
+ 469 003f 13       		.uleb128 0x13
+ 470 0040 2F       		.uleb128 0x2f
+ 471 0041 0B       		.uleb128 0xb
+ 472 0042 00       		.byte	0
+ 473 0043 00       		.byte	0
+ 474 0044 07       		.uleb128 0x7
+ 475 0045 34       		.uleb128 0x34
+ 476 0046 00       		.byte	0
+ 477 0047 03       		.uleb128 0x3
+ 478 0048 0E       		.uleb128 0xe
+ 479 0049 3A       		.uleb128 0x3a
+ 480 004a 0B       		.uleb128 0xb
+ 481 004b 3B       		.uleb128 0x3b
+ 482 004c 0B       		.uleb128 0xb
+ 483 004d 49       		.uleb128 0x49
+ 484 004e 13       		.uleb128 0x13
+ 485 004f 3F       		.uleb128 0x3f
+ 486 0050 0C       		.uleb128 0xc
+ 487 0051 02       		.uleb128 0x2
+ 488 0052 0A       		.uleb128 0xa
+ 489 0053 00       		.byte	0
+ 490 0054 00       		.byte	0
+ 491 0055 08       		.uleb128 0x8
+ 492 0056 26       		.uleb128 0x26
+ 493 0057 00       		.byte	0
+ 494 0058 49       		.uleb128 0x49
+ 495 0059 13       		.uleb128 0x13
+ 496 005a 00       		.byte	0
+ 497 005b 00       		.byte	0
+ 498 005c 00       		.byte	0
+ 499              		.section	.debug_aranges,"",%progbits
+ 500 0000 14000000 		.4byte	0x14
+ 501 0004 0200     		.2byte	0x2
+ 502 0006 00000000 		.4byte	.Ldebug_info0
+ 503 000a 04       		.byte	0x4
+ 504 000b 00       		.byte	0
+ 505 000c 0000     		.2byte	0
+ 506 000e 0000     		.2byte	0
+ 507 0010 00000000 		.4byte	0
+ 508 0014 00000000 		.4byte	0
+ 509              		.section	.debug_line,"",%progbits
+ 510              	.Ldebug_line0:
+ 511 0000 4F000000 		.section	.debug_str,"MS",%progbits,1
+ 511      02004900 
+ 511      00000201 
+ARM GAS  C:\Users\Robert\AppData\Local\Temp\ccImNo3Y.s 			page 10
+
+
+ 511      FB0E0D00 
+ 511      01010101 
+ 512              	.LASF16:
+ 513 0000 2E5C4765 		.ascii	".\\Generated_Source\\PSoC5\\cymetadata.c\000"
+ 513      6E657261 
+ 513      7465645F 
+ 513      536F7572 
+ 513      63655C50 
+ 514              	.LASF9:
+ 515 0026 666C6F61 		.ascii	"float\000"
+ 515      7400
+ 516              	.LASF1:
+ 517 002c 756E7369 		.ascii	"unsigned char\000"
+ 517      676E6564 
+ 517      20636861 
+ 517      7200
+ 518              	.LASF5:
+ 519 003a 6C6F6E67 		.ascii	"long unsigned int\000"
+ 519      20756E73 
+ 519      69676E65 
+ 519      6420696E 
+ 519      7400
+ 520              	.LASF3:
+ 521 004c 73686F72 		.ascii	"short unsigned int\000"
+ 521      7420756E 
+ 521      7369676E 
+ 521      65642069 
+ 521      6E7400
+ 522              	.LASF10:
+ 523 005f 646F7562 		.ascii	"double\000"
+ 523      6C6500
+ 524              	.LASF14:
+ 525 0066 63795F6D 		.ascii	"cy_meta_configecc\000"
+ 525      6574615F 
+ 525      636F6E66 
+ 525      69676563 
+ 525      6300
+ 526              	.LASF8:
+ 527 0078 756E7369 		.ascii	"unsigned int\000"
+ 527      676E6564 
+ 527      20696E74 
+ 527      00
+ 528              	.LASF7:
+ 529 0085 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 529      206C6F6E 
+ 529      6720756E 
+ 529      7369676E 
+ 529      65642069 
+ 530              	.LASF17:
+ 531 009c 433A5C55 		.ascii	"C:\\Users\\Robert\\workspace\\embedit_git\\RPiSoC_B"
+ 531      73657273 
+ 531      5C526F62 
+ 531      6572745C 
+ 531      776F726B 
+ 532 00ca 6F6F746C 		.ascii	"ootloader\\RPiSoC_Bootloader\\Bootloadable_RPiSoC_e"
+ 532      6F616465 
+ 532      725C5250 
+ARM GAS  C:\Users\Robert\AppData\Local\Temp\ccImNo3Y.s 			page 11
+
+
+ 532      69536F43 
+ 532      5F426F6F 
+ 533 00fb 78616D70 		.ascii	"xample.cydsn\000"
+ 533      6C652E63 
+ 533      7964736E 
+ 533      00
+ 534              	.LASF13:
+ 535 0108 63795F6D 		.ascii	"cy_meta_loadable\000"
+ 535      6574615F 
+ 535      6C6F6164 
+ 535      61626C65 
+ 535      00
+ 536              	.LASF12:
+ 537 0119 73697A65 		.ascii	"sizetype\000"
+ 537      74797065 
+ 537      00
+ 538              	.LASF6:
+ 539 0122 6C6F6E67 		.ascii	"long long int\000"
+ 539      206C6F6E 
+ 539      6720696E 
+ 539      7400
+ 540              	.LASF11:
+ 541 0130 63686172 		.ascii	"char\000"
+ 541      00
+ 542              	.LASF2:
+ 543 0135 73686F72 		.ascii	"short int\000"
+ 543      7420696E 
+ 543      7400
+ 544              	.LASF18:
+ 545 013f 75696E74 		.ascii	"uint8\000"
+ 545      3800
+ 546              	.LASF15:
+ 547 0145 474E5520 		.ascii	"GNU C 4.7.3 20130312 (release) [ARM/embedded-4_7-br"
+ 547      4320342E 
+ 547      372E3320 
+ 547      32303133 
+ 547      30333132 
+ 548 0178 616E6368 		.ascii	"anch revision 196615]\000"
+ 548      20726576 
+ 548      6973696F 
+ 548      6E203139 
+ 548      36363135 
+ 549              	.LASF4:
+ 550 018e 6C6F6E67 		.ascii	"long int\000"
+ 550      20696E74 
+ 550      00
+ 551              	.LASF0:
+ 552 0197 7369676E 		.ascii	"signed char\000"
+ 552      65642063 
+ 552      68617200 
+ 553              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.7.3 20130312 (release) [ARM/embedded-4_7-br

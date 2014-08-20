@@ -29,11 +29,11 @@ extern uint8 PWM_1_initVar;
 * Conditional Compilation Parameters
 ***************************************/
 #define PWM_1_Resolution 8u
-#define PWM_1_UsingFixedFunction 1u
+#define PWM_1_UsingFixedFunction 0u
 #define PWM_1_DeadBandMode 0u
 #define PWM_1_KillModeMinTime 0u
-#define PWM_1_KillMode 1u
-#define PWM_1_PWMMode 0u
+#define PWM_1_KillMode 0u
+#define PWM_1_PWMMode 1u
 #define PWM_1_PWMModeIsCenterAligned 0u
 #define PWM_1_DeadBandUsed 0u
 #define PWM_1_DeadBand2_4 0u
@@ -49,7 +49,7 @@ extern uint8 PWM_1_initVar;
 #else
     #define PWM_1_UseControl 0u
 #endif /* !defined(PWM_1_PWMUDB_genblk1_ctrlreg__REMOVED) */
-#define PWM_1_UseOneCompareMode 1u
+#define PWM_1_UseOneCompareMode 0u
 #define PWM_1_MinimumKillTime 1u
 #define PWM_1_EnableMode 0u
 

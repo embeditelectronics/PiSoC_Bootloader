@@ -250,8 +250,8 @@
             <field>
               <name>device_address</name>
               <description>No description available</description>
-              <lsb>6</lsb>
-              <msb>0</msb>
+              <lsb>0</lsb>
+              <msb>6</msb>
               <access>read-only</access>
             </field>
             <field>
