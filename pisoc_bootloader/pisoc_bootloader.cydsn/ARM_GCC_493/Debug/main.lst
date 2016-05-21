@@ -1,0 +1,576 @@
+ARM GAS  C:\Users\Robert\AppData\Local\Temp\ccBOIuW4.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.file	"main.c"
+  15              		.text
+  16              	.Ltext0:
+  17              		.cfi_sections	.debug_frame
+  18              		.section	.text.main,"ax",%progbits
+  19              		.align	2
+  20              		.global	main
+  21              		.thumb
+  22              		.thumb_func
+  23              		.type	main, %function
+  24              	main:
+  25              	.LFB63:
+  26              		.file 1 ".\\main.c"
+   1:.\main.c      **** /* ========================================
+   2:.\main.c      ****  *
+   3:.\main.c      ****  * Embedit Electronics
+   4:.\main.c      ****  *
+   5:.\main.c      ****  * PiSoC Rev E bootloader
+   6:.\main.c      ****  * 
+   7:.\main.c      ****  * MIT License
+   8:.\main.c      ****  *
+   9:.\main.c      ****  * ========================================
+  10:.\main.c      **** */
+  11:.\main.c      **** #include <project.h>
+  12:.\main.c      **** 
+  13:.\main.c      **** int main()
+  14:.\main.c      **** {
+  27              		.loc 1 14 0
+  28              		.cfi_startproc
+  29              		@ Volatile: function does not return.
+  30              		@ args = 0, pretend = 0, frame = 0
+  31              		@ frame_needed = 0, uses_anonymous_args = 0
+  32 0000 08B5     		push	{r3, lr}
+  33              		.cfi_def_cfa_offset 8
+  34              		.cfi_offset 3, -8
+  35              		.cfi_offset 14, -4
+  15:.\main.c      ****     //CyGlobalIntEnable; /* Enable global interrupts. */
+  16:.\main.c      ****     //CyDelay(10);
+  17:.\main.c      ****     //checks if bootloader pin is low, if it is the bootloader is started
+  18:.\main.c      ****     //otherwise go to the user application (bootloadable)
+  19:.\main.c      ****     if((BOOT_MODE_Read() == 0) || (Bootloader_GET_RUN_TYPE == Bootloader_START_BTLDR))
+  36              		.loc 1 19 0
+  37 0002 FFF7FEFF 		bl	BOOT_MODE_Read
+  38              	.LVL0:
+ARM GAS  C:\Users\Robert\AppData\Local\Temp\ccBOIuW4.s 			page 2
+
+
+  39 0006 28B1     		cbz	r0, .L2
+  40              		.loc 1 19 0 is_stmt 0 discriminator 1
+  41 0008 054B     		ldr	r3, .L6
+  42 000a 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+  43 000c 03F0C003 		and	r3, r3, #192
+  44 0010 402B     		cmp	r3, #64
+  45 0012 02D1     		bne	.L3
+  46              	.L2:
+  20:.\main.c      **** 	{	
+  21:.\main.c      **** 		Bootloader_SET_RUN_TYPE(Bootloader_START_BTLDR);
+  47              		.loc 1 21 0 is_stmt 1
+  48 0014 4022     		movs	r2, #64
+  49 0016 024B     		ldr	r3, .L6
+  50 0018 1A70     		strb	r2, [r3]
+  51              	.L3:
+  22:.\main.c      **** 	}
+  23:.\main.c      ****     
+  24:.\main.c      ****     /*if(BOOT_MODE_Read() == 0)
+  25:.\main.c      ****     {
+  26:.\main.c      ****         //Start Boot loader
+  27:.\main.c      ****         Bootloader_Start();
+  28:.\main.c      ****         //CyBtldr_Start();
+  29:.\main.c      ****     }*/
+  30:.\main.c      ****     
+  31:.\main.c      ****     CyBtldr_Start();
+  52              		.loc 1 31 0
+  53 001a FFF7FEFF 		bl	Bootloader_Start
+  54              	.LVL1:
+  55              	.L4:
+  32:.\main.c      ****     /* Place your initialization/startup code here (e.g. MyInst_Start()) */
+  33:.\main.c      **** 
+  34:.\main.c      ****     for(;;)
+  35:.\main.c      ****     {
+  36:.\main.c      ****         /* Place your application code here. */
+  37:.\main.c      ****     }
+  56              		.loc 1 37 0 discriminator 1
+  57 001e FEE7     		b	.L4
+  58              	.L7:
+  59              		.align	2
+  60              	.L6:
+  61 0020 FA460040 		.word	1073759994
+  62              		.cfi_endproc
+  63              	.LFE63:
+  64              		.size	main, .-main
+  65              		.text
+  66              	.Letext0:
+  67              		.file 2 "c:\\program files (x86)\\cypress\\psoc creator\\3.3\\psoc creator\\import\\gnu\\arm\\4.9.
+  68              		.file 3 "c:\\program files (x86)\\cypress\\psoc creator\\3.3\\psoc creator\\import\\gnu\\arm\\4.9.
+  69              		.file 4 "Generated_Source\\PSoC5/cytypes.h"
+  70              		.file 5 "Generated_Source\\PSoC5/core_cm3.h"
+  71              		.file 6 "Generated_Source\\PSoC5/BOOT_MODE.h"
+  72              		.file 7 "Generated_Source\\PSoC5/Bootloader.h"
+  73              		.section	.debug_info,"",%progbits
+  74              	.Ldebug_info0:
+  75 0000 05010000 		.4byte	0x105
+  76 0004 0400     		.2byte	0x4
+  77 0006 00000000 		.4byte	.Ldebug_abbrev0
+ARM GAS  C:\Users\Robert\AppData\Local\Temp\ccBOIuW4.s 			page 3
+
+
+  78 000a 04       		.byte	0x4
+  79 000b 01       		.uleb128 0x1
+  80 000c 70000000 		.4byte	.LASF17
+  81 0010 01       		.byte	0x1
+  82 0011 62010000 		.4byte	.LASF18
+  83 0015 FE000000 		.4byte	.LASF19
+  84 0019 00000000 		.4byte	.Ldebug_ranges0+0
+  85 001d 00000000 		.4byte	0
+  86 0021 00000000 		.4byte	.Ldebug_line0
+  87 0025 02       		.uleb128 0x2
+  88 0026 01       		.byte	0x1
+  89 0027 06       		.byte	0x6
+  90 0028 A8010000 		.4byte	.LASF0
+  91 002c 02       		.uleb128 0x2
+  92 002d 01       		.byte	0x1
+  93 002e 08       		.byte	0x8
+  94 002f 2E000000 		.4byte	.LASF1
+  95 0033 02       		.uleb128 0x2
+  96 0034 02       		.byte	0x2
+  97 0035 05       		.byte	0x5
+  98 0036 C4010000 		.4byte	.LASF2
+  99 003a 02       		.uleb128 0x2
+ 100 003b 02       		.byte	0x2
+ 101 003c 07       		.byte	0x7
+ 102 003d 0E000000 		.4byte	.LASF3
+ 103 0041 03       		.uleb128 0x3
+ 104 0042 B4010000 		.4byte	.LASF9
+ 105 0046 02       		.byte	0x2
+ 106 0047 3F       		.byte	0x3f
+ 107 0048 4C000000 		.4byte	0x4c
+ 108 004c 02       		.uleb128 0x2
+ 109 004d 04       		.byte	0x4
+ 110 004e 05       		.byte	0x5
+ 111 004f 83010000 		.4byte	.LASF4
+ 112 0053 02       		.uleb128 0x2
+ 113 0054 04       		.byte	0x4
+ 114 0055 07       		.byte	0x7
+ 115 0056 47000000 		.4byte	.LASF5
+ 116 005a 02       		.uleb128 0x2
+ 117 005b 08       		.byte	0x8
+ 118 005c 05       		.byte	0x5
+ 119 005d 00000000 		.4byte	.LASF6
+ 120 0061 02       		.uleb128 0x2
+ 121 0062 08       		.byte	0x8
+ 122 0063 07       		.byte	0x7
+ 123 0064 59000000 		.4byte	.LASF7
+ 124 0068 04       		.uleb128 0x4
+ 125 0069 04       		.byte	0x4
+ 126 006a 05       		.byte	0x5
+ 127 006b 696E7400 		.ascii	"int\000"
+ 128 006f 02       		.uleb128 0x2
+ 129 0070 04       		.byte	0x4
+ 130 0071 07       		.byte	0x7
+ 131 0072 21000000 		.4byte	.LASF8
+ 132 0076 03       		.uleb128 0x3
+ 133 0077 CE010000 		.4byte	.LASF10
+ 134 007b 03       		.byte	0x3
+ARM GAS  C:\Users\Robert\AppData\Local\Temp\ccBOIuW4.s 			page 4
+
+
+ 135 007c 2C       		.byte	0x2c
+ 136 007d 41000000 		.4byte	0x41
+ 137 0081 03       		.uleb128 0x3
+ 138 0082 41000000 		.4byte	.LASF11
+ 139 0086 04       		.byte	0x4
+ 140 0087 C2       		.byte	0xc2
+ 141 0088 2C000000 		.4byte	0x2c
+ 142 008c 02       		.uleb128 0x2
+ 143 008d 04       		.byte	0x4
+ 144 008e 04       		.byte	0x4
+ 145 008f BE010000 		.4byte	.LASF12
+ 146 0093 02       		.uleb128 0x2
+ 147 0094 08       		.byte	0x8
+ 148 0095 04       		.byte	0x4
+ 149 0096 7C010000 		.4byte	.LASF13
+ 150 009a 02       		.uleb128 0x2
+ 151 009b 01       		.byte	0x1
+ 152 009c 08       		.byte	0x8
+ 153 009d 58010000 		.4byte	.LASF14
+ 154 00a1 05       		.uleb128 0x5
+ 155 00a2 5D010000 		.4byte	.LASF15
+ 156 00a6 04       		.byte	0x4
+ 157 00a7 6C01     		.2byte	0x16c
+ 158 00a9 AD000000 		.4byte	0xad
+ 159 00ad 06       		.uleb128 0x6
+ 160 00ae 81000000 		.4byte	0x81
+ 161 00b2 02       		.uleb128 0x2
+ 162 00b3 04       		.byte	0x4
+ 163 00b4 07       		.byte	0x7
+ 164 00b5 D6010000 		.4byte	.LASF16
+ 165 00b9 07       		.uleb128 0x7
+ 166 00ba 3C000000 		.4byte	.LASF20
+ 167 00be 01       		.byte	0x1
+ 168 00bf 0D       		.byte	0xd
+ 169 00c0 68000000 		.4byte	0x68
+ 170 00c4 00000000 		.4byte	.LFB63
+ 171 00c8 24000000 		.4byte	.LFE63-.LFB63
+ 172 00cc 01       		.uleb128 0x1
+ 173 00cd 9C       		.byte	0x9c
+ 174 00ce E5000000 		.4byte	0xe5
+ 175 00d2 08       		.uleb128 0x8
+ 176 00d3 06000000 		.4byte	.LVL0
+ 177 00d7 F6000000 		.4byte	0xf6
+ 178 00db 08       		.uleb128 0x8
+ 179 00dc 1E000000 		.4byte	.LVL1
+ 180 00e0 01010000 		.4byte	0x101
+ 181 00e4 00       		.byte	0
+ 182 00e5 09       		.uleb128 0x9
+ 183 00e6 9B010000 		.4byte	.LASF21
+ 184 00ea 05       		.byte	0x5
+ 185 00eb 2A06     		.2byte	0x62a
+ 186 00ed F1000000 		.4byte	0xf1
+ 187 00f1 06       		.uleb128 0x6
+ 188 00f2 76000000 		.4byte	0x76
+ 189 00f6 0A       		.uleb128 0xa
+ 190 00f7 8C010000 		.4byte	.LASF22
+ 191 00fb 06       		.byte	0x6
+ARM GAS  C:\Users\Robert\AppData\Local\Temp\ccBOIuW4.s 			page 5
+
+
+ 192 00fc 2B       		.byte	0x2b
+ 193 00fd 81000000 		.4byte	0x81
+ 194 0101 0B       		.uleb128 0xb
+ 195 0102 6B010000 		.4byte	.LASF23
+ 196 0106 07       		.byte	0x7
+ 197 0107 E6       		.byte	0xe6
+ 198 0108 00       		.byte	0
+ 199              		.section	.debug_abbrev,"",%progbits
+ 200              	.Ldebug_abbrev0:
+ 201 0000 01       		.uleb128 0x1
+ 202 0001 11       		.uleb128 0x11
+ 203 0002 01       		.byte	0x1
+ 204 0003 25       		.uleb128 0x25
+ 205 0004 0E       		.uleb128 0xe
+ 206 0005 13       		.uleb128 0x13
+ 207 0006 0B       		.uleb128 0xb
+ 208 0007 03       		.uleb128 0x3
+ 209 0008 0E       		.uleb128 0xe
+ 210 0009 1B       		.uleb128 0x1b
+ 211 000a 0E       		.uleb128 0xe
+ 212 000b 55       		.uleb128 0x55
+ 213 000c 17       		.uleb128 0x17
+ 214 000d 11       		.uleb128 0x11
+ 215 000e 01       		.uleb128 0x1
+ 216 000f 10       		.uleb128 0x10
+ 217 0010 17       		.uleb128 0x17
+ 218 0011 00       		.byte	0
+ 219 0012 00       		.byte	0
+ 220 0013 02       		.uleb128 0x2
+ 221 0014 24       		.uleb128 0x24
+ 222 0015 00       		.byte	0
+ 223 0016 0B       		.uleb128 0xb
+ 224 0017 0B       		.uleb128 0xb
+ 225 0018 3E       		.uleb128 0x3e
+ 226 0019 0B       		.uleb128 0xb
+ 227 001a 03       		.uleb128 0x3
+ 228 001b 0E       		.uleb128 0xe
+ 229 001c 00       		.byte	0
+ 230 001d 00       		.byte	0
+ 231 001e 03       		.uleb128 0x3
+ 232 001f 16       		.uleb128 0x16
+ 233 0020 00       		.byte	0
+ 234 0021 03       		.uleb128 0x3
+ 235 0022 0E       		.uleb128 0xe
+ 236 0023 3A       		.uleb128 0x3a
+ 237 0024 0B       		.uleb128 0xb
+ 238 0025 3B       		.uleb128 0x3b
+ 239 0026 0B       		.uleb128 0xb
+ 240 0027 49       		.uleb128 0x49
+ 241 0028 13       		.uleb128 0x13
+ 242 0029 00       		.byte	0
+ 243 002a 00       		.byte	0
+ 244 002b 04       		.uleb128 0x4
+ 245 002c 24       		.uleb128 0x24
+ 246 002d 00       		.byte	0
+ 247 002e 0B       		.uleb128 0xb
+ 248 002f 0B       		.uleb128 0xb
+ARM GAS  C:\Users\Robert\AppData\Local\Temp\ccBOIuW4.s 			page 6
+
+
+ 249 0030 3E       		.uleb128 0x3e
+ 250 0031 0B       		.uleb128 0xb
+ 251 0032 03       		.uleb128 0x3
+ 252 0033 08       		.uleb128 0x8
+ 253 0034 00       		.byte	0
+ 254 0035 00       		.byte	0
+ 255 0036 05       		.uleb128 0x5
+ 256 0037 16       		.uleb128 0x16
+ 257 0038 00       		.byte	0
+ 258 0039 03       		.uleb128 0x3
+ 259 003a 0E       		.uleb128 0xe
+ 260 003b 3A       		.uleb128 0x3a
+ 261 003c 0B       		.uleb128 0xb
+ 262 003d 3B       		.uleb128 0x3b
+ 263 003e 05       		.uleb128 0x5
+ 264 003f 49       		.uleb128 0x49
+ 265 0040 13       		.uleb128 0x13
+ 266 0041 00       		.byte	0
+ 267 0042 00       		.byte	0
+ 268 0043 06       		.uleb128 0x6
+ 269 0044 35       		.uleb128 0x35
+ 270 0045 00       		.byte	0
+ 271 0046 49       		.uleb128 0x49
+ 272 0047 13       		.uleb128 0x13
+ 273 0048 00       		.byte	0
+ 274 0049 00       		.byte	0
+ 275 004a 07       		.uleb128 0x7
+ 276 004b 2E       		.uleb128 0x2e
+ 277 004c 01       		.byte	0x1
+ 278 004d 3F       		.uleb128 0x3f
+ 279 004e 19       		.uleb128 0x19
+ 280 004f 03       		.uleb128 0x3
+ 281 0050 0E       		.uleb128 0xe
+ 282 0051 3A       		.uleb128 0x3a
+ 283 0052 0B       		.uleb128 0xb
+ 284 0053 3B       		.uleb128 0x3b
+ 285 0054 0B       		.uleb128 0xb
+ 286 0055 49       		.uleb128 0x49
+ 287 0056 13       		.uleb128 0x13
+ 288 0057 11       		.uleb128 0x11
+ 289 0058 01       		.uleb128 0x1
+ 290 0059 12       		.uleb128 0x12
+ 291 005a 06       		.uleb128 0x6
+ 292 005b 40       		.uleb128 0x40
+ 293 005c 18       		.uleb128 0x18
+ 294 005d 9742     		.uleb128 0x2117
+ 295 005f 19       		.uleb128 0x19
+ 296 0060 01       		.uleb128 0x1
+ 297 0061 13       		.uleb128 0x13
+ 298 0062 00       		.byte	0
+ 299 0063 00       		.byte	0
+ 300 0064 08       		.uleb128 0x8
+ 301 0065 898201   		.uleb128 0x4109
+ 302 0068 00       		.byte	0
+ 303 0069 11       		.uleb128 0x11
+ 304 006a 01       		.uleb128 0x1
+ 305 006b 31       		.uleb128 0x31
+ARM GAS  C:\Users\Robert\AppData\Local\Temp\ccBOIuW4.s 			page 7
+
+
+ 306 006c 13       		.uleb128 0x13
+ 307 006d 00       		.byte	0
+ 308 006e 00       		.byte	0
+ 309 006f 09       		.uleb128 0x9
+ 310 0070 34       		.uleb128 0x34
+ 311 0071 00       		.byte	0
+ 312 0072 03       		.uleb128 0x3
+ 313 0073 0E       		.uleb128 0xe
+ 314 0074 3A       		.uleb128 0x3a
+ 315 0075 0B       		.uleb128 0xb
+ 316 0076 3B       		.uleb128 0x3b
+ 317 0077 05       		.uleb128 0x5
+ 318 0078 49       		.uleb128 0x49
+ 319 0079 13       		.uleb128 0x13
+ 320 007a 3F       		.uleb128 0x3f
+ 321 007b 19       		.uleb128 0x19
+ 322 007c 3C       		.uleb128 0x3c
+ 323 007d 19       		.uleb128 0x19
+ 324 007e 00       		.byte	0
+ 325 007f 00       		.byte	0
+ 326 0080 0A       		.uleb128 0xa
+ 327 0081 2E       		.uleb128 0x2e
+ 328 0082 00       		.byte	0
+ 329 0083 3F       		.uleb128 0x3f
+ 330 0084 19       		.uleb128 0x19
+ 331 0085 03       		.uleb128 0x3
+ 332 0086 0E       		.uleb128 0xe
+ 333 0087 3A       		.uleb128 0x3a
+ 334 0088 0B       		.uleb128 0xb
+ 335 0089 3B       		.uleb128 0x3b
+ 336 008a 0B       		.uleb128 0xb
+ 337 008b 27       		.uleb128 0x27
+ 338 008c 19       		.uleb128 0x19
+ 339 008d 49       		.uleb128 0x49
+ 340 008e 13       		.uleb128 0x13
+ 341 008f 3C       		.uleb128 0x3c
+ 342 0090 19       		.uleb128 0x19
+ 343 0091 00       		.byte	0
+ 344 0092 00       		.byte	0
+ 345 0093 0B       		.uleb128 0xb
+ 346 0094 2E       		.uleb128 0x2e
+ 347 0095 00       		.byte	0
+ 348 0096 3F       		.uleb128 0x3f
+ 349 0097 19       		.uleb128 0x19
+ 350 0098 03       		.uleb128 0x3
+ 351 0099 0E       		.uleb128 0xe
+ 352 009a 3A       		.uleb128 0x3a
+ 353 009b 0B       		.uleb128 0xb
+ 354 009c 3B       		.uleb128 0x3b
+ 355 009d 0B       		.uleb128 0xb
+ 356 009e 27       		.uleb128 0x27
+ 357 009f 19       		.uleb128 0x19
+ 358 00a0 3C       		.uleb128 0x3c
+ 359 00a1 19       		.uleb128 0x19
+ 360 00a2 00       		.byte	0
+ 361 00a3 00       		.byte	0
+ 362 00a4 00       		.byte	0
+ARM GAS  C:\Users\Robert\AppData\Local\Temp\ccBOIuW4.s 			page 8
+
+
+ 363              		.section	.debug_aranges,"",%progbits
+ 364 0000 1C000000 		.4byte	0x1c
+ 365 0004 0200     		.2byte	0x2
+ 366 0006 00000000 		.4byte	.Ldebug_info0
+ 367 000a 04       		.byte	0x4
+ 368 000b 00       		.byte	0
+ 369 000c 0000     		.2byte	0
+ 370 000e 0000     		.2byte	0
+ 371 0010 00000000 		.4byte	.LFB63
+ 372 0014 24000000 		.4byte	.LFE63-.LFB63
+ 373 0018 00000000 		.4byte	0
+ 374 001c 00000000 		.4byte	0
+ 375              		.section	.debug_ranges,"",%progbits
+ 376              	.Ldebug_ranges0:
+ 377 0000 00000000 		.4byte	.LFB63
+ 378 0004 24000000 		.4byte	.LFE63
+ 379 0008 00000000 		.4byte	0
+ 380 000c 00000000 		.4byte	0
+ 381              		.section	.debug_line,"",%progbits
+ 382              	.Ldebug_line0:
+ 383 0000 8E010000 		.section	.debug_str,"MS",%progbits,1
+ 383      02006801 
+ 383      00000201 
+ 383      FB0E0D00 
+ 383      01010101 
+ 384              	.LASF6:
+ 385 0000 6C6F6E67 		.ascii	"long long int\000"
+ 385      206C6F6E 
+ 385      6720696E 
+ 385      7400
+ 386              	.LASF3:
+ 387 000e 73686F72 		.ascii	"short unsigned int\000"
+ 387      7420756E 
+ 387      7369676E 
+ 387      65642069 
+ 387      6E7400
+ 388              	.LASF8:
+ 389 0021 756E7369 		.ascii	"unsigned int\000"
+ 389      676E6564 
+ 389      20696E74 
+ 389      00
+ 390              	.LASF1:
+ 391 002e 756E7369 		.ascii	"unsigned char\000"
+ 391      676E6564 
+ 391      20636861 
+ 391      7200
+ 392              	.LASF20:
+ 393 003c 6D61696E 		.ascii	"main\000"
+ 393      00
+ 394              	.LASF11:
+ 395 0041 75696E74 		.ascii	"uint8\000"
+ 395      3800
+ 396              	.LASF5:
+ 397 0047 6C6F6E67 		.ascii	"long unsigned int\000"
+ 397      20756E73 
+ 397      69676E65 
+ 397      6420696E 
+ARM GAS  C:\Users\Robert\AppData\Local\Temp\ccBOIuW4.s 			page 9
+
+
+ 397      7400
+ 398              	.LASF7:
+ 399 0059 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 399      206C6F6E 
+ 399      6720756E 
+ 399      7369676E 
+ 399      65642069 
+ 400              	.LASF17:
+ 401 0070 474E5520 		.ascii	"GNU C 4.9.3 20150303 (release) [ARM/embedded-4_9-br"
+ 401      4320342E 
+ 401      392E3320 
+ 401      32303135 
+ 401      30333033 
+ 402 00a3 616E6368 		.ascii	"anch revision 221220] -mcpu=cortex-m3 -mthumb -g -O"
+ 402      20726576 
+ 402      6973696F 
+ 402      6E203232 
+ 402      31323230 
+ 403 00d6 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 403      66756E63 
+ 403      74696F6E 
+ 403      2D736563 
+ 403      74696F6E 
+ 404              	.LASF19:
+ 405 00fe 433A5C55 		.ascii	"C:\\Users\\Robert\\Documents\\PSoC Creator\\product"
+ 405      73657273 
+ 405      5C526F62 
+ 405      6572745C 
+ 405      446F6375 
+ 406 012c 696F6E5F 		.ascii	"ion_108\\PSoC Creator\\pisoc_bootloader.cydsn\000"
+ 406      3130385C 
+ 406      50536F43 
+ 406      20437265 
+ 406      61746F72 
+ 407              	.LASF14:
+ 408 0158 63686172 		.ascii	"char\000"
+ 408      00
+ 409              	.LASF15:
+ 410 015d 72656738 		.ascii	"reg8\000"
+ 410      00
+ 411              	.LASF18:
+ 412 0162 2E5C6D61 		.ascii	".\\main.c\000"
+ 412      696E2E63 
+ 412      00
+ 413              	.LASF23:
+ 414 016b 426F6F74 		.ascii	"Bootloader_Start\000"
+ 414      6C6F6164 
+ 414      65725F53 
+ 414      74617274 
+ 414      00
+ 415              	.LASF13:
+ 416 017c 646F7562 		.ascii	"double\000"
+ 416      6C6500
+ 417              	.LASF4:
+ 418 0183 6C6F6E67 		.ascii	"long int\000"
+ 418      20696E74 
+ 418      00
+ARM GAS  C:\Users\Robert\AppData\Local\Temp\ccBOIuW4.s 			page 10
+
+
+ 419              	.LASF22:
+ 420 018c 424F4F54 		.ascii	"BOOT_MODE_Read\000"
+ 420      5F4D4F44 
+ 420      455F5265 
+ 420      616400
+ 421              	.LASF21:
+ 422 019b 49544D5F 		.ascii	"ITM_RxBuffer\000"
+ 422      52784275 
+ 422      66666572 
+ 422      00
+ 423              	.LASF0:
+ 424 01a8 7369676E 		.ascii	"signed char\000"
+ 424      65642063 
+ 424      68617200 
+ 425              	.LASF9:
+ 426 01b4 5F5F696E 		.ascii	"__int32_t\000"
+ 426      7433325F 
+ 426      7400
+ 427              	.LASF12:
+ 428 01be 666C6F61 		.ascii	"float\000"
+ 428      7400
+ 429              	.LASF2:
+ 430 01c4 73686F72 		.ascii	"short int\000"
+ 430      7420696E 
+ 430      7400
+ 431              	.LASF10:
+ 432 01ce 696E7433 		.ascii	"int32_t\000"
+ 432      325F7400 
+ 433              	.LASF16:
+ 434 01d6 73697A65 		.ascii	"sizetype\000"
+ 434      74797065 
+ 434      00
+ 435              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.9.3 20150303 (release) [ARM/embedded-4_9-br

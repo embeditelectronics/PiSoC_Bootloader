@@ -1,0 +1,2788 @@
+ARM GAS  C:\Users\Robert\AppData\Local\Temp\ccr2TuqX.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.file	"USB_Bootloader_hid.c"
+  15              		.text
+  16              	.Ltext0:
+  17              		.cfi_sections	.debug_frame
+  18              		.section	.text.USB_Bootloader_UpdateHIDTimer,"ax",%progbits
+  19              		.align	2
+  20              		.global	USB_Bootloader_UpdateHIDTimer
+  21              		.thumb
+  22              		.thumb_func
+  23              		.type	USB_Bootloader_UpdateHIDTimer, %function
+  24              	USB_Bootloader_UpdateHIDTimer:
+  25              	.LFB0:
+  26              		.file 1 ".\\Generated_Source\\PSoC5\\USB_Bootloader_hid.c"
+   1:.\Generated_Source\PSoC5/USB_Bootloader_hid.c **** /*******************************************************************************
+   2:.\Generated_Source\PSoC5/USB_Bootloader_hid.c **** * File Name: USB_Bootloader_hid.c
+   3:.\Generated_Source\PSoC5/USB_Bootloader_hid.c **** * Version 2.80
+   4:.\Generated_Source\PSoC5/USB_Bootloader_hid.c **** *
+   5:.\Generated_Source\PSoC5/USB_Bootloader_hid.c **** * Description:
+   6:.\Generated_Source\PSoC5/USB_Bootloader_hid.c **** *  USB HID Class request handler.
+   7:.\Generated_Source\PSoC5/USB_Bootloader_hid.c **** *
+   8:.\Generated_Source\PSoC5/USB_Bootloader_hid.c **** * Related Document:
+   9:.\Generated_Source\PSoC5/USB_Bootloader_hid.c **** *  Device Class Definition for Human Interface Devices (HID) Version 1.11
+  10:.\Generated_Source\PSoC5/USB_Bootloader_hid.c **** *
+  11:.\Generated_Source\PSoC5/USB_Bootloader_hid.c **** * Note:
+  12:.\Generated_Source\PSoC5/USB_Bootloader_hid.c **** *
+  13:.\Generated_Source\PSoC5/USB_Bootloader_hid.c **** ********************************************************************************
+  14:.\Generated_Source\PSoC5/USB_Bootloader_hid.c **** * Copyright 2008-2014, Cypress Semiconductor Corporation.  All rights reserved.
+  15:.\Generated_Source\PSoC5/USB_Bootloader_hid.c **** * You may use this file only in accordance with the license, terms, conditions,
+  16:.\Generated_Source\PSoC5/USB_Bootloader_hid.c **** * disclaimers, and limitations in the end user license agreement accompanying
+  17:.\Generated_Source\PSoC5/USB_Bootloader_hid.c **** * the software package with which this file was provided.
+  18:.\Generated_Source\PSoC5/USB_Bootloader_hid.c **** *******************************************************************************/
+  19:.\Generated_Source\PSoC5/USB_Bootloader_hid.c **** 
+  20:.\Generated_Source\PSoC5/USB_Bootloader_hid.c **** #include "USB_Bootloader.h"
+  21:.\Generated_Source\PSoC5/USB_Bootloader_hid.c **** 
+  22:.\Generated_Source\PSoC5/USB_Bootloader_hid.c **** #if defined(USB_Bootloader_ENABLE_HID_CLASS)
+  23:.\Generated_Source\PSoC5/USB_Bootloader_hid.c **** 
+  24:.\Generated_Source\PSoC5/USB_Bootloader_hid.c **** #include "USB_Bootloader_pvt.h"
+  25:.\Generated_Source\PSoC5/USB_Bootloader_hid.c **** #include "USB_Bootloader_hid.h"
+  26:.\Generated_Source\PSoC5/USB_Bootloader_hid.c **** #include "cyapicallbacks.h"
+  27:.\Generated_Source\PSoC5/USB_Bootloader_hid.c **** 
+  28:.\Generated_Source\PSoC5/USB_Bootloader_hid.c **** 
+  29:.\Generated_Source\PSoC5/USB_Bootloader_hid.c **** /***************************************
+  30:.\Generated_Source\PSoC5/USB_Bootloader_hid.c **** *    HID Variables
+  31:.\Generated_Source\PSoC5/USB_Bootloader_hid.c **** ***************************************/
+ARM GAS  C:\Users\Robert\AppData\Local\Temp\ccr2TuqX.s 			page 2
+
+
+  32:.\Generated_Source\PSoC5/USB_Bootloader_hid.c **** 
+  33:.\Generated_Source\PSoC5/USB_Bootloader_hid.c **** volatile uint8 USB_Bootloader_hidProtocol[USB_Bootloader_MAX_INTERFACES_NUMBER];  /* HID device pro
+  34:.\Generated_Source\PSoC5/USB_Bootloader_hid.c **** volatile uint8 USB_Bootloader_hidIdleRate[USB_Bootloader_MAX_INTERFACES_NUMBER];  /* HID device idl
+  35:.\Generated_Source\PSoC5/USB_Bootloader_hid.c **** volatile uint8 USB_Bootloader_hidIdleTimer[USB_Bootloader_MAX_INTERFACES_NUMBER]; /* HID device idl
+  36:.\Generated_Source\PSoC5/USB_Bootloader_hid.c **** 
+  37:.\Generated_Source\PSoC5/USB_Bootloader_hid.c **** 
+  38:.\Generated_Source\PSoC5/USB_Bootloader_hid.c **** /***************************************
+  39:.\Generated_Source\PSoC5/USB_Bootloader_hid.c **** * Custom Declarations
+  40:.\Generated_Source\PSoC5/USB_Bootloader_hid.c **** ***************************************/
+  41:.\Generated_Source\PSoC5/USB_Bootloader_hid.c **** 
+  42:.\Generated_Source\PSoC5/USB_Bootloader_hid.c **** /* `#START HID_CUSTOM_DECLARATIONS` Place your declaration here */
+  43:.\Generated_Source\PSoC5/USB_Bootloader_hid.c **** 
+  44:.\Generated_Source\PSoC5/USB_Bootloader_hid.c **** /* `#END` */
+  45:.\Generated_Source\PSoC5/USB_Bootloader_hid.c **** 
+  46:.\Generated_Source\PSoC5/USB_Bootloader_hid.c **** 
+  47:.\Generated_Source\PSoC5/USB_Bootloader_hid.c **** /*******************************************************************************
+  48:.\Generated_Source\PSoC5/USB_Bootloader_hid.c **** * Function Name: USB_Bootloader_UpdateHIDTimer
+  49:.\Generated_Source\PSoC5/USB_Bootloader_hid.c **** ********************************************************************************
+  50:.\Generated_Source\PSoC5/USB_Bootloader_hid.c **** *
+  51:.\Generated_Source\PSoC5/USB_Bootloader_hid.c **** * Summary:
+  52:.\Generated_Source\PSoC5/USB_Bootloader_hid.c **** *  Updates the HID report timer and reloads it if expired
+  53:.\Generated_Source\PSoC5/USB_Bootloader_hid.c **** *
+  54:.\Generated_Source\PSoC5/USB_Bootloader_hid.c **** * Parameters:
+  55:.\Generated_Source\PSoC5/USB_Bootloader_hid.c **** *  interface:  Interface Number.
+  56:.\Generated_Source\PSoC5/USB_Bootloader_hid.c **** *
+  57:.\Generated_Source\PSoC5/USB_Bootloader_hid.c **** * Return:
+  58:.\Generated_Source\PSoC5/USB_Bootloader_hid.c **** *  status.
+  59:.\Generated_Source\PSoC5/USB_Bootloader_hid.c **** *
+  60:.\Generated_Source\PSoC5/USB_Bootloader_hid.c **** * Reentrant:
+  61:.\Generated_Source\PSoC5/USB_Bootloader_hid.c **** *  No.
+  62:.\Generated_Source\PSoC5/USB_Bootloader_hid.c **** *
+  63:.\Generated_Source\PSoC5/USB_Bootloader_hid.c **** *******************************************************************************/
+  64:.\Generated_Source\PSoC5/USB_Bootloader_hid.c **** uint8 USB_Bootloader_UpdateHIDTimer(uint8 interface) 
+  65:.\Generated_Source\PSoC5/USB_Bootloader_hid.c **** {
+  27              		.loc 1 65 0
+  28              		.cfi_startproc
+  29              		@ args = 0, pretend = 0, frame = 0
+  30              		@ frame_needed = 0, uses_anonymous_args = 0
+  31              		@ link register save eliminated.
+  32              	.LVL0:
+  66:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****     uint8 stat = USB_Bootloader_IDLE_TIMER_INDEFINITE;
+  67:.\Generated_Source\PSoC5/USB_Bootloader_hid.c **** 
+  68:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****     if(USB_Bootloader_hidIdleRate[interface] != 0u)
+  33              		.loc 1 68 0
+  34 0000 0C4B     		ldr	r3, .L5
+  35 0002 1B5C     		ldrb	r3, [r3, r0]	@ zero_extendqisi2
+  36 0004 13F0FF0F 		tst	r3, #255
+  37 0008 12D0     		beq	.L4
+  69:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****     {
+  70:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****         if(USB_Bootloader_hidIdleTimer[interface] > 0u)
+  38              		.loc 1 70 0
+  39 000a 0B4B     		ldr	r3, .L5+4
+  40 000c 1B5C     		ldrb	r3, [r3, r0]	@ zero_extendqisi2
+  41 000e 13F0FF0F 		tst	r3, #255
+  42 0012 06D0     		beq	.L3
+  71:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****         {
+  72:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****             USB_Bootloader_hidIdleTimer[interface]--;
+ARM GAS  C:\Users\Robert\AppData\Local\Temp\ccr2TuqX.s 			page 3
+
+
+  43              		.loc 1 72 0
+  44 0014 084A     		ldr	r2, .L5+4
+  45 0016 135C     		ldrb	r3, [r2, r0]	@ zero_extendqisi2
+  46 0018 013B     		subs	r3, r3, #1
+  47 001a DBB2     		uxtb	r3, r3
+  48 001c 1354     		strb	r3, [r2, r0]
+  49              	.LVL1:
+  73:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****             stat = USB_Bootloader_IDLE_TIMER_RUNNING;
+  50              		.loc 1 73 0
+  51 001e 0220     		movs	r0, #2
+  52              	.LVL2:
+  53 0020 7047     		bx	lr
+  54              	.LVL3:
+  55              	.L3:
+  74:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****         }
+  75:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****         else
+  76:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****         {
+  77:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****             USB_Bootloader_hidIdleTimer[interface] = USB_Bootloader_hidIdleRate[interface];
+  56              		.loc 1 77 0
+  57 0022 044B     		ldr	r3, .L5
+  58 0024 1B5C     		ldrb	r3, [r3, r0]	@ zero_extendqisi2
+  59 0026 DBB2     		uxtb	r3, r3
+  60 0028 034A     		ldr	r2, .L5+4
+  61 002a 1354     		strb	r3, [r2, r0]
+  62              	.LVL4:
+  78:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****             stat = USB_Bootloader_IDLE_TIMER_EXPIRED;
+  63              		.loc 1 78 0
+  64 002c 0120     		movs	r0, #1
+  65              	.LVL5:
+  66 002e 7047     		bx	lr
+  67              	.LVL6:
+  68              	.L4:
+  66:.\Generated_Source\PSoC5/USB_Bootloader_hid.c **** 
+  69              		.loc 1 66 0
+  70 0030 0020     		movs	r0, #0
+  71              	.LVL7:
+  79:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****         }
+  80:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****     }
+  81:.\Generated_Source\PSoC5/USB_Bootloader_hid.c **** 
+  82:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****     return(stat);
+  83:.\Generated_Source\PSoC5/USB_Bootloader_hid.c **** }
+  72              		.loc 1 83 0
+  73 0032 7047     		bx	lr
+  74              	.L6:
+  75              		.align	2
+  76              	.L5:
+  77 0034 00000000 		.word	USB_Bootloader_hidIdleRate
+  78 0038 00000000 		.word	USB_Bootloader_hidIdleTimer
+  79              		.cfi_endproc
+  80              	.LFE0:
+  81              		.size	USB_Bootloader_UpdateHIDTimer, .-USB_Bootloader_UpdateHIDTimer
+  82              		.section	.text.USB_Bootloader_GetProtocol,"ax",%progbits
+  83              		.align	2
+  84              		.global	USB_Bootloader_GetProtocol
+  85              		.thumb
+  86              		.thumb_func
+  87              		.type	USB_Bootloader_GetProtocol, %function
+ARM GAS  C:\Users\Robert\AppData\Local\Temp\ccr2TuqX.s 			page 4
+
+
+  88              	USB_Bootloader_GetProtocol:
+  89              	.LFB1:
+  84:.\Generated_Source\PSoC5/USB_Bootloader_hid.c **** 
+  85:.\Generated_Source\PSoC5/USB_Bootloader_hid.c **** 
+  86:.\Generated_Source\PSoC5/USB_Bootloader_hid.c **** /*******************************************************************************
+  87:.\Generated_Source\PSoC5/USB_Bootloader_hid.c **** * Function Name: USB_Bootloader_GetProtocol
+  88:.\Generated_Source\PSoC5/USB_Bootloader_hid.c **** ********************************************************************************
+  89:.\Generated_Source\PSoC5/USB_Bootloader_hid.c **** *
+  90:.\Generated_Source\PSoC5/USB_Bootloader_hid.c **** * Summary:
+  91:.\Generated_Source\PSoC5/USB_Bootloader_hid.c **** *  Returns the selected protocol value to the application
+  92:.\Generated_Source\PSoC5/USB_Bootloader_hid.c **** *
+  93:.\Generated_Source\PSoC5/USB_Bootloader_hid.c **** * Parameters:
+  94:.\Generated_Source\PSoC5/USB_Bootloader_hid.c **** *  interface:  Interface Number.
+  95:.\Generated_Source\PSoC5/USB_Bootloader_hid.c **** *
+  96:.\Generated_Source\PSoC5/USB_Bootloader_hid.c **** * Return:
+  97:.\Generated_Source\PSoC5/USB_Bootloader_hid.c **** *  Interface protocol.
+  98:.\Generated_Source\PSoC5/USB_Bootloader_hid.c **** *
+  99:.\Generated_Source\PSoC5/USB_Bootloader_hid.c **** *******************************************************************************/
+ 100:.\Generated_Source\PSoC5/USB_Bootloader_hid.c **** uint8 USB_Bootloader_GetProtocol(uint8 interface) 
+ 101:.\Generated_Source\PSoC5/USB_Bootloader_hid.c **** {
+  90              		.loc 1 101 0
+  91              		.cfi_startproc
+  92              		@ args = 0, pretend = 0, frame = 0
+  93              		@ frame_needed = 0, uses_anonymous_args = 0
+  94              		@ link register save eliminated.
+  95              	.LVL8:
+ 102:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****     return(USB_Bootloader_hidProtocol[interface]);
+  96              		.loc 1 102 0
+  97 0000 014B     		ldr	r3, .L8
+  98 0002 185C     		ldrb	r0, [r3, r0]	@ zero_extendqisi2
+  99              	.LVL9:
+ 103:.\Generated_Source\PSoC5/USB_Bootloader_hid.c **** }
+ 100              		.loc 1 103 0
+ 101 0004 7047     		bx	lr
+ 102              	.L9:
+ 103 0006 00BF     		.align	2
+ 104              	.L8:
+ 105 0008 00000000 		.word	USB_Bootloader_hidProtocol
+ 106              		.cfi_endproc
+ 107              	.LFE1:
+ 108              		.size	USB_Bootloader_GetProtocol, .-USB_Bootloader_GetProtocol
+ 109              		.section	.text.USB_Bootloader_FindHidClassDecriptor,"ax",%progbits
+ 110              		.align	2
+ 111              		.global	USB_Bootloader_FindHidClassDecriptor
+ 112              		.thumb
+ 113              		.thumb_func
+ 114              		.type	USB_Bootloader_FindHidClassDecriptor, %function
+ 115              	USB_Bootloader_FindHidClassDecriptor:
+ 116              	.LFB3:
+ 104:.\Generated_Source\PSoC5/USB_Bootloader_hid.c **** 
+ 105:.\Generated_Source\PSoC5/USB_Bootloader_hid.c **** 
+ 106:.\Generated_Source\PSoC5/USB_Bootloader_hid.c **** /*******************************************************************************
+ 107:.\Generated_Source\PSoC5/USB_Bootloader_hid.c **** * Function Name: USB_Bootloader_DispatchHIDClassRqst
+ 108:.\Generated_Source\PSoC5/USB_Bootloader_hid.c **** ********************************************************************************
+ 109:.\Generated_Source\PSoC5/USB_Bootloader_hid.c **** *
+ 110:.\Generated_Source\PSoC5/USB_Bootloader_hid.c **** * Summary:
+ 111:.\Generated_Source\PSoC5/USB_Bootloader_hid.c **** *  This routine dispatches class requests
+ARM GAS  C:\Users\Robert\AppData\Local\Temp\ccr2TuqX.s 			page 5
+
+
+ 112:.\Generated_Source\PSoC5/USB_Bootloader_hid.c **** *
+ 113:.\Generated_Source\PSoC5/USB_Bootloader_hid.c **** * Parameters:
+ 114:.\Generated_Source\PSoC5/USB_Bootloader_hid.c **** *  None.
+ 115:.\Generated_Source\PSoC5/USB_Bootloader_hid.c **** *
+ 116:.\Generated_Source\PSoC5/USB_Bootloader_hid.c **** * Return:
+ 117:.\Generated_Source\PSoC5/USB_Bootloader_hid.c **** *  requestHandled
+ 118:.\Generated_Source\PSoC5/USB_Bootloader_hid.c **** *
+ 119:.\Generated_Source\PSoC5/USB_Bootloader_hid.c **** * Reentrant:
+ 120:.\Generated_Source\PSoC5/USB_Bootloader_hid.c **** *  No.
+ 121:.\Generated_Source\PSoC5/USB_Bootloader_hid.c **** *
+ 122:.\Generated_Source\PSoC5/USB_Bootloader_hid.c **** *******************************************************************************/
+ 123:.\Generated_Source\PSoC5/USB_Bootloader_hid.c **** uint8 USB_Bootloader_DispatchHIDClassRqst(void) 
+ 124:.\Generated_Source\PSoC5/USB_Bootloader_hid.c **** {
+ 125:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****     uint8 requestHandled = USB_Bootloader_FALSE;
+ 126:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****     uint8 interfaceNumber;
+ 127:.\Generated_Source\PSoC5/USB_Bootloader_hid.c **** 
+ 128:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****     interfaceNumber = CY_GET_REG8(USB_Bootloader_wIndexLo);
+ 129:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****     if ((CY_GET_REG8(USB_Bootloader_bmRequestType) & USB_Bootloader_RQST_DIR_MASK) == USB_Bootloade
+ 130:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****     {   /* Control Read */
+ 131:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****         switch (CY_GET_REG8(USB_Bootloader_bRequest))
+ 132:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****         {
+ 133:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****             case USB_Bootloader_GET_DESCRIPTOR:
+ 134:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****                 if (CY_GET_REG8(USB_Bootloader_wValueHi) == USB_Bootloader_DESCR_HID_CLASS)
+ 135:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****                 {
+ 136:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****                     USB_Bootloader_FindHidClassDecriptor();
+ 137:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****                     if (USB_Bootloader_currentTD.count != 0u)
+ 138:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****                     {
+ 139:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****                         requestHandled = USB_Bootloader_InitControlRead();
+ 140:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****                     }
+ 141:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****                 }
+ 142:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****                 else if (CY_GET_REG8(USB_Bootloader_wValueHi) == USB_Bootloader_DESCR_HID_REPORT)
+ 143:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****                 {
+ 144:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****                     USB_Bootloader_FindReportDescriptor();
+ 145:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****                     if (USB_Bootloader_currentTD.count != 0u)
+ 146:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****                     {
+ 147:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****                         requestHandled = USB_Bootloader_InitControlRead();
+ 148:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****                     }
+ 149:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****                 }
+ 150:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****                 else
+ 151:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****                 {   /* requestHandled is initialezed as FALSE by default */
+ 152:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****                 }
+ 153:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****                 break;
+ 154:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****             case USB_Bootloader_HID_GET_REPORT:
+ 155:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****                 USB_Bootloader_FindReport();
+ 156:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****                 if (USB_Bootloader_currentTD.count != 0u)
+ 157:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****                 {
+ 158:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****                     requestHandled = USB_Bootloader_InitControlRead();
+ 159:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****                 }
+ 160:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****                 break;
+ 161:.\Generated_Source\PSoC5/USB_Bootloader_hid.c **** 
+ 162:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****             case USB_Bootloader_HID_GET_IDLE:
+ 163:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****                 /* This function does not support multiple reports per interface*/
+ 164:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****                 /* Validate interfaceNumber and Report ID (should be 0) */
+ 165:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****                 if( (interfaceNumber < USB_Bootloader_MAX_INTERFACES_NUMBER) &&
+ 166:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****                     (CY_GET_REG8(USB_Bootloader_wValueLo) == 0u ) ) /* Do not support Idle per Repo
+ 167:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****                 {
+ 168:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****                     USB_Bootloader_currentTD.count = 1u;
+ARM GAS  C:\Users\Robert\AppData\Local\Temp\ccr2TuqX.s 			page 6
+
+
+ 169:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****                     USB_Bootloader_currentTD.pData = &USB_Bootloader_hidIdleRate[interfaceNumber];
+ 170:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****                     requestHandled  = USB_Bootloader_InitControlRead();
+ 171:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****                 }
+ 172:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****                 break;
+ 173:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****             case USB_Bootloader_HID_GET_PROTOCOL:
+ 174:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****                 /* Validate interfaceNumber */
+ 175:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****                 if( interfaceNumber < USB_Bootloader_MAX_INTERFACES_NUMBER)
+ 176:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****                 {
+ 177:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****                     USB_Bootloader_currentTD.count = 1u;
+ 178:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****                     USB_Bootloader_currentTD.pData = &USB_Bootloader_hidProtocol[interfaceNumber];
+ 179:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****                     requestHandled  = USB_Bootloader_InitControlRead();
+ 180:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****                 }
+ 181:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****                 break;
+ 182:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****             default:    /* requestHandled is initialized as FALSE by default */
+ 183:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****                 break;
+ 184:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****         }
+ 185:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****     }
+ 186:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****     else if ((CY_GET_REG8(USB_Bootloader_bmRequestType) & USB_Bootloader_RQST_DIR_MASK) ==
+ 187:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****                                                                             USB_Bootloader_RQST_DIR
+ 188:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****     {   /* Control Write */
+ 189:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****         switch (CY_GET_REG8(USB_Bootloader_bRequest))
+ 190:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****         {
+ 191:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****             case USB_Bootloader_HID_SET_REPORT:
+ 192:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****                 USB_Bootloader_FindReport();
+ 193:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****                 if (USB_Bootloader_currentTD.count != 0u)
+ 194:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****                 {
+ 195:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****                     requestHandled = USB_Bootloader_InitControlWrite();
+ 196:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****                 }
+ 197:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****                 break;
+ 198:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****             case USB_Bootloader_HID_SET_IDLE:
+ 199:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****                 /* This function does not support multiple reports per interface */
+ 200:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****                 /* Validate interfaceNumber and Report ID (should be 0) */
+ 201:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****                 if( (interfaceNumber < USB_Bootloader_MAX_INTERFACES_NUMBER) &&
+ 202:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****                     (CY_GET_REG8(USB_Bootloader_wValueLo) == 0u ) ) /* Do not support Idle per Repo
+ 203:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****                 {
+ 204:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****                     USB_Bootloader_hidIdleRate[interfaceNumber] = CY_GET_REG8(USB_Bootloader_wValue
+ 205:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****                     /* With regards to HID spec: "7.2.4 Set_Idle Request"
+ 206:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****                     *  Latency. If the current period has gone past the
+ 207:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****                     *  newly proscribed time duration, then a report
+ 208:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****                     *  will be generated immediately.
+ 209:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****                     */
+ 210:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****                     if(USB_Bootloader_hidIdleRate[interfaceNumber] <
+ 211:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****                        USB_Bootloader_hidIdleTimer[interfaceNumber])
+ 212:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****                     {
+ 213:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****                         /* Set the timer to zero and let the UpdateHIDTimer() API return IDLE_TIMER
+ 214:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****                         USB_Bootloader_hidIdleTimer[interfaceNumber] = 0u;
+ 215:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****                     }
+ 216:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****                     /* If the new request is received within 4 milliseconds
+ 217:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****                     *  (1 count) of the end of the current period, then the
+ 218:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****                     *  new request will have no effect until after the report.
+ 219:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****                     */
+ 220:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****                     else if(USB_Bootloader_hidIdleTimer[interfaceNumber] <= 1u)
+ 221:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****                     {
+ 222:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****                         /* Do nothing.
+ 223:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****                         *  Let the UpdateHIDTimer() API continue to work and
+ 224:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****                         *  return IDLE_TIMER_EXPIRED status
+ 225:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****                         */
+ARM GAS  C:\Users\Robert\AppData\Local\Temp\ccr2TuqX.s 			page 7
+
+
+ 226:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****                     }
+ 227:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****                     else
+ 228:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****                     {   /* Reload the timer*/
+ 229:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****                         USB_Bootloader_hidIdleTimer[interfaceNumber] =
+ 230:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****                         USB_Bootloader_hidIdleRate[interfaceNumber];
+ 231:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****                     }
+ 232:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****                     requestHandled = USB_Bootloader_InitNoDataControlTransfer();
+ 233:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****                 }
+ 234:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****                 break;
+ 235:.\Generated_Source\PSoC5/USB_Bootloader_hid.c **** 
+ 236:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****             case USB_Bootloader_HID_SET_PROTOCOL:
+ 237:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****                 /* Validate interfaceNumber and protocol (must be 0 or 1) */
+ 238:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****                 if( (interfaceNumber < USB_Bootloader_MAX_INTERFACES_NUMBER) &&
+ 239:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****                     (CY_GET_REG8(USB_Bootloader_wValueLo) <= 1u) )
+ 240:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****                 {
+ 241:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****                     USB_Bootloader_hidProtocol[interfaceNumber] = CY_GET_REG8(USB_Bootloader_wValue
+ 242:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****                     requestHandled = USB_Bootloader_InitNoDataControlTransfer();
+ 243:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****                 }
+ 244:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****                 break;
+ 245:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****             default:    /* requestHandled is initialized as FALSE by default */
+ 246:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****                 break;
+ 247:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****         }
+ 248:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****     }
+ 249:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****     else
+ 250:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****     {   /* requestHandled is initialized as FALSE by default */
+ 251:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****     }
+ 252:.\Generated_Source\PSoC5/USB_Bootloader_hid.c **** 
+ 253:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****     return(requestHandled);
+ 254:.\Generated_Source\PSoC5/USB_Bootloader_hid.c **** }
+ 255:.\Generated_Source\PSoC5/USB_Bootloader_hid.c **** 
+ 256:.\Generated_Source\PSoC5/USB_Bootloader_hid.c **** 
+ 257:.\Generated_Source\PSoC5/USB_Bootloader_hid.c **** /*******************************************************************************
+ 258:.\Generated_Source\PSoC5/USB_Bootloader_hid.c **** * Function Name: USB_FindHidClassDescriptor
+ 259:.\Generated_Source\PSoC5/USB_Bootloader_hid.c **** ********************************************************************************
+ 260:.\Generated_Source\PSoC5/USB_Bootloader_hid.c **** *
+ 261:.\Generated_Source\PSoC5/USB_Bootloader_hid.c **** * Summary:
+ 262:.\Generated_Source\PSoC5/USB_Bootloader_hid.c **** *  This routine find Hid Class Descriptor pointer based on the Interface number
+ 263:.\Generated_Source\PSoC5/USB_Bootloader_hid.c **** *  and Alternate setting then loads the currentTD structure with the address of
+ 264:.\Generated_Source\PSoC5/USB_Bootloader_hid.c **** *  the buffer and the size.
+ 265:.\Generated_Source\PSoC5/USB_Bootloader_hid.c **** *  The HID Class Descriptor resides inside the config descriptor.
+ 266:.\Generated_Source\PSoC5/USB_Bootloader_hid.c **** *
+ 267:.\Generated_Source\PSoC5/USB_Bootloader_hid.c **** * Parameters:
+ 268:.\Generated_Source\PSoC5/USB_Bootloader_hid.c **** *  None.
+ 269:.\Generated_Source\PSoC5/USB_Bootloader_hid.c **** *
+ 270:.\Generated_Source\PSoC5/USB_Bootloader_hid.c **** * Return:
+ 271:.\Generated_Source\PSoC5/USB_Bootloader_hid.c **** *  currentTD
+ 272:.\Generated_Source\PSoC5/USB_Bootloader_hid.c **** *
+ 273:.\Generated_Source\PSoC5/USB_Bootloader_hid.c **** * Reentrant:
+ 274:.\Generated_Source\PSoC5/USB_Bootloader_hid.c **** *  No.
+ 275:.\Generated_Source\PSoC5/USB_Bootloader_hid.c **** *
+ 276:.\Generated_Source\PSoC5/USB_Bootloader_hid.c **** *******************************************************************************/
+ 277:.\Generated_Source\PSoC5/USB_Bootloader_hid.c **** void USB_Bootloader_FindHidClassDecriptor(void) 
+ 278:.\Generated_Source\PSoC5/USB_Bootloader_hid.c **** {
+ 117              		.loc 1 278 0
+ 118              		.cfi_startproc
+ 119              		@ args = 0, pretend = 0, frame = 0
+ 120              		@ frame_needed = 0, uses_anonymous_args = 0
+ARM GAS  C:\Users\Robert\AppData\Local\Temp\ccr2TuqX.s 			page 8
+
+
+ 121 0000 08B5     		push	{r3, lr}
+ 122              		.cfi_def_cfa_offset 8
+ 123              		.cfi_offset 3, -8
+ 124              		.cfi_offset 14, -4
+ 279:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****     const T_USB_Bootloader_LUT CYCODE *pTmp;
+ 280:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****     volatile uint8 *pDescr;
+ 281:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****     uint8 interfaceN;
+ 282:.\Generated_Source\PSoC5/USB_Bootloader_hid.c **** 
+ 283:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****     pTmp = USB_Bootloader_GetConfigTablePtr(USB_Bootloader_configuration - 1u);
+ 125              		.loc 1 283 0
+ 126 0002 0B4B     		ldr	r3, .L12
+ 127 0004 1878     		ldrb	r0, [r3]	@ zero_extendqisi2
+ 128 0006 0138     		subs	r0, r0, #1
+ 129 0008 C0B2     		uxtb	r0, r0
+ 130 000a FFF7FEFF 		bl	USB_Bootloader_GetConfigTablePtr
+ 131              	.LVL10:
+ 284:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****     interfaceN = CY_GET_REG8(USB_Bootloader_wIndexLo);
+ 132              		.loc 1 284 0
+ 133 000e 094B     		ldr	r3, .L12+4
+ 134 0010 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 135 0012 DBB2     		uxtb	r3, r3
+ 136              	.LVL11:
+ 285:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****     /* Third entry in the LUT starts the Interface Table pointers */
+ 286:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****     /* Now use the request interface number*/
+ 287:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****     pTmp = &pTmp[interfaceN + 2u];
+ 137              		.loc 1 287 0
+ 138 0014 00EBC300 		add	r0, r0, r3, lsl #3
+ 139              	.LVL12:
+ 288:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****     /* USB_DEVICEx_CONFIGURATIONy_INTERFACEz_TABLE */
+ 289:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****     pTmp = (const T_USB_Bootloader_LUT CYCODE *) pTmp->p_list;
+ 140              		.loc 1 289 0
+ 141 0018 4269     		ldr	r2, [r0, #20]
+ 142              	.LVL13:
+ 290:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****     /* Now use Alternate setting number */
+ 291:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****     pTmp = &pTmp[USB_Bootloader_interfaceSetting[interfaceN]];
+ 143              		.loc 1 291 0
+ 144 001a 0749     		ldr	r1, .L12+8
+ 145 001c CB5C     		ldrb	r3, [r1, r3]	@ zero_extendqisi2
+ 146              	.LVL14:
+ 147 001e 02EBC303 		add	r3, r2, r3, lsl #3
+ 148              	.LVL15:
+ 292:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****     /* USB_DEVICEx_CONFIGURATIONy_INTERFACEz_ALTERNATEi_HID_TABLE */
+ 293:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****     pTmp = (const T_USB_Bootloader_LUT CYCODE *) pTmp->p_list;
+ 149              		.loc 1 293 0
+ 150 0022 5B68     		ldr	r3, [r3, #4]
+ 151              	.LVL16:
+ 294:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****     /* Fifth entry in the LUT points to Hid Class Descriptor in Configuration Descriptor */
+ 295:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****     pTmp = &pTmp[4u];
+ 296:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****     pDescr = (volatile uint8 *)pTmp->p_list;
+ 152              		.loc 1 296 0
+ 153 0024 596A     		ldr	r1, [r3, #36]
+ 154              	.LVL17:
+ 297:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****     /* The first byte contains the descriptor length */
+ 298:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****     USB_Bootloader_currentTD.count = *pDescr;
+ 155              		.loc 1 298 0
+ 156 0026 0B78     		ldrb	r3, [r1]	@ zero_extendqisi2
+ 157              	.LVL18:
+ARM GAS  C:\Users\Robert\AppData\Local\Temp\ccr2TuqX.s 			page 9
+
+
+ 158 0028 044A     		ldr	r2, .L12+12
+ 159 002a 1380     		strh	r3, [r2]	@ movhi
+ 299:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****     USB_Bootloader_currentTD.pData = pDescr;
+ 160              		.loc 1 299 0
+ 161 002c 5160     		str	r1, [r2, #4]
+ 162 002e 08BD     		pop	{r3, pc}
+ 163              	.L13:
+ 164              		.align	2
+ 165              	.L12:
+ 166 0030 00000000 		.word	USB_Bootloader_configuration
+ 167 0034 04600040 		.word	1073766404
+ 168 0038 00000000 		.word	USB_Bootloader_interfaceSetting
+ 169 003c 00000000 		.word	USB_Bootloader_currentTD
+ 170              		.cfi_endproc
+ 171              	.LFE3:
+ 172              		.size	USB_Bootloader_FindHidClassDecriptor, .-USB_Bootloader_FindHidClassDecriptor
+ 173              		.section	.text.USB_Bootloader_FindReportDescriptor,"ax",%progbits
+ 174              		.align	2
+ 175              		.global	USB_Bootloader_FindReportDescriptor
+ 176              		.thumb
+ 177              		.thumb_func
+ 178              		.type	USB_Bootloader_FindReportDescriptor, %function
+ 179              	USB_Bootloader_FindReportDescriptor:
+ 180              	.LFB4:
+ 300:.\Generated_Source\PSoC5/USB_Bootloader_hid.c **** }
+ 301:.\Generated_Source\PSoC5/USB_Bootloader_hid.c **** 
+ 302:.\Generated_Source\PSoC5/USB_Bootloader_hid.c **** 
+ 303:.\Generated_Source\PSoC5/USB_Bootloader_hid.c **** /*******************************************************************************
+ 304:.\Generated_Source\PSoC5/USB_Bootloader_hid.c **** * Function Name: USB_FindReportDescriptor
+ 305:.\Generated_Source\PSoC5/USB_Bootloader_hid.c **** ********************************************************************************
+ 306:.\Generated_Source\PSoC5/USB_Bootloader_hid.c **** *
+ 307:.\Generated_Source\PSoC5/USB_Bootloader_hid.c **** * Summary:
+ 308:.\Generated_Source\PSoC5/USB_Bootloader_hid.c **** *  This routine find Hid Report Descriptor pointer based on the Interface
+ 309:.\Generated_Source\PSoC5/USB_Bootloader_hid.c **** *  number, then loads the currentTD structure with the address of the buffer
+ 310:.\Generated_Source\PSoC5/USB_Bootloader_hid.c **** *  and the size.
+ 311:.\Generated_Source\PSoC5/USB_Bootloader_hid.c **** *  Hid Report Descriptor is located after IN/OUT/FEATURE reports.
+ 312:.\Generated_Source\PSoC5/USB_Bootloader_hid.c **** *
+ 313:.\Generated_Source\PSoC5/USB_Bootloader_hid.c **** * Parameters:
+ 314:.\Generated_Source\PSoC5/USB_Bootloader_hid.c **** *   void
+ 315:.\Generated_Source\PSoC5/USB_Bootloader_hid.c **** *
+ 316:.\Generated_Source\PSoC5/USB_Bootloader_hid.c **** * Return:
+ 317:.\Generated_Source\PSoC5/USB_Bootloader_hid.c **** *  currentTD
+ 318:.\Generated_Source\PSoC5/USB_Bootloader_hid.c **** *
+ 319:.\Generated_Source\PSoC5/USB_Bootloader_hid.c **** * Reentrant:
+ 320:.\Generated_Source\PSoC5/USB_Bootloader_hid.c **** *  No.
+ 321:.\Generated_Source\PSoC5/USB_Bootloader_hid.c **** *
+ 322:.\Generated_Source\PSoC5/USB_Bootloader_hid.c **** *******************************************************************************/
+ 323:.\Generated_Source\PSoC5/USB_Bootloader_hid.c **** void USB_Bootloader_FindReportDescriptor(void) 
+ 324:.\Generated_Source\PSoC5/USB_Bootloader_hid.c **** {
+ 181              		.loc 1 324 0
+ 182              		.cfi_startproc
+ 183              		@ args = 0, pretend = 0, frame = 0
+ 184              		@ frame_needed = 0, uses_anonymous_args = 0
+ 185 0000 08B5     		push	{r3, lr}
+ 186              		.cfi_def_cfa_offset 8
+ 187              		.cfi_offset 3, -8
+ 188              		.cfi_offset 14, -4
+ARM GAS  C:\Users\Robert\AppData\Local\Temp\ccr2TuqX.s 			page 10
+
+
+ 325:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****     const T_USB_Bootloader_LUT CYCODE *pTmp;
+ 326:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****     volatile uint8 *pDescr;
+ 327:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****     uint8 interfaceN;
+ 328:.\Generated_Source\PSoC5/USB_Bootloader_hid.c **** 
+ 329:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****     pTmp = USB_Bootloader_GetConfigTablePtr(USB_Bootloader_configuration - 1u);
+ 189              		.loc 1 329 0
+ 190 0002 0D4B     		ldr	r3, .L16
+ 191 0004 1878     		ldrb	r0, [r3]	@ zero_extendqisi2
+ 192 0006 0138     		subs	r0, r0, #1
+ 193 0008 C0B2     		uxtb	r0, r0
+ 194 000a FFF7FEFF 		bl	USB_Bootloader_GetConfigTablePtr
+ 195              	.LVL19:
+ 330:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****     interfaceN = CY_GET_REG8(USB_Bootloader_wIndexLo);
+ 196              		.loc 1 330 0
+ 197 000e 0B4B     		ldr	r3, .L16+4
+ 198 0010 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 199 0012 DBB2     		uxtb	r3, r3
+ 200              	.LVL20:
+ 331:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****     /* Third entry in the LUT starts the Interface Table pointers */
+ 332:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****     /* Now use the request interface number */
+ 333:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****     pTmp = &pTmp[interfaceN + 2u];
+ 201              		.loc 1 333 0
+ 202 0014 00EBC300 		add	r0, r0, r3, lsl #3
+ 203              	.LVL21:
+ 334:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****     /* USB_DEVICEx_CONFIGURATIONy_INTERFACEz_TABLE */
+ 335:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****     pTmp = (const T_USB_Bootloader_LUT CYCODE *) pTmp->p_list;
+ 204              		.loc 1 335 0
+ 205 0018 4269     		ldr	r2, [r0, #20]
+ 206              	.LVL22:
+ 336:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****     /* Now use Alternate setting number */
+ 337:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****     pTmp = &pTmp[USB_Bootloader_interfaceSetting[interfaceN]];
+ 207              		.loc 1 337 0
+ 208 001a 0949     		ldr	r1, .L16+8
+ 209 001c CB5C     		ldrb	r3, [r1, r3]	@ zero_extendqisi2
+ 210              	.LVL23:
+ 211 001e 02EBC303 		add	r3, r2, r3, lsl #3
+ 212              	.LVL24:
+ 338:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****     /* USB_DEVICEx_CONFIGURATIONy_INTERFACEz_ALTERNATEi_HID_TABLE */
+ 339:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****     pTmp = (const T_USB_Bootloader_LUT CYCODE *) pTmp->p_list;
+ 213              		.loc 1 339 0
+ 214 0022 5B68     		ldr	r3, [r3, #4]
+ 215              	.LVL25:
+ 340:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****     /* Fourth entry in the LUT starts the Hid Report Descriptor */
+ 341:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****     pTmp = &pTmp[3u];
+ 342:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****     pDescr = (volatile uint8 *)pTmp->p_list;
+ 216              		.loc 1 342 0
+ 217 0024 DB69     		ldr	r3, [r3, #28]
+ 218              	.LVL26:
+ 343:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****     /* The 1st and 2nd bytes of descriptor contain its length. LSB is 1st. */
+ 344:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****     USB_Bootloader_currentTD.count =  (((uint16)pDescr[1u] << 8u) | pDescr[0u]);
+ 219              		.loc 1 344 0
+ 220 0026 5978     		ldrb	r1, [r3, #1]	@ zero_extendqisi2
+ 221 0028 13F8022B 		ldrb	r2, [r3], #2	@ zero_extendqisi2
+ 222              	.LVL27:
+ 223 002c 42EA0122 		orr	r2, r2, r1, lsl #8
+ 224 0030 0449     		ldr	r1, .L16+12
+ 225 0032 0A80     		strh	r2, [r1]	@ movhi
+ARM GAS  C:\Users\Robert\AppData\Local\Temp\ccr2TuqX.s 			page 11
+
+
+ 345:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****     USB_Bootloader_currentTD.pData = &pDescr[2u];
+ 226              		.loc 1 345 0
+ 227 0034 4B60     		str	r3, [r1, #4]
+ 228 0036 08BD     		pop	{r3, pc}
+ 229              	.LVL28:
+ 230              	.L17:
+ 231              		.align	2
+ 232              	.L16:
+ 233 0038 00000000 		.word	USB_Bootloader_configuration
+ 234 003c 04600040 		.word	1073766404
+ 235 0040 00000000 		.word	USB_Bootloader_interfaceSetting
+ 236 0044 00000000 		.word	USB_Bootloader_currentTD
+ 237              		.cfi_endproc
+ 238              	.LFE4:
+ 239              		.size	USB_Bootloader_FindReportDescriptor, .-USB_Bootloader_FindReportDescriptor
+ 240              		.section	.text.USB_Bootloader_FindReport,"ax",%progbits
+ 241              		.align	2
+ 242              		.global	USB_Bootloader_FindReport
+ 243              		.thumb
+ 244              		.thumb_func
+ 245              		.type	USB_Bootloader_FindReport, %function
+ 246              	USB_Bootloader_FindReport:
+ 247              	.LFB5:
+ 346:.\Generated_Source\PSoC5/USB_Bootloader_hid.c **** }
+ 347:.\Generated_Source\PSoC5/USB_Bootloader_hid.c **** 
+ 348:.\Generated_Source\PSoC5/USB_Bootloader_hid.c **** 
+ 349:.\Generated_Source\PSoC5/USB_Bootloader_hid.c **** /*******************************************************************************
+ 350:.\Generated_Source\PSoC5/USB_Bootloader_hid.c **** * Function Name: USB_Bootloader_FindReport
+ 351:.\Generated_Source\PSoC5/USB_Bootloader_hid.c **** ********************************************************************************
+ 352:.\Generated_Source\PSoC5/USB_Bootloader_hid.c **** *
+ 353:.\Generated_Source\PSoC5/USB_Bootloader_hid.c **** * Summary:
+ 354:.\Generated_Source\PSoC5/USB_Bootloader_hid.c **** *  This routine sets up a transfer based on the Interface number, Report Type
+ 355:.\Generated_Source\PSoC5/USB_Bootloader_hid.c **** *  and Report ID, then loads the currentTD structure with the address of the
+ 356:.\Generated_Source\PSoC5/USB_Bootloader_hid.c **** *  buffer and the size.  The caller has to decide if it is a control read or
+ 357:.\Generated_Source\PSoC5/USB_Bootloader_hid.c **** *  control write.
+ 358:.\Generated_Source\PSoC5/USB_Bootloader_hid.c **** *
+ 359:.\Generated_Source\PSoC5/USB_Bootloader_hid.c **** * Parameters:
+ 360:.\Generated_Source\PSoC5/USB_Bootloader_hid.c **** *  None.
+ 361:.\Generated_Source\PSoC5/USB_Bootloader_hid.c **** *
+ 362:.\Generated_Source\PSoC5/USB_Bootloader_hid.c **** * Return:
+ 363:.\Generated_Source\PSoC5/USB_Bootloader_hid.c **** *  currentTD
+ 364:.\Generated_Source\PSoC5/USB_Bootloader_hid.c **** *
+ 365:.\Generated_Source\PSoC5/USB_Bootloader_hid.c **** * Reentrant:
+ 366:.\Generated_Source\PSoC5/USB_Bootloader_hid.c **** *  No.
+ 367:.\Generated_Source\PSoC5/USB_Bootloader_hid.c **** *
+ 368:.\Generated_Source\PSoC5/USB_Bootloader_hid.c **** *******************************************************************************/
+ 369:.\Generated_Source\PSoC5/USB_Bootloader_hid.c **** void USB_Bootloader_FindReport(void) 
+ 370:.\Generated_Source\PSoC5/USB_Bootloader_hid.c **** {
+ 248              		.loc 1 370 0
+ 249              		.cfi_startproc
+ 250              		@ args = 0, pretend = 0, frame = 0
+ 251              		@ frame_needed = 0, uses_anonymous_args = 0
+ 252 0000 10B5     		push	{r4, lr}
+ 253              		.cfi_def_cfa_offset 8
+ 254              		.cfi_offset 4, -8
+ 255              		.cfi_offset 14, -4
+ 371:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****     const T_USB_Bootloader_LUT CYCODE *pTmp;
+ARM GAS  C:\Users\Robert\AppData\Local\Temp\ccr2TuqX.s 			page 12
+
+
+ 372:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****     T_USB_Bootloader_TD *pTD;
+ 373:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****     uint8 interfaceN;
+ 374:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****     uint8 reportType;
+ 375:.\Generated_Source\PSoC5/USB_Bootloader_hid.c **** 
+ 376:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****     /* `#START HID_FINDREPORT` Place custom handling here */
+ 377:.\Generated_Source\PSoC5/USB_Bootloader_hid.c **** 
+ 378:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****     /* `#END` */
+ 379:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****     
+ 380:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****     #ifdef USB_Bootloader_FIND_REPORT_CALLBACK
+ 381:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****         USB_Bootloader_FindReport_Callback();
+ 382:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****     #endif /* USB_Bootloader_FIND_REPORT_CALLBACK */
+ 383:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****     
+ 384:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****     USB_Bootloader_currentTD.count = 0u;   /* Init not supported condition */
+ 256              		.loc 1 384 0
+ 257 0002 0022     		movs	r2, #0
+ 258 0004 194B     		ldr	r3, .L21
+ 259 0006 1A80     		strh	r2, [r3]	@ movhi
+ 385:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****     pTmp = USB_Bootloader_GetConfigTablePtr(USB_Bootloader_configuration - 1u);
+ 260              		.loc 1 385 0
+ 261 0008 194B     		ldr	r3, .L21+4
+ 262 000a 1878     		ldrb	r0, [r3]	@ zero_extendqisi2
+ 263 000c 0138     		subs	r0, r0, #1
+ 264 000e C0B2     		uxtb	r0, r0
+ 265 0010 FFF7FEFF 		bl	USB_Bootloader_GetConfigTablePtr
+ 266              	.LVL29:
+ 386:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****     reportType = CY_GET_REG8(USB_Bootloader_wValueHi);
+ 267              		.loc 1 386 0
+ 268 0014 174B     		ldr	r3, .L21+8
+ 269 0016 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 270 0018 DBB2     		uxtb	r3, r3
+ 271              	.LVL30:
+ 387:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****     interfaceN = CY_GET_REG8(USB_Bootloader_wIndexLo);
+ 272              		.loc 1 387 0
+ 273 001a 174A     		ldr	r2, .L21+12
+ 274 001c 1278     		ldrb	r2, [r2]	@ zero_extendqisi2
+ 275 001e D2B2     		uxtb	r2, r2
+ 276              	.LVL31:
+ 388:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****     /* Third entry in the LUT COnfiguration Table starts the Interface Table pointers */
+ 389:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****     /* Now use the request interface number */
+ 390:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****     pTmp = &pTmp[interfaceN + 2u];
+ 277              		.loc 1 390 0
+ 278 0020 00EBC200 		add	r0, r0, r2, lsl #3
+ 279              	.LVL32:
+ 391:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****     /* USB_DEVICEx_CONFIGURATIONy_INTERFACEz_TABLE*/
+ 392:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****     pTmp = (const T_USB_Bootloader_LUT CYCODE *) pTmp->p_list;
+ 280              		.loc 1 392 0
+ 281 0024 4169     		ldr	r1, [r0, #20]
+ 282              	.LVL33:
+ 393:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****     if(interfaceN < USB_Bootloader_MAX_INTERFACES_NUMBER)
+ 283              		.loc 1 393 0
+ 284 0026 02BB     		cbnz	r2, .L18
+ 394:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****     {
+ 395:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****         /* Now use Alternate setting number */
+ 396:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****         pTmp = &pTmp[USB_Bootloader_interfaceSetting[interfaceN]];
+ 285              		.loc 1 396 0
+ 286 0028 1448     		ldr	r0, .L21+16
+ 287 002a 825C     		ldrb	r2, [r0, r2]	@ zero_extendqisi2
+ARM GAS  C:\Users\Robert\AppData\Local\Temp\ccr2TuqX.s 			page 13
+
+
+ 288              	.LVL34:
+ 289 002c 01EBC201 		add	r1, r1, r2, lsl #3
+ 290              	.LVL35:
+ 397:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****         /* USB_DEVICEx_CONFIGURATIONy_INTERFACEz_ALTERNATEi_HID_TABLE */
+ 398:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****         pTmp = (const T_USB_Bootloader_LUT CYCODE *) pTmp->p_list;
+ 291              		.loc 1 398 0
+ 292 0030 4968     		ldr	r1, [r1, #4]
+ 293              	.LVL36:
+ 399:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****         /* Validate reportType to comply with "7.2.1 Get_Report Request" */
+ 400:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****         if((reportType >= USB_Bootloader_HID_GET_REPORT_INPUT) &&
+ 294              		.loc 1 400 0
+ 295 0032 5A1E     		subs	r2, r3, #1
+ 296 0034 D2B2     		uxtb	r2, r2
+ 297 0036 022A     		cmp	r2, #2
+ 298 0038 17D8     		bhi	.L18
+ 401:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****            (reportType <= USB_Bootloader_HID_GET_REPORT_FEATURE))
+ 402:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****         {
+ 403:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****             /* Get the entry proper TD (IN, OUT or Feature Report Table)*/
+ 404:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****             pTmp = &pTmp[reportType - 1u];
+ 299              		.loc 1 404 0
+ 300 003a 03F10053 		add	r3, r3, #536870912
+ 301              	.LVL37:
+ 302 003e 013B     		subs	r3, r3, #1
+ 303              	.LVL38:
+ 304 0040 01EBC300 		add	r0, r1, r3, lsl #3
+ 305              	.LVL39:
+ 405:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****             reportType = CY_GET_REG8(USB_Bootloader_wValueLo);    /* Get reportID */
+ 306              		.loc 1 405 0
+ 307 0044 0E4A     		ldr	r2, .L21+20
+ 308 0046 1278     		ldrb	r2, [r2]	@ zero_extendqisi2
+ 309 0048 D2B2     		uxtb	r2, r2
+ 310              	.LVL40:
+ 406:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****             /* Validate table support by the HID descriptor, compare table count with reportID */
+ 407:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****             if(pTmp->c >= reportType)
+ 311              		.loc 1 407 0
+ 312 004a 11F83330 		ldrb	r3, [r1, r3, lsl #3]	@ zero_extendqisi2
+ 313 004e 9342     		cmp	r3, r2
+ 314 0050 0BD3     		bcc	.L18
+ 408:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****             {
+ 409:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****                 pTD = (T_USB_Bootloader_TD *) pTmp->p_list;
+ 315              		.loc 1 409 0
+ 316 0052 4068     		ldr	r0, [r0, #4]
+ 317              	.LVL41:
+ 410:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****                 pTD = &pTD[reportType];                          /* select entry depend on report I
+ 318              		.loc 1 410 0
+ 319 0054 02EB4202 		add	r2, r2, r2, lsl #1
+ 320              	.LVL42:
+ 321 0058 9200     		lsls	r2, r2, #2
+ 322 005a 8118     		adds	r1, r0, r2
+ 323              	.LVL43:
+ 411:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****                 USB_Bootloader_currentTD.pData = pTD->pData;   /* Buffer pointer */
+ 324              		.loc 1 411 0
+ 325 005c 4C68     		ldr	r4, [r1, #4]
+ 326 005e 034B     		ldr	r3, .L21
+ 327 0060 5C60     		str	r4, [r3, #4]
+ 412:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****                 USB_Bootloader_currentTD.count = pTD->count;   /* Buffer Size */
+ 328              		.loc 1 412 0
+ARM GAS  C:\Users\Robert\AppData\Local\Temp\ccr2TuqX.s 			page 14
+
+
+ 329 0062 825A     		ldrh	r2, [r0, r2]
+ 330 0064 1A80     		strh	r2, [r3]	@ movhi
+ 413:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****                 USB_Bootloader_currentTD.pStatusBlock = pTD->pStatusBlock;
+ 331              		.loc 1 413 0
+ 332 0066 8A68     		ldr	r2, [r1, #8]
+ 333 0068 9A60     		str	r2, [r3, #8]
+ 334              	.LVL44:
+ 335              	.L18:
+ 336 006a 10BD     		pop	{r4, pc}
+ 337              	.L22:
+ 338              		.align	2
+ 339              	.L21:
+ 340 006c 00000000 		.word	USB_Bootloader_currentTD
+ 341 0070 00000000 		.word	USB_Bootloader_configuration
+ 342 0074 03600040 		.word	1073766403
+ 343 0078 04600040 		.word	1073766404
+ 344 007c 00000000 		.word	USB_Bootloader_interfaceSetting
+ 345 0080 02600040 		.word	1073766402
+ 346              		.cfi_endproc
+ 347              	.LFE5:
+ 348              		.size	USB_Bootloader_FindReport, .-USB_Bootloader_FindReport
+ 349              		.section	.text.USB_Bootloader_DispatchHIDClassRqst,"ax",%progbits
+ 350              		.align	2
+ 351              		.global	USB_Bootloader_DispatchHIDClassRqst
+ 352              		.thumb
+ 353              		.thumb_func
+ 354              		.type	USB_Bootloader_DispatchHIDClassRqst, %function
+ 355              	USB_Bootloader_DispatchHIDClassRqst:
+ 356              	.LFB2:
+ 124:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****     uint8 requestHandled = USB_Bootloader_FALSE;
+ 357              		.loc 1 124 0
+ 358              		.cfi_startproc
+ 359              		@ args = 0, pretend = 0, frame = 0
+ 360              		@ frame_needed = 0, uses_anonymous_args = 0
+ 361 0000 08B5     		push	{r3, lr}
+ 362              		.cfi_def_cfa_offset 8
+ 363              		.cfi_offset 3, -8
+ 364              		.cfi_offset 14, -4
+ 365              	.LVL45:
+ 128:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****     if ((CY_GET_REG8(USB_Bootloader_bmRequestType) & USB_Bootloader_RQST_DIR_MASK) == USB_Bootloade
+ 366              		.loc 1 128 0
+ 367 0002 5F4B     		ldr	r3, .L54
+ 368 0004 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 369 0006 DAB2     		uxtb	r2, r3
+ 370              	.LVL46:
+ 129:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****     {   /* Control Read */
+ 371              		.loc 1 129 0
+ 372 0008 5E4B     		ldr	r3, .L54+4
+ 373 000a 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 374 000c 13F0800F 		tst	r3, #128
+ 375 0010 4ED0     		beq	.L24
+ 131:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****         {
+ 376              		.loc 1 131 0
+ 377 0012 5D4B     		ldr	r3, .L54+8
+ 378 0014 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 379 0016 013B     		subs	r3, r3, #1
+ 380 0018 052B     		cmp	r3, #5
+ARM GAS  C:\Users\Robert\AppData\Local\Temp\ccr2TuqX.s 			page 15
+
+
+ 381 001a 00F29280 		bhi	.L37
+ 382 001e DFE803F0 		tbb	[pc, r3]
+ 383              	.L27:
+ 384 0022 22       		.byte	(.L26-.L27)/2
+ 385 0023 2C       		.byte	(.L28-.L27)/2
+ 386 0024 3C       		.byte	(.L29-.L27)/2
+ 387 0025 90       		.byte	(.L37-.L27)/2
+ 388 0026 90       		.byte	(.L37-.L27)/2
+ 389 0027 03       		.byte	(.L30-.L27)/2
+ 390              		.p2align 1
+ 391              	.L30:
+ 134:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****                 {
+ 392              		.loc 1 134 0
+ 393 0028 584B     		ldr	r3, .L54+12
+ 394 002a 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 395 002c DBB2     		uxtb	r3, r3
+ 396 002e 212B     		cmp	r3, #33
+ 397 0030 0AD1     		bne	.L31
+ 136:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****                     if (USB_Bootloader_currentTD.count != 0u)
+ 398              		.loc 1 136 0
+ 399 0032 FFF7FEFF 		bl	USB_Bootloader_FindHidClassDecriptor
+ 400              	.LVL47:
+ 137:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****                     {
+ 401              		.loc 1 137 0
+ 402 0036 564B     		ldr	r3, .L54+16
+ 403 0038 1B88     		ldrh	r3, [r3]
+ 404 003a 9BB2     		uxth	r3, r3
+ 405 003c 002B     		cmp	r3, #0
+ 406 003e 00F08280 		beq	.L38
+ 139:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****                     }
+ 407              		.loc 1 139 0
+ 408 0042 FFF7FEFF 		bl	USB_Bootloader_InitControlRead
+ 409              	.LVL48:
+ 410 0046 08BD     		pop	{r3, pc}
+ 411              	.LVL49:
+ 412              	.L31:
+ 142:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****                 {
+ 413              		.loc 1 142 0
+ 414 0048 504B     		ldr	r3, .L54+12
+ 415 004a 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 416 004c DBB2     		uxtb	r3, r3
+ 417 004e 222B     		cmp	r3, #34
+ 418 0050 7BD1     		bne	.L39
+ 144:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****                     if (USB_Bootloader_currentTD.count != 0u)
+ 419              		.loc 1 144 0
+ 420 0052 FFF7FEFF 		bl	USB_Bootloader_FindReportDescriptor
+ 421              	.LVL50:
+ 145:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****                     {
+ 422              		.loc 1 145 0
+ 423 0056 4E4B     		ldr	r3, .L54+16
+ 424 0058 1B88     		ldrh	r3, [r3]
+ 425 005a 9BB2     		uxth	r3, r3
+ 426 005c 002B     		cmp	r3, #0
+ 427 005e 76D0     		beq	.L40
+ 147:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****                     }
+ 428              		.loc 1 147 0
+ 429 0060 FFF7FEFF 		bl	USB_Bootloader_InitControlRead
+ARM GAS  C:\Users\Robert\AppData\Local\Temp\ccr2TuqX.s 			page 16
+
+
+ 430              	.LVL51:
+ 431 0064 08BD     		pop	{r3, pc}
+ 432              	.LVL52:
+ 433              	.L26:
+ 155:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****                 if (USB_Bootloader_currentTD.count != 0u)
+ 434              		.loc 1 155 0
+ 435 0066 FFF7FEFF 		bl	USB_Bootloader_FindReport
+ 436              	.LVL53:
+ 156:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****                 {
+ 437              		.loc 1 156 0
+ 438 006a 494B     		ldr	r3, .L54+16
+ 439 006c 1B88     		ldrh	r3, [r3]
+ 440 006e 9BB2     		uxth	r3, r3
+ 441 0070 002B     		cmp	r3, #0
+ 442 0072 6ED0     		beq	.L41
+ 158:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****                 }
+ 443              		.loc 1 158 0
+ 444 0074 FFF7FEFF 		bl	USB_Bootloader_InitControlRead
+ 445              	.LVL54:
+ 446 0078 08BD     		pop	{r3, pc}
+ 447              	.LVL55:
+ 448              	.L28:
+ 165:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****                     (CY_GET_REG8(USB_Bootloader_wValueLo) == 0u ) ) /* Do not support Idle per Repo
+ 449              		.loc 1 165 0
+ 450 007a 002A     		cmp	r2, #0
+ 451 007c 6BD1     		bne	.L42
+ 166:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****                 {
+ 452              		.loc 1 166 0 discriminator 1
+ 453 007e 454B     		ldr	r3, .L54+20
+ 454 0080 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 165:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****                     (CY_GET_REG8(USB_Bootloader_wValueLo) == 0u ) ) /* Do not support Idle per Repo
+ 455              		.loc 1 165 0 discriminator 1
+ 456 0082 13F0FF0F 		tst	r3, #255
+ 457 0086 68D1     		bne	.L43
+ 168:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****                     USB_Bootloader_currentTD.pData = &USB_Bootloader_hidIdleRate[interfaceNumber];
+ 458              		.loc 1 168 0
+ 459 0088 4149     		ldr	r1, .L54+16
+ 460 008a 0123     		movs	r3, #1
+ 461 008c 0B80     		strh	r3, [r1]	@ movhi
+ 169:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****                     requestHandled  = USB_Bootloader_InitControlRead();
+ 462              		.loc 1 169 0
+ 463 008e 424B     		ldr	r3, .L54+24
+ 464 0090 1344     		add	r3, r3, r2
+ 465 0092 4B60     		str	r3, [r1, #4]
+ 170:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****                 }
+ 466              		.loc 1 170 0
+ 467 0094 FFF7FEFF 		bl	USB_Bootloader_InitControlRead
+ 468              	.LVL56:
+ 469 0098 08BD     		pop	{r3, pc}
+ 470              	.LVL57:
+ 471              	.L29:
+ 175:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****                 {
+ 472              		.loc 1 175 0
+ 473 009a 002A     		cmp	r2, #0
+ 474 009c 5FD1     		bne	.L44
+ 177:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****                     USB_Bootloader_currentTD.pData = &USB_Bootloader_hidProtocol[interfaceNumber];
+ 475              		.loc 1 177 0
+ARM GAS  C:\Users\Robert\AppData\Local\Temp\ccr2TuqX.s 			page 17
+
+
+ 476 009e 3C49     		ldr	r1, .L54+16
+ 477 00a0 0123     		movs	r3, #1
+ 478 00a2 0B80     		strh	r3, [r1]	@ movhi
+ 178:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****                     requestHandled  = USB_Bootloader_InitControlRead();
+ 479              		.loc 1 178 0
+ 480 00a4 3D4B     		ldr	r3, .L54+28
+ 481 00a6 1344     		add	r3, r3, r2
+ 482 00a8 4B60     		str	r3, [r1, #4]
+ 179:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****                 }
+ 483              		.loc 1 179 0
+ 484 00aa FFF7FEFF 		bl	USB_Bootloader_InitControlRead
+ 485              	.LVL58:
+ 486 00ae 08BD     		pop	{r3, pc}
+ 487              	.LVL59:
+ 488              	.L24:
+ 186:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****                                                                             USB_Bootloader_RQST_DIR
+ 489              		.loc 1 186 0
+ 490 00b0 344B     		ldr	r3, .L54+4
+ 491 00b2 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 492 00b4 13F0800F 		tst	r3, #128
+ 493 00b8 53D1     		bne	.L45
+ 189:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****         {
+ 494              		.loc 1 189 0
+ 495 00ba 334B     		ldr	r3, .L54+8
+ 496 00bc 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 497 00be DBB2     		uxtb	r3, r3
+ 498 00c0 0A2B     		cmp	r3, #10
+ 499 00c2 0DD0     		beq	.L32
+ 500 00c4 0B2B     		cmp	r3, #11
+ 501 00c6 2ED0     		beq	.L33
+ 502 00c8 092B     		cmp	r3, #9
+ 503 00ca 4CD1     		bne	.L52
+ 192:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****                 if (USB_Bootloader_currentTD.count != 0u)
+ 504              		.loc 1 192 0
+ 505 00cc FFF7FEFF 		bl	USB_Bootloader_FindReport
+ 506              	.LVL60:
+ 193:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****                 {
+ 507              		.loc 1 193 0
+ 508 00d0 2F4B     		ldr	r3, .L54+16
+ 509 00d2 1B88     		ldrh	r3, [r3]
+ 510 00d4 9BB2     		uxth	r3, r3
+ 511 00d6 002B     		cmp	r3, #0
+ 512 00d8 47D0     		beq	.L47
+ 195:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****                 }
+ 513              		.loc 1 195 0
+ 514 00da FFF7FEFF 		bl	USB_Bootloader_InitControlWrite
+ 515              	.LVL61:
+ 516 00de 08BD     		pop	{r3, pc}
+ 517              	.LVL62:
+ 518              	.L32:
+ 201:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****                     (CY_GET_REG8(USB_Bootloader_wValueLo) == 0u ) ) /* Do not support Idle per Repo
+ 519              		.loc 1 201 0
+ 520 00e0 002A     		cmp	r2, #0
+ 521 00e2 44D1     		bne	.L48
+ 202:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****                 {
+ 522              		.loc 1 202 0 discriminator 1
+ 523 00e4 2B4B     		ldr	r3, .L54+20
+ARM GAS  C:\Users\Robert\AppData\Local\Temp\ccr2TuqX.s 			page 18
+
+
+ 524 00e6 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 201:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****                     (CY_GET_REG8(USB_Bootloader_wValueLo) == 0u ) ) /* Do not support Idle per Repo
+ 525              		.loc 1 201 0 discriminator 1
+ 526 00e8 13F0FF0F 		tst	r3, #255
+ 527 00ec 41D1     		bne	.L49
+ 204:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****                     /* With regards to HID spec: "7.2.4 Set_Idle Request"
+ 528              		.loc 1 204 0
+ 529 00ee 274B     		ldr	r3, .L54+12
+ 530 00f0 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 531 00f2 DBB2     		uxtb	r3, r3
+ 532 00f4 2849     		ldr	r1, .L54+24
+ 533 00f6 8B54     		strb	r3, [r1, r2]
+ 210:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****                        USB_Bootloader_hidIdleTimer[interfaceNumber])
+ 534              		.loc 1 210 0
+ 535 00f8 8B5C     		ldrb	r3, [r1, r2]	@ zero_extendqisi2
+ 211:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****                     {
+ 536              		.loc 1 211 0
+ 537 00fa 2949     		ldr	r1, .L54+32
+ 538 00fc 895C     		ldrb	r1, [r1, r2]	@ zero_extendqisi2
+ 539 00fe DBB2     		uxtb	r3, r3
+ 210:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****                        USB_Bootloader_hidIdleTimer[interfaceNumber])
+ 540              		.loc 1 210 0
+ 541 0100 8B42     		cmp	r3, r1
+ 542 0102 03D2     		bcs	.L35
+ 214:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****                     }
+ 543              		.loc 1 214 0
+ 544 0104 0021     		movs	r1, #0
+ 545 0106 264B     		ldr	r3, .L54+32
+ 546 0108 9954     		strb	r1, [r3, r2]
+ 547 010a 09E0     		b	.L36
+ 548              	.L35:
+ 220:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****                     {
+ 549              		.loc 1 220 0
+ 550 010c 244B     		ldr	r3, .L54+32
+ 551 010e 9B5C     		ldrb	r3, [r3, r2]	@ zero_extendqisi2
+ 552 0110 DBB2     		uxtb	r3, r3
+ 553 0112 012B     		cmp	r3, #1
+ 554 0114 04D9     		bls	.L36
+ 230:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****                     }
+ 555              		.loc 1 230 0
+ 556 0116 204B     		ldr	r3, .L54+24
+ 557 0118 9B5C     		ldrb	r3, [r3, r2]	@ zero_extendqisi2
+ 558 011a DBB2     		uxtb	r3, r3
+ 229:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****                         USB_Bootloader_hidIdleRate[interfaceNumber];
+ 559              		.loc 1 229 0
+ 560 011c 2049     		ldr	r1, .L54+32
+ 561 011e 8B54     		strb	r3, [r1, r2]
+ 562              	.L36:
+ 232:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****                 }
+ 563              		.loc 1 232 0
+ 564 0120 FFF7FEFF 		bl	USB_Bootloader_InitNoDataControlTransfer
+ 565              	.LVL63:
+ 566 0124 08BD     		pop	{r3, pc}
+ 567              	.LVL64:
+ 568              	.L33:
+ 238:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****                     (CY_GET_REG8(USB_Bootloader_wValueLo) <= 1u) )
+ 569              		.loc 1 238 0
+ARM GAS  C:\Users\Robert\AppData\Local\Temp\ccr2TuqX.s 			page 19
+
+
+ 570 0126 32BB     		cbnz	r2, .L50
+ 239:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****                 {
+ 571              		.loc 1 239 0 discriminator 1
+ 572 0128 1A4B     		ldr	r3, .L54+20
+ 573 012a 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 574 012c DBB2     		uxtb	r3, r3
+ 238:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****                     (CY_GET_REG8(USB_Bootloader_wValueLo) <= 1u) )
+ 575              		.loc 1 238 0 discriminator 1
+ 576 012e 012B     		cmp	r3, #1
+ 577 0130 23D8     		bhi	.L51
+ 241:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****                     requestHandled = USB_Bootloader_InitNoDataControlTransfer();
+ 578              		.loc 1 241 0
+ 579 0132 184B     		ldr	r3, .L54+20
+ 580 0134 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 581 0136 DBB2     		uxtb	r3, r3
+ 582 0138 1849     		ldr	r1, .L54+28
+ 583 013a 8B54     		strb	r3, [r1, r2]
+ 242:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****                 }
+ 584              		.loc 1 242 0
+ 585 013c FFF7FEFF 		bl	USB_Bootloader_InitNoDataControlTransfer
+ 586              	.LVL65:
+ 587 0140 08BD     		pop	{r3, pc}
+ 588              	.LVL66:
+ 589              	.L37:
+ 125:.\Generated_Source\PSoC5/USB_Bootloader_hid.c ****     uint8 interfaceNumber;
+ 590              		.loc 1 125 0
+ 591 0142 0020     		movs	r0, #0
+ 592 0144 08BD     		pop	{r3, pc}
+ 593              	.LVL67:
+ 594              	.L38:
+ 595 0146 0020     		movs	r0, #0
+ 596 0148 08BD     		pop	{r3, pc}
+ 597              	.LVL68:
+ 598              	.L39:
+ 599 014a 0020     		movs	r0, #0
+ 600 014c 08BD     		pop	{r3, pc}
+ 601              	.LVL69:
+ 602              	.L40:
+ 603 014e 0020     		movs	r0, #0
+ 604 0150 08BD     		pop	{r3, pc}
+ 605              	.L41:
+ 606 0152 0020     		movs	r0, #0
+ 607 0154 08BD     		pop	{r3, pc}
+ 608              	.LVL70:
+ 609              	.L42:
+ 610 0156 0020     		movs	r0, #0
+ 611 0158 08BD     		pop	{r3, pc}
+ 612              	.L43:
+ 613 015a 0020     		movs	r0, #0
+ 614 015c 08BD     		pop	{r3, pc}
+ 615              	.L44:
+ 616 015e 0020     		movs	r0, #0
+ 617 0160 08BD     		pop	{r3, pc}
+ 618              	.L45:
+ 619 0162 0020     		movs	r0, #0
+ 620 0164 08BD     		pop	{r3, pc}
+ 621              	.L52:
+ARM GAS  C:\Users\Robert\AppData\Local\Temp\ccr2TuqX.s 			page 20
+
+
+ 622 0166 0020     		movs	r0, #0
+ 623 0168 08BD     		pop	{r3, pc}
+ 624              	.LVL71:
+ 625              	.L47:
+ 626 016a 0020     		movs	r0, #0
+ 627 016c 08BD     		pop	{r3, pc}
+ 628              	.LVL72:
+ 629              	.L48:
+ 630 016e 0020     		movs	r0, #0
+ 631 0170 08BD     		pop	{r3, pc}
+ 632              	.L49:
+ 633 0172 0020     		movs	r0, #0
+ 634 0174 08BD     		pop	{r3, pc}
+ 635              	.L50:
+ 636 0176 0020     		movs	r0, #0
+ 637 0178 08BD     		pop	{r3, pc}
+ 638              	.L51:
+ 639 017a 0020     		movs	r0, #0
+ 640              	.LVL73:
+ 254:.\Generated_Source\PSoC5/USB_Bootloader_hid.c **** 
+ 641              		.loc 1 254 0
+ 642 017c 08BD     		pop	{r3, pc}
+ 643              	.L55:
+ 644 017e 00BF     		.align	2
+ 645              	.L54:
+ 646 0180 04600040 		.word	1073766404
+ 647 0184 00600040 		.word	1073766400
+ 648 0188 01600040 		.word	1073766401
+ 649 018c 03600040 		.word	1073766403
+ 650 0190 00000000 		.word	USB_Bootloader_currentTD
+ 651 0194 02600040 		.word	1073766402
+ 652 0198 00000000 		.word	USB_Bootloader_hidIdleRate
+ 653 019c 00000000 		.word	USB_Bootloader_hidProtocol
+ 654 01a0 00000000 		.word	USB_Bootloader_hidIdleTimer
+ 655              		.cfi_endproc
+ 656              	.LFE2:
+ 657              		.size	USB_Bootloader_DispatchHIDClassRqst, .-USB_Bootloader_DispatchHIDClassRqst
+ 658              		.comm	USB_Bootloader_hidIdleTimer,1,4
+ 659              		.comm	USB_Bootloader_hidIdleRate,1,4
+ 660              		.comm	USB_Bootloader_hidProtocol,1,4
+ 661              		.text
+ 662              	.Letext0:
+ 663              		.file 2 ".\\Generated_Source\\PSoC5\\cytypes.h"
+ 664              		.file 3 ".\\Generated_Source\\PSoC5\\USB_Bootloader.h"
+ 665              		.file 4 ".\\Generated_Source\\PSoC5\\USB_Bootloader_pvt.h"
+ 666              		.section	.debug_info,"",%progbits
+ 667              	.Ldebug_info0:
+ 668 0000 14040000 		.4byte	0x414
+ 669 0004 0400     		.2byte	0x4
+ 670 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 671 000a 04       		.byte	0x4
+ 672 000b 01       		.uleb128 0x1
+ 673 000c 21020000 		.4byte	.LASF48
+ 674 0010 01       		.byte	0x1
+ 675 0011 16040000 		.4byte	.LASF49
+ 676 0015 0D000000 		.4byte	.LASF50
+ 677 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ARM GAS  C:\Users\Robert\AppData\Local\Temp\ccr2TuqX.s 			page 21
+
+
+ 678 001d 00000000 		.4byte	0
+ 679 0021 00000000 		.4byte	.Ldebug_line0
+ 680 0025 02       		.uleb128 0x2
+ 681 0026 01       		.byte	0x1
+ 682 0027 06       		.byte	0x6
+ 683 0028 60010000 		.4byte	.LASF0
+ 684 002c 02       		.uleb128 0x2
+ 685 002d 01       		.byte	0x1
+ 686 002e 08       		.byte	0x8
+ 687 002f 6C010000 		.4byte	.LASF1
+ 688 0033 02       		.uleb128 0x2
+ 689 0034 02       		.byte	0x2
+ 690 0035 05       		.byte	0x5
+ 691 0036 93030000 		.4byte	.LASF2
+ 692 003a 02       		.uleb128 0x2
+ 693 003b 02       		.byte	0x2
+ 694 003c 07       		.byte	0x7
+ 695 003d 96000000 		.4byte	.LASF3
+ 696 0041 02       		.uleb128 0x2
+ 697 0042 04       		.byte	0x4
+ 698 0043 05       		.byte	0x5
+ 699 0044 E4030000 		.4byte	.LASF4
+ 700 0048 02       		.uleb128 0x2
+ 701 0049 04       		.byte	0x4
+ 702 004a 07       		.byte	0x7
+ 703 004b BE010000 		.4byte	.LASF5
+ 704 004f 02       		.uleb128 0x2
+ 705 0050 08       		.byte	0x8
+ 706 0051 05       		.byte	0x5
+ 707 0052 5B030000 		.4byte	.LASF6
+ 708 0056 02       		.uleb128 0x2
+ 709 0057 08       		.byte	0x8
+ 710 0058 07       		.byte	0x7
+ 711 0059 D8020000 		.4byte	.LASF7
+ 712 005d 03       		.uleb128 0x3
+ 713 005e 04       		.byte	0x4
+ 714 005f 05       		.byte	0x5
+ 715 0060 696E7400 		.ascii	"int\000"
+ 716 0064 02       		.uleb128 0x2
+ 717 0065 04       		.byte	0x4
+ 718 0066 07       		.byte	0x7
+ 719 0067 CB020000 		.4byte	.LASF8
+ 720 006b 04       		.uleb128 0x4
+ 721 006c D0010000 		.4byte	.LASF9
+ 722 0070 02       		.byte	0x2
+ 723 0071 C2       		.byte	0xc2
+ 724 0072 2C000000 		.4byte	0x2c
+ 725 0076 04       		.uleb128 0x4
+ 726 0077 1A020000 		.4byte	.LASF10
+ 727 007b 02       		.byte	0x2
+ 728 007c C3       		.byte	0xc3
+ 729 007d 3A000000 		.4byte	0x3a
+ 730 0081 02       		.uleb128 0x2
+ 731 0082 04       		.byte	0x4
+ 732 0083 04       		.byte	0x4
+ 733 0084 4F010000 		.4byte	.LASF11
+ 734 0088 02       		.uleb128 0x2
+ARM GAS  C:\Users\Robert\AppData\Local\Temp\ccr2TuqX.s 			page 22
+
+
+ 735 0089 08       		.byte	0x8
+ 736 008a 04       		.byte	0x4
+ 737 008b 13020000 		.4byte	.LASF12
+ 738 008f 02       		.uleb128 0x2
+ 739 0090 01       		.byte	0x1
+ 740 0091 08       		.byte	0x8
+ 741 0092 69030000 		.4byte	.LASF13
+ 742 0096 05       		.uleb128 0x5
+ 743 0097 B9010000 		.4byte	.LASF14
+ 744 009b 02       		.byte	0x2
+ 745 009c 6C01     		.2byte	0x16c
+ 746 009e A2000000 		.4byte	0xa2
+ 747 00a2 06       		.uleb128 0x6
+ 748 00a3 6B000000 		.4byte	0x6b
+ 749 00a7 02       		.uleb128 0x2
+ 750 00a8 04       		.byte	0x4
+ 751 00a9 07       		.byte	0x7
+ 752 00aa 52030000 		.4byte	.LASF15
+ 753 00ae 07       		.uleb128 0x7
+ 754 00af 04       		.byte	0x4
+ 755 00b0 03       		.byte	0x3
+ 756 00b1 97       		.byte	0x97
+ 757 00b2 CF000000 		.4byte	0xcf
+ 758 00b6 08       		.uleb128 0x8
+ 759 00b7 ED000000 		.4byte	.LASF16
+ 760 00bb 03       		.byte	0x3
+ 761 00bc 99       		.byte	0x99
+ 762 00bd 6B000000 		.4byte	0x6b
+ 763 00c1 00       		.byte	0
+ 764 00c2 08       		.uleb128 0x8
+ 765 00c3 5F040000 		.4byte	.LASF17
+ 766 00c7 03       		.byte	0x3
+ 767 00c8 9A       		.byte	0x9a
+ 768 00c9 76000000 		.4byte	0x76
+ 769 00cd 02       		.byte	0x2
+ 770 00ce 00       		.byte	0
+ 771 00cf 04       		.uleb128 0x4
+ 772 00d0 C1030000 		.4byte	.LASF18
+ 773 00d4 03       		.byte	0x3
+ 774 00d5 9B       		.byte	0x9b
+ 775 00d6 AE000000 		.4byte	0xae
+ 776 00da 07       		.uleb128 0x7
+ 777 00db 0C       		.byte	0xc
+ 778 00dc 03       		.byte	0x3
+ 779 00dd 9D       		.byte	0x9d
+ 780 00de 07010000 		.4byte	0x107
+ 781 00e2 08       		.uleb128 0x8
+ 782 00e3 6C000000 		.4byte	.LASF19
+ 783 00e7 03       		.byte	0x3
+ 784 00e8 9F       		.byte	0x9f
+ 785 00e9 76000000 		.4byte	0x76
+ 786 00ed 00       		.byte	0
+ 787 00ee 08       		.uleb128 0x8
+ 788 00ef 19010000 		.4byte	.LASF20
+ 789 00f3 03       		.byte	0x3
+ 790 00f4 A0       		.byte	0xa0
+ 791 00f5 07010000 		.4byte	0x107
+ARM GAS  C:\Users\Robert\AppData\Local\Temp\ccr2TuqX.s 			page 23
+
+
+ 792 00f9 04       		.byte	0x4
+ 793 00fa 08       		.uleb128 0x8
+ 794 00fb 00000000 		.4byte	.LASF21
+ 795 00ff 03       		.byte	0x3
+ 796 0100 A1       		.byte	0xa1
+ 797 0101 0D010000 		.4byte	0x10d
+ 798 0105 08       		.byte	0x8
+ 799 0106 00       		.byte	0
+ 800 0107 09       		.uleb128 0x9
+ 801 0108 04       		.byte	0x4
+ 802 0109 A2000000 		.4byte	0xa2
+ 803 010d 09       		.uleb128 0x9
+ 804 010e 04       		.byte	0x4
+ 805 010f CF000000 		.4byte	0xcf
+ 806 0113 04       		.uleb128 0x4
+ 807 0114 EF010000 		.4byte	.LASF22
+ 808 0118 03       		.byte	0x3
+ 809 0119 A2       		.byte	0xa2
+ 810 011a DA000000 		.4byte	0xda
+ 811 011e 07       		.uleb128 0x7
+ 812 011f 08       		.byte	0x8
+ 813 0120 03       		.byte	0x3
+ 814 0121 A5       		.byte	0xa5
+ 815 0122 3D010000 		.4byte	0x13d
+ 816 0126 0A       		.uleb128 0xa
+ 817 0127 6300     		.ascii	"c\000"
+ 818 0129 03       		.byte	0x3
+ 819 012a A7       		.byte	0xa7
+ 820 012b 6B000000 		.4byte	0x6b
+ 821 012f 00       		.byte	0
+ 822 0130 08       		.uleb128 0x8
+ 823 0131 EF020000 		.4byte	.LASF23
+ 824 0135 03       		.byte	0x3
+ 825 0136 A8       		.byte	0xa8
+ 826 0137 3D010000 		.4byte	0x13d
+ 827 013b 04       		.byte	0x4
+ 828 013c 00       		.byte	0
+ 829 013d 09       		.uleb128 0x9
+ 830 013e 04       		.byte	0x4
+ 831 013f 43010000 		.4byte	0x143
+ 832 0143 0B       		.uleb128 0xb
+ 833 0144 04       		.uleb128 0x4
+ 834 0145 B6020000 		.4byte	.LASF24
+ 835 0149 03       		.byte	0x3
+ 836 014a A9       		.byte	0xa9
+ 837 014b 1E010000 		.4byte	0x11e
+ 838 014f 0C       		.uleb128 0xc
+ 839 0150 A9000000 		.4byte	.LASF25
+ 840 0154 01       		.byte	0x1
+ 841 0155 40       		.byte	0x40
+ 842 0156 6B000000 		.4byte	0x6b
+ 843 015a 00000000 		.4byte	.LFB0
+ 844 015e 3C000000 		.4byte	.LFE0-.LFB0
+ 845 0162 01       		.uleb128 0x1
+ 846 0163 9C       		.byte	0x9c
+ 847 0164 87010000 		.4byte	0x187
+ 848 0168 0D       		.uleb128 0xd
+ARM GAS  C:\Users\Robert\AppData\Local\Temp\ccr2TuqX.s 			page 24
+
+
+ 849 0169 B7030000 		.4byte	.LASF27
+ 850 016d 01       		.byte	0x1
+ 851 016e 40       		.byte	0x40
+ 852 016f 6B000000 		.4byte	0x6b
+ 853 0173 00000000 		.4byte	.LLST0
+ 854 0177 0E       		.uleb128 0xe
+ 855 0178 67000000 		.4byte	.LASF28
+ 856 017c 01       		.byte	0x1
+ 857 017d 42       		.byte	0x42
+ 858 017e 6B000000 		.4byte	0x6b
+ 859 0182 53000000 		.4byte	.LLST1
+ 860 0186 00       		.byte	0
+ 861 0187 0C       		.uleb128 0xc
+ 862 0188 44040000 		.4byte	.LASF26
+ 863 018c 01       		.byte	0x1
+ 864 018d 64       		.byte	0x64
+ 865 018e 6B000000 		.4byte	0x6b
+ 866 0192 00000000 		.4byte	.LFB1
+ 867 0196 0C000000 		.4byte	.LFE1-.LFB1
+ 868 019a 01       		.uleb128 0x1
+ 869 019b 9C       		.byte	0x9c
+ 870 019c B0010000 		.4byte	0x1b0
+ 871 01a0 0D       		.uleb128 0xd
+ 872 01a1 B7030000 		.4byte	.LASF27
+ 873 01a5 01       		.byte	0x1
+ 874 01a6 64       		.byte	0x64
+ 875 01a7 6B000000 		.4byte	0x6b
+ 876 01ab A2000000 		.4byte	.LLST2
+ 877 01af 00       		.byte	0
+ 878 01b0 0F       		.uleb128 0xf
+ 879 01b1 F4000000 		.4byte	.LASF32
+ 880 01b5 01       		.byte	0x1
+ 881 01b6 1501     		.2byte	0x115
+ 882 01b8 00000000 		.4byte	.LFB3
+ 883 01bc 40000000 		.4byte	.LFE3-.LFB3
+ 884 01c0 01       		.uleb128 0x1
+ 885 01c1 9C       		.byte	0x9c
+ 886 01c2 FE010000 		.4byte	0x1fe
+ 887 01c6 10       		.uleb128 0x10
+ 888 01c7 6E030000 		.4byte	.LASF29
+ 889 01cb 01       		.byte	0x1
+ 890 01cc 1701     		.2byte	0x117
+ 891 01ce FE010000 		.4byte	0x1fe
+ 892 01d2 C3000000 		.4byte	.LLST3
+ 893 01d6 11       		.uleb128 0x11
+ 894 01d7 AF020000 		.4byte	.LASF30
+ 895 01db 01       		.byte	0x1
+ 896 01dc 1801     		.2byte	0x118
+ 897 01de 07010000 		.4byte	0x107
+ 898 01e2 01       		.uleb128 0x1
+ 899 01e3 51       		.byte	0x51
+ 900 01e4 10       		.uleb128 0x10
+ 901 01e5 E2000000 		.4byte	.LASF31
+ 902 01e9 01       		.byte	0x1
+ 903 01ea 1901     		.2byte	0x119
+ 904 01ec 6B000000 		.4byte	0x6b
+ 905 01f0 F9000000 		.4byte	.LLST4
+ARM GAS  C:\Users\Robert\AppData\Local\Temp\ccr2TuqX.s 			page 25
+
+
+ 906 01f4 12       		.uleb128 0x12
+ 907 01f5 0E000000 		.4byte	.LVL10
+ 908 01f9 E1030000 		.4byte	0x3e1
+ 909 01fd 00       		.byte	0
+ 910 01fe 09       		.uleb128 0x9
+ 911 01ff 04       		.byte	0x4
+ 912 0200 04020000 		.4byte	0x204
+ 913 0204 13       		.uleb128 0x13
+ 914 0205 44010000 		.4byte	0x144
+ 915 0209 0F       		.uleb128 0xf
+ 916 020a 95010000 		.4byte	.LASF33
+ 917 020e 01       		.byte	0x1
+ 918 020f 4301     		.2byte	0x143
+ 919 0211 00000000 		.4byte	.LFB4
+ 920 0215 48000000 		.4byte	.LFE4-.LFB4
+ 921 0219 01       		.uleb128 0x1
+ 922 021a 9C       		.byte	0x9c
+ 923 021b 59020000 		.4byte	0x259
+ 924 021f 10       		.uleb128 0x10
+ 925 0220 6E030000 		.4byte	.LASF29
+ 926 0224 01       		.byte	0x1
+ 927 0225 4501     		.2byte	0x145
+ 928 0227 FE010000 		.4byte	0x1fe
+ 929 022b 0C010000 		.4byte	.LLST5
+ 930 022f 10       		.uleb128 0x10
+ 931 0230 AF020000 		.4byte	.LASF30
+ 932 0234 01       		.byte	0x1
+ 933 0235 4601     		.2byte	0x146
+ 934 0237 07010000 		.4byte	0x107
+ 935 023b 42010000 		.4byte	.LLST6
+ 936 023f 10       		.uleb128 0x10
+ 937 0240 E2000000 		.4byte	.LASF31
+ 938 0244 01       		.byte	0x1
+ 939 0245 4701     		.2byte	0x147
+ 940 0247 6B000000 		.4byte	0x6b
+ 941 024b 72010000 		.4byte	.LLST7
+ 942 024f 12       		.uleb128 0x12
+ 943 0250 0E000000 		.4byte	.LVL19
+ 944 0254 E1030000 		.4byte	0x3e1
+ 945 0258 00       		.byte	0
+ 946 0259 0F       		.uleb128 0xf
+ 947 025a 9D030000 		.4byte	.LASF34
+ 948 025e 01       		.byte	0x1
+ 949 025f 7101     		.2byte	0x171
+ 950 0261 00000000 		.4byte	.LFB5
+ 951 0265 84000000 		.4byte	.LFE5-.LFB5
+ 952 0269 01       		.uleb128 0x1
+ 953 026a 9C       		.byte	0x9c
+ 954 026b B9020000 		.4byte	0x2b9
+ 955 026f 10       		.uleb128 0x10
+ 956 0270 6E030000 		.4byte	.LASF29
+ 957 0274 01       		.byte	0x1
+ 958 0275 7301     		.2byte	0x173
+ 959 0277 FE010000 		.4byte	0x1fe
+ 960 027b 85010000 		.4byte	.LLST8
+ 961 027f 14       		.uleb128 0x14
+ 962 0280 70544400 		.ascii	"pTD\000"
+ARM GAS  C:\Users\Robert\AppData\Local\Temp\ccr2TuqX.s 			page 26
+
+
+ 963 0284 01       		.byte	0x1
+ 964 0285 7401     		.2byte	0x174
+ 965 0287 B9020000 		.4byte	0x2b9
+ 966 028b AE010000 		.4byte	.LLST9
+ 967 028f 10       		.uleb128 0x10
+ 968 0290 E2000000 		.4byte	.LASF31
+ 969 0294 01       		.byte	0x1
+ 970 0295 7501     		.2byte	0x175
+ 971 0297 6B000000 		.4byte	0x6b
+ 972 029b CC010000 		.4byte	.LLST10
+ 973 029f 10       		.uleb128 0x10
+ 974 02a0 55010000 		.4byte	.LASF35
+ 975 02a4 01       		.byte	0x1
+ 976 02a5 7601     		.2byte	0x176
+ 977 02a7 6B000000 		.4byte	0x6b
+ 978 02ab DF010000 		.4byte	.LLST11
+ 979 02af 12       		.uleb128 0x12
+ 980 02b0 14000000 		.4byte	.LVL29
+ 981 02b4 E1030000 		.4byte	0x3e1
+ 982 02b8 00       		.byte	0
+ 983 02b9 09       		.uleb128 0x9
+ 984 02ba 04       		.byte	0x4
+ 985 02bb 13010000 		.4byte	0x113
+ 986 02bf 0C       		.uleb128 0xc
+ 987 02c0 72000000 		.4byte	.LASF36
+ 988 02c4 01       		.byte	0x1
+ 989 02c5 7B       		.byte	0x7b
+ 990 02c6 6B000000 		.4byte	0x6b
+ 991 02ca 00000000 		.4byte	.LFB2
+ 992 02ce A4010000 		.4byte	.LFE2-.LFB2
+ 993 02d2 01       		.uleb128 0x1
+ 994 02d3 9C       		.byte	0x9c
+ 995 02d4 63030000 		.4byte	0x363
+ 996 02d8 0E       		.uleb128 0xe
+ 997 02d9 40010000 		.4byte	.LASF37
+ 998 02dd 01       		.byte	0x1
+ 999 02de 7D       		.byte	0x7d
+ 1000 02df 6B000000 		.4byte	0x6b
+ 1001 02e3 1F020000 		.4byte	.LLST12
+ 1002 02e7 0E       		.uleb128 0xe
+ 1003 02e8 03020000 		.4byte	.LASF38
+ 1004 02ec 01       		.byte	0x1
+ 1005 02ed 7E       		.byte	0x7e
+ 1006 02ee 6B000000 		.4byte	0x6b
+ 1007 02f2 F6020000 		.4byte	.LLST13
+ 1008 02f6 12       		.uleb128 0x12
+ 1009 02f7 36000000 		.4byte	.LVL47
+ 1010 02fb B0010000 		.4byte	0x1b0
+ 1011 02ff 12       		.uleb128 0x12
+ 1012 0300 46000000 		.4byte	.LVL48
+ 1013 0304 F6030000 		.4byte	0x3f6
+ 1014 0308 12       		.uleb128 0x12
+ 1015 0309 56000000 		.4byte	.LVL50
+ 1016 030d 09020000 		.4byte	0x209
+ 1017 0311 12       		.uleb128 0x12
+ 1018 0312 64000000 		.4byte	.LVL51
+ 1019 0316 F6030000 		.4byte	0x3f6
+ARM GAS  C:\Users\Robert\AppData\Local\Temp\ccr2TuqX.s 			page 27
+
+
+ 1020 031a 12       		.uleb128 0x12
+ 1021 031b 6A000000 		.4byte	.LVL53
+ 1022 031f 59020000 		.4byte	0x259
+ 1023 0323 12       		.uleb128 0x12
+ 1024 0324 78000000 		.4byte	.LVL54
+ 1025 0328 F6030000 		.4byte	0x3f6
+ 1026 032c 12       		.uleb128 0x12
+ 1027 032d 98000000 		.4byte	.LVL56
+ 1028 0331 F6030000 		.4byte	0x3f6
+ 1029 0335 12       		.uleb128 0x12
+ 1030 0336 AE000000 		.4byte	.LVL58
+ 1031 033a F6030000 		.4byte	0x3f6
+ 1032 033e 12       		.uleb128 0x12
+ 1033 033f D0000000 		.4byte	.LVL60
+ 1034 0343 59020000 		.4byte	0x259
+ 1035 0347 12       		.uleb128 0x12
+ 1036 0348 DE000000 		.4byte	.LVL61
+ 1037 034c 01040000 		.4byte	0x401
+ 1038 0350 12       		.uleb128 0x12
+ 1039 0351 24010000 		.4byte	.LVL63
+ 1040 0355 0C040000 		.4byte	0x40c
+ 1041 0359 12       		.uleb128 0x12
+ 1042 035a 40010000 		.4byte	.LVL65
+ 1043 035e 0C040000 		.4byte	0x40c
+ 1044 0362 00       		.byte	0
+ 1045 0363 15       		.uleb128 0x15
+ 1046 0364 15030000 		.4byte	.LASF39
+ 1047 0368 03       		.byte	0x3
+ 1048 0369 5402     		.2byte	0x254
+ 1049 036b A2000000 		.4byte	0xa2
+ 1050 036f 16       		.uleb128 0x16
+ 1051 0370 6B000000 		.4byte	0x6b
+ 1052 0374 7F030000 		.4byte	0x37f
+ 1053 0378 17       		.uleb128 0x17
+ 1054 0379 A7000000 		.4byte	0xa7
+ 1055 037d 00       		.byte	0
+ 1056 037e 00       		.byte	0
+ 1057 037f 18       		.uleb128 0x18
+ 1058 0380 C7000000 		.4byte	.LASF40
+ 1059 0384 01       		.byte	0x1
+ 1060 0385 21       		.byte	0x21
+ 1061 0386 90030000 		.4byte	0x390
+ 1062 038a 05       		.uleb128 0x5
+ 1063 038b 03       		.byte	0x3
+ 1064 038c 00000000 		.4byte	USB_Bootloader_hidProtocol
+ 1065 0390 06       		.uleb128 0x6
+ 1066 0391 6F030000 		.4byte	0x36f
+ 1067 0395 18       		.uleb128 0x18
+ 1068 0396 7A010000 		.4byte	.LASF41
+ 1069 039a 01       		.byte	0x1
+ 1070 039b 22       		.byte	0x22
+ 1071 039c A6030000 		.4byte	0x3a6
+ 1072 03a0 05       		.uleb128 0x5
+ 1073 03a1 03       		.byte	0x3
+ 1074 03a2 00000000 		.4byte	USB_Bootloader_hidIdleRate
+ 1075 03a6 06       		.uleb128 0x6
+ 1076 03a7 6F030000 		.4byte	0x36f
+ARM GAS  C:\Users\Robert\AppData\Local\Temp\ccr2TuqX.s 			page 28
+
+
+ 1077 03ab 18       		.uleb128 0x18
+ 1078 03ac 66040000 		.4byte	.LASF42
+ 1079 03b0 01       		.byte	0x1
+ 1080 03b1 23       		.byte	0x23
+ 1081 03b2 BC030000 		.4byte	0x3bc
+ 1082 03b6 05       		.uleb128 0x5
+ 1083 03b7 03       		.byte	0x3
+ 1084 03b8 00000000 		.4byte	USB_Bootloader_hidIdleTimer
+ 1085 03bc 06       		.uleb128 0x6
+ 1086 03bd 6F030000 		.4byte	0x36f
+ 1087 03c1 19       		.uleb128 0x19
+ 1088 03c2 73030000 		.4byte	.LASF43
+ 1089 03c6 04       		.byte	0x4
+ 1090 03c7 39       		.byte	0x39
+ 1091 03c8 CC030000 		.4byte	0x3cc
+ 1092 03cc 06       		.uleb128 0x6
+ 1093 03cd 6F030000 		.4byte	0x36f
+ 1094 03d1 19       		.uleb128 0x19
+ 1095 03d2 D6010000 		.4byte	.LASF44
+ 1096 03d6 04       		.byte	0x4
+ 1097 03d7 40       		.byte	0x40
+ 1098 03d8 DC030000 		.4byte	0x3dc
+ 1099 03dc 06       		.uleb128 0x6
+ 1100 03dd 13010000 		.4byte	0x113
+ 1101 03e1 1A       		.uleb128 0x1a
+ 1102 03e2 1F010000 		.4byte	.LASF51
+ 1103 03e6 04       		.byte	0x4
+ 1104 03e7 74       		.byte	0x74
+ 1105 03e8 FE010000 		.4byte	0x1fe
+ 1106 03ec F6030000 		.4byte	0x3f6
+ 1107 03f0 1B       		.uleb128 0x1b
+ 1108 03f1 6B000000 		.4byte	0x6b
+ 1109 03f5 00       		.byte	0
+ 1110 03f6 1C       		.uleb128 0x1c
+ 1111 03f7 F6020000 		.4byte	.LASF45
+ 1112 03fb 04       		.byte	0x4
+ 1113 03fc 5D       		.byte	0x5d
+ 1114 03fd 6B000000 		.4byte	0x6b
+ 1115 0401 1C       		.uleb128 0x1c
+ 1116 0402 32030000 		.4byte	.LASF46
+ 1117 0406 04       		.byte	0x4
+ 1118 0407 63       		.byte	0x63
+ 1119 0408 6B000000 		.4byte	0x6b
+ 1120 040c 1C       		.uleb128 0x1c
+ 1121 040d ED030000 		.4byte	.LASF47
+ 1122 0411 04       		.byte	0x4
+ 1123 0412 6A       		.byte	0x6a
+ 1124 0413 6B000000 		.4byte	0x6b
+ 1125 0417 00       		.byte	0
+ 1126              		.section	.debug_abbrev,"",%progbits
+ 1127              	.Ldebug_abbrev0:
+ 1128 0000 01       		.uleb128 0x1
+ 1129 0001 11       		.uleb128 0x11
+ 1130 0002 01       		.byte	0x1
+ 1131 0003 25       		.uleb128 0x25
+ 1132 0004 0E       		.uleb128 0xe
+ 1133 0005 13       		.uleb128 0x13
+ARM GAS  C:\Users\Robert\AppData\Local\Temp\ccr2TuqX.s 			page 29
+
+
+ 1134 0006 0B       		.uleb128 0xb
+ 1135 0007 03       		.uleb128 0x3
+ 1136 0008 0E       		.uleb128 0xe
+ 1137 0009 1B       		.uleb128 0x1b
+ 1138 000a 0E       		.uleb128 0xe
+ 1139 000b 55       		.uleb128 0x55
+ 1140 000c 17       		.uleb128 0x17
+ 1141 000d 11       		.uleb128 0x11
+ 1142 000e 01       		.uleb128 0x1
+ 1143 000f 10       		.uleb128 0x10
+ 1144 0010 17       		.uleb128 0x17
+ 1145 0011 00       		.byte	0
+ 1146 0012 00       		.byte	0
+ 1147 0013 02       		.uleb128 0x2
+ 1148 0014 24       		.uleb128 0x24
+ 1149 0015 00       		.byte	0
+ 1150 0016 0B       		.uleb128 0xb
+ 1151 0017 0B       		.uleb128 0xb
+ 1152 0018 3E       		.uleb128 0x3e
+ 1153 0019 0B       		.uleb128 0xb
+ 1154 001a 03       		.uleb128 0x3
+ 1155 001b 0E       		.uleb128 0xe
+ 1156 001c 00       		.byte	0
+ 1157 001d 00       		.byte	0
+ 1158 001e 03       		.uleb128 0x3
+ 1159 001f 24       		.uleb128 0x24
+ 1160 0020 00       		.byte	0
+ 1161 0021 0B       		.uleb128 0xb
+ 1162 0022 0B       		.uleb128 0xb
+ 1163 0023 3E       		.uleb128 0x3e
+ 1164 0024 0B       		.uleb128 0xb
+ 1165 0025 03       		.uleb128 0x3
+ 1166 0026 08       		.uleb128 0x8
+ 1167 0027 00       		.byte	0
+ 1168 0028 00       		.byte	0
+ 1169 0029 04       		.uleb128 0x4
+ 1170 002a 16       		.uleb128 0x16
+ 1171 002b 00       		.byte	0
+ 1172 002c 03       		.uleb128 0x3
+ 1173 002d 0E       		.uleb128 0xe
+ 1174 002e 3A       		.uleb128 0x3a
+ 1175 002f 0B       		.uleb128 0xb
+ 1176 0030 3B       		.uleb128 0x3b
+ 1177 0031 0B       		.uleb128 0xb
+ 1178 0032 49       		.uleb128 0x49
+ 1179 0033 13       		.uleb128 0x13
+ 1180 0034 00       		.byte	0
+ 1181 0035 00       		.byte	0
+ 1182 0036 05       		.uleb128 0x5
+ 1183 0037 16       		.uleb128 0x16
+ 1184 0038 00       		.byte	0
+ 1185 0039 03       		.uleb128 0x3
+ 1186 003a 0E       		.uleb128 0xe
+ 1187 003b 3A       		.uleb128 0x3a
+ 1188 003c 0B       		.uleb128 0xb
+ 1189 003d 3B       		.uleb128 0x3b
+ 1190 003e 05       		.uleb128 0x5
+ARM GAS  C:\Users\Robert\AppData\Local\Temp\ccr2TuqX.s 			page 30
+
+
+ 1191 003f 49       		.uleb128 0x49
+ 1192 0040 13       		.uleb128 0x13
+ 1193 0041 00       		.byte	0
+ 1194 0042 00       		.byte	0
+ 1195 0043 06       		.uleb128 0x6
+ 1196 0044 35       		.uleb128 0x35
+ 1197 0045 00       		.byte	0
+ 1198 0046 49       		.uleb128 0x49
+ 1199 0047 13       		.uleb128 0x13
+ 1200 0048 00       		.byte	0
+ 1201 0049 00       		.byte	0
+ 1202 004a 07       		.uleb128 0x7
+ 1203 004b 13       		.uleb128 0x13
+ 1204 004c 01       		.byte	0x1
+ 1205 004d 0B       		.uleb128 0xb
+ 1206 004e 0B       		.uleb128 0xb
+ 1207 004f 3A       		.uleb128 0x3a
+ 1208 0050 0B       		.uleb128 0xb
+ 1209 0051 3B       		.uleb128 0x3b
+ 1210 0052 0B       		.uleb128 0xb
+ 1211 0053 01       		.uleb128 0x1
+ 1212 0054 13       		.uleb128 0x13
+ 1213 0055 00       		.byte	0
+ 1214 0056 00       		.byte	0
+ 1215 0057 08       		.uleb128 0x8
+ 1216 0058 0D       		.uleb128 0xd
+ 1217 0059 00       		.byte	0
+ 1218 005a 03       		.uleb128 0x3
+ 1219 005b 0E       		.uleb128 0xe
+ 1220 005c 3A       		.uleb128 0x3a
+ 1221 005d 0B       		.uleb128 0xb
+ 1222 005e 3B       		.uleb128 0x3b
+ 1223 005f 0B       		.uleb128 0xb
+ 1224 0060 49       		.uleb128 0x49
+ 1225 0061 13       		.uleb128 0x13
+ 1226 0062 38       		.uleb128 0x38
+ 1227 0063 0B       		.uleb128 0xb
+ 1228 0064 00       		.byte	0
+ 1229 0065 00       		.byte	0
+ 1230 0066 09       		.uleb128 0x9
+ 1231 0067 0F       		.uleb128 0xf
+ 1232 0068 00       		.byte	0
+ 1233 0069 0B       		.uleb128 0xb
+ 1234 006a 0B       		.uleb128 0xb
+ 1235 006b 49       		.uleb128 0x49
+ 1236 006c 13       		.uleb128 0x13
+ 1237 006d 00       		.byte	0
+ 1238 006e 00       		.byte	0
+ 1239 006f 0A       		.uleb128 0xa
+ 1240 0070 0D       		.uleb128 0xd
+ 1241 0071 00       		.byte	0
+ 1242 0072 03       		.uleb128 0x3
+ 1243 0073 08       		.uleb128 0x8
+ 1244 0074 3A       		.uleb128 0x3a
+ 1245 0075 0B       		.uleb128 0xb
+ 1246 0076 3B       		.uleb128 0x3b
+ 1247 0077 0B       		.uleb128 0xb
+ARM GAS  C:\Users\Robert\AppData\Local\Temp\ccr2TuqX.s 			page 31
+
+
+ 1248 0078 49       		.uleb128 0x49
+ 1249 0079 13       		.uleb128 0x13
+ 1250 007a 38       		.uleb128 0x38
+ 1251 007b 0B       		.uleb128 0xb
+ 1252 007c 00       		.byte	0
+ 1253 007d 00       		.byte	0
+ 1254 007e 0B       		.uleb128 0xb
+ 1255 007f 26       		.uleb128 0x26
+ 1256 0080 00       		.byte	0
+ 1257 0081 00       		.byte	0
+ 1258 0082 00       		.byte	0
+ 1259 0083 0C       		.uleb128 0xc
+ 1260 0084 2E       		.uleb128 0x2e
+ 1261 0085 01       		.byte	0x1
+ 1262 0086 3F       		.uleb128 0x3f
+ 1263 0087 19       		.uleb128 0x19
+ 1264 0088 03       		.uleb128 0x3
+ 1265 0089 0E       		.uleb128 0xe
+ 1266 008a 3A       		.uleb128 0x3a
+ 1267 008b 0B       		.uleb128 0xb
+ 1268 008c 3B       		.uleb128 0x3b
+ 1269 008d 0B       		.uleb128 0xb
+ 1270 008e 27       		.uleb128 0x27
+ 1271 008f 19       		.uleb128 0x19
+ 1272 0090 49       		.uleb128 0x49
+ 1273 0091 13       		.uleb128 0x13
+ 1274 0092 11       		.uleb128 0x11
+ 1275 0093 01       		.uleb128 0x1
+ 1276 0094 12       		.uleb128 0x12
+ 1277 0095 06       		.uleb128 0x6
+ 1278 0096 40       		.uleb128 0x40
+ 1279 0097 18       		.uleb128 0x18
+ 1280 0098 9742     		.uleb128 0x2117
+ 1281 009a 19       		.uleb128 0x19
+ 1282 009b 01       		.uleb128 0x1
+ 1283 009c 13       		.uleb128 0x13
+ 1284 009d 00       		.byte	0
+ 1285 009e 00       		.byte	0
+ 1286 009f 0D       		.uleb128 0xd
+ 1287 00a0 05       		.uleb128 0x5
+ 1288 00a1 00       		.byte	0
+ 1289 00a2 03       		.uleb128 0x3
+ 1290 00a3 0E       		.uleb128 0xe
+ 1291 00a4 3A       		.uleb128 0x3a
+ 1292 00a5 0B       		.uleb128 0xb
+ 1293 00a6 3B       		.uleb128 0x3b
+ 1294 00a7 0B       		.uleb128 0xb
+ 1295 00a8 49       		.uleb128 0x49
+ 1296 00a9 13       		.uleb128 0x13
+ 1297 00aa 02       		.uleb128 0x2
+ 1298 00ab 17       		.uleb128 0x17
+ 1299 00ac 00       		.byte	0
+ 1300 00ad 00       		.byte	0
+ 1301 00ae 0E       		.uleb128 0xe
+ 1302 00af 34       		.uleb128 0x34
+ 1303 00b0 00       		.byte	0
+ 1304 00b1 03       		.uleb128 0x3
+ARM GAS  C:\Users\Robert\AppData\Local\Temp\ccr2TuqX.s 			page 32
+
+
+ 1305 00b2 0E       		.uleb128 0xe
+ 1306 00b3 3A       		.uleb128 0x3a
+ 1307 00b4 0B       		.uleb128 0xb
+ 1308 00b5 3B       		.uleb128 0x3b
+ 1309 00b6 0B       		.uleb128 0xb
+ 1310 00b7 49       		.uleb128 0x49
+ 1311 00b8 13       		.uleb128 0x13
+ 1312 00b9 02       		.uleb128 0x2
+ 1313 00ba 17       		.uleb128 0x17
+ 1314 00bb 00       		.byte	0
+ 1315 00bc 00       		.byte	0
+ 1316 00bd 0F       		.uleb128 0xf
+ 1317 00be 2E       		.uleb128 0x2e
+ 1318 00bf 01       		.byte	0x1
+ 1319 00c0 3F       		.uleb128 0x3f
+ 1320 00c1 19       		.uleb128 0x19
+ 1321 00c2 03       		.uleb128 0x3
+ 1322 00c3 0E       		.uleb128 0xe
+ 1323 00c4 3A       		.uleb128 0x3a
+ 1324 00c5 0B       		.uleb128 0xb
+ 1325 00c6 3B       		.uleb128 0x3b
+ 1326 00c7 05       		.uleb128 0x5
+ 1327 00c8 27       		.uleb128 0x27
+ 1328 00c9 19       		.uleb128 0x19
+ 1329 00ca 11       		.uleb128 0x11
+ 1330 00cb 01       		.uleb128 0x1
+ 1331 00cc 12       		.uleb128 0x12
+ 1332 00cd 06       		.uleb128 0x6
+ 1333 00ce 40       		.uleb128 0x40
+ 1334 00cf 18       		.uleb128 0x18
+ 1335 00d0 9742     		.uleb128 0x2117
+ 1336 00d2 19       		.uleb128 0x19
+ 1337 00d3 01       		.uleb128 0x1
+ 1338 00d4 13       		.uleb128 0x13
+ 1339 00d5 00       		.byte	0
+ 1340 00d6 00       		.byte	0
+ 1341 00d7 10       		.uleb128 0x10
+ 1342 00d8 34       		.uleb128 0x34
+ 1343 00d9 00       		.byte	0
+ 1344 00da 03       		.uleb128 0x3
+ 1345 00db 0E       		.uleb128 0xe
+ 1346 00dc 3A       		.uleb128 0x3a
+ 1347 00dd 0B       		.uleb128 0xb
+ 1348 00de 3B       		.uleb128 0x3b
+ 1349 00df 05       		.uleb128 0x5
+ 1350 00e0 49       		.uleb128 0x49
+ 1351 00e1 13       		.uleb128 0x13
+ 1352 00e2 02       		.uleb128 0x2
+ 1353 00e3 17       		.uleb128 0x17
+ 1354 00e4 00       		.byte	0
+ 1355 00e5 00       		.byte	0
+ 1356 00e6 11       		.uleb128 0x11
+ 1357 00e7 34       		.uleb128 0x34
+ 1358 00e8 00       		.byte	0
+ 1359 00e9 03       		.uleb128 0x3
+ 1360 00ea 0E       		.uleb128 0xe
+ 1361 00eb 3A       		.uleb128 0x3a
+ARM GAS  C:\Users\Robert\AppData\Local\Temp\ccr2TuqX.s 			page 33
+
+
+ 1362 00ec 0B       		.uleb128 0xb
+ 1363 00ed 3B       		.uleb128 0x3b
+ 1364 00ee 05       		.uleb128 0x5
+ 1365 00ef 49       		.uleb128 0x49
+ 1366 00f0 13       		.uleb128 0x13
+ 1367 00f1 02       		.uleb128 0x2
+ 1368 00f2 18       		.uleb128 0x18
+ 1369 00f3 00       		.byte	0
+ 1370 00f4 00       		.byte	0
+ 1371 00f5 12       		.uleb128 0x12
+ 1372 00f6 898201   		.uleb128 0x4109
+ 1373 00f9 00       		.byte	0
+ 1374 00fa 11       		.uleb128 0x11
+ 1375 00fb 01       		.uleb128 0x1
+ 1376 00fc 31       		.uleb128 0x31
+ 1377 00fd 13       		.uleb128 0x13
+ 1378 00fe 00       		.byte	0
+ 1379 00ff 00       		.byte	0
+ 1380 0100 13       		.uleb128 0x13
+ 1381 0101 26       		.uleb128 0x26
+ 1382 0102 00       		.byte	0
+ 1383 0103 49       		.uleb128 0x49
+ 1384 0104 13       		.uleb128 0x13
+ 1385 0105 00       		.byte	0
+ 1386 0106 00       		.byte	0
+ 1387 0107 14       		.uleb128 0x14
+ 1388 0108 34       		.uleb128 0x34
+ 1389 0109 00       		.byte	0
+ 1390 010a 03       		.uleb128 0x3
+ 1391 010b 08       		.uleb128 0x8
+ 1392 010c 3A       		.uleb128 0x3a
+ 1393 010d 0B       		.uleb128 0xb
+ 1394 010e 3B       		.uleb128 0x3b
+ 1395 010f 05       		.uleb128 0x5
+ 1396 0110 49       		.uleb128 0x49
+ 1397 0111 13       		.uleb128 0x13
+ 1398 0112 02       		.uleb128 0x2
+ 1399 0113 17       		.uleb128 0x17
+ 1400 0114 00       		.byte	0
+ 1401 0115 00       		.byte	0
+ 1402 0116 15       		.uleb128 0x15
+ 1403 0117 34       		.uleb128 0x34
+ 1404 0118 00       		.byte	0
+ 1405 0119 03       		.uleb128 0x3
+ 1406 011a 0E       		.uleb128 0xe
+ 1407 011b 3A       		.uleb128 0x3a
+ 1408 011c 0B       		.uleb128 0xb
+ 1409 011d 3B       		.uleb128 0x3b
+ 1410 011e 05       		.uleb128 0x5
+ 1411 011f 49       		.uleb128 0x49
+ 1412 0120 13       		.uleb128 0x13
+ 1413 0121 3F       		.uleb128 0x3f
+ 1414 0122 19       		.uleb128 0x19
+ 1415 0123 3C       		.uleb128 0x3c
+ 1416 0124 19       		.uleb128 0x19
+ 1417 0125 00       		.byte	0
+ 1418 0126 00       		.byte	0
+ARM GAS  C:\Users\Robert\AppData\Local\Temp\ccr2TuqX.s 			page 34
+
+
+ 1419 0127 16       		.uleb128 0x16
+ 1420 0128 01       		.uleb128 0x1
+ 1421 0129 01       		.byte	0x1
+ 1422 012a 49       		.uleb128 0x49
+ 1423 012b 13       		.uleb128 0x13
+ 1424 012c 01       		.uleb128 0x1
+ 1425 012d 13       		.uleb128 0x13
+ 1426 012e 00       		.byte	0
+ 1427 012f 00       		.byte	0
+ 1428 0130 17       		.uleb128 0x17
+ 1429 0131 21       		.uleb128 0x21
+ 1430 0132 00       		.byte	0
+ 1431 0133 49       		.uleb128 0x49
+ 1432 0134 13       		.uleb128 0x13
+ 1433 0135 2F       		.uleb128 0x2f
+ 1434 0136 0B       		.uleb128 0xb
+ 1435 0137 00       		.byte	0
+ 1436 0138 00       		.byte	0
+ 1437 0139 18       		.uleb128 0x18
+ 1438 013a 34       		.uleb128 0x34
+ 1439 013b 00       		.byte	0
+ 1440 013c 03       		.uleb128 0x3
+ 1441 013d 0E       		.uleb128 0xe
+ 1442 013e 3A       		.uleb128 0x3a
+ 1443 013f 0B       		.uleb128 0xb
+ 1444 0140 3B       		.uleb128 0x3b
+ 1445 0141 0B       		.uleb128 0xb
+ 1446 0142 49       		.uleb128 0x49
+ 1447 0143 13       		.uleb128 0x13
+ 1448 0144 3F       		.uleb128 0x3f
+ 1449 0145 19       		.uleb128 0x19
+ 1450 0146 02       		.uleb128 0x2
+ 1451 0147 18       		.uleb128 0x18
+ 1452 0148 00       		.byte	0
+ 1453 0149 00       		.byte	0
+ 1454 014a 19       		.uleb128 0x19
+ 1455 014b 34       		.uleb128 0x34
+ 1456 014c 00       		.byte	0
+ 1457 014d 03       		.uleb128 0x3
+ 1458 014e 0E       		.uleb128 0xe
+ 1459 014f 3A       		.uleb128 0x3a
+ 1460 0150 0B       		.uleb128 0xb
+ 1461 0151 3B       		.uleb128 0x3b
+ 1462 0152 0B       		.uleb128 0xb
+ 1463 0153 49       		.uleb128 0x49
+ 1464 0154 13       		.uleb128 0x13
+ 1465 0155 3F       		.uleb128 0x3f
+ 1466 0156 19       		.uleb128 0x19
+ 1467 0157 3C       		.uleb128 0x3c
+ 1468 0158 19       		.uleb128 0x19
+ 1469 0159 00       		.byte	0
+ 1470 015a 00       		.byte	0
+ 1471 015b 1A       		.uleb128 0x1a
+ 1472 015c 2E       		.uleb128 0x2e
+ 1473 015d 01       		.byte	0x1
+ 1474 015e 3F       		.uleb128 0x3f
+ 1475 015f 19       		.uleb128 0x19
+ARM GAS  C:\Users\Robert\AppData\Local\Temp\ccr2TuqX.s 			page 35
+
+
+ 1476 0160 03       		.uleb128 0x3
+ 1477 0161 0E       		.uleb128 0xe
+ 1478 0162 3A       		.uleb128 0x3a
+ 1479 0163 0B       		.uleb128 0xb
+ 1480 0164 3B       		.uleb128 0x3b
+ 1481 0165 0B       		.uleb128 0xb
+ 1482 0166 27       		.uleb128 0x27
+ 1483 0167 19       		.uleb128 0x19
+ 1484 0168 49       		.uleb128 0x49
+ 1485 0169 13       		.uleb128 0x13
+ 1486 016a 3C       		.uleb128 0x3c
+ 1487 016b 19       		.uleb128 0x19
+ 1488 016c 01       		.uleb128 0x1
+ 1489 016d 13       		.uleb128 0x13
+ 1490 016e 00       		.byte	0
+ 1491 016f 00       		.byte	0
+ 1492 0170 1B       		.uleb128 0x1b
+ 1493 0171 05       		.uleb128 0x5
+ 1494 0172 00       		.byte	0
+ 1495 0173 49       		.uleb128 0x49
+ 1496 0174 13       		.uleb128 0x13
+ 1497 0175 00       		.byte	0
+ 1498 0176 00       		.byte	0
+ 1499 0177 1C       		.uleb128 0x1c
+ 1500 0178 2E       		.uleb128 0x2e
+ 1501 0179 00       		.byte	0
+ 1502 017a 3F       		.uleb128 0x3f
+ 1503 017b 19       		.uleb128 0x19
+ 1504 017c 03       		.uleb128 0x3
+ 1505 017d 0E       		.uleb128 0xe
+ 1506 017e 3A       		.uleb128 0x3a
+ 1507 017f 0B       		.uleb128 0xb
+ 1508 0180 3B       		.uleb128 0x3b
+ 1509 0181 0B       		.uleb128 0xb
+ 1510 0182 27       		.uleb128 0x27
+ 1511 0183 19       		.uleb128 0x19
+ 1512 0184 49       		.uleb128 0x49
+ 1513 0185 13       		.uleb128 0x13
+ 1514 0186 3C       		.uleb128 0x3c
+ 1515 0187 19       		.uleb128 0x19
+ 1516 0188 00       		.byte	0
+ 1517 0189 00       		.byte	0
+ 1518 018a 00       		.byte	0
+ 1519              		.section	.debug_loc,"",%progbits
+ 1520              	.Ldebug_loc0:
+ 1521              	.LLST0:
+ 1522 0000 00000000 		.4byte	.LVL0
+ 1523 0004 20000000 		.4byte	.LVL2
+ 1524 0008 0100     		.2byte	0x1
+ 1525 000a 50       		.byte	0x50
+ 1526 000b 20000000 		.4byte	.LVL2
+ 1527 000f 22000000 		.4byte	.LVL3
+ 1528 0013 0400     		.2byte	0x4
+ 1529 0015 F3       		.byte	0xf3
+ 1530 0016 01       		.uleb128 0x1
+ 1531 0017 50       		.byte	0x50
+ 1532 0018 9F       		.byte	0x9f
+ARM GAS  C:\Users\Robert\AppData\Local\Temp\ccr2TuqX.s 			page 36
+
+
+ 1533 0019 22000000 		.4byte	.LVL3
+ 1534 001d 2E000000 		.4byte	.LVL5
+ 1535 0021 0100     		.2byte	0x1
+ 1536 0023 50       		.byte	0x50
+ 1537 0024 2E000000 		.4byte	.LVL5
+ 1538 0028 30000000 		.4byte	.LVL6
+ 1539 002c 0400     		.2byte	0x4
+ 1540 002e F3       		.byte	0xf3
+ 1541 002f 01       		.uleb128 0x1
+ 1542 0030 50       		.byte	0x50
+ 1543 0031 9F       		.byte	0x9f
+ 1544 0032 30000000 		.4byte	.LVL6
+ 1545 0036 32000000 		.4byte	.LVL7
+ 1546 003a 0100     		.2byte	0x1
+ 1547 003c 50       		.byte	0x50
+ 1548 003d 32000000 		.4byte	.LVL7
+ 1549 0041 3C000000 		.4byte	.LFE0
+ 1550 0045 0400     		.2byte	0x4
+ 1551 0047 F3       		.byte	0xf3
+ 1552 0048 01       		.uleb128 0x1
+ 1553 0049 50       		.byte	0x50
+ 1554 004a 9F       		.byte	0x9f
+ 1555 004b 00000000 		.4byte	0
+ 1556 004f 00000000 		.4byte	0
+ 1557              	.LLST1:
+ 1558 0053 00000000 		.4byte	.LVL0
+ 1559 0057 1E000000 		.4byte	.LVL1
+ 1560 005b 0200     		.2byte	0x2
+ 1561 005d 30       		.byte	0x30
+ 1562 005e 9F       		.byte	0x9f
+ 1563 005f 1E000000 		.4byte	.LVL1
+ 1564 0063 22000000 		.4byte	.LVL3
+ 1565 0067 0200     		.2byte	0x2
+ 1566 0069 32       		.byte	0x32
+ 1567 006a 9F       		.byte	0x9f
+ 1568 006b 22000000 		.4byte	.LVL3
+ 1569 006f 2C000000 		.4byte	.LVL4
+ 1570 0073 0200     		.2byte	0x2
+ 1571 0075 30       		.byte	0x30
+ 1572 0076 9F       		.byte	0x9f
+ 1573 0077 2C000000 		.4byte	.LVL4
+ 1574 007b 30000000 		.4byte	.LVL6
+ 1575 007f 0200     		.2byte	0x2
+ 1576 0081 31       		.byte	0x31
+ 1577 0082 9F       		.byte	0x9f
+ 1578 0083 30000000 		.4byte	.LVL6
+ 1579 0087 32000000 		.4byte	.LVL7
+ 1580 008b 0200     		.2byte	0x2
+ 1581 008d 30       		.byte	0x30
+ 1582 008e 9F       		.byte	0x9f
+ 1583 008f 32000000 		.4byte	.LVL7
+ 1584 0093 3C000000 		.4byte	.LFE0
+ 1585 0097 0100     		.2byte	0x1
+ 1586 0099 50       		.byte	0x50
+ 1587 009a 00000000 		.4byte	0
+ 1588 009e 00000000 		.4byte	0
+ 1589              	.LLST2:
+ARM GAS  C:\Users\Robert\AppData\Local\Temp\ccr2TuqX.s 			page 37
+
+
+ 1590 00a2 00000000 		.4byte	.LVL8
+ 1591 00a6 04000000 		.4byte	.LVL9
+ 1592 00aa 0100     		.2byte	0x1
+ 1593 00ac 50       		.byte	0x50
+ 1594 00ad 04000000 		.4byte	.LVL9
+ 1595 00b1 0C000000 		.4byte	.LFE1
+ 1596 00b5 0400     		.2byte	0x4
+ 1597 00b7 F3       		.byte	0xf3
+ 1598 00b8 01       		.uleb128 0x1
+ 1599 00b9 50       		.byte	0x50
+ 1600 00ba 9F       		.byte	0x9f
+ 1601 00bb 00000000 		.4byte	0
+ 1602 00bf 00000000 		.4byte	0
+ 1603              	.LLST3:
+ 1604 00c3 0E000000 		.4byte	.LVL10
+ 1605 00c7 18000000 		.4byte	.LVL12
+ 1606 00cb 0100     		.2byte	0x1
+ 1607 00cd 50       		.byte	0x50
+ 1608 00ce 1A000000 		.4byte	.LVL13
+ 1609 00d2 22000000 		.4byte	.LVL15
+ 1610 00d6 0100     		.2byte	0x1
+ 1611 00d8 52       		.byte	0x52
+ 1612 00d9 22000000 		.4byte	.LVL15
+ 1613 00dd 24000000 		.4byte	.LVL16
+ 1614 00e1 0100     		.2byte	0x1
+ 1615 00e3 53       		.byte	0x53
+ 1616 00e4 24000000 		.4byte	.LVL16
+ 1617 00e8 28000000 		.4byte	.LVL18
+ 1618 00ec 0300     		.2byte	0x3
+ 1619 00ee 73       		.byte	0x73
+ 1620 00ef 20       		.sleb128 32
+ 1621 00f0 9F       		.byte	0x9f
+ 1622 00f1 00000000 		.4byte	0
+ 1623 00f5 00000000 		.4byte	0
+ 1624              	.LLST4:
+ 1625 00f9 14000000 		.4byte	.LVL11
+ 1626 00fd 1E000000 		.4byte	.LVL14
+ 1627 0101 0100     		.2byte	0x1
+ 1628 0103 53       		.byte	0x53
+ 1629 0104 00000000 		.4byte	0
+ 1630 0108 00000000 		.4byte	0
+ 1631              	.LLST5:
+ 1632 010c 0E000000 		.4byte	.LVL19
+ 1633 0110 18000000 		.4byte	.LVL21
+ 1634 0114 0100     		.2byte	0x1
+ 1635 0116 50       		.byte	0x50
+ 1636 0117 1A000000 		.4byte	.LVL22
+ 1637 011b 22000000 		.4byte	.LVL24
+ 1638 011f 0100     		.2byte	0x1
+ 1639 0121 52       		.byte	0x52
+ 1640 0122 22000000 		.4byte	.LVL24
+ 1641 0126 24000000 		.4byte	.LVL25
+ 1642 012a 0100     		.2byte	0x1
+ 1643 012c 53       		.byte	0x53
+ 1644 012d 24000000 		.4byte	.LVL25
+ 1645 0131 26000000 		.4byte	.LVL26
+ 1646 0135 0300     		.2byte	0x3
+ARM GAS  C:\Users\Robert\AppData\Local\Temp\ccr2TuqX.s 			page 38
+
+
+ 1647 0137 73       		.byte	0x73
+ 1648 0138 18       		.sleb128 24
+ 1649 0139 9F       		.byte	0x9f
+ 1650 013a 00000000 		.4byte	0
+ 1651 013e 00000000 		.4byte	0
+ 1652              	.LLST6:
+ 1653 0142 26000000 		.4byte	.LVL26
+ 1654 0146 2C000000 		.4byte	.LVL27
+ 1655 014a 0100     		.2byte	0x1
+ 1656 014c 53       		.byte	0x53
+ 1657 014d 2C000000 		.4byte	.LVL27
+ 1658 0151 38000000 		.4byte	.LVL28
+ 1659 0155 0300     		.2byte	0x3
+ 1660 0157 73       		.byte	0x73
+ 1661 0158 7E       		.sleb128 -2
+ 1662 0159 9F       		.byte	0x9f
+ 1663 015a 38000000 		.4byte	.LVL28
+ 1664 015e 48000000 		.4byte	.LFE4
+ 1665 0162 0600     		.2byte	0x6
+ 1666 0164 71       		.byte	0x71
+ 1667 0165 04       		.sleb128 4
+ 1668 0166 06       		.byte	0x6
+ 1669 0167 32       		.byte	0x32
+ 1670 0168 1C       		.byte	0x1c
+ 1671 0169 9F       		.byte	0x9f
+ 1672 016a 00000000 		.4byte	0
+ 1673 016e 00000000 		.4byte	0
+ 1674              	.LLST7:
+ 1675 0172 14000000 		.4byte	.LVL20
+ 1676 0176 1E000000 		.4byte	.LVL23
+ 1677 017a 0100     		.2byte	0x1
+ 1678 017c 53       		.byte	0x53
+ 1679 017d 00000000 		.4byte	0
+ 1680 0181 00000000 		.4byte	0
+ 1681              	.LLST8:
+ 1682 0185 14000000 		.4byte	.LVL29
+ 1683 0189 24000000 		.4byte	.LVL32
+ 1684 018d 0100     		.2byte	0x1
+ 1685 018f 50       		.byte	0x50
+ 1686 0190 26000000 		.4byte	.LVL33
+ 1687 0194 44000000 		.4byte	.LVL39
+ 1688 0198 0100     		.2byte	0x1
+ 1689 019a 51       		.byte	0x51
+ 1690 019b 44000000 		.4byte	.LVL39
+ 1691 019f 54000000 		.4byte	.LVL41
+ 1692 01a3 0100     		.2byte	0x1
+ 1693 01a5 50       		.byte	0x50
+ 1694 01a6 00000000 		.4byte	0
+ 1695 01aa 00000000 		.4byte	0
+ 1696              	.LLST9:
+ 1697 01ae 54000000 		.4byte	.LVL41
+ 1698 01b2 5C000000 		.4byte	.LVL43
+ 1699 01b6 0100     		.2byte	0x1
+ 1700 01b8 50       		.byte	0x50
+ 1701 01b9 5C000000 		.4byte	.LVL43
+ 1702 01bd 6A000000 		.4byte	.LVL44
+ 1703 01c1 0100     		.2byte	0x1
+ARM GAS  C:\Users\Robert\AppData\Local\Temp\ccr2TuqX.s 			page 39
+
+
+ 1704 01c3 51       		.byte	0x51
+ 1705 01c4 00000000 		.4byte	0
+ 1706 01c8 00000000 		.4byte	0
+ 1707              	.LLST10:
+ 1708 01cc 20000000 		.4byte	.LVL31
+ 1709 01d0 2C000000 		.4byte	.LVL34
+ 1710 01d4 0100     		.2byte	0x1
+ 1711 01d6 52       		.byte	0x52
+ 1712 01d7 00000000 		.4byte	0
+ 1713 01db 00000000 		.4byte	0
+ 1714              	.LLST11:
+ 1715 01df 1A000000 		.4byte	.LVL30
+ 1716 01e3 3E000000 		.4byte	.LVL37
+ 1717 01e7 0100     		.2byte	0x1
+ 1718 01e9 53       		.byte	0x53
+ 1719 01ea 3E000000 		.4byte	.LVL37
+ 1720 01ee 40000000 		.4byte	.LVL38
+ 1721 01f2 0700     		.2byte	0x7
+ 1722 01f4 73       		.byte	0x73
+ 1723 01f5 80808080 		.sleb128 -536870912
+ 1723      7E
+ 1724 01fa 9F       		.byte	0x9f
+ 1725 01fb 40000000 		.4byte	.LVL38
+ 1726 01ff 4A000000 		.4byte	.LVL40
+ 1727 0203 0700     		.2byte	0x7
+ 1728 0205 73       		.byte	0x73
+ 1729 0206 81808080 		.sleb128 -536870911
+ 1729      7E
+ 1730 020b 9F       		.byte	0x9f
+ 1731 020c 4A000000 		.4byte	.LVL40
+ 1732 0210 58000000 		.4byte	.LVL42
+ 1733 0214 0100     		.2byte	0x1
+ 1734 0216 52       		.byte	0x52
+ 1735 0217 00000000 		.4byte	0
+ 1736 021b 00000000 		.4byte	0
+ 1737              	.LLST12:
+ 1738 021f 02000000 		.4byte	.LVL45
+ 1739 0223 46000000 		.4byte	.LVL48
+ 1740 0227 0200     		.2byte	0x2
+ 1741 0229 30       		.byte	0x30
+ 1742 022a 9F       		.byte	0x9f
+ 1743 022b 46000000 		.4byte	.LVL48
+ 1744 022f 48000000 		.4byte	.LVL49
+ 1745 0233 0100     		.2byte	0x1
+ 1746 0235 50       		.byte	0x50
+ 1747 0236 48000000 		.4byte	.LVL49
+ 1748 023a 64000000 		.4byte	.LVL51
+ 1749 023e 0200     		.2byte	0x2
+ 1750 0240 30       		.byte	0x30
+ 1751 0241 9F       		.byte	0x9f
+ 1752 0242 64000000 		.4byte	.LVL51
+ 1753 0246 66000000 		.4byte	.LVL52
+ 1754 024a 0100     		.2byte	0x1
+ 1755 024c 50       		.byte	0x50
+ 1756 024d 66000000 		.4byte	.LVL52
+ 1757 0251 78000000 		.4byte	.LVL54
+ 1758 0255 0200     		.2byte	0x2
+ARM GAS  C:\Users\Robert\AppData\Local\Temp\ccr2TuqX.s 			page 40
+
+
+ 1759 0257 30       		.byte	0x30
+ 1760 0258 9F       		.byte	0x9f
+ 1761 0259 78000000 		.4byte	.LVL54
+ 1762 025d 7A000000 		.4byte	.LVL55
+ 1763 0261 0100     		.2byte	0x1
+ 1764 0263 50       		.byte	0x50
+ 1765 0264 7A000000 		.4byte	.LVL55
+ 1766 0268 98000000 		.4byte	.LVL56
+ 1767 026c 0200     		.2byte	0x2
+ 1768 026e 30       		.byte	0x30
+ 1769 026f 9F       		.byte	0x9f
+ 1770 0270 98000000 		.4byte	.LVL56
+ 1771 0274 9A000000 		.4byte	.LVL57
+ 1772 0278 0100     		.2byte	0x1
+ 1773 027a 50       		.byte	0x50
+ 1774 027b 9A000000 		.4byte	.LVL57
+ 1775 027f AE000000 		.4byte	.LVL58
+ 1776 0283 0200     		.2byte	0x2
+ 1777 0285 30       		.byte	0x30
+ 1778 0286 9F       		.byte	0x9f
+ 1779 0287 AE000000 		.4byte	.LVL58
+ 1780 028b B0000000 		.4byte	.LVL59
+ 1781 028f 0100     		.2byte	0x1
+ 1782 0291 50       		.byte	0x50
+ 1783 0292 B0000000 		.4byte	.LVL59
+ 1784 0296 DE000000 		.4byte	.LVL61
+ 1785 029a 0200     		.2byte	0x2
+ 1786 029c 30       		.byte	0x30
+ 1787 029d 9F       		.byte	0x9f
+ 1788 029e DE000000 		.4byte	.LVL61
+ 1789 02a2 E0000000 		.4byte	.LVL62
+ 1790 02a6 0100     		.2byte	0x1
+ 1791 02a8 50       		.byte	0x50
+ 1792 02a9 E0000000 		.4byte	.LVL62
+ 1793 02ad 24010000 		.4byte	.LVL63
+ 1794 02b1 0200     		.2byte	0x2
+ 1795 02b3 30       		.byte	0x30
+ 1796 02b4 9F       		.byte	0x9f
+ 1797 02b5 24010000 		.4byte	.LVL63
+ 1798 02b9 26010000 		.4byte	.LVL64
+ 1799 02bd 0100     		.2byte	0x1
+ 1800 02bf 50       		.byte	0x50
+ 1801 02c0 26010000 		.4byte	.LVL64
+ 1802 02c4 40010000 		.4byte	.LVL65
+ 1803 02c8 0200     		.2byte	0x2
+ 1804 02ca 30       		.byte	0x30
+ 1805 02cb 9F       		.byte	0x9f
+ 1806 02cc 40010000 		.4byte	.LVL65
+ 1807 02d0 42010000 		.4byte	.LVL66
+ 1808 02d4 0100     		.2byte	0x1
+ 1809 02d6 50       		.byte	0x50
+ 1810 02d7 42010000 		.4byte	.LVL66
+ 1811 02db 7C010000 		.4byte	.LVL73
+ 1812 02df 0200     		.2byte	0x2
+ 1813 02e1 30       		.byte	0x30
+ 1814 02e2 9F       		.byte	0x9f
+ 1815 02e3 7C010000 		.4byte	.LVL73
+ARM GAS  C:\Users\Robert\AppData\Local\Temp\ccr2TuqX.s 			page 41
+
+
+ 1816 02e7 A4010000 		.4byte	.LFE2
+ 1817 02eb 0100     		.2byte	0x1
+ 1818 02ed 50       		.byte	0x50
+ 1819 02ee 00000000 		.4byte	0
+ 1820 02f2 00000000 		.4byte	0
+ 1821              	.LLST13:
+ 1822 02f6 08000000 		.4byte	.LVL46
+ 1823 02fa 35000000 		.4byte	.LVL47-1
+ 1824 02fe 0100     		.2byte	0x1
+ 1825 0300 52       		.byte	0x52
+ 1826 0301 48000000 		.4byte	.LVL49
+ 1827 0305 55000000 		.4byte	.LVL50-1
+ 1828 0309 0100     		.2byte	0x1
+ 1829 030b 52       		.byte	0x52
+ 1830 030c 66000000 		.4byte	.LVL52
+ 1831 0310 69000000 		.4byte	.LVL53-1
+ 1832 0314 0100     		.2byte	0x1
+ 1833 0316 52       		.byte	0x52
+ 1834 0317 7A000000 		.4byte	.LVL55
+ 1835 031b 97000000 		.4byte	.LVL56-1
+ 1836 031f 0100     		.2byte	0x1
+ 1837 0321 52       		.byte	0x52
+ 1838 0322 9A000000 		.4byte	.LVL57
+ 1839 0326 AD000000 		.4byte	.LVL58-1
+ 1840 032a 0100     		.2byte	0x1
+ 1841 032c 52       		.byte	0x52
+ 1842 032d B0000000 		.4byte	.LVL59
+ 1843 0331 CF000000 		.4byte	.LVL60-1
+ 1844 0335 0100     		.2byte	0x1
+ 1845 0337 52       		.byte	0x52
+ 1846 0338 E0000000 		.4byte	.LVL62
+ 1847 033c 23010000 		.4byte	.LVL63-1
+ 1848 0340 0100     		.2byte	0x1
+ 1849 0342 52       		.byte	0x52
+ 1850 0343 26010000 		.4byte	.LVL64
+ 1851 0347 3F010000 		.4byte	.LVL65-1
+ 1852 034b 0100     		.2byte	0x1
+ 1853 034d 52       		.byte	0x52
+ 1854 034e 42010000 		.4byte	.LVL66
+ 1855 0352 46010000 		.4byte	.LVL67
+ 1856 0356 0100     		.2byte	0x1
+ 1857 0358 52       		.byte	0x52
+ 1858 0359 4A010000 		.4byte	.LVL68
+ 1859 035d 4E010000 		.4byte	.LVL69
+ 1860 0361 0100     		.2byte	0x1
+ 1861 0363 52       		.byte	0x52
+ 1862 0364 56010000 		.4byte	.LVL70
+ 1863 0368 6A010000 		.4byte	.LVL71
+ 1864 036c 0100     		.2byte	0x1
+ 1865 036e 52       		.byte	0x52
+ 1866 036f 6E010000 		.4byte	.LVL72
+ 1867 0373 A4010000 		.4byte	.LFE2
+ 1868 0377 0100     		.2byte	0x1
+ 1869 0379 52       		.byte	0x52
+ 1870 037a 00000000 		.4byte	0
+ 1871 037e 00000000 		.4byte	0
+ 1872              		.section	.debug_aranges,"",%progbits
+ARM GAS  C:\Users\Robert\AppData\Local\Temp\ccr2TuqX.s 			page 42
+
+
+ 1873 0000 44000000 		.4byte	0x44
+ 1874 0004 0200     		.2byte	0x2
+ 1875 0006 00000000 		.4byte	.Ldebug_info0
+ 1876 000a 04       		.byte	0x4
+ 1877 000b 00       		.byte	0
+ 1878 000c 0000     		.2byte	0
+ 1879 000e 0000     		.2byte	0
+ 1880 0010 00000000 		.4byte	.LFB0
+ 1881 0014 3C000000 		.4byte	.LFE0-.LFB0
+ 1882 0018 00000000 		.4byte	.LFB1
+ 1883 001c 0C000000 		.4byte	.LFE1-.LFB1
+ 1884 0020 00000000 		.4byte	.LFB3
+ 1885 0024 40000000 		.4byte	.LFE3-.LFB3
+ 1886 0028 00000000 		.4byte	.LFB4
+ 1887 002c 48000000 		.4byte	.LFE4-.LFB4
+ 1888 0030 00000000 		.4byte	.LFB5
+ 1889 0034 84000000 		.4byte	.LFE5-.LFB5
+ 1890 0038 00000000 		.4byte	.LFB2
+ 1891 003c A4010000 		.4byte	.LFE2-.LFB2
+ 1892 0040 00000000 		.4byte	0
+ 1893 0044 00000000 		.4byte	0
+ 1894              		.section	.debug_ranges,"",%progbits
+ 1895              	.Ldebug_ranges0:
+ 1896 0000 00000000 		.4byte	.LFB0
+ 1897 0004 3C000000 		.4byte	.LFE0
+ 1898 0008 00000000 		.4byte	.LFB1
+ 1899 000c 0C000000 		.4byte	.LFE1
+ 1900 0010 00000000 		.4byte	.LFB3
+ 1901 0014 40000000 		.4byte	.LFE3
+ 1902 0018 00000000 		.4byte	.LFB4
+ 1903 001c 48000000 		.4byte	.LFE4
+ 1904 0020 00000000 		.4byte	.LFB5
+ 1905 0024 84000000 		.4byte	.LFE5
+ 1906 0028 00000000 		.4byte	.LFB2
+ 1907 002c A4010000 		.4byte	.LFE2
+ 1908 0030 00000000 		.4byte	0
+ 1909 0034 00000000 		.4byte	0
+ 1910              		.section	.debug_line,"",%progbits
+ 1911              	.Ldebug_line0:
+ 1912 0000 68010000 		.section	.debug_str,"MS",%progbits,1
+ 1912      02007D00 
+ 1912      00000201 
+ 1912      FB0E0D00 
+ 1912      01010101 
+ 1913              	.LASF21:
+ 1914 0000 70537461 		.ascii	"pStatusBlock\000"
+ 1914      74757342 
+ 1914      6C6F636B 
+ 1914      00
+ 1915              	.LASF50:
+ 1916 000d 433A5C55 		.ascii	"C:\\Users\\Robert\\Documents\\PSoC Creator\\product"
+ 1916      73657273 
+ 1916      5C526F62 
+ 1916      6572745C 
+ 1916      446F6375 
+ 1917 003b 696F6E5F 		.ascii	"ion_108\\PSoC Creator\\pisoc_bootloader.cydsn\000"
+ 1917      3130385C 
+ARM GAS  C:\Users\Robert\AppData\Local\Temp\ccr2TuqX.s 			page 43
+
+
+ 1917      50536F43 
+ 1917      20437265 
+ 1917      61746F72 
+ 1918              	.LASF28:
+ 1919 0067 73746174 		.ascii	"stat\000"
+ 1919      00
+ 1920              	.LASF19:
+ 1921 006c 636F756E 		.ascii	"count\000"
+ 1921      7400
+ 1922              	.LASF36:
+ 1923 0072 5553425F 		.ascii	"USB_Bootloader_DispatchHIDClassRqst\000"
+ 1923      426F6F74 
+ 1923      6C6F6164 
+ 1923      65725F44 
+ 1923      69737061 
+ 1924              	.LASF3:
+ 1925 0096 73686F72 		.ascii	"short unsigned int\000"
+ 1925      7420756E 
+ 1925      7369676E 
+ 1925      65642069 
+ 1925      6E7400
+ 1926              	.LASF25:
+ 1927 00a9 5553425F 		.ascii	"USB_Bootloader_UpdateHIDTimer\000"
+ 1927      426F6F74 
+ 1927      6C6F6164 
+ 1927      65725F55 
+ 1927      70646174 
+ 1928              	.LASF40:
+ 1929 00c7 5553425F 		.ascii	"USB_Bootloader_hidProtocol\000"
+ 1929      426F6F74 
+ 1929      6C6F6164 
+ 1929      65725F68 
+ 1929      69645072 
+ 1930              	.LASF31:
+ 1931 00e2 696E7465 		.ascii	"interfaceN\000"
+ 1931      72666163 
+ 1931      654E00
+ 1932              	.LASF16:
+ 1933 00ed 73746174 		.ascii	"status\000"
+ 1933      757300
+ 1934              	.LASF32:
+ 1935 00f4 5553425F 		.ascii	"USB_Bootloader_FindHidClassDecriptor\000"
+ 1935      426F6F74 
+ 1935      6C6F6164 
+ 1935      65725F46 
+ 1935      696E6448 
+ 1936              	.LASF20:
+ 1937 0119 70446174 		.ascii	"pData\000"
+ 1937      6100
+ 1938              	.LASF51:
+ 1939 011f 5553425F 		.ascii	"USB_Bootloader_GetConfigTablePtr\000"
+ 1939      426F6F74 
+ 1939      6C6F6164 
+ 1939      65725F47 
+ 1939      6574436F 
+ 1940              	.LASF37:
+ 1941 0140 72657175 		.ascii	"requestHandled\000"
+ARM GAS  C:\Users\Robert\AppData\Local\Temp\ccr2TuqX.s 			page 44
+
+
+ 1941      65737448 
+ 1941      616E646C 
+ 1941      656400
+ 1942              	.LASF11:
+ 1943 014f 666C6F61 		.ascii	"float\000"
+ 1943      7400
+ 1944              	.LASF35:
+ 1945 0155 7265706F 		.ascii	"reportType\000"
+ 1945      72745479 
+ 1945      706500
+ 1946              	.LASF0:
+ 1947 0160 7369676E 		.ascii	"signed char\000"
+ 1947      65642063 
+ 1947      68617200 
+ 1948              	.LASF1:
+ 1949 016c 756E7369 		.ascii	"unsigned char\000"
+ 1949      676E6564 
+ 1949      20636861 
+ 1949      7200
+ 1950              	.LASF41:
+ 1951 017a 5553425F 		.ascii	"USB_Bootloader_hidIdleRate\000"
+ 1951      426F6F74 
+ 1951      6C6F6164 
+ 1951      65725F68 
+ 1951      69644964 
+ 1952              	.LASF33:
+ 1953 0195 5553425F 		.ascii	"USB_Bootloader_FindReportDescriptor\000"
+ 1953      426F6F74 
+ 1953      6C6F6164 
+ 1953      65725F46 
+ 1953      696E6452 
+ 1954              	.LASF14:
+ 1955 01b9 72656738 		.ascii	"reg8\000"
+ 1955      00
+ 1956              	.LASF5:
+ 1957 01be 6C6F6E67 		.ascii	"long unsigned int\000"
+ 1957      20756E73 
+ 1957      69676E65 
+ 1957      6420696E 
+ 1957      7400
+ 1958              	.LASF9:
+ 1959 01d0 75696E74 		.ascii	"uint8\000"
+ 1959      3800
+ 1960              	.LASF44:
+ 1961 01d6 5553425F 		.ascii	"USB_Bootloader_currentTD\000"
+ 1961      426F6F74 
+ 1961      6C6F6164 
+ 1961      65725F63 
+ 1961      75727265 
+ 1962              	.LASF22:
+ 1963 01ef 545F5553 		.ascii	"T_USB_Bootloader_TD\000"
+ 1963      425F426F 
+ 1963      6F746C6F 
+ 1963      61646572 
+ 1963      5F544400 
+ 1964              	.LASF38:
+ 1965 0203 696E7465 		.ascii	"interfaceNumber\000"
+ARM GAS  C:\Users\Robert\AppData\Local\Temp\ccr2TuqX.s 			page 45
+
+
+ 1965      72666163 
+ 1965      654E756D 
+ 1965      62657200 
+ 1966              	.LASF12:
+ 1967 0213 646F7562 		.ascii	"double\000"
+ 1967      6C6500
+ 1968              	.LASF10:
+ 1969 021a 75696E74 		.ascii	"uint16\000"
+ 1969      313600
+ 1970              	.LASF48:
+ 1971 0221 474E5520 		.ascii	"GNU C 4.9.3 20150303 (release) [ARM/embedded-4_9-br"
+ 1971      4320342E 
+ 1971      392E3320 
+ 1971      32303135 
+ 1971      30333033 
+ 1972 0254 616E6368 		.ascii	"anch revision 221220] -mcpu=cortex-m3 -mthumb -g -O"
+ 1972      20726576 
+ 1972      6973696F 
+ 1972      6E203232 
+ 1972      31323230 
+ 1973 0287 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 1973      66756E63 
+ 1973      74696F6E 
+ 1973      2D736563 
+ 1973      74696F6E 
+ 1974              	.LASF30:
+ 1975 02af 70446573 		.ascii	"pDescr\000"
+ 1975      637200
+ 1976              	.LASF24:
+ 1977 02b6 545F5553 		.ascii	"T_USB_Bootloader_LUT\000"
+ 1977      425F426F 
+ 1977      6F746C6F 
+ 1977      61646572 
+ 1977      5F4C5554 
+ 1978              	.LASF8:
+ 1979 02cb 756E7369 		.ascii	"unsigned int\000"
+ 1979      676E6564 
+ 1979      20696E74 
+ 1979      00
+ 1980              	.LASF7:
+ 1981 02d8 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 1981      206C6F6E 
+ 1981      6720756E 
+ 1981      7369676E 
+ 1981      65642069 
+ 1982              	.LASF23:
+ 1983 02ef 705F6C69 		.ascii	"p_list\000"
+ 1983      737400
+ 1984              	.LASF45:
+ 1985 02f6 5553425F 		.ascii	"USB_Bootloader_InitControlRead\000"
+ 1985      426F6F74 
+ 1985      6C6F6164 
+ 1985      65725F49 
+ 1985      6E697443 
+ 1986              	.LASF39:
+ 1987 0315 5553425F 		.ascii	"USB_Bootloader_configuration\000"
+ 1987      426F6F74 
+ARM GAS  C:\Users\Robert\AppData\Local\Temp\ccr2TuqX.s 			page 46
+
+
+ 1987      6C6F6164 
+ 1987      65725F63 
+ 1987      6F6E6669 
+ 1988              	.LASF46:
+ 1989 0332 5553425F 		.ascii	"USB_Bootloader_InitControlWrite\000"
+ 1989      426F6F74 
+ 1989      6C6F6164 
+ 1989      65725F49 
+ 1989      6E697443 
+ 1990              	.LASF15:
+ 1991 0352 73697A65 		.ascii	"sizetype\000"
+ 1991      74797065 
+ 1991      00
+ 1992              	.LASF6:
+ 1993 035b 6C6F6E67 		.ascii	"long long int\000"
+ 1993      206C6F6E 
+ 1993      6720696E 
+ 1993      7400
+ 1994              	.LASF13:
+ 1995 0369 63686172 		.ascii	"char\000"
+ 1995      00
+ 1996              	.LASF29:
+ 1997 036e 70546D70 		.ascii	"pTmp\000"
+ 1997      00
+ 1998              	.LASF43:
+ 1999 0373 5553425F 		.ascii	"USB_Bootloader_interfaceSetting\000"
+ 1999      426F6F74 
+ 1999      6C6F6164 
+ 1999      65725F69 
+ 1999      6E746572 
+ 2000              	.LASF2:
+ 2001 0393 73686F72 		.ascii	"short int\000"
+ 2001      7420696E 
+ 2001      7400
+ 2002              	.LASF34:
+ 2003 039d 5553425F 		.ascii	"USB_Bootloader_FindReport\000"
+ 2003      426F6F74 
+ 2003      6C6F6164 
+ 2003      65725F46 
+ 2003      696E6452 
+ 2004              	.LASF27:
+ 2005 03b7 696E7465 		.ascii	"interface\000"
+ 2005      72666163 
+ 2005      6500
+ 2006              	.LASF18:
+ 2007 03c1 545F5553 		.ascii	"T_USB_Bootloader_XFER_STATUS_BLOCK\000"
+ 2007      425F426F 
+ 2007      6F746C6F 
+ 2007      61646572 
+ 2007      5F584645 
+ 2008              	.LASF4:
+ 2009 03e4 6C6F6E67 		.ascii	"long int\000"
+ 2009      20696E74 
+ 2009      00
+ 2010              	.LASF47:
+ 2011 03ed 5553425F 		.ascii	"USB_Bootloader_InitNoDataControlTransfer\000"
+ 2011      426F6F74 
+ARM GAS  C:\Users\Robert\AppData\Local\Temp\ccr2TuqX.s 			page 47
+
+
+ 2011      6C6F6164 
+ 2011      65725F49 
+ 2011      6E69744E 
+ 2012              	.LASF49:
+ 2013 0416 2E5C4765 		.ascii	".\\Generated_Source\\PSoC5\\USB_Bootloader_hid.c\000"
+ 2013      6E657261 
+ 2013      7465645F 
+ 2013      536F7572 
+ 2013      63655C50 
+ 2014              	.LASF26:
+ 2015 0444 5553425F 		.ascii	"USB_Bootloader_GetProtocol\000"
+ 2015      426F6F74 
+ 2015      6C6F6164 
+ 2015      65725F47 
+ 2015      65745072 
+ 2016              	.LASF17:
+ 2017 045f 6C656E67 		.ascii	"length\000"
+ 2017      746800
+ 2018              	.LASF42:
+ 2019 0466 5553425F 		.ascii	"USB_Bootloader_hidIdleTimer\000"
+ 2019      426F6F74 
+ 2019      6C6F6164 
+ 2019      65725F68 
+ 2019      69644964 
+ 2020              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.9.3 20150303 (release) [ARM/embedded-4_9-br

@@ -1,8 +1,0 @@
-Last Modified Date & Time: 08/20/2014 14:41:23
-
-Project : Bootloader_RPiSoC
-		Schematic : TopDesign
-
-		USBFS	v 2.60tv 2.70
-
-

@@ -1,0 +1,328 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CyXmlSerializer>
+<!--This file is machine generated and read. It is not intended to be edited by hand.-->
+<!--Due to this, there is no schema for this file.-->
+<CyGuid_843a90a4-0c4b-4e44-991d-05e7fb117a21 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtWrkspcCustomData" version="4">
+<CyGuid_fdba8dfd-b15b-4469-9bbb-9e40c3e70997 type_name="CyDesigner.Common.Base.CyCustomData" version="2">
+<userData>
+<dataGuid v="1b906a0f-a7b6-4e4d-a428-82f98b53cb35">
+<CyGuid_1b906a0f-a7b6-4e4d-a428-82f98b53cb35 type_name="CyDesigner.Common.ProjMgmt.GUI.CyExplorerWindow+CyExplorerWindowState" version="3" SelectedTab="Source">
+<TreeKeys>
+<v>Source</v>
+<v>Components</v>
+<v>Output</v>
+</TreeKeys>
+<TreeStates>
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="PSoC_2_Pi\pisoc_bootloadable_example\TopDesign">
+<ExpandedNodeIds>
+<v>PSoC_2_Pi</v>
+<v>PSoC_2_Pi\pisoc_bootloadable_example</v>
+<v>PSoC_2_Pi\pisoc_bootloadable_example\TopDesign</v>
+<v>PSoC_2_Pi\pisoc_bootloadable_example\pisoc_bootloadable_example.cydwr</v>
+<v>PSoC_2_Pi\pisoc_bootloadable_example\Header Files</v>
+<v>PSoC_2_Pi\pisoc_bootloadable_example\Header Files\cyapicallbacks.h</v>
+<v>PSoC_2_Pi\pisoc_bootloadable_example\Source Files</v>
+<v>PSoC_2_Pi\pisoc_bootloadable_example\Source Files\main.c</v>
+<v>PSoC_2_Pi\pisoc_bootloadable_example\Generated_Source\PSoC5</v>
+<v>PSoC_2_Pi\pisoc_bootloadable_example\Generated_Source\PSoC5\Bootloadable_1</v>
+<v>PSoC_2_Pi\pisoc_bootloadable_example\Generated_Source\PSoC5\Bootloadable_1\Bootloadable_1.c</v>
+<v>PSoC_2_Pi\pisoc_bootloadable_example\Generated_Source\PSoC5\Bootloadable_1\Bootloadable_1.h</v>
+<v>PSoC_2_Pi\pisoc_bootloadable_example\Generated_Source\PSoC5\Clock_1</v>
+<v>PSoC_2_Pi\pisoc_bootloadable_example\Generated_Source\PSoC5\Clock_1\Clock_1.c</v>
+<v>PSoC_2_Pi\pisoc_bootloadable_example\Generated_Source\PSoC5\Clock_1\Clock_1.h</v>
+<v>PSoC_2_Pi\pisoc_bootloadable_example\Generated_Source\PSoC5\cy_boot</v>
+<v>PSoC_2_Pi\pisoc_bootloadable_example\Generated_Source\PSoC5\cy_boot\cm3gcc.ld</v>
+<v>PSoC_2_Pi\pisoc_bootloadable_example\Generated_Source\PSoC5\cy_boot\Cm3Iar.icf</v>
+<v>PSoC_2_Pi\pisoc_bootloadable_example\Generated_Source\PSoC5\cy_boot\Cm3RealView.scat</v>
+<v>PSoC_2_Pi\pisoc_bootloadable_example\Generated_Source\PSoC5\cy_boot\Cm3Start.c</v>
+<v>PSoC_2_Pi\pisoc_bootloadable_example\Generated_Source\PSoC5\cy_boot\core_cm3.h</v>
+<v>PSoC_2_Pi\pisoc_bootloadable_example\Generated_Source\PSoC5\cy_boot\core_cm3_psoc5.h</v>
+<v>PSoC_2_Pi\pisoc_bootloadable_example\Generated_Source\PSoC5\cy_boot\core_cmFunc.h</v>
+<v>PSoC_2_Pi\pisoc_bootloadable_example\Generated_Source\PSoC5\cy_boot\core_cmInstr.h</v>
+<v>PSoC_2_Pi\pisoc_bootloadable_example\Generated_Source\PSoC5\cy_boot\CyBootAsmGnu.s</v>
+<v>PSoC_2_Pi\pisoc_bootloadable_example\Generated_Source\PSoC5\cy_boot\CyBootAsmIar.s</v>
+<v>PSoC_2_Pi\pisoc_bootloadable_example\Generated_Source\PSoC5\cy_boot\CyBootAsmRv.s</v>
+<v>PSoC_2_Pi\pisoc_bootloadable_example\Generated_Source\PSoC5\cy_boot\CyDmac.c</v>
+<v>PSoC_2_Pi\pisoc_bootloadable_example\Generated_Source\PSoC5\cy_boot\CyDmac.h</v>
+<v>PSoC_2_Pi\pisoc_bootloadable_example\Generated_Source\PSoC5\cy_boot\CyFlash.c</v>
+<v>PSoC_2_Pi\pisoc_bootloadable_example\Generated_Source\PSoC5\cy_boot\CyFlash.h</v>
+<v>PSoC_2_Pi\pisoc_bootloadable_example\Generated_Source\PSoC5\cy_boot\CyLib.c</v>
+<v>PSoC_2_Pi\pisoc_bootloadable_example\Generated_Source\PSoC5\cy_boot\CyLib.h</v>
+<v>PSoC_2_Pi\pisoc_bootloadable_example\Generated_Source\PSoC5\cy_boot\cypins.h</v>
+<v>PSoC_2_Pi\pisoc_bootloadable_example\Generated_Source\PSoC5\cy_boot\cyPm.c</v>
+<v>PSoC_2_Pi\pisoc_bootloadable_example\Generated_Source\PSoC5\cy_boot\cyPm.h</v>
+<v>PSoC_2_Pi\pisoc_bootloadable_example\Generated_Source\PSoC5\cy_boot\CySpc.c</v>
+<v>PSoC_2_Pi\pisoc_bootloadable_example\Generated_Source\PSoC5\cy_boot\CySpc.h</v>
+<v>PSoC_2_Pi\pisoc_bootloadable_example\Generated_Source\PSoC5\cy_boot\cytypes.h</v>
+<v>PSoC_2_Pi\pisoc_bootloadable_example\Generated_Source\PSoC5\cy_boot\cyutils.c</v>
+<v>PSoC_2_Pi\pisoc_bootloadable_example\Generated_Source\PSoC5\led</v>
+<v>PSoC_2_Pi\pisoc_bootloadable_example\Generated_Source\PSoC5\led\led.c</v>
+<v>PSoC_2_Pi\pisoc_bootloadable_example\Generated_Source\PSoC5\led\led.h</v>
+<v>PSoC_2_Pi\pisoc_bootloadable_example\Generated_Source\PSoC5\led\led_aliases.h</v>
+<v>PSoC_2_Pi\pisoc_bootloadable_example\Generated_Source\PSoC5\PWM_1</v>
+<v>PSoC_2_Pi\pisoc_bootloadable_example\Generated_Source\PSoC5\PWM_1\PWM_1.c</v>
+<v>PSoC_2_Pi\pisoc_bootloadable_example\Generated_Source\PSoC5\PWM_1\PWM_1.h</v>
+<v>PSoC_2_Pi\pisoc_bootloadable_example\Generated_Source\PSoC5\PWM_1\PWM_1_PM.c</v>
+<v>PSoC_2_Pi\pisoc_bootloadable_example\Generated_Source\PSoC5\cybootloader.c</v>
+<v>PSoC_2_Pi\pisoc_bootloadable_example\Generated_Source\PSoC5\cybootloader.icf</v>
+<v>PSoC_2_Pi\pisoc_bootloadable_example\Generated_Source\PSoC5\cycodeshareexport.ld</v>
+<v>PSoC_2_Pi\pisoc_bootloadable_example\Generated_Source\PSoC5\cycodeshareimport.ld</v>
+<v>PSoC_2_Pi\pisoc_bootloadable_example\Generated_Source\PSoC5\cycodeshareimport.scat</v>
+<v>PSoC_2_Pi\pisoc_bootloadable_example\Generated_Source\PSoC5\cydevice.h</v>
+<v>PSoC_2_Pi\pisoc_bootloadable_example\Generated_Source\PSoC5\cydevice_trm.h</v>
+<v>PSoC_2_Pi\pisoc_bootloadable_example\Generated_Source\PSoC5\cydevicegnu.inc</v>
+<v>PSoC_2_Pi\pisoc_bootloadable_example\Generated_Source\PSoC5\cydevicegnu_trm.inc</v>
+<v>PSoC_2_Pi\pisoc_bootloadable_example\Generated_Source\PSoC5\cydeviceiar.inc</v>
+<v>PSoC_2_Pi\pisoc_bootloadable_example\Generated_Source\PSoC5\cydeviceiar_trm.inc</v>
+<v>PSoC_2_Pi\pisoc_bootloadable_example\Generated_Source\PSoC5\cydevicerv.inc</v>
+<v>PSoC_2_Pi\pisoc_bootloadable_example\Generated_Source\PSoC5\cydevicerv_trm.inc</v>
+<v>PSoC_2_Pi\pisoc_bootloadable_example\Generated_Source\PSoC5\cydisabledsheets.h</v>
+<v>PSoC_2_Pi\pisoc_bootloadable_example\Generated_Source\PSoC5\cyfitter.h</v>
+<v>PSoC_2_Pi\pisoc_bootloadable_example\Generated_Source\PSoC5\cyfitter_cfg.c</v>
+<v>PSoC_2_Pi\pisoc_bootloadable_example\Generated_Source\PSoC5\cyfitter_cfg.h</v>
+<v>PSoC_2_Pi\pisoc_bootloadable_example\Generated_Source\PSoC5\cyfittergnu.inc</v>
+<v>PSoC_2_Pi\pisoc_bootloadable_example\Generated_Source\PSoC5\cyfitteriar.inc</v>
+<v>PSoC_2_Pi\pisoc_bootloadable_example\Generated_Source\PSoC5\cyfitterrv.inc</v>
+<v>PSoC_2_Pi\pisoc_bootloadable_example\Generated_Source\PSoC5\cymetadata.c</v>
+<v>PSoC_2_Pi\pisoc_bootloadable_example\Generated_Source\PSoC5\project.h</v>
+<v>PSoC_2_Pi\pisoc_bootloader</v>
+<v>PSoC_2_Pi\pisoc_bootloader\TopDesign</v>
+<v>PSoC_2_Pi\pisoc_bootloader\pisoc_bootloader.cydwr</v>
+<v>PSoC_2_Pi\pisoc_bootloader\Header Files</v>
+<v>PSoC_2_Pi\pisoc_bootloader\Header Files\cyapicallbacks.h</v>
+<v>PSoC_2_Pi\pisoc_bootloader\Source Files</v>
+<v>PSoC_2_Pi\pisoc_bootloader\Source Files\main.c</v>
+<v>PSoC_2_Pi\pisoc_bootloader\Generated_Source\PSoC5</v>
+<v>PSoC_2_Pi\pisoc_bootloader\Generated_Source\PSoC5\BOOT_LED</v>
+<v>PSoC_2_Pi\pisoc_bootloader\Generated_Source\PSoC5\BOOT_LED\BOOT_LED.c</v>
+<v>PSoC_2_Pi\pisoc_bootloader\Generated_Source\PSoC5\BOOT_LED\BOOT_LED.h</v>
+<v>PSoC_2_Pi\pisoc_bootloader\Generated_Source\PSoC5\BOOT_LED\BOOT_LED_aliases.h</v>
+<v>PSoC_2_Pi\pisoc_bootloader\Generated_Source\PSoC5\BOOT_MODE</v>
+<v>PSoC_2_Pi\pisoc_bootloader\Generated_Source\PSoC5\BOOT_MODE\BOOT_MODE.c</v>
+<v>PSoC_2_Pi\pisoc_bootloader\Generated_Source\PSoC5\BOOT_MODE\BOOT_MODE.h</v>
+<v>PSoC_2_Pi\pisoc_bootloader\Generated_Source\PSoC5\BOOT_MODE\BOOT_MODE_aliases.h</v>
+<v>PSoC_2_Pi\pisoc_bootloader\Generated_Source\PSoC5\Bootloader</v>
+<v>PSoC_2_Pi\pisoc_bootloader\Generated_Source\PSoC5\Bootloader\Bootloader.c</v>
+<v>PSoC_2_Pi\pisoc_bootloader\Generated_Source\PSoC5\Bootloader\Bootloader.h</v>
+<v>PSoC_2_Pi\pisoc_bootloader\Generated_Source\PSoC5\Bootloader\Bootloader_PVT.h</v>
+<v>PSoC_2_Pi\pisoc_bootloader\Generated_Source\PSoC5\cy_boot</v>
+<v>PSoC_2_Pi\pisoc_bootloader\Generated_Source\PSoC5\cy_boot\cm3gcc.ld</v>
+<v>PSoC_2_Pi\pisoc_bootloader\Generated_Source\PSoC5\cy_boot\Cm3Iar.icf</v>
+<v>PSoC_2_Pi\pisoc_bootloader\Generated_Source\PSoC5\cy_boot\Cm3RealView.scat</v>
+<v>PSoC_2_Pi\pisoc_bootloader\Generated_Source\PSoC5\cy_boot\Cm3Start.c</v>
+<v>PSoC_2_Pi\pisoc_bootloader\Generated_Source\PSoC5\cy_boot\core_cm3.h</v>
+<v>PSoC_2_Pi\pisoc_bootloader\Generated_Source\PSoC5\cy_boot\core_cm3_psoc5.h</v>
+<v>PSoC_2_Pi\pisoc_bootloader\Generated_Source\PSoC5\cy_boot\core_cmFunc.h</v>
+<v>PSoC_2_Pi\pisoc_bootloader\Generated_Source\PSoC5\cy_boot\core_cmInstr.h</v>
+<v>PSoC_2_Pi\pisoc_bootloader\Generated_Source\PSoC5\cy_boot\CyBootAsmGnu.s</v>
+<v>PSoC_2_Pi\pisoc_bootloader\Generated_Source\PSoC5\cy_boot\CyBootAsmIar.s</v>
+<v>PSoC_2_Pi\pisoc_bootloader\Generated_Source\PSoC5\cy_boot\CyBootAsmRv.s</v>
+<v>PSoC_2_Pi\pisoc_bootloader\Generated_Source\PSoC5\cy_boot\CyDmac.c</v>
+<v>PSoC_2_Pi\pisoc_bootloader\Generated_Source\PSoC5\cy_boot\CyDmac.h</v>
+<v>PSoC_2_Pi\pisoc_bootloader\Generated_Source\PSoC5\cy_boot\CyFlash.c</v>
+<v>PSoC_2_Pi\pisoc_bootloader\Generated_Source\PSoC5\cy_boot\CyFlash.h</v>
+<v>PSoC_2_Pi\pisoc_bootloader\Generated_Source\PSoC5\cy_boot\CyLib.c</v>
+<v>PSoC_2_Pi\pisoc_bootloader\Generated_Source\PSoC5\cy_boot\CyLib.h</v>
+<v>PSoC_2_Pi\pisoc_bootloader\Generated_Source\PSoC5\cy_boot\cypins.h</v>
+<v>PSoC_2_Pi\pisoc_bootloader\Generated_Source\PSoC5\cy_boot\cyPm.c</v>
+<v>PSoC_2_Pi\pisoc_bootloader\Generated_Source\PSoC5\cy_boot\cyPm.h</v>
+<v>PSoC_2_Pi\pisoc_bootloader\Generated_Source\PSoC5\cy_boot\CySpc.c</v>
+<v>PSoC_2_Pi\pisoc_bootloader\Generated_Source\PSoC5\cy_boot\CySpc.h</v>
+<v>PSoC_2_Pi\pisoc_bootloader\Generated_Source\PSoC5\cy_boot\cytypes.h</v>
+<v>PSoC_2_Pi\pisoc_bootloader\Generated_Source\PSoC5\cy_boot\cyutils.c</v>
+<v>PSoC_2_Pi\pisoc_bootloader\Generated_Source\PSoC5\USB_Bootloader</v>
+<v>PSoC_2_Pi\pisoc_bootloader\Generated_Source\PSoC5\USB_Bootloader\USB_Bootloader.c</v>
+<v>PSoC_2_Pi\pisoc_bootloader\Generated_Source\PSoC5\USB_Bootloader\USB_Bootloader.h</v>
+<v>PSoC_2_Pi\pisoc_bootloader\Generated_Source\PSoC5\USB_Bootloader\USB_Bootloader_audio.c</v>
+<v>PSoC_2_Pi\pisoc_bootloader\Generated_Source\PSoC5\USB_Bootloader\USB_Bootloader_audio.h</v>
+<v>PSoC_2_Pi\pisoc_bootloader\Generated_Source\PSoC5\USB_Bootloader\USB_Bootloader_boot.c</v>
+<v>PSoC_2_Pi\pisoc_bootloader\Generated_Source\PSoC5\USB_Bootloader\USB_Bootloader_cdc.c</v>
+<v>PSoC_2_Pi\pisoc_bootloader\Generated_Source\PSoC5\USB_Bootloader\USB_Bootloader_cdc.h</v>
+<v>PSoC_2_Pi\pisoc_bootloader\Generated_Source\PSoC5\USB_Bootloader\USB_Bootloader_cdc.inf</v>
+<v>PSoC_2_Pi\pisoc_bootloader\Generated_Source\PSoC5\USB_Bootloader\USB_Bootloader_cls.c</v>
+<v>PSoC_2_Pi\pisoc_bootloader\Generated_Source\PSoC5\USB_Bootloader\USB_Bootloader_descr.c</v>
+<v>PSoC_2_Pi\pisoc_bootloader\Generated_Source\PSoC5\USB_Bootloader\USB_Bootloader_drv.c</v>
+<v>PSoC_2_Pi\pisoc_bootloader\Generated_Source\PSoC5\USB_Bootloader\USB_Bootloader_episr.c</v>
+<v>PSoC_2_Pi\pisoc_bootloader\Generated_Source\PSoC5\USB_Bootloader\USB_Bootloader_hid.c</v>
+<v>PSoC_2_Pi\pisoc_bootloader\Generated_Source\PSoC5\USB_Bootloader\USB_Bootloader_hid.h</v>
+<v>PSoC_2_Pi\pisoc_bootloader\Generated_Source\PSoC5\USB_Bootloader\USB_Bootloader_midi.c</v>
+<v>PSoC_2_Pi\pisoc_bootloader\Generated_Source\PSoC5\USB_Bootloader\USB_Bootloader_midi.h</v>
+<v>PSoC_2_Pi\pisoc_bootloader\Generated_Source\PSoC5\USB_Bootloader\USB_Bootloader_pm.c</v>
+<v>PSoC_2_Pi\pisoc_bootloader\Generated_Source\PSoC5\USB_Bootloader\USB_Bootloader_pvt.h</v>
+<v>PSoC_2_Pi\pisoc_bootloader\Generated_Source\PSoC5\USB_Bootloader\USB_Bootloader_std.c</v>
+<v>PSoC_2_Pi\pisoc_bootloader\Generated_Source\PSoC5\USB_Bootloader\USB_Bootloader_vnd.c</v>
+<v>PSoC_2_Pi\pisoc_bootloader\Generated_Source\PSoC5\USB_Bootloader_Dm</v>
+<v>PSoC_2_Pi\pisoc_bootloader\Generated_Source\PSoC5\USB_Bootloader_Dm\USB_Bootloader_Dm.c</v>
+<v>PSoC_2_Pi\pisoc_bootloader\Generated_Source\PSoC5\USB_Bootloader_Dm\USB_Bootloader_Dm.h</v>
+<v>PSoC_2_Pi\pisoc_bootloader\Generated_Source\PSoC5\USB_Bootloader_Dm\USB_Bootloader_Dm_aliases.h</v>
+<v>PSoC_2_Pi\pisoc_bootloader\Generated_Source\PSoC5\USB_Bootloader_Dp</v>
+<v>PSoC_2_Pi\pisoc_bootloader\Generated_Source\PSoC5\USB_Bootloader_Dp\USB_Bootloader_Dp.c</v>
+<v>PSoC_2_Pi\pisoc_bootloader\Generated_Source\PSoC5\USB_Bootloader_Dp\USB_Bootloader_Dp.h</v>
+<v>PSoC_2_Pi\pisoc_bootloader\Generated_Source\PSoC5\USB_Bootloader_Dp\USB_Bootloader_Dp_aliases.h</v>
+<v>PSoC_2_Pi\pisoc_bootloader\Generated_Source\PSoC5\cycodeshareimport.ld</v>
+<v>PSoC_2_Pi\pisoc_bootloader\Generated_Source\PSoC5\cycodeshareimport.scat</v>
+<v>PSoC_2_Pi\pisoc_bootloader\Generated_Source\PSoC5\cydevice.h</v>
+<v>PSoC_2_Pi\pisoc_bootloader\Generated_Source\PSoC5\cydevice_trm.h</v>
+<v>PSoC_2_Pi\pisoc_bootloader\Generated_Source\PSoC5\cydevicegnu.inc</v>
+<v>PSoC_2_Pi\pisoc_bootloader\Generated_Source\PSoC5\cydevicegnu_trm.inc</v>
+<v>PSoC_2_Pi\pisoc_bootloader\Generated_Source\PSoC5\cydeviceiar.inc</v>
+<v>PSoC_2_Pi\pisoc_bootloader\Generated_Source\PSoC5\cydeviceiar_trm.inc</v>
+<v>PSoC_2_Pi\pisoc_bootloader\Generated_Source\PSoC5\cydevicerv.inc</v>
+<v>PSoC_2_Pi\pisoc_bootloader\Generated_Source\PSoC5\cydevicerv_trm.inc</v>
+<v>PSoC_2_Pi\pisoc_bootloader\Generated_Source\PSoC5\cydisabledsheets.h</v>
+<v>PSoC_2_Pi\pisoc_bootloader\Generated_Source\PSoC5\cyfitter.h</v>
+<v>PSoC_2_Pi\pisoc_bootloader\Generated_Source\PSoC5\cyfitter_cfg.c</v>
+<v>PSoC_2_Pi\pisoc_bootloader\Generated_Source\PSoC5\cyfitter_cfg.h</v>
+<v>PSoC_2_Pi\pisoc_bootloader\Generated_Source\PSoC5\cyfittergnu.inc</v>
+<v>PSoC_2_Pi\pisoc_bootloader\Generated_Source\PSoC5\cyfitteriar.inc</v>
+<v>PSoC_2_Pi\pisoc_bootloader\Generated_Source\PSoC5\cyfitterrv.inc</v>
+<v>PSoC_2_Pi\pisoc_bootloader\Generated_Source\PSoC5\cymetadata.c</v>
+<v>PSoC_2_Pi\pisoc_bootloader\Generated_Source\PSoC5\project.h</v>
+</ExpandedNodeIds>
+<VisibleNodeIds>
+<v>PSoC_2_Pi</v>
+<v>PSoC_2_Pi\pisoc_bootloadable_example</v>
+<v>PSoC_2_Pi\pisoc_bootloadable_example\TopDesign</v>
+<v>PSoC_2_Pi\pisoc_bootloadable_example\pisoc_bootloadable_example.cydwr</v>
+<v>PSoC_2_Pi\pisoc_bootloadable_example\Header Files</v>
+<v>PSoC_2_Pi\pisoc_bootloadable_example\Header Files\cyapicallbacks.h</v>
+<v>PSoC_2_Pi\pisoc_bootloadable_example\Source Files</v>
+<v>PSoC_2_Pi\pisoc_bootloadable_example\Source Files\main.c</v>
+<v>PSoC_2_Pi\pisoc_bootloadable_example\Generated_Source</v>
+<v>PSoC_2_Pi\pisoc_bootloader</v>
+<v>PSoC_2_Pi\pisoc_bootloader\TopDesign</v>
+<v>PSoC_2_Pi\pisoc_bootloader\pisoc_bootloader.cydwr</v>
+<v>PSoC_2_Pi\pisoc_bootloader\Header Files</v>
+<v>PSoC_2_Pi\pisoc_bootloader\Header Files\cyapicallbacks.h</v>
+<v>PSoC_2_Pi\pisoc_bootloader\Source Files</v>
+<v>PSoC_2_Pi\pisoc_bootloader\Source Files\main.c</v>
+<v>PSoC_2_Pi\pisoc_bootloader\Generated_Source</v>
+</VisibleNodeIds>
+</CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
+<ExpandedNodeIds>
+<v>PSoC_2_Pi</v>
+<v>PSoC_2_Pi\pisoc_bootloadable_example</v>
+<v>PSoC_2_Pi\pisoc_bootloadable_example\TopDesign</v>
+<v>PSoC_2_Pi\pisoc_bootloadable_example\TopDesign\TopDesign.cysch</v>
+<v>PSoC_2_Pi\pisoc_bootloader</v>
+<v>PSoC_2_Pi\pisoc_bootloader\TopDesign</v>
+<v>PSoC_2_Pi\pisoc_bootloader\TopDesign\TopDesign.cysch</v>
+</ExpandedNodeIds>
+<VisibleNodeIds>
+<v>PSoC_2_Pi</v>
+<v>PSoC_2_Pi\pisoc_bootloadable_example</v>
+<v>PSoC_2_Pi\pisoc_bootloadable_example\TopDesign</v>
+<v>PSoC_2_Pi\pisoc_bootloadable_example\TopDesign\TopDesign.cysch</v>
+<v>PSoC_2_Pi\pisoc_bootloader</v>
+<v>PSoC_2_Pi\pisoc_bootloader\TopDesign</v>
+<v>PSoC_2_Pi\pisoc_bootloader\TopDesign\TopDesign.cysch</v>
+</VisibleNodeIds>
+</CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
+<ExpandedNodeIds>
+<v>PSoC_2_Pi</v>
+<v>PSoC_2_Pi\pisoc_bootloadable_example</v>
+<v>PSoC_2_Pi\pisoc_bootloadable_example\pisoc_bootloadable_example.gpdsc</v>
+<v>PSoC_2_Pi\pisoc_bootloadable_example\pisoc_bootloadable_example.rpt</v>
+<v>PSoC_2_Pi\pisoc_bootloadable_example\pisoc_bootloadable_example_timing.html</v>
+<v>PSoC_2_Pi\pisoc_bootloader</v>
+<v>PSoC_2_Pi\pisoc_bootloader\CortexM3</v>
+<v>PSoC_2_Pi\pisoc_bootloader\CortexM3\ARM_GCC_493</v>
+<v>PSoC_2_Pi\pisoc_bootloader\CortexM3\ARM_GCC_493\Debug</v>
+<v>PSoC_2_Pi\pisoc_bootloader\CortexM3\ARM_GCC_493\Debug\pisoc_bootloader.elf</v>
+<v>PSoC_2_Pi\pisoc_bootloader\CortexM3\ARM_GCC_493\Debug\pisoc_bootloader.hex</v>
+<v>PSoC_2_Pi\pisoc_bootloader\CortexM3\ARM_GCC_493\Debug\pisoc_bootloader.map</v>
+<v>PSoC_2_Pi\pisoc_bootloader\pisoc_bootloader.gpdsc</v>
+<v>PSoC_2_Pi\pisoc_bootloader\pisoc_bootloader.rpt</v>
+<v>PSoC_2_Pi\pisoc_bootloader\pisoc_bootloader_timing.html</v>
+</ExpandedNodeIds>
+<VisibleNodeIds>
+<v>PSoC_2_Pi</v>
+<v>PSoC_2_Pi\pisoc_bootloadable_example</v>
+<v>PSoC_2_Pi\pisoc_bootloadable_example\pisoc_bootloadable_example.gpdsc</v>
+<v>PSoC_2_Pi\pisoc_bootloadable_example\pisoc_bootloadable_example.rpt</v>
+<v>PSoC_2_Pi\pisoc_bootloadable_example\pisoc_bootloadable_example_timing.html</v>
+<v>PSoC_2_Pi\pisoc_bootloader</v>
+<v>PSoC_2_Pi\pisoc_bootloader\CortexM3</v>
+<v>PSoC_2_Pi\pisoc_bootloader\CortexM3\ARM_GCC_493</v>
+<v>PSoC_2_Pi\pisoc_bootloader\CortexM3\ARM_GCC_493\Debug</v>
+<v>PSoC_2_Pi\pisoc_bootloader\CortexM3\ARM_GCC_493\Debug\pisoc_bootloader.elf</v>
+<v>PSoC_2_Pi\pisoc_bootloader\CortexM3\ARM_GCC_493\Debug\pisoc_bootloader.hex</v>
+<v>PSoC_2_Pi\pisoc_bootloader\CortexM3\ARM_GCC_493\Debug\pisoc_bootloader.map</v>
+<v>PSoC_2_Pi\pisoc_bootloader\pisoc_bootloader.gpdsc</v>
+<v>PSoC_2_Pi\pisoc_bootloader\pisoc_bootloader.rpt</v>
+<v>PSoC_2_Pi\pisoc_bootloader\pisoc_bootloader_timing.html</v>
+</VisibleNodeIds>
+</CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
+</TreeStates>
+<TreeKeysV2>
+<v>Datasheet</v>
+</TreeKeysV2>
+<TreeStatesV2>
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
+<ExpandedNodeIds>
+<v>PSoC_2_Pi</v>
+<v>PSoC_2_Pi\pisoc_bootloadable_example</v>
+<v>PSoC_2_Pi\pisoc_bootloadable_example\PSoC 5 Architecture TRM</v>
+<v>PSoC_2_Pi\pisoc_bootloadable_example\CY8C58LP Family Datasheet</v>
+<v>PSoC_2_Pi\pisoc_bootloadable_example\System Reference Guides</v>
+<v>PSoC_2_Pi\pisoc_bootloadable_example\System Reference Guides\cy_boot_v5_30</v>
+<v>PSoC_2_Pi\pisoc_bootloadable_example\Bootloadable_v1_50.pdf</v>
+<v>PSoC_2_Pi\pisoc_bootloadable_example\cy_clock_v2_20.pdf</v>
+<v>PSoC_2_Pi\pisoc_bootloadable_example\cy_pins_v2_20.pdf</v>
+<v>PSoC_2_Pi\pisoc_bootloadable_example\PWM_v3_30.pdf</v>
+<v>PSoC_2_Pi\pisoc_bootloader</v>
+<v>PSoC_2_Pi\pisoc_bootloader\PSoC 5 Architecture TRM</v>
+<v>PSoC_2_Pi\pisoc_bootloader\CY8C58LP Family Datasheet</v>
+<v>PSoC_2_Pi\pisoc_bootloader\System Reference Guides</v>
+<v>PSoC_2_Pi\pisoc_bootloader\System Reference Guides\cy_boot_v5_20</v>
+<v>PSoC_2_Pi\pisoc_bootloader\Bootloader_v1_40.pdf</v>
+<v>PSoC_2_Pi\pisoc_bootloader\cy_constant_v1_0.pdf</v>
+<v>PSoC_2_Pi\pisoc_bootloader\cy_pins_v2_10</v>
+<v>PSoC_2_Pi\pisoc_bootloader\cy_pins_v2_10\cy_pins_v2_10.pdf</v>
+<v>PSoC_2_Pi\pisoc_bootloader\USBFS_v2_80.pdf</v>
+</ExpandedNodeIds>
+<VisibleNodeIds>
+<v>PSoC_2_Pi</v>
+<v>PSoC_2_Pi\pisoc_bootloadable_example</v>
+<v>PSoC_2_Pi\pisoc_bootloadable_example\PSoC 5 Architecture TRM</v>
+<v>PSoC_2_Pi\pisoc_bootloadable_example\CY8C58LP Family Datasheet</v>
+<v>PSoC_2_Pi\pisoc_bootloadable_example\System Reference Guides</v>
+<v>PSoC_2_Pi\pisoc_bootloadable_example\System Reference Guides\cy_boot_v5_30</v>
+<v>PSoC_2_Pi\pisoc_bootloadable_example\Bootloadable_v1_50.pdf</v>
+<v>PSoC_2_Pi\pisoc_bootloadable_example\cy_clock_v2_20.pdf</v>
+<v>PSoC_2_Pi\pisoc_bootloadable_example\cy_pins_v2_20.pdf</v>
+<v>PSoC_2_Pi\pisoc_bootloadable_example\PWM_v3_30.pdf</v>
+<v>PSoC_2_Pi\pisoc_bootloader</v>
+<v>PSoC_2_Pi\pisoc_bootloader\PSoC 5 Architecture TRM</v>
+<v>PSoC_2_Pi\pisoc_bootloader\CY8C58LP Family Datasheet</v>
+<v>PSoC_2_Pi\pisoc_bootloader\System Reference Guides</v>
+<v>PSoC_2_Pi\pisoc_bootloader\System Reference Guides\cy_boot_v5_20</v>
+<v>PSoC_2_Pi\pisoc_bootloader\Bootloader_v1_40.pdf</v>
+<v>PSoC_2_Pi\pisoc_bootloader\cy_constant_v1_0.pdf</v>
+<v>PSoC_2_Pi\pisoc_bootloader\cy_pins_v2_10</v>
+<v>PSoC_2_Pi\pisoc_bootloader\cy_pins_v2_10\cy_pins_v2_10.pdf</v>
+<v>PSoC_2_Pi\pisoc_bootloader\USBFS_v2_80.pdf</v>
+</VisibleNodeIds>
+</CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
+</TreeStatesV2>
+</CyGuid_1b906a0f-a7b6-4e4d-a428-82f98b53cb35>
+</dataGuid>
+<dataGuid v="5f2be1a5-0687-4501-bb8c-cf21cb8211bf">
+<CyGuid_5f2be1a5-0687-4501-bb8c-cf21cb8211bf type_name="CyDesigner.Common.ProjMgmt.GUI.CyBookmarkData" version="1">
+<indicators />
+</CyGuid_5f2be1a5-0687-4501-bb8c-cf21cb8211bf>
+</dataGuid>
+</userData>
+</CyGuid_fdba8dfd-b15b-4469-9bbb-9e40c3e70997>
+<Unloaded />
+<OpenDocs>
+<name v=".\pisoc_bootloader.cydsn\TopDesign\TopDesign.cysch" />
+<name v=".\pisoc_bootloader.cydsn\pisoc_bootloader.cydwr" />
+<name v=".\pisoc_bootloadable_example.cydsn\TopDesign\TopDesign.cysch" />
+</OpenDocs>
+<config v="" />
+<AutoUpdate v="true" />
+</CyGuid_843a90a4-0c4b-4e44-991d-05e7fb117a21>
+</CyXmlSerializer>

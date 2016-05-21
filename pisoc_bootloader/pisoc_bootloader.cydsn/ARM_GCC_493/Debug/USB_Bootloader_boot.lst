@@ -1,0 +1,1958 @@
+ARM GAS  C:\Users\Robert\AppData\Local\Temp\cclJrXLm.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.file	"USB_Bootloader_boot.c"
+  15              		.text
+  16              	.Ltext0:
+  17              		.cfi_sections	.debug_frame
+  18              		.section	.text.USB_Bootloader_CyBtldrCommStart,"ax",%progbits
+  19              		.align	2
+  20              		.global	USB_Bootloader_CyBtldrCommStart
+  21              		.thumb
+  22              		.thumb_func
+  23              		.type	USB_Bootloader_CyBtldrCommStart, %function
+  24              	USB_Bootloader_CyBtldrCommStart:
+  25              	.LFB0:
+  26              		.file 1 ".\\Generated_Source\\PSoC5\\USB_Bootloader_boot.c"
+   1:.\Generated_Source\PSoC5/USB_Bootloader_boot.c **** /*******************************************************************************
+   2:.\Generated_Source\PSoC5/USB_Bootloader_boot.c **** * File Name: USB_Bootloader_boot.c
+   3:.\Generated_Source\PSoC5/USB_Bootloader_boot.c **** * Version 2.80
+   4:.\Generated_Source\PSoC5/USB_Bootloader_boot.c **** *
+   5:.\Generated_Source\PSoC5/USB_Bootloader_boot.c **** * Description:
+   6:.\Generated_Source\PSoC5/USB_Bootloader_boot.c **** *  Boot loader API for USBFS Component.
+   7:.\Generated_Source\PSoC5/USB_Bootloader_boot.c **** *
+   8:.\Generated_Source\PSoC5/USB_Bootloader_boot.c **** *  Note:
+   9:.\Generated_Source\PSoC5/USB_Bootloader_boot.c **** *
+  10:.\Generated_Source\PSoC5/USB_Bootloader_boot.c **** ********************************************************************************
+  11:.\Generated_Source\PSoC5/USB_Bootloader_boot.c **** * Copyright 2008-2014, Cypress Semiconductor Corporation.  All rights reserved.
+  12:.\Generated_Source\PSoC5/USB_Bootloader_boot.c **** * You may use this file only in accordance with the license, terms, conditions,
+  13:.\Generated_Source\PSoC5/USB_Bootloader_boot.c **** * disclaimers, and limitations in the end user license agreement accompanying
+  14:.\Generated_Source\PSoC5/USB_Bootloader_boot.c **** * the software package with which this file was provided.
+  15:.\Generated_Source\PSoC5/USB_Bootloader_boot.c **** *******************************************************************************/
+  16:.\Generated_Source\PSoC5/USB_Bootloader_boot.c **** 
+  17:.\Generated_Source\PSoC5/USB_Bootloader_boot.c **** #include "USB_Bootloader.h"
+  18:.\Generated_Source\PSoC5/USB_Bootloader_boot.c **** 
+  19:.\Generated_Source\PSoC5/USB_Bootloader_boot.c **** #if defined(CYDEV_BOOTLOADER_IO_COMP) && ((CYDEV_BOOTLOADER_IO_COMP == CyBtldr_USB_Bootloader) || \
+  20:.\Generated_Source\PSoC5/USB_Bootloader_boot.c ****                                           (CYDEV_BOOTLOADER_IO_COMP == CyBtldr_Custom_Interface))
+  21:.\Generated_Source\PSoC5/USB_Bootloader_boot.c **** 
+  22:.\Generated_Source\PSoC5/USB_Bootloader_boot.c **** 
+  23:.\Generated_Source\PSoC5/USB_Bootloader_boot.c **** /***************************************
+  24:.\Generated_Source\PSoC5/USB_Bootloader_boot.c **** *    Bootloader Variables
+  25:.\Generated_Source\PSoC5/USB_Bootloader_boot.c **** ***************************************/
+  26:.\Generated_Source\PSoC5/USB_Bootloader_boot.c **** 
+  27:.\Generated_Source\PSoC5/USB_Bootloader_boot.c **** static uint8  USB_Bootloader_started = 0u;
+  28:.\Generated_Source\PSoC5/USB_Bootloader_boot.c **** 
+  29:.\Generated_Source\PSoC5/USB_Bootloader_boot.c **** 
+  30:.\Generated_Source\PSoC5/USB_Bootloader_boot.c **** /*******************************************************************************
+  31:.\Generated_Source\PSoC5/USB_Bootloader_boot.c **** * Function Name: USB_Bootloader_CyBtldrCommStart
+ARM GAS  C:\Users\Robert\AppData\Local\Temp\cclJrXLm.s 			page 2
+
+
+  32:.\Generated_Source\PSoC5/USB_Bootloader_boot.c **** ********************************************************************************
+  33:.\Generated_Source\PSoC5/USB_Bootloader_boot.c **** *
+  34:.\Generated_Source\PSoC5/USB_Bootloader_boot.c **** * Summary:
+  35:.\Generated_Source\PSoC5/USB_Bootloader_boot.c **** *  Starts the component and enables the interrupt.
+  36:.\Generated_Source\PSoC5/USB_Bootloader_boot.c **** *
+  37:.\Generated_Source\PSoC5/USB_Bootloader_boot.c **** * Parameters:
+  38:.\Generated_Source\PSoC5/USB_Bootloader_boot.c **** *  None.
+  39:.\Generated_Source\PSoC5/USB_Bootloader_boot.c **** *
+  40:.\Generated_Source\PSoC5/USB_Bootloader_boot.c **** * Return:
+  41:.\Generated_Source\PSoC5/USB_Bootloader_boot.c **** *  None.
+  42:.\Generated_Source\PSoC5/USB_Bootloader_boot.c **** *
+  43:.\Generated_Source\PSoC5/USB_Bootloader_boot.c **** * Side Effects:
+  44:.\Generated_Source\PSoC5/USB_Bootloader_boot.c **** *  This function starts the USB with 3V or 5V operation.
+  45:.\Generated_Source\PSoC5/USB_Bootloader_boot.c **** *
+  46:.\Generated_Source\PSoC5/USB_Bootloader_boot.c **** * Reentrant:
+  47:.\Generated_Source\PSoC5/USB_Bootloader_boot.c **** *  No.
+  48:.\Generated_Source\PSoC5/USB_Bootloader_boot.c **** *
+  49:.\Generated_Source\PSoC5/USB_Bootloader_boot.c **** *******************************************************************************/
+  50:.\Generated_Source\PSoC5/USB_Bootloader_boot.c **** void USB_Bootloader_CyBtldrCommStart(void) 
+  51:.\Generated_Source\PSoC5/USB_Bootloader_boot.c **** {
+  27              		.loc 1 51 0
+  28              		.cfi_startproc
+  29              		@ args = 0, pretend = 0, frame = 0
+  30              		@ frame_needed = 0, uses_anonymous_args = 0
+  31 0000 08B5     		push	{r3, lr}
+  32              		.cfi_def_cfa_offset 8
+  33              		.cfi_offset 3, -8
+  34              		.cfi_offset 14, -4
+  52:.\Generated_Source\PSoC5/USB_Bootloader_boot.c ****     CyGlobalIntEnable;      /* Enable Global Interrupts */
+  35              		.loc 1 52 0
+  36              	@ 52 ".\Generated_Source\PSoC5\USB_Bootloader_boot.c" 1
+  37 0002 62B6     		CPSIE   i
+  38              	@ 0 "" 2
+  53:.\Generated_Source\PSoC5/USB_Bootloader_boot.c **** 
+  54:.\Generated_Source\PSoC5/USB_Bootloader_boot.c ****     /*Start USBFS Operation/device 0 and with 5V or 3V operation depend on Voltage Configuration in
+  55:.\Generated_Source\PSoC5/USB_Bootloader_boot.c ****     USB_Bootloader_Start(0u, USB_Bootloader_DWR_VDDD_OPERATION);
+  39              		.loc 1 55 0
+  40              		.thumb
+  41 0004 0020     		movs	r0, #0
+  42 0006 0221     		movs	r1, #2
+  43 0008 FFF7FEFF 		bl	USB_Bootloader_Start
+  44              	.LVL0:
+  56:.\Generated_Source\PSoC5/USB_Bootloader_boot.c **** 
+  57:.\Generated_Source\PSoC5/USB_Bootloader_boot.c ****     /* USB component started, the correct enumeration will be checked in first Read operation */
+  58:.\Generated_Source\PSoC5/USB_Bootloader_boot.c ****     USB_Bootloader_started = 1u;
+  45              		.loc 1 58 0
+  46 000c 0122     		movs	r2, #1
+  47 000e 014B     		ldr	r3, .L3
+  48 0010 1A70     		strb	r2, [r3]
+  49 0012 08BD     		pop	{r3, pc}
+  50              	.L4:
+  51              		.align	2
+  52              	.L3:
+  53 0014 00000000 		.word	.LANCHOR0
+  54              		.cfi_endproc
+  55              	.LFE0:
+  56              		.size	USB_Bootloader_CyBtldrCommStart, .-USB_Bootloader_CyBtldrCommStart
+ARM GAS  C:\Users\Robert\AppData\Local\Temp\cclJrXLm.s 			page 3
+
+
+  57              		.section	.text.USB_Bootloader_CyBtldrCommStop,"ax",%progbits
+  58              		.align	2
+  59              		.global	USB_Bootloader_CyBtldrCommStop
+  60              		.thumb
+  61              		.thumb_func
+  62              		.type	USB_Bootloader_CyBtldrCommStop, %function
+  63              	USB_Bootloader_CyBtldrCommStop:
+  64              	.LFB1:
+  59:.\Generated_Source\PSoC5/USB_Bootloader_boot.c **** }
+  60:.\Generated_Source\PSoC5/USB_Bootloader_boot.c **** 
+  61:.\Generated_Source\PSoC5/USB_Bootloader_boot.c **** 
+  62:.\Generated_Source\PSoC5/USB_Bootloader_boot.c **** /*******************************************************************************
+  63:.\Generated_Source\PSoC5/USB_Bootloader_boot.c **** * Function Name: USB_Bootloader_CyBtldrCommStop.
+  64:.\Generated_Source\PSoC5/USB_Bootloader_boot.c **** ********************************************************************************
+  65:.\Generated_Source\PSoC5/USB_Bootloader_boot.c **** *
+  66:.\Generated_Source\PSoC5/USB_Bootloader_boot.c **** * Summary:
+  67:.\Generated_Source\PSoC5/USB_Bootloader_boot.c **** *  Disable the component and disable the interrupt.
+  68:.\Generated_Source\PSoC5/USB_Bootloader_boot.c **** *
+  69:.\Generated_Source\PSoC5/USB_Bootloader_boot.c **** * Parameters:
+  70:.\Generated_Source\PSoC5/USB_Bootloader_boot.c **** *  None.
+  71:.\Generated_Source\PSoC5/USB_Bootloader_boot.c **** *
+  72:.\Generated_Source\PSoC5/USB_Bootloader_boot.c **** * Return:
+  73:.\Generated_Source\PSoC5/USB_Bootloader_boot.c **** *  None.
+  74:.\Generated_Source\PSoC5/USB_Bootloader_boot.c **** *
+  75:.\Generated_Source\PSoC5/USB_Bootloader_boot.c **** *******************************************************************************/
+  76:.\Generated_Source\PSoC5/USB_Bootloader_boot.c **** void USB_Bootloader_CyBtldrCommStop(void) 
+  77:.\Generated_Source\PSoC5/USB_Bootloader_boot.c **** {
+  65              		.loc 1 77 0
+  66              		.cfi_startproc
+  67              		@ args = 0, pretend = 0, frame = 0
+  68              		@ frame_needed = 0, uses_anonymous_args = 0
+  69 0000 08B5     		push	{r3, lr}
+  70              		.cfi_def_cfa_offset 8
+  71              		.cfi_offset 3, -8
+  72              		.cfi_offset 14, -4
+  78:.\Generated_Source\PSoC5/USB_Bootloader_boot.c ****     USB_Bootloader_Stop();
+  73              		.loc 1 78 0
+  74 0002 FFF7FEFF 		bl	USB_Bootloader_Stop
+  75              	.LVL1:
+  76 0006 08BD     		pop	{r3, pc}
+  77              		.cfi_endproc
+  78              	.LFE1:
+  79              		.size	USB_Bootloader_CyBtldrCommStop, .-USB_Bootloader_CyBtldrCommStop
+  80              		.section	.text.USB_Bootloader_CyBtldrCommReset,"ax",%progbits
+  81              		.align	2
+  82              		.global	USB_Bootloader_CyBtldrCommReset
+  83              		.thumb
+  84              		.thumb_func
+  85              		.type	USB_Bootloader_CyBtldrCommReset, %function
+  86              	USB_Bootloader_CyBtldrCommReset:
+  87              	.LFB2:
+  79:.\Generated_Source\PSoC5/USB_Bootloader_boot.c **** }
+  80:.\Generated_Source\PSoC5/USB_Bootloader_boot.c **** 
+  81:.\Generated_Source\PSoC5/USB_Bootloader_boot.c **** 
+  82:.\Generated_Source\PSoC5/USB_Bootloader_boot.c **** /*******************************************************************************
+  83:.\Generated_Source\PSoC5/USB_Bootloader_boot.c **** * Function Name: USB_Bootloader_CyBtldrCommReset.
+  84:.\Generated_Source\PSoC5/USB_Bootloader_boot.c **** ********************************************************************************
+ARM GAS  C:\Users\Robert\AppData\Local\Temp\cclJrXLm.s 			page 4
+
+
+  85:.\Generated_Source\PSoC5/USB_Bootloader_boot.c **** *
+  86:.\Generated_Source\PSoC5/USB_Bootloader_boot.c **** * Summary:
+  87:.\Generated_Source\PSoC5/USB_Bootloader_boot.c **** *  Resets the receive and transmit communication Buffers.
+  88:.\Generated_Source\PSoC5/USB_Bootloader_boot.c **** *
+  89:.\Generated_Source\PSoC5/USB_Bootloader_boot.c **** * Parameters:
+  90:.\Generated_Source\PSoC5/USB_Bootloader_boot.c **** *  None
+  91:.\Generated_Source\PSoC5/USB_Bootloader_boot.c **** *
+  92:.\Generated_Source\PSoC5/USB_Bootloader_boot.c **** * Return:
+  93:.\Generated_Source\PSoC5/USB_Bootloader_boot.c **** *  None
+  94:.\Generated_Source\PSoC5/USB_Bootloader_boot.c **** *
+  95:.\Generated_Source\PSoC5/USB_Bootloader_boot.c **** * Reentrant:
+  96:.\Generated_Source\PSoC5/USB_Bootloader_boot.c **** *  No
+  97:.\Generated_Source\PSoC5/USB_Bootloader_boot.c **** *
+  98:.\Generated_Source\PSoC5/USB_Bootloader_boot.c **** *******************************************************************************/
+  99:.\Generated_Source\PSoC5/USB_Bootloader_boot.c **** void USB_Bootloader_CyBtldrCommReset(void) 
+ 100:.\Generated_Source\PSoC5/USB_Bootloader_boot.c **** {
+  88              		.loc 1 100 0
+  89              		.cfi_startproc
+  90              		@ args = 0, pretend = 0, frame = 0
+  91              		@ frame_needed = 0, uses_anonymous_args = 0
+  92 0000 08B5     		push	{r3, lr}
+  93              		.cfi_def_cfa_offset 8
+  94              		.cfi_offset 3, -8
+  95              		.cfi_offset 14, -4
+ 101:.\Generated_Source\PSoC5/USB_Bootloader_boot.c ****     USB_Bootloader_EnableOutEP(USB_Bootloader_BTLDR_OUT_EP);  /* Enable the OUT endpoint */
+  96              		.loc 1 101 0
+  97 0002 0120     		movs	r0, #1
+  98 0004 FFF7FEFF 		bl	USB_Bootloader_EnableOutEP
+  99              	.LVL2:
+ 100 0008 08BD     		pop	{r3, pc}
+ 101              		.cfi_endproc
+ 102              	.LFE2:
+ 103              		.size	USB_Bootloader_CyBtldrCommReset, .-USB_Bootloader_CyBtldrCommReset
+ 104 000a 00BF     		.section	.text.USB_Bootloader_CyBtldrCommWrite,"ax",%progbits
+ 105              		.align	2
+ 106              		.global	USB_Bootloader_CyBtldrCommWrite
+ 107              		.thumb
+ 108              		.thumb_func
+ 109              		.type	USB_Bootloader_CyBtldrCommWrite, %function
+ 110              	USB_Bootloader_CyBtldrCommWrite:
+ 111              	.LFB3:
+ 102:.\Generated_Source\PSoC5/USB_Bootloader_boot.c **** }
+ 103:.\Generated_Source\PSoC5/USB_Bootloader_boot.c **** 
+ 104:.\Generated_Source\PSoC5/USB_Bootloader_boot.c **** 
+ 105:.\Generated_Source\PSoC5/USB_Bootloader_boot.c **** /*******************************************************************************
+ 106:.\Generated_Source\PSoC5/USB_Bootloader_boot.c **** * Function Name: USB_Bootloader_CyBtldrCommWrite.
+ 107:.\Generated_Source\PSoC5/USB_Bootloader_boot.c **** ********************************************************************************
+ 108:.\Generated_Source\PSoC5/USB_Bootloader_boot.c **** *
+ 109:.\Generated_Source\PSoC5/USB_Bootloader_boot.c **** * Summary:
+ 110:.\Generated_Source\PSoC5/USB_Bootloader_boot.c **** *  Allows the caller to write data to the boot loader host. The function will
+ 111:.\Generated_Source\PSoC5/USB_Bootloader_boot.c **** *  handle polling to allow a block of data to be completely sent to the host
+ 112:.\Generated_Source\PSoC5/USB_Bootloader_boot.c **** *  device.
+ 113:.\Generated_Source\PSoC5/USB_Bootloader_boot.c **** *
+ 114:.\Generated_Source\PSoC5/USB_Bootloader_boot.c **** * Parameters:
+ 115:.\Generated_Source\PSoC5/USB_Bootloader_boot.c **** *  pData:    A pointer to the block of data to send to the device
+ 116:.\Generated_Source\PSoC5/USB_Bootloader_boot.c **** *  size:     The number of bytes to write.
+ 117:.\Generated_Source\PSoC5/USB_Bootloader_boot.c **** *  count:    Pointer to an unsigned short variable to write the number of
+ARM GAS  C:\Users\Robert\AppData\Local\Temp\cclJrXLm.s 			page 5
+
+
+ 118:.\Generated_Source\PSoC5/USB_Bootloader_boot.c **** *             bytes actually written.
+ 119:.\Generated_Source\PSoC5/USB_Bootloader_boot.c **** *  timeOut:  Number of units to wait before returning because of a timeout.
+ 120:.\Generated_Source\PSoC5/USB_Bootloader_boot.c **** *
+ 121:.\Generated_Source\PSoC5/USB_Bootloader_boot.c **** * Return:
+ 122:.\Generated_Source\PSoC5/USB_Bootloader_boot.c **** *  Returns the value that best describes the problem.
+ 123:.\Generated_Source\PSoC5/USB_Bootloader_boot.c **** *
+ 124:.\Generated_Source\PSoC5/USB_Bootloader_boot.c **** * Reentrant:
+ 125:.\Generated_Source\PSoC5/USB_Bootloader_boot.c **** *  No
+ 126:.\Generated_Source\PSoC5/USB_Bootloader_boot.c **** *
+ 127:.\Generated_Source\PSoC5/USB_Bootloader_boot.c **** *******************************************************************************/
+ 128:.\Generated_Source\PSoC5/USB_Bootloader_boot.c **** cystatus USB_Bootloader_CyBtldrCommWrite(const uint8 pData[], uint16 size, uint16 *count, uint8 tim
+ 129:.\Generated_Source\PSoC5/USB_Bootloader_boot.c ****                                                             
+ 130:.\Generated_Source\PSoC5/USB_Bootloader_boot.c **** {
+ 112              		.loc 1 130 0
+ 113              		.cfi_startproc
+ 114              		@ args = 0, pretend = 0, frame = 0
+ 115              		@ frame_needed = 0, uses_anonymous_args = 0
+ 116              	.LVL3:
+ 117 0000 F8B5     		push	{r3, r4, r5, r6, r7, lr}
+ 118              		.cfi_def_cfa_offset 24
+ 119              		.cfi_offset 3, -24
+ 120              		.cfi_offset 4, -20
+ 121              		.cfi_offset 5, -16
+ 122              		.cfi_offset 6, -12
+ 123              		.cfi_offset 7, -8
+ 124              		.cfi_offset 14, -4
+ 125 0002 0546     		mov	r5, r0
+ 126 0004 0F46     		mov	r7, r1
+ 127 0006 1646     		mov	r6, r2
+ 131:.\Generated_Source\PSoC5/USB_Bootloader_boot.c ****     cystatus retCode;
+ 132:.\Generated_Source\PSoC5/USB_Bootloader_boot.c ****     uint16 timeoutMs;
+ 133:.\Generated_Source\PSoC5/USB_Bootloader_boot.c **** 
+ 134:.\Generated_Source\PSoC5/USB_Bootloader_boot.c ****     timeoutMs = ((uint16) 10u * timeOut);  /* Convert from 10mS check to number 1mS checks */
+ 128              		.loc 1 134 0
+ 129 0008 03EB8303 		add	r3, r3, r3, lsl #2
+ 130              	.LVL4:
+ 131 000c 5C00     		lsls	r4, r3, #1
+ 132 000e A4B2     		uxth	r4, r4
+ 133              	.LVL5:
+ 135:.\Generated_Source\PSoC5/USB_Bootloader_boot.c **** 
+ 136:.\Generated_Source\PSoC5/USB_Bootloader_boot.c ****     /* Enable IN transfer */
+ 137:.\Generated_Source\PSoC5/USB_Bootloader_boot.c ****     USB_Bootloader_LoadInEP(USB_Bootloader_BTLDR_IN_EP, pData, USB_Bootloader_BTLDR_SIZEOF_READ_BUF
+ 134              		.loc 1 137 0
+ 135 0010 0220     		movs	r0, #2
+ 136              	.LVL6:
+ 137 0012 2946     		mov	r1, r5
+ 138              	.LVL7:
+ 139 0014 4022     		movs	r2, #64
+ 140              	.LVL8:
+ 141 0016 FFF7FEFF 		bl	USB_Bootloader_LoadInEP
+ 142              	.LVL9:
+ 138:.\Generated_Source\PSoC5/USB_Bootloader_boot.c **** 
+ 139:.\Generated_Source\PSoC5/USB_Bootloader_boot.c ****     /* Wait for the master to read it. */
+ 140:.\Generated_Source\PSoC5/USB_Bootloader_boot.c ****     while ((USB_Bootloader_GetEPState(USB_Bootloader_BTLDR_IN_EP) == USB_Bootloader_IN_BUFFER_FULL)
+ 143              		.loc 1 140 0
+ 144 001a 04E0     		b	.L10
+ 145              	.L12:
+ARM GAS  C:\Users\Robert\AppData\Local\Temp\cclJrXLm.s 			page 6
+
+
+ 141:.\Generated_Source\PSoC5/USB_Bootloader_boot.c ****            (0u != timeoutMs))
+ 142:.\Generated_Source\PSoC5/USB_Bootloader_boot.c ****     {
+ 143:.\Generated_Source\PSoC5/USB_Bootloader_boot.c ****         CyDelay(USB_Bootloader_BTLDR_WAIT_1_MS);
+ 146              		.loc 1 143 0
+ 147 001c 0120     		movs	r0, #1
+ 148 001e FFF7FEFF 		bl	CyDelay
+ 149              	.LVL10:
+ 144:.\Generated_Source\PSoC5/USB_Bootloader_boot.c ****         timeoutMs--;
+ 150              		.loc 1 144 0
+ 151 0022 013C     		subs	r4, r4, #1
+ 152              	.LVL11:
+ 153 0024 A4B2     		uxth	r4, r4
+ 154              	.LVL12:
+ 155              	.L10:
+ 140:.\Generated_Source\PSoC5/USB_Bootloader_boot.c ****            (0u != timeoutMs))
+ 156              		.loc 1 140 0
+ 157 0026 0220     		movs	r0, #2
+ 158 0028 FFF7FEFF 		bl	USB_Bootloader_GetEPState
+ 159              	.LVL13:
+ 160 002c 08B9     		cbnz	r0, .L11
+ 140:.\Generated_Source\PSoC5/USB_Bootloader_boot.c ****            (0u != timeoutMs))
+ 161              		.loc 1 140 0 is_stmt 0 discriminator 1
+ 162 002e 002C     		cmp	r4, #0
+ 163 0030 F4D1     		bne	.L12
+ 164              	.L11:
+ 145:.\Generated_Source\PSoC5/USB_Bootloader_boot.c ****     }
+ 146:.\Generated_Source\PSoC5/USB_Bootloader_boot.c **** 
+ 147:.\Generated_Source\PSoC5/USB_Bootloader_boot.c ****     if (USB_Bootloader_GetEPState(USB_Bootloader_BTLDR_IN_EP) == USB_Bootloader_IN_BUFFER_FULL)
+ 165              		.loc 1 147 0 is_stmt 1
+ 166 0032 0220     		movs	r0, #2
+ 167 0034 FFF7FEFF 		bl	USB_Bootloader_GetEPState
+ 168              	.LVL14:
+ 169 0038 10B1     		cbz	r0, .L14
+ 148:.\Generated_Source\PSoC5/USB_Bootloader_boot.c ****     {
+ 149:.\Generated_Source\PSoC5/USB_Bootloader_boot.c ****         retCode = CYRET_TIMEOUT;
+ 150:.\Generated_Source\PSoC5/USB_Bootloader_boot.c ****     }
+ 151:.\Generated_Source\PSoC5/USB_Bootloader_boot.c ****     else
+ 152:.\Generated_Source\PSoC5/USB_Bootloader_boot.c ****     {
+ 153:.\Generated_Source\PSoC5/USB_Bootloader_boot.c ****         *count = size;
+ 170              		.loc 1 153 0
+ 171 003a 3780     		strh	r7, [r6]	@ movhi
+ 172              	.LVL15:
+ 154:.\Generated_Source\PSoC5/USB_Bootloader_boot.c ****         retCode = CYRET_SUCCESS;
+ 173              		.loc 1 154 0
+ 174 003c 0020     		movs	r0, #0
+ 175 003e F8BD     		pop	{r3, r4, r5, r6, r7, pc}
+ 176              	.LVL16:
+ 177              	.L14:
+ 149:.\Generated_Source\PSoC5/USB_Bootloader_boot.c ****     }
+ 178              		.loc 1 149 0
+ 179 0040 1020     		movs	r0, #16
+ 180              	.LVL17:
+ 155:.\Generated_Source\PSoC5/USB_Bootloader_boot.c ****     }
+ 156:.\Generated_Source\PSoC5/USB_Bootloader_boot.c **** 
+ 157:.\Generated_Source\PSoC5/USB_Bootloader_boot.c ****     return(retCode);
+ 158:.\Generated_Source\PSoC5/USB_Bootloader_boot.c **** }
+ 181              		.loc 1 158 0
+ARM GAS  C:\Users\Robert\AppData\Local\Temp\cclJrXLm.s 			page 7
+
+
+ 182 0042 F8BD     		pop	{r3, r4, r5, r6, r7, pc}
+ 183              		.cfi_endproc
+ 184              	.LFE3:
+ 185              		.size	USB_Bootloader_CyBtldrCommWrite, .-USB_Bootloader_CyBtldrCommWrite
+ 186              		.section	.text.USB_Bootloader_CyBtldrCommRead,"ax",%progbits
+ 187              		.align	2
+ 188              		.global	USB_Bootloader_CyBtldrCommRead
+ 189              		.thumb
+ 190              		.thumb_func
+ 191              		.type	USB_Bootloader_CyBtldrCommRead, %function
+ 192              	USB_Bootloader_CyBtldrCommRead:
+ 193              	.LFB4:
+ 159:.\Generated_Source\PSoC5/USB_Bootloader_boot.c **** 
+ 160:.\Generated_Source\PSoC5/USB_Bootloader_boot.c **** 
+ 161:.\Generated_Source\PSoC5/USB_Bootloader_boot.c **** /*******************************************************************************
+ 162:.\Generated_Source\PSoC5/USB_Bootloader_boot.c **** * Function Name: USB_Bootloader_CyBtldrCommRead.
+ 163:.\Generated_Source\PSoC5/USB_Bootloader_boot.c **** ********************************************************************************
+ 164:.\Generated_Source\PSoC5/USB_Bootloader_boot.c **** *
+ 165:.\Generated_Source\PSoC5/USB_Bootloader_boot.c **** * Summary:
+ 166:.\Generated_Source\PSoC5/USB_Bootloader_boot.c **** *  Allows the caller to read data from the boot loader host. The function will
+ 167:.\Generated_Source\PSoC5/USB_Bootloader_boot.c **** *  handle polling to allow a block of data to be completely received from the
+ 168:.\Generated_Source\PSoC5/USB_Bootloader_boot.c **** *  host device.
+ 169:.\Generated_Source\PSoC5/USB_Bootloader_boot.c **** *
+ 170:.\Generated_Source\PSoC5/USB_Bootloader_boot.c **** * Parameters:
+ 171:.\Generated_Source\PSoC5/USB_Bootloader_boot.c **** *  pData:    A pointer to the area to store the block of data received
+ 172:.\Generated_Source\PSoC5/USB_Bootloader_boot.c **** *             from the device.
+ 173:.\Generated_Source\PSoC5/USB_Bootloader_boot.c **** *  size:     The number of bytes to read.
+ 174:.\Generated_Source\PSoC5/USB_Bootloader_boot.c **** *  count:    Pointer to an unsigned short variable to write the number
+ 175:.\Generated_Source\PSoC5/USB_Bootloader_boot.c **** *             of bytes actually read.
+ 176:.\Generated_Source\PSoC5/USB_Bootloader_boot.c **** *  timeOut:  Number of units to wait before returning because of a timeOut.
+ 177:.\Generated_Source\PSoC5/USB_Bootloader_boot.c **** *            Timeout is measured in 10s of ms.
+ 178:.\Generated_Source\PSoC5/USB_Bootloader_boot.c **** *
+ 179:.\Generated_Source\PSoC5/USB_Bootloader_boot.c **** * Return:
+ 180:.\Generated_Source\PSoC5/USB_Bootloader_boot.c **** *  Returns the value that best describes the problem.
+ 181:.\Generated_Source\PSoC5/USB_Bootloader_boot.c **** *
+ 182:.\Generated_Source\PSoC5/USB_Bootloader_boot.c **** * Reentrant:
+ 183:.\Generated_Source\PSoC5/USB_Bootloader_boot.c **** *  No
+ 184:.\Generated_Source\PSoC5/USB_Bootloader_boot.c **** *
+ 185:.\Generated_Source\PSoC5/USB_Bootloader_boot.c **** *******************************************************************************/
+ 186:.\Generated_Source\PSoC5/USB_Bootloader_boot.c **** cystatus USB_Bootloader_CyBtldrCommRead(uint8 pData[], uint16 size, uint16 *count, uint8 timeOut) C
+ 187:.\Generated_Source\PSoC5/USB_Bootloader_boot.c ****                                                             
+ 188:.\Generated_Source\PSoC5/USB_Bootloader_boot.c **** {
+ 194              		.loc 1 188 0
+ 195              		.cfi_startproc
+ 196              		@ args = 0, pretend = 0, frame = 0
+ 197              		@ frame_needed = 0, uses_anonymous_args = 0
+ 198              	.LVL18:
+ 199 0000 2DE9F041 		push	{r4, r5, r6, r7, r8, lr}
+ 200              		.cfi_def_cfa_offset 24
+ 201              		.cfi_offset 4, -24
+ 202              		.cfi_offset 5, -20
+ 203              		.cfi_offset 6, -16
+ 204              		.cfi_offset 7, -12
+ 205              		.cfi_offset 8, -8
+ 206              		.cfi_offset 14, -4
+ 207 0004 8046     		mov	r8, r0
+ 208 0006 0E46     		mov	r6, r1
+ARM GAS  C:\Users\Robert\AppData\Local\Temp\cclJrXLm.s 			page 8
+
+
+ 209 0008 1746     		mov	r7, r2
+ 189:.\Generated_Source\PSoC5/USB_Bootloader_boot.c ****     cystatus retCode;
+ 190:.\Generated_Source\PSoC5/USB_Bootloader_boot.c ****     uint16 timeoutMs;
+ 191:.\Generated_Source\PSoC5/USB_Bootloader_boot.c **** 
+ 192:.\Generated_Source\PSoC5/USB_Bootloader_boot.c ****     timeoutMs = ((uint16) 10u * timeOut);  /* Convert from 10mS check to number 1mS checks */
+ 210              		.loc 1 192 0
+ 211 000a 03EB8303 		add	r3, r3, r3, lsl #2
+ 212              	.LVL19:
+ 213 000e 5C00     		lsls	r4, r3, #1
+ 214 0010 A4B2     		uxth	r4, r4
+ 215              	.LVL20:
+ 193:.\Generated_Source\PSoC5/USB_Bootloader_boot.c **** 
+ 194:.\Generated_Source\PSoC5/USB_Bootloader_boot.c ****     if (size > USB_Bootloader_BTLDR_SIZEOF_WRITE_BUFFER)
+ 216              		.loc 1 194 0
+ 217 0012 4029     		cmp	r1, #64
+ 218 0014 00D9     		bls	.L17
+ 195:.\Generated_Source\PSoC5/USB_Bootloader_boot.c ****     {
+ 196:.\Generated_Source\PSoC5/USB_Bootloader_boot.c ****         size = USB_Bootloader_BTLDR_SIZEOF_WRITE_BUFFER;
+ 219              		.loc 1 196 0
+ 220 0016 4026     		movs	r6, #64
+ 221              	.L17:
+ 222              	.LVL21:
+ 197:.\Generated_Source\PSoC5/USB_Bootloader_boot.c ****     }
+ 198:.\Generated_Source\PSoC5/USB_Bootloader_boot.c **** 
+ 199:.\Generated_Source\PSoC5/USB_Bootloader_boot.c ****     /* Wait on enumeration in first time */
+ 200:.\Generated_Source\PSoC5/USB_Bootloader_boot.c ****     if (0u != USB_Bootloader_started)
+ 223              		.loc 1 200 0
+ 224 0018 204B     		ldr	r3, .L32
+ 225 001a 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 226 001c 33B9     		cbnz	r3, .L29
+ 227 001e 16E0     		b	.L30
+ 228              	.LVL22:
+ 229              	.L21:
+ 201:.\Generated_Source\PSoC5/USB_Bootloader_boot.c ****     {
+ 202:.\Generated_Source\PSoC5/USB_Bootloader_boot.c ****         /* Wait for Device to enumerate */
+ 203:.\Generated_Source\PSoC5/USB_Bootloader_boot.c ****         while ((0u ==USB_Bootloader_GetConfiguration()) && (0u != timeoutMs))
+ 204:.\Generated_Source\PSoC5/USB_Bootloader_boot.c ****         {
+ 205:.\Generated_Source\PSoC5/USB_Bootloader_boot.c ****             CyDelay(USB_Bootloader_BTLDR_WAIT_1_MS);
+ 230              		.loc 1 205 0
+ 231 0020 0120     		movs	r0, #1
+ 232 0022 FFF7FEFF 		bl	CyDelay
+ 233              	.LVL23:
+ 206:.\Generated_Source\PSoC5/USB_Bootloader_boot.c ****             timeoutMs--;
+ 234              		.loc 1 206 0
+ 235 0026 013D     		subs	r5, r5, #1
+ 236              	.LVL24:
+ 237 0028 ADB2     		uxth	r5, r5
+ 238              	.LVL25:
+ 239 002a 00E0     		b	.L18
+ 240              	.LVL26:
+ 241              	.L29:
+ 242 002c 2546     		mov	r5, r4
+ 243              	.LVL27:
+ 244              	.L18:
+ 203:.\Generated_Source\PSoC5/USB_Bootloader_boot.c ****         {
+ 245              		.loc 1 203 0
+ 246 002e FFF7FEFF 		bl	USB_Bootloader_GetConfiguration
+ARM GAS  C:\Users\Robert\AppData\Local\Temp\cclJrXLm.s 			page 9
+
+
+ 247              	.LVL28:
+ 248 0032 08B9     		cbnz	r0, .L20
+ 203:.\Generated_Source\PSoC5/USB_Bootloader_boot.c ****         {
+ 249              		.loc 1 203 0 is_stmt 0 discriminator 1
+ 250 0034 002D     		cmp	r5, #0
+ 251 0036 F3D1     		bne	.L21
+ 252              	.L20:
+ 207:.\Generated_Source\PSoC5/USB_Bootloader_boot.c ****         }
+ 208:.\Generated_Source\PSoC5/USB_Bootloader_boot.c **** 
+ 209:.\Generated_Source\PSoC5/USB_Bootloader_boot.c ****         /* Enable first OUT, if enumeration complete */
+ 210:.\Generated_Source\PSoC5/USB_Bootloader_boot.c ****         if (0u != USB_Bootloader_GetConfiguration())
+ 253              		.loc 1 210 0 is_stmt 1
+ 254 0038 FFF7FEFF 		bl	USB_Bootloader_GetConfiguration
+ 255              	.LVL29:
+ 256 003c A8B1     		cbz	r0, .L23
+ 211:.\Generated_Source\PSoC5/USB_Bootloader_boot.c ****         {
+ 212:.\Generated_Source\PSoC5/USB_Bootloader_boot.c ****             (void) USB_Bootloader_IsConfigurationChanged();  /* Clear configuration changes state s
+ 257              		.loc 1 212 0
+ 258 003e FFF7FEFF 		bl	USB_Bootloader_IsConfigurationChanged
+ 259              	.LVL30:
+ 213:.\Generated_Source\PSoC5/USB_Bootloader_boot.c ****             USB_Bootloader_CyBtldrCommReset();
+ 260              		.loc 1 213 0
+ 261 0042 FFF7FEFF 		bl	USB_Bootloader_CyBtldrCommReset
+ 262              	.LVL31:
+ 214:.\Generated_Source\PSoC5/USB_Bootloader_boot.c ****             USB_Bootloader_started = 0u;
+ 263              		.loc 1 214 0
+ 264 0046 0022     		movs	r2, #0
+ 265 0048 144B     		ldr	r3, .L32
+ 266 004a 1A70     		strb	r2, [r3]
+ 267 004c 0DE0     		b	.L23
+ 268              	.LVL32:
+ 269              	.L30:
+ 215:.\Generated_Source\PSoC5/USB_Bootloader_boot.c ****         }
+ 216:.\Generated_Source\PSoC5/USB_Bootloader_boot.c ****     }
+ 217:.\Generated_Source\PSoC5/USB_Bootloader_boot.c ****     else /* Check for configuration changes, has been done by Host */
+ 218:.\Generated_Source\PSoC5/USB_Bootloader_boot.c ****     {
+ 219:.\Generated_Source\PSoC5/USB_Bootloader_boot.c ****         if (0u != USB_Bootloader_IsConfigurationChanged()) /* Host could send double SET_INTERFACE 
+ 270              		.loc 1 219 0
+ 271 004e FFF7FEFF 		bl	USB_Bootloader_IsConfigurationChanged
+ 272              	.LVL33:
+ 273 0052 50B1     		cbz	r0, .L23
+ 220:.\Generated_Source\PSoC5/USB_Bootloader_boot.c ****         {
+ 221:.\Generated_Source\PSoC5/USB_Bootloader_boot.c ****             if (0u != USB_Bootloader_GetConfiguration())   /* Init OUT endpoints when device reconf
+ 274              		.loc 1 221 0
+ 275 0054 FFF7FEFF 		bl	USB_Bootloader_GetConfiguration
+ 276              	.LVL34:
+ 277 0058 38B1     		cbz	r0, .L23
+ 222:.\Generated_Source\PSoC5/USB_Bootloader_boot.c ****             {
+ 223:.\Generated_Source\PSoC5/USB_Bootloader_boot.c ****                 USB_Bootloader_CyBtldrCommReset();
+ 278              		.loc 1 223 0
+ 279 005a FFF7FEFF 		bl	USB_Bootloader_CyBtldrCommReset
+ 280              	.LVL35:
+ 224:.\Generated_Source\PSoC5/USB_Bootloader_boot.c ****             }
+ 225:.\Generated_Source\PSoC5/USB_Bootloader_boot.c ****         }
+ 226:.\Generated_Source\PSoC5/USB_Bootloader_boot.c ****     }
+ 227:.\Generated_Source\PSoC5/USB_Bootloader_boot.c **** 
+ 228:.\Generated_Source\PSoC5/USB_Bootloader_boot.c ****     timeoutMs = ((uint16) 10u * timeOut); /* Re-arm timeout */
+ARM GAS  C:\Users\Robert\AppData\Local\Temp\cclJrXLm.s 			page 10
+
+
+ 229:.\Generated_Source\PSoC5/USB_Bootloader_boot.c **** 
+ 230:.\Generated_Source\PSoC5/USB_Bootloader_boot.c ****     /* Wait on next packet */
+ 231:.\Generated_Source\PSoC5/USB_Bootloader_boot.c ****     while((USB_Bootloader_GetEPState(USB_Bootloader_BTLDR_OUT_EP) != USB_Bootloader_OUT_BUFFER_FULL
+ 281              		.loc 1 231 0
+ 282 005e 04E0     		b	.L23
+ 283              	.L25:
+ 232:.\Generated_Source\PSoC5/USB_Bootloader_boot.c ****           (0u != timeoutMs))
+ 233:.\Generated_Source\PSoC5/USB_Bootloader_boot.c ****     {
+ 234:.\Generated_Source\PSoC5/USB_Bootloader_boot.c ****         CyDelay(USB_Bootloader_BTLDR_WAIT_1_MS);
+ 284              		.loc 1 234 0
+ 285 0060 0120     		movs	r0, #1
+ 286 0062 FFF7FEFF 		bl	CyDelay
+ 287              	.LVL36:
+ 235:.\Generated_Source\PSoC5/USB_Bootloader_boot.c ****         timeoutMs--;
+ 288              		.loc 1 235 0
+ 289 0066 013C     		subs	r4, r4, #1
+ 290              	.LVL37:
+ 291 0068 A4B2     		uxth	r4, r4
+ 292              	.LVL38:
+ 293              	.L23:
+ 231:.\Generated_Source\PSoC5/USB_Bootloader_boot.c ****           (0u != timeoutMs))
+ 294              		.loc 1 231 0
+ 295 006a 0120     		movs	r0, #1
+ 296 006c FFF7FEFF 		bl	USB_Bootloader_GetEPState
+ 297              	.LVL39:
+ 298 0070 0128     		cmp	r0, #1
+ 299 0072 01D0     		beq	.L24
+ 231:.\Generated_Source\PSoC5/USB_Bootloader_boot.c ****           (0u != timeoutMs))
+ 300              		.loc 1 231 0 is_stmt 0 discriminator 1
+ 301 0074 002C     		cmp	r4, #0
+ 302 0076 F3D1     		bne	.L25
+ 303              	.L24:
+ 236:.\Generated_Source\PSoC5/USB_Bootloader_boot.c ****     }
+ 237:.\Generated_Source\PSoC5/USB_Bootloader_boot.c **** 
+ 238:.\Generated_Source\PSoC5/USB_Bootloader_boot.c ****     /* OUT EP has completed */
+ 239:.\Generated_Source\PSoC5/USB_Bootloader_boot.c ****     if (USB_Bootloader_GetEPState(USB_Bootloader_BTLDR_OUT_EP) == USB_Bootloader_OUT_BUFFER_FULL)
+ 304              		.loc 1 239 0 is_stmt 1
+ 305 0078 0120     		movs	r0, #1
+ 306 007a FFF7FEFF 		bl	USB_Bootloader_GetEPState
+ 307              	.LVL40:
+ 308 007e 0128     		cmp	r0, #1
+ 309 0080 07D1     		bne	.L26
+ 240:.\Generated_Source\PSoC5/USB_Bootloader_boot.c ****     {
+ 241:.\Generated_Source\PSoC5/USB_Bootloader_boot.c ****         *count = USB_Bootloader_ReadOutEP(USB_Bootloader_BTLDR_OUT_EP, pData, size);
+ 310              		.loc 1 241 0
+ 311 0082 4146     		mov	r1, r8
+ 312 0084 3246     		mov	r2, r6
+ 313 0086 FFF7FEFF 		bl	USB_Bootloader_ReadOutEP
+ 314              	.LVL41:
+ 315 008a 3880     		strh	r0, [r7]	@ movhi
+ 316              	.LVL42:
+ 242:.\Generated_Source\PSoC5/USB_Bootloader_boot.c ****         retCode = CYRET_SUCCESS;
+ 317              		.loc 1 242 0
+ 318 008c 0020     		movs	r0, #0
+ 319 008e BDE8F081 		pop	{r4, r5, r6, r7, r8, pc}
+ 320              	.LVL43:
+ 321              	.L26:
+ARM GAS  C:\Users\Robert\AppData\Local\Temp\cclJrXLm.s 			page 11
+
+
+ 243:.\Generated_Source\PSoC5/USB_Bootloader_boot.c ****     }
+ 244:.\Generated_Source\PSoC5/USB_Bootloader_boot.c ****     else
+ 245:.\Generated_Source\PSoC5/USB_Bootloader_boot.c ****     {
+ 246:.\Generated_Source\PSoC5/USB_Bootloader_boot.c ****         *count = 0u;
+ 322              		.loc 1 246 0
+ 323 0092 0023     		movs	r3, #0
+ 324 0094 3B80     		strh	r3, [r7]	@ movhi
+ 325              	.LVL44:
+ 247:.\Generated_Source\PSoC5/USB_Bootloader_boot.c ****         retCode = CYRET_TIMEOUT;
+ 326              		.loc 1 247 0
+ 327 0096 1020     		movs	r0, #16
+ 328              	.LVL45:
+ 248:.\Generated_Source\PSoC5/USB_Bootloader_boot.c ****     }
+ 249:.\Generated_Source\PSoC5/USB_Bootloader_boot.c **** 
+ 250:.\Generated_Source\PSoC5/USB_Bootloader_boot.c ****     return(retCode);
+ 251:.\Generated_Source\PSoC5/USB_Bootloader_boot.c **** }
+ 329              		.loc 1 251 0
+ 330 0098 BDE8F081 		pop	{r4, r5, r6, r7, r8, pc}
+ 331              	.LVL46:
+ 332              	.L33:
+ 333              		.align	2
+ 334              	.L32:
+ 335 009c 00000000 		.word	.LANCHOR0
+ 336              		.cfi_endproc
+ 337              	.LFE4:
+ 338              		.size	USB_Bootloader_CyBtldrCommRead, .-USB_Bootloader_CyBtldrCommRead
+ 339              		.bss
+ 340              		.set	.LANCHOR0,. + 0
+ 341              		.type	USB_Bootloader_started, %object
+ 342              		.size	USB_Bootloader_started, 1
+ 343              	USB_Bootloader_started:
+ 344 0000 00       		.space	1
+ 345              		.text
+ 346              	.Letext0:
+ 347              		.file 2 ".\\Generated_Source\\PSoC5\\cytypes.h"
+ 348              		.file 3 ".\\Generated_Source\\PSoC5\\USB_Bootloader.h"
+ 349              		.file 4 ".\\Generated_Source\\PSoC5\\CyLib.h"
+ 350              		.section	.debug_info,"",%progbits
+ 351              	.Ldebug_info0:
+ 352 0000 C4030000 		.4byte	0x3c4
+ 353 0004 0400     		.2byte	0x4
+ 354 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 355 000a 04       		.byte	0x4
+ 356 000b 01       		.uleb128 0x1
+ 357 000c AB010000 		.4byte	.LASF36
+ 358 0010 01       		.byte	0x1
+ 359 0011 80020000 		.4byte	.LASF37
+ 360 0015 13000000 		.4byte	.LASF38
+ 361 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 362 001d 00000000 		.4byte	0
+ 363 0021 00000000 		.4byte	.Ldebug_line0
+ 364 0025 02       		.uleb128 0x2
+ 365 0026 01       		.byte	0x1
+ 366 0027 06       		.byte	0x6
+ 367 0028 67030000 		.4byte	.LASF0
+ 368 002c 02       		.uleb128 0x2
+ 369 002d 01       		.byte	0x1
+ARM GAS  C:\Users\Robert\AppData\Local\Temp\cclJrXLm.s 			page 12
+
+
+ 370 002e 08       		.byte	0x8
+ 371 002f 66010000 		.4byte	.LASF1
+ 372 0033 02       		.uleb128 0x2
+ 373 0034 02       		.byte	0x2
+ 374 0035 05       		.byte	0x5
+ 375 0036 7B010000 		.4byte	.LASF2
+ 376 003a 02       		.uleb128 0x2
+ 377 003b 02       		.byte	0x2
+ 378 003c 07       		.byte	0x7
+ 379 003d FD000000 		.4byte	.LASF3
+ 380 0041 02       		.uleb128 0x2
+ 381 0042 04       		.byte	0x4
+ 382 0043 05       		.byte	0x5
+ 383 0044 5E030000 		.4byte	.LASF4
+ 384 0048 02       		.uleb128 0x2
+ 385 0049 04       		.byte	0x4
+ 386 004a 07       		.byte	0x7
+ 387 004b 4E010000 		.4byte	.LASF5
+ 388 004f 02       		.uleb128 0x2
+ 389 0050 08       		.byte	0x8
+ 390 0051 05       		.byte	0x5
+ 391 0052 B8020000 		.4byte	.LASF6
+ 392 0056 02       		.uleb128 0x2
+ 393 0057 08       		.byte	0x8
+ 394 0058 07       		.byte	0x7
+ 395 0059 46020000 		.4byte	.LASF7
+ 396 005d 03       		.uleb128 0x3
+ 397 005e 04       		.byte	0x4
+ 398 005f 05       		.byte	0x5
+ 399 0060 696E7400 		.ascii	"int\000"
+ 400 0064 02       		.uleb128 0x2
+ 401 0065 04       		.byte	0x4
+ 402 0066 07       		.byte	0x7
+ 403 0067 39020000 		.4byte	.LASF8
+ 404 006b 04       		.uleb128 0x4
+ 405 006c 60010000 		.4byte	.LASF9
+ 406 0070 02       		.byte	0x2
+ 407 0071 C2       		.byte	0xc2
+ 408 0072 2C000000 		.4byte	0x2c
+ 409 0076 04       		.uleb128 0x4
+ 410 0077 9D010000 		.4byte	.LASF10
+ 411 007b 02       		.byte	0x2
+ 412 007c C3       		.byte	0xc3
+ 413 007d 3A000000 		.4byte	0x3a
+ 414 0081 04       		.uleb128 0x4
+ 415 0082 A4010000 		.4byte	.LASF11
+ 416 0086 02       		.byte	0x2
+ 417 0087 C4       		.byte	0xc4
+ 418 0088 48000000 		.4byte	0x48
+ 419 008c 02       		.uleb128 0x2
+ 420 008d 04       		.byte	0x4
+ 421 008e 04       		.byte	0x4
+ 422 008f B2000000 		.4byte	.LASF12
+ 423 0093 02       		.uleb128 0x2
+ 424 0094 08       		.byte	0x8
+ 425 0095 04       		.byte	0x4
+ 426 0096 74010000 		.4byte	.LASF13
+ARM GAS  C:\Users\Robert\AppData\Local\Temp\cclJrXLm.s 			page 13
+
+
+ 427 009a 02       		.uleb128 0x2
+ 428 009b 01       		.byte	0x1
+ 429 009c 08       		.byte	0x8
+ 430 009d E6020000 		.4byte	.LASF14
+ 431 00a1 05       		.uleb128 0x5
+ 432 00a2 0A000000 		.4byte	.LASF15
+ 433 00a6 02       		.byte	0x2
+ 434 00a7 6401     		.2byte	0x164
+ 435 00a9 48000000 		.4byte	0x48
+ 436 00ad 02       		.uleb128 0x2
+ 437 00ae 04       		.byte	0x4
+ 438 00af 07       		.byte	0x7
+ 439 00b0 AF020000 		.4byte	.LASF16
+ 440 00b4 06       		.uleb128 0x6
+ 441 00b5 36030000 		.4byte	.LASF17
+ 442 00b9 01       		.byte	0x1
+ 443 00ba 32       		.byte	0x32
+ 444 00bb 00000000 		.4byte	.LFB0
+ 445 00bf 18000000 		.4byte	.LFE0-.LFB0
+ 446 00c3 01       		.uleb128 0x1
+ 447 00c4 9C       		.byte	0x9c
+ 448 00c5 DE000000 		.4byte	0xde
+ 449 00c9 07       		.uleb128 0x7
+ 450 00ca 0C000000 		.4byte	.LVL0
+ 451 00ce 27030000 		.4byte	0x327
+ 452 00d2 08       		.uleb128 0x8
+ 453 00d3 01       		.uleb128 0x1
+ 454 00d4 51       		.byte	0x51
+ 455 00d5 01       		.uleb128 0x1
+ 456 00d6 32       		.byte	0x32
+ 457 00d7 08       		.uleb128 0x8
+ 458 00d8 01       		.uleb128 0x1
+ 459 00d9 50       		.byte	0x50
+ 460 00da 01       		.uleb128 0x1
+ 461 00db 30       		.byte	0x30
+ 462 00dc 00       		.byte	0
+ 463 00dd 00       		.byte	0
+ 464 00de 06       		.uleb128 0x6
+ 465 00df B8000000 		.4byte	.LASF18
+ 466 00e3 01       		.byte	0x1
+ 467 00e4 4C       		.byte	0x4c
+ 468 00e5 00000000 		.4byte	.LFB1
+ 469 00e9 08000000 		.4byte	.LFE1-.LFB1
+ 470 00ed 01       		.uleb128 0x1
+ 471 00ee 9C       		.byte	0x9c
+ 472 00ef FD000000 		.4byte	0xfd
+ 473 00f3 09       		.uleb128 0x9
+ 474 00f4 06000000 		.4byte	.LVL1
+ 475 00f8 3D030000 		.4byte	0x33d
+ 476 00fc 00       		.byte	0
+ 477 00fd 06       		.uleb128 0x6
+ 478 00fe EB020000 		.4byte	.LASF19
+ 479 0102 01       		.byte	0x1
+ 480 0103 63       		.byte	0x63
+ 481 0104 00000000 		.4byte	.LFB2
+ 482 0108 0A000000 		.4byte	.LFE2-.LFB2
+ 483 010c 01       		.uleb128 0x1
+ARM GAS  C:\Users\Robert\AppData\Local\Temp\cclJrXLm.s 			page 14
+
+
+ 484 010d 9C       		.byte	0x9c
+ 485 010e 22010000 		.4byte	0x122
+ 486 0112 07       		.uleb128 0x7
+ 487 0113 08000000 		.4byte	.LVL2
+ 488 0117 44030000 		.4byte	0x344
+ 489 011b 08       		.uleb128 0x8
+ 490 011c 01       		.uleb128 0x1
+ 491 011d 50       		.byte	0x50
+ 492 011e 01       		.uleb128 0x1
+ 493 011f 31       		.byte	0x31
+ 494 0120 00       		.byte	0
+ 495 0121 00       		.byte	0
+ 496 0122 0A       		.uleb128 0xa
+ 497 0123 C6020000 		.4byte	.LASF26
+ 498 0127 01       		.byte	0x1
+ 499 0128 80       		.byte	0x80
+ 500 0129 A1000000 		.4byte	0xa1
+ 501 012d 00000000 		.4byte	.LFB3
+ 502 0131 44000000 		.4byte	.LFE3-.LFB3
+ 503 0135 01       		.uleb128 0x1
+ 504 0136 9C       		.byte	0x9c
+ 505 0137 EA010000 		.4byte	0x1ea
+ 506 013b 0B       		.uleb128 0xb
+ 507 013c 29010000 		.4byte	.LASF20
+ 508 0140 01       		.byte	0x1
+ 509 0141 80       		.byte	0x80
+ 510 0142 EA010000 		.4byte	0x1ea
+ 511 0146 00000000 		.4byte	.LLST0
+ 512 014a 0B       		.uleb128 0xb
+ 513 014b 49010000 		.4byte	.LASF21
+ 514 014f 01       		.byte	0x1
+ 515 0150 80       		.byte	0x80
+ 516 0151 76000000 		.4byte	0x76
+ 517 0155 1E000000 		.4byte	.LLST1
+ 518 0159 0B       		.uleb128 0xb
+ 519 015a D7000000 		.4byte	.LASF22
+ 520 015e 01       		.byte	0x1
+ 521 015f 80       		.byte	0x80
+ 522 0160 F5010000 		.4byte	0x1f5
+ 523 0164 3F000000 		.4byte	.LLST2
+ 524 0168 0B       		.uleb128 0xb
+ 525 0169 56030000 		.4byte	.LASF23
+ 526 016d 01       		.byte	0x1
+ 527 016e 80       		.byte	0x80
+ 528 016f 6B000000 		.4byte	0x6b
+ 529 0173 5D000000 		.4byte	.LLST3
+ 530 0177 0C       		.uleb128 0xc
+ 531 0178 5D020000 		.4byte	.LASF24
+ 532 017c 01       		.byte	0x1
+ 533 017d 83       		.byte	0x83
+ 534 017e A1000000 		.4byte	0xa1
+ 535 0182 7E000000 		.4byte	.LLST4
+ 536 0186 0C       		.uleb128 0xc
+ 537 0187 00000000 		.4byte	.LASF25
+ 538 018b 01       		.byte	0x1
+ 539 018c 84       		.byte	0x84
+ 540 018d 76000000 		.4byte	0x76
+ARM GAS  C:\Users\Robert\AppData\Local\Temp\cclJrXLm.s 			page 15
+
+
+ 541 0191 9D000000 		.4byte	.LLST5
+ 542 0195 0D       		.uleb128 0xd
+ 543 0196 1A000000 		.4byte	.LVL9
+ 544 019a 55030000 		.4byte	0x355
+ 545 019e B4010000 		.4byte	0x1b4
+ 546 01a2 08       		.uleb128 0x8
+ 547 01a3 01       		.uleb128 0x1
+ 548 01a4 52       		.byte	0x52
+ 549 01a5 02       		.uleb128 0x2
+ 550 01a6 08       		.byte	0x8
+ 551 01a7 40       		.byte	0x40
+ 552 01a8 08       		.uleb128 0x8
+ 553 01a9 01       		.uleb128 0x1
+ 554 01aa 51       		.byte	0x51
+ 555 01ab 02       		.uleb128 0x2
+ 556 01ac 75       		.byte	0x75
+ 557 01ad 00       		.sleb128 0
+ 558 01ae 08       		.uleb128 0x8
+ 559 01af 01       		.uleb128 0x1
+ 560 01b0 50       		.byte	0x50
+ 561 01b1 01       		.uleb128 0x1
+ 562 01b2 32       		.byte	0x32
+ 563 01b3 00       		.byte	0
+ 564 01b4 0D       		.uleb128 0xd
+ 565 01b5 22000000 		.4byte	.LVL10
+ 566 01b9 70030000 		.4byte	0x370
+ 567 01bd C7010000 		.4byte	0x1c7
+ 568 01c1 08       		.uleb128 0x8
+ 569 01c2 01       		.uleb128 0x1
+ 570 01c3 50       		.byte	0x50
+ 571 01c4 01       		.uleb128 0x1
+ 572 01c5 31       		.byte	0x31
+ 573 01c6 00       		.byte	0
+ 574 01c7 0D       		.uleb128 0xd
+ 575 01c8 2C000000 		.4byte	.LVL13
+ 576 01cc 81030000 		.4byte	0x381
+ 577 01d0 DA010000 		.4byte	0x1da
+ 578 01d4 08       		.uleb128 0x8
+ 579 01d5 01       		.uleb128 0x1
+ 580 01d6 50       		.byte	0x50
+ 581 01d7 01       		.uleb128 0x1
+ 582 01d8 32       		.byte	0x32
+ 583 01d9 00       		.byte	0
+ 584 01da 07       		.uleb128 0x7
+ 585 01db 38000000 		.4byte	.LVL14
+ 586 01df 81030000 		.4byte	0x381
+ 587 01e3 08       		.uleb128 0x8
+ 588 01e4 01       		.uleb128 0x1
+ 589 01e5 50       		.byte	0x50
+ 590 01e6 01       		.uleb128 0x1
+ 591 01e7 32       		.byte	0x32
+ 592 01e8 00       		.byte	0
+ 593 01e9 00       		.byte	0
+ 594 01ea 0E       		.uleb128 0xe
+ 595 01eb 04       		.byte	0x4
+ 596 01ec F0010000 		.4byte	0x1f0
+ 597 01f0 0F       		.uleb128 0xf
+ARM GAS  C:\Users\Robert\AppData\Local\Temp\cclJrXLm.s 			page 16
+
+
+ 598 01f1 6B000000 		.4byte	0x6b
+ 599 01f5 0E       		.uleb128 0xe
+ 600 01f6 04       		.byte	0x4
+ 601 01f7 76000000 		.4byte	0x76
+ 602 01fb 0A       		.uleb128 0xa
+ 603 01fc 6D000000 		.4byte	.LASF27
+ 604 0200 01       		.byte	0x1
+ 605 0201 BA       		.byte	0xba
+ 606 0202 A1000000 		.4byte	0xa1
+ 607 0206 00000000 		.4byte	.LFB4
+ 608 020a A0000000 		.4byte	.LFE4-.LFB4
+ 609 020e 01       		.uleb128 0x1
+ 610 020f 9C       		.byte	0x9c
+ 611 0210 10030000 		.4byte	0x310
+ 612 0214 0B       		.uleb128 0xb
+ 613 0215 29010000 		.4byte	.LASF20
+ 614 0219 01       		.byte	0x1
+ 615 021a BA       		.byte	0xba
+ 616 021b 10030000 		.4byte	0x310
+ 617 021f BB000000 		.4byte	.LLST6
+ 618 0223 0B       		.uleb128 0xb
+ 619 0224 49010000 		.4byte	.LASF21
+ 620 0228 01       		.byte	0x1
+ 621 0229 BA       		.byte	0xba
+ 622 022a 76000000 		.4byte	0x76
+ 623 022e 13010000 		.4byte	.LLST7
+ 624 0232 0B       		.uleb128 0xb
+ 625 0233 D7000000 		.4byte	.LASF22
+ 626 0237 01       		.byte	0x1
+ 627 0238 BA       		.byte	0xba
+ 628 0239 F5010000 		.4byte	0x1f5
+ 629 023d 31010000 		.4byte	.LLST8
+ 630 0241 0B       		.uleb128 0xb
+ 631 0242 56030000 		.4byte	.LASF23
+ 632 0246 01       		.byte	0x1
+ 633 0247 BA       		.byte	0xba
+ 634 0248 6B000000 		.4byte	0x6b
+ 635 024c 89010000 		.4byte	.LLST9
+ 636 0250 0C       		.uleb128 0xc
+ 637 0251 5D020000 		.4byte	.LASF24
+ 638 0255 01       		.byte	0x1
+ 639 0256 BD       		.byte	0xbd
+ 640 0257 A1000000 		.4byte	0xa1
+ 641 025b AA010000 		.4byte	.LLST10
+ 642 025f 0C       		.uleb128 0xc
+ 643 0260 00000000 		.4byte	.LASF25
+ 644 0264 01       		.byte	0x1
+ 645 0265 BE       		.byte	0xbe
+ 646 0266 76000000 		.4byte	0x76
+ 647 026a D5010000 		.4byte	.LLST11
+ 648 026e 0D       		.uleb128 0xd
+ 649 026f 26000000 		.4byte	.LVL23
+ 650 0273 70030000 		.4byte	0x370
+ 651 0277 81020000 		.4byte	0x281
+ 652 027b 08       		.uleb128 0x8
+ 653 027c 01       		.uleb128 0x1
+ 654 027d 50       		.byte	0x50
+ARM GAS  C:\Users\Robert\AppData\Local\Temp\cclJrXLm.s 			page 17
+
+
+ 655 027e 01       		.uleb128 0x1
+ 656 027f 31       		.byte	0x31
+ 657 0280 00       		.byte	0
+ 658 0281 09       		.uleb128 0x9
+ 659 0282 32000000 		.4byte	.LVL28
+ 660 0286 96030000 		.4byte	0x396
+ 661 028a 09       		.uleb128 0x9
+ 662 028b 3C000000 		.4byte	.LVL29
+ 663 028f 96030000 		.4byte	0x396
+ 664 0293 09       		.uleb128 0x9
+ 665 0294 42000000 		.4byte	.LVL30
+ 666 0298 A1030000 		.4byte	0x3a1
+ 667 029c 09       		.uleb128 0x9
+ 668 029d 46000000 		.4byte	.LVL31
+ 669 02a1 FD000000 		.4byte	0xfd
+ 670 02a5 09       		.uleb128 0x9
+ 671 02a6 52000000 		.4byte	.LVL33
+ 672 02aa A1030000 		.4byte	0x3a1
+ 673 02ae 09       		.uleb128 0x9
+ 674 02af 58000000 		.4byte	.LVL34
+ 675 02b3 96030000 		.4byte	0x396
+ 676 02b7 09       		.uleb128 0x9
+ 677 02b8 5E000000 		.4byte	.LVL35
+ 678 02bc FD000000 		.4byte	0xfd
+ 679 02c0 0D       		.uleb128 0xd
+ 680 02c1 66000000 		.4byte	.LVL36
+ 681 02c5 70030000 		.4byte	0x370
+ 682 02c9 D3020000 		.4byte	0x2d3
+ 683 02cd 08       		.uleb128 0x8
+ 684 02ce 01       		.uleb128 0x1
+ 685 02cf 50       		.byte	0x50
+ 686 02d0 01       		.uleb128 0x1
+ 687 02d1 31       		.byte	0x31
+ 688 02d2 00       		.byte	0
+ 689 02d3 0D       		.uleb128 0xd
+ 690 02d4 70000000 		.4byte	.LVL39
+ 691 02d8 81030000 		.4byte	0x381
+ 692 02dc E6020000 		.4byte	0x2e6
+ 693 02e0 08       		.uleb128 0x8
+ 694 02e1 01       		.uleb128 0x1
+ 695 02e2 50       		.byte	0x50
+ 696 02e3 01       		.uleb128 0x1
+ 697 02e4 31       		.byte	0x31
+ 698 02e5 00       		.byte	0
+ 699 02e6 0D       		.uleb128 0xd
+ 700 02e7 7E000000 		.4byte	.LVL40
+ 701 02eb 81030000 		.4byte	0x381
+ 702 02ef F9020000 		.4byte	0x2f9
+ 703 02f3 08       		.uleb128 0x8
+ 704 02f4 01       		.uleb128 0x1
+ 705 02f5 50       		.byte	0x50
+ 706 02f6 01       		.uleb128 0x1
+ 707 02f7 31       		.byte	0x31
+ 708 02f8 00       		.byte	0
+ 709 02f9 07       		.uleb128 0x7
+ 710 02fa 8A000000 		.4byte	.LVL41
+ 711 02fe AC030000 		.4byte	0x3ac
+ARM GAS  C:\Users\Robert\AppData\Local\Temp\cclJrXLm.s 			page 18
+
+
+ 712 0302 08       		.uleb128 0x8
+ 713 0303 01       		.uleb128 0x1
+ 714 0304 52       		.byte	0x52
+ 715 0305 02       		.uleb128 0x2
+ 716 0306 76       		.byte	0x76
+ 717 0307 00       		.sleb128 0
+ 718 0308 08       		.uleb128 0x8
+ 719 0309 01       		.uleb128 0x1
+ 720 030a 51       		.byte	0x51
+ 721 030b 02       		.uleb128 0x2
+ 722 030c 78       		.byte	0x78
+ 723 030d 00       		.sleb128 0
+ 724 030e 00       		.byte	0
+ 725 030f 00       		.byte	0
+ 726 0310 0E       		.uleb128 0xe
+ 727 0311 04       		.byte	0x4
+ 728 0312 6B000000 		.4byte	0x6b
+ 729 0316 10       		.uleb128 0x10
+ 730 0317 0B030000 		.4byte	.LASF28
+ 731 031b 01       		.byte	0x1
+ 732 031c 1B       		.byte	0x1b
+ 733 031d 6B000000 		.4byte	0x6b
+ 734 0321 05       		.uleb128 0x5
+ 735 0322 03       		.byte	0x3
+ 736 0323 00000000 		.4byte	USB_Bootloader_started
+ 737 0327 11       		.uleb128 0x11
+ 738 0328 73030000 		.4byte	.LASF29
+ 739 032c 03       		.byte	0x3
+ 740 032d C6       		.byte	0xc6
+ 741 032e 3D030000 		.4byte	0x33d
+ 742 0332 12       		.uleb128 0x12
+ 743 0333 6B000000 		.4byte	0x6b
+ 744 0337 12       		.uleb128 0x12
+ 745 0338 6B000000 		.4byte	0x6b
+ 746 033c 00       		.byte	0
+ 747 033d 13       		.uleb128 0x13
+ 748 033e 22030000 		.4byte	.LASF39
+ 749 0342 03       		.byte	0x3
+ 750 0343 C9       		.byte	0xc9
+ 751 0344 11       		.uleb128 0x11
+ 752 0345 65020000 		.4byte	.LASF30
+ 753 0349 03       		.byte	0x3
+ 754 034a D5       		.byte	0xd5
+ 755 034b 55030000 		.4byte	0x355
+ 756 034f 12       		.uleb128 0x12
+ 757 0350 6B000000 		.4byte	0x6b
+ 758 0354 00       		.byte	0
+ 759 0355 11       		.uleb128 0x11
+ 760 0356 85010000 		.4byte	.LASF31
+ 761 035a 03       		.byte	0x3
+ 762 035b D1       		.byte	0xd1
+ 763 035c 70030000 		.4byte	0x370
+ 764 0360 12       		.uleb128 0x12
+ 765 0361 6B000000 		.4byte	0x6b
+ 766 0365 12       		.uleb128 0x12
+ 767 0366 EA010000 		.4byte	0x1ea
+ 768 036a 12       		.uleb128 0x12
+ARM GAS  C:\Users\Robert\AppData\Local\Temp\cclJrXLm.s 			page 19
+
+
+ 769 036b 76000000 		.4byte	0x76
+ 770 036f 00       		.byte	0
+ 771 0370 11       		.uleb128 0x11
+ 772 0371 88030000 		.4byte	.LASF32
+ 773 0375 04       		.byte	0x4
+ 774 0376 77       		.byte	0x77
+ 775 0377 81030000 		.4byte	0x381
+ 776 037b 12       		.uleb128 0x12
+ 777 037c 81000000 		.4byte	0x81
+ 778 0380 00       		.byte	0
+ 779 0381 14       		.uleb128 0x14
+ 780 0382 2F010000 		.4byte	.LASF40
+ 781 0386 03       		.byte	0x3
+ 782 0387 CF       		.byte	0xcf
+ 783 0388 6B000000 		.4byte	0x6b
+ 784 038c 96030000 		.4byte	0x396
+ 785 0390 12       		.uleb128 0x12
+ 786 0391 6B000000 		.4byte	0x6b
+ 787 0395 00       		.byte	0
+ 788 0396 15       		.uleb128 0x15
+ 789 0397 DD000000 		.4byte	.LASF33
+ 790 039b 03       		.byte	0x3
+ 791 039c CB       		.byte	0xcb
+ 792 039d 6B000000 		.4byte	0x6b
+ 793 03a1 15       		.uleb128 0x15
+ 794 03a2 8C000000 		.4byte	.LASF34
+ 795 03a6 03       		.byte	0x3
+ 796 03a7 CC       		.byte	0xcc
+ 797 03a8 6B000000 		.4byte	0x6b
+ 798 03ac 16       		.uleb128 0x16
+ 799 03ad 10010000 		.4byte	.LASF35
+ 800 03b1 03       		.byte	0x3
+ 801 03b2 D3       		.byte	0xd3
+ 802 03b3 76000000 		.4byte	0x76
+ 803 03b7 12       		.uleb128 0x12
+ 804 03b8 6B000000 		.4byte	0x6b
+ 805 03bc 12       		.uleb128 0x12
+ 806 03bd 10030000 		.4byte	0x310
+ 807 03c1 12       		.uleb128 0x12
+ 808 03c2 76000000 		.4byte	0x76
+ 809 03c6 00       		.byte	0
+ 810 03c7 00       		.byte	0
+ 811              		.section	.debug_abbrev,"",%progbits
+ 812              	.Ldebug_abbrev0:
+ 813 0000 01       		.uleb128 0x1
+ 814 0001 11       		.uleb128 0x11
+ 815 0002 01       		.byte	0x1
+ 816 0003 25       		.uleb128 0x25
+ 817 0004 0E       		.uleb128 0xe
+ 818 0005 13       		.uleb128 0x13
+ 819 0006 0B       		.uleb128 0xb
+ 820 0007 03       		.uleb128 0x3
+ 821 0008 0E       		.uleb128 0xe
+ 822 0009 1B       		.uleb128 0x1b
+ 823 000a 0E       		.uleb128 0xe
+ 824 000b 55       		.uleb128 0x55
+ 825 000c 17       		.uleb128 0x17
+ARM GAS  C:\Users\Robert\AppData\Local\Temp\cclJrXLm.s 			page 20
+
+
+ 826 000d 11       		.uleb128 0x11
+ 827 000e 01       		.uleb128 0x1
+ 828 000f 10       		.uleb128 0x10
+ 829 0010 17       		.uleb128 0x17
+ 830 0011 00       		.byte	0
+ 831 0012 00       		.byte	0
+ 832 0013 02       		.uleb128 0x2
+ 833 0014 24       		.uleb128 0x24
+ 834 0015 00       		.byte	0
+ 835 0016 0B       		.uleb128 0xb
+ 836 0017 0B       		.uleb128 0xb
+ 837 0018 3E       		.uleb128 0x3e
+ 838 0019 0B       		.uleb128 0xb
+ 839 001a 03       		.uleb128 0x3
+ 840 001b 0E       		.uleb128 0xe
+ 841 001c 00       		.byte	0
+ 842 001d 00       		.byte	0
+ 843 001e 03       		.uleb128 0x3
+ 844 001f 24       		.uleb128 0x24
+ 845 0020 00       		.byte	0
+ 846 0021 0B       		.uleb128 0xb
+ 847 0022 0B       		.uleb128 0xb
+ 848 0023 3E       		.uleb128 0x3e
+ 849 0024 0B       		.uleb128 0xb
+ 850 0025 03       		.uleb128 0x3
+ 851 0026 08       		.uleb128 0x8
+ 852 0027 00       		.byte	0
+ 853 0028 00       		.byte	0
+ 854 0029 04       		.uleb128 0x4
+ 855 002a 16       		.uleb128 0x16
+ 856 002b 00       		.byte	0
+ 857 002c 03       		.uleb128 0x3
+ 858 002d 0E       		.uleb128 0xe
+ 859 002e 3A       		.uleb128 0x3a
+ 860 002f 0B       		.uleb128 0xb
+ 861 0030 3B       		.uleb128 0x3b
+ 862 0031 0B       		.uleb128 0xb
+ 863 0032 49       		.uleb128 0x49
+ 864 0033 13       		.uleb128 0x13
+ 865 0034 00       		.byte	0
+ 866 0035 00       		.byte	0
+ 867 0036 05       		.uleb128 0x5
+ 868 0037 16       		.uleb128 0x16
+ 869 0038 00       		.byte	0
+ 870 0039 03       		.uleb128 0x3
+ 871 003a 0E       		.uleb128 0xe
+ 872 003b 3A       		.uleb128 0x3a
+ 873 003c 0B       		.uleb128 0xb
+ 874 003d 3B       		.uleb128 0x3b
+ 875 003e 05       		.uleb128 0x5
+ 876 003f 49       		.uleb128 0x49
+ 877 0040 13       		.uleb128 0x13
+ 878 0041 00       		.byte	0
+ 879 0042 00       		.byte	0
+ 880 0043 06       		.uleb128 0x6
+ 881 0044 2E       		.uleb128 0x2e
+ 882 0045 01       		.byte	0x1
+ARM GAS  C:\Users\Robert\AppData\Local\Temp\cclJrXLm.s 			page 21
+
+
+ 883 0046 3F       		.uleb128 0x3f
+ 884 0047 19       		.uleb128 0x19
+ 885 0048 03       		.uleb128 0x3
+ 886 0049 0E       		.uleb128 0xe
+ 887 004a 3A       		.uleb128 0x3a
+ 888 004b 0B       		.uleb128 0xb
+ 889 004c 3B       		.uleb128 0x3b
+ 890 004d 0B       		.uleb128 0xb
+ 891 004e 27       		.uleb128 0x27
+ 892 004f 19       		.uleb128 0x19
+ 893 0050 11       		.uleb128 0x11
+ 894 0051 01       		.uleb128 0x1
+ 895 0052 12       		.uleb128 0x12
+ 896 0053 06       		.uleb128 0x6
+ 897 0054 40       		.uleb128 0x40
+ 898 0055 18       		.uleb128 0x18
+ 899 0056 9742     		.uleb128 0x2117
+ 900 0058 19       		.uleb128 0x19
+ 901 0059 01       		.uleb128 0x1
+ 902 005a 13       		.uleb128 0x13
+ 903 005b 00       		.byte	0
+ 904 005c 00       		.byte	0
+ 905 005d 07       		.uleb128 0x7
+ 906 005e 898201   		.uleb128 0x4109
+ 907 0061 01       		.byte	0x1
+ 908 0062 11       		.uleb128 0x11
+ 909 0063 01       		.uleb128 0x1
+ 910 0064 31       		.uleb128 0x31
+ 911 0065 13       		.uleb128 0x13
+ 912 0066 00       		.byte	0
+ 913 0067 00       		.byte	0
+ 914 0068 08       		.uleb128 0x8
+ 915 0069 8A8201   		.uleb128 0x410a
+ 916 006c 00       		.byte	0
+ 917 006d 02       		.uleb128 0x2
+ 918 006e 18       		.uleb128 0x18
+ 919 006f 9142     		.uleb128 0x2111
+ 920 0071 18       		.uleb128 0x18
+ 921 0072 00       		.byte	0
+ 922 0073 00       		.byte	0
+ 923 0074 09       		.uleb128 0x9
+ 924 0075 898201   		.uleb128 0x4109
+ 925 0078 00       		.byte	0
+ 926 0079 11       		.uleb128 0x11
+ 927 007a 01       		.uleb128 0x1
+ 928 007b 31       		.uleb128 0x31
+ 929 007c 13       		.uleb128 0x13
+ 930 007d 00       		.byte	0
+ 931 007e 00       		.byte	0
+ 932 007f 0A       		.uleb128 0xa
+ 933 0080 2E       		.uleb128 0x2e
+ 934 0081 01       		.byte	0x1
+ 935 0082 3F       		.uleb128 0x3f
+ 936 0083 19       		.uleb128 0x19
+ 937 0084 03       		.uleb128 0x3
+ 938 0085 0E       		.uleb128 0xe
+ 939 0086 3A       		.uleb128 0x3a
+ARM GAS  C:\Users\Robert\AppData\Local\Temp\cclJrXLm.s 			page 22
+
+
+ 940 0087 0B       		.uleb128 0xb
+ 941 0088 3B       		.uleb128 0x3b
+ 942 0089 0B       		.uleb128 0xb
+ 943 008a 27       		.uleb128 0x27
+ 944 008b 19       		.uleb128 0x19
+ 945 008c 49       		.uleb128 0x49
+ 946 008d 13       		.uleb128 0x13
+ 947 008e 11       		.uleb128 0x11
+ 948 008f 01       		.uleb128 0x1
+ 949 0090 12       		.uleb128 0x12
+ 950 0091 06       		.uleb128 0x6
+ 951 0092 40       		.uleb128 0x40
+ 952 0093 18       		.uleb128 0x18
+ 953 0094 9742     		.uleb128 0x2117
+ 954 0096 19       		.uleb128 0x19
+ 955 0097 01       		.uleb128 0x1
+ 956 0098 13       		.uleb128 0x13
+ 957 0099 00       		.byte	0
+ 958 009a 00       		.byte	0
+ 959 009b 0B       		.uleb128 0xb
+ 960 009c 05       		.uleb128 0x5
+ 961 009d 00       		.byte	0
+ 962 009e 03       		.uleb128 0x3
+ 963 009f 0E       		.uleb128 0xe
+ 964 00a0 3A       		.uleb128 0x3a
+ 965 00a1 0B       		.uleb128 0xb
+ 966 00a2 3B       		.uleb128 0x3b
+ 967 00a3 0B       		.uleb128 0xb
+ 968 00a4 49       		.uleb128 0x49
+ 969 00a5 13       		.uleb128 0x13
+ 970 00a6 02       		.uleb128 0x2
+ 971 00a7 17       		.uleb128 0x17
+ 972 00a8 00       		.byte	0
+ 973 00a9 00       		.byte	0
+ 974 00aa 0C       		.uleb128 0xc
+ 975 00ab 34       		.uleb128 0x34
+ 976 00ac 00       		.byte	0
+ 977 00ad 03       		.uleb128 0x3
+ 978 00ae 0E       		.uleb128 0xe
+ 979 00af 3A       		.uleb128 0x3a
+ 980 00b0 0B       		.uleb128 0xb
+ 981 00b1 3B       		.uleb128 0x3b
+ 982 00b2 0B       		.uleb128 0xb
+ 983 00b3 49       		.uleb128 0x49
+ 984 00b4 13       		.uleb128 0x13
+ 985 00b5 02       		.uleb128 0x2
+ 986 00b6 17       		.uleb128 0x17
+ 987 00b7 00       		.byte	0
+ 988 00b8 00       		.byte	0
+ 989 00b9 0D       		.uleb128 0xd
+ 990 00ba 898201   		.uleb128 0x4109
+ 991 00bd 01       		.byte	0x1
+ 992 00be 11       		.uleb128 0x11
+ 993 00bf 01       		.uleb128 0x1
+ 994 00c0 31       		.uleb128 0x31
+ 995 00c1 13       		.uleb128 0x13
+ 996 00c2 01       		.uleb128 0x1
+ARM GAS  C:\Users\Robert\AppData\Local\Temp\cclJrXLm.s 			page 23
+
+
+ 997 00c3 13       		.uleb128 0x13
+ 998 00c4 00       		.byte	0
+ 999 00c5 00       		.byte	0
+ 1000 00c6 0E       		.uleb128 0xe
+ 1001 00c7 0F       		.uleb128 0xf
+ 1002 00c8 00       		.byte	0
+ 1003 00c9 0B       		.uleb128 0xb
+ 1004 00ca 0B       		.uleb128 0xb
+ 1005 00cb 49       		.uleb128 0x49
+ 1006 00cc 13       		.uleb128 0x13
+ 1007 00cd 00       		.byte	0
+ 1008 00ce 00       		.byte	0
+ 1009 00cf 0F       		.uleb128 0xf
+ 1010 00d0 26       		.uleb128 0x26
+ 1011 00d1 00       		.byte	0
+ 1012 00d2 49       		.uleb128 0x49
+ 1013 00d3 13       		.uleb128 0x13
+ 1014 00d4 00       		.byte	0
+ 1015 00d5 00       		.byte	0
+ 1016 00d6 10       		.uleb128 0x10
+ 1017 00d7 34       		.uleb128 0x34
+ 1018 00d8 00       		.byte	0
+ 1019 00d9 03       		.uleb128 0x3
+ 1020 00da 0E       		.uleb128 0xe
+ 1021 00db 3A       		.uleb128 0x3a
+ 1022 00dc 0B       		.uleb128 0xb
+ 1023 00dd 3B       		.uleb128 0x3b
+ 1024 00de 0B       		.uleb128 0xb
+ 1025 00df 49       		.uleb128 0x49
+ 1026 00e0 13       		.uleb128 0x13
+ 1027 00e1 02       		.uleb128 0x2
+ 1028 00e2 18       		.uleb128 0x18
+ 1029 00e3 00       		.byte	0
+ 1030 00e4 00       		.byte	0
+ 1031 00e5 11       		.uleb128 0x11
+ 1032 00e6 2E       		.uleb128 0x2e
+ 1033 00e7 01       		.byte	0x1
+ 1034 00e8 3F       		.uleb128 0x3f
+ 1035 00e9 19       		.uleb128 0x19
+ 1036 00ea 03       		.uleb128 0x3
+ 1037 00eb 0E       		.uleb128 0xe
+ 1038 00ec 3A       		.uleb128 0x3a
+ 1039 00ed 0B       		.uleb128 0xb
+ 1040 00ee 3B       		.uleb128 0x3b
+ 1041 00ef 0B       		.uleb128 0xb
+ 1042 00f0 27       		.uleb128 0x27
+ 1043 00f1 19       		.uleb128 0x19
+ 1044 00f2 3C       		.uleb128 0x3c
+ 1045 00f3 19       		.uleb128 0x19
+ 1046 00f4 01       		.uleb128 0x1
+ 1047 00f5 13       		.uleb128 0x13
+ 1048 00f6 00       		.byte	0
+ 1049 00f7 00       		.byte	0
+ 1050 00f8 12       		.uleb128 0x12
+ 1051 00f9 05       		.uleb128 0x5
+ 1052 00fa 00       		.byte	0
+ 1053 00fb 49       		.uleb128 0x49
+ARM GAS  C:\Users\Robert\AppData\Local\Temp\cclJrXLm.s 			page 24
+
+
+ 1054 00fc 13       		.uleb128 0x13
+ 1055 00fd 00       		.byte	0
+ 1056 00fe 00       		.byte	0
+ 1057 00ff 13       		.uleb128 0x13
+ 1058 0100 2E       		.uleb128 0x2e
+ 1059 0101 00       		.byte	0
+ 1060 0102 3F       		.uleb128 0x3f
+ 1061 0103 19       		.uleb128 0x19
+ 1062 0104 03       		.uleb128 0x3
+ 1063 0105 0E       		.uleb128 0xe
+ 1064 0106 3A       		.uleb128 0x3a
+ 1065 0107 0B       		.uleb128 0xb
+ 1066 0108 3B       		.uleb128 0x3b
+ 1067 0109 0B       		.uleb128 0xb
+ 1068 010a 27       		.uleb128 0x27
+ 1069 010b 19       		.uleb128 0x19
+ 1070 010c 3C       		.uleb128 0x3c
+ 1071 010d 19       		.uleb128 0x19
+ 1072 010e 00       		.byte	0
+ 1073 010f 00       		.byte	0
+ 1074 0110 14       		.uleb128 0x14
+ 1075 0111 2E       		.uleb128 0x2e
+ 1076 0112 01       		.byte	0x1
+ 1077 0113 3F       		.uleb128 0x3f
+ 1078 0114 19       		.uleb128 0x19
+ 1079 0115 03       		.uleb128 0x3
+ 1080 0116 0E       		.uleb128 0xe
+ 1081 0117 3A       		.uleb128 0x3a
+ 1082 0118 0B       		.uleb128 0xb
+ 1083 0119 3B       		.uleb128 0x3b
+ 1084 011a 0B       		.uleb128 0xb
+ 1085 011b 27       		.uleb128 0x27
+ 1086 011c 19       		.uleb128 0x19
+ 1087 011d 49       		.uleb128 0x49
+ 1088 011e 13       		.uleb128 0x13
+ 1089 011f 3C       		.uleb128 0x3c
+ 1090 0120 19       		.uleb128 0x19
+ 1091 0121 01       		.uleb128 0x1
+ 1092 0122 13       		.uleb128 0x13
+ 1093 0123 00       		.byte	0
+ 1094 0124 00       		.byte	0
+ 1095 0125 15       		.uleb128 0x15
+ 1096 0126 2E       		.uleb128 0x2e
+ 1097 0127 00       		.byte	0
+ 1098 0128 3F       		.uleb128 0x3f
+ 1099 0129 19       		.uleb128 0x19
+ 1100 012a 03       		.uleb128 0x3
+ 1101 012b 0E       		.uleb128 0xe
+ 1102 012c 3A       		.uleb128 0x3a
+ 1103 012d 0B       		.uleb128 0xb
+ 1104 012e 3B       		.uleb128 0x3b
+ 1105 012f 0B       		.uleb128 0xb
+ 1106 0130 27       		.uleb128 0x27
+ 1107 0131 19       		.uleb128 0x19
+ 1108 0132 49       		.uleb128 0x49
+ 1109 0133 13       		.uleb128 0x13
+ 1110 0134 3C       		.uleb128 0x3c
+ARM GAS  C:\Users\Robert\AppData\Local\Temp\cclJrXLm.s 			page 25
+
+
+ 1111 0135 19       		.uleb128 0x19
+ 1112 0136 00       		.byte	0
+ 1113 0137 00       		.byte	0
+ 1114 0138 16       		.uleb128 0x16
+ 1115 0139 2E       		.uleb128 0x2e
+ 1116 013a 01       		.byte	0x1
+ 1117 013b 3F       		.uleb128 0x3f
+ 1118 013c 19       		.uleb128 0x19
+ 1119 013d 03       		.uleb128 0x3
+ 1120 013e 0E       		.uleb128 0xe
+ 1121 013f 3A       		.uleb128 0x3a
+ 1122 0140 0B       		.uleb128 0xb
+ 1123 0141 3B       		.uleb128 0x3b
+ 1124 0142 0B       		.uleb128 0xb
+ 1125 0143 27       		.uleb128 0x27
+ 1126 0144 19       		.uleb128 0x19
+ 1127 0145 49       		.uleb128 0x49
+ 1128 0146 13       		.uleb128 0x13
+ 1129 0147 3C       		.uleb128 0x3c
+ 1130 0148 19       		.uleb128 0x19
+ 1131 0149 00       		.byte	0
+ 1132 014a 00       		.byte	0
+ 1133 014b 00       		.byte	0
+ 1134              		.section	.debug_loc,"",%progbits
+ 1135              	.Ldebug_loc0:
+ 1136              	.LLST0:
+ 1137 0000 00000000 		.4byte	.LVL3
+ 1138 0004 12000000 		.4byte	.LVL6
+ 1139 0008 0100     		.2byte	0x1
+ 1140 000a 50       		.byte	0x50
+ 1141 000b 12000000 		.4byte	.LVL6
+ 1142 000f 44000000 		.4byte	.LFE3
+ 1143 0013 0100     		.2byte	0x1
+ 1144 0015 55       		.byte	0x55
+ 1145 0016 00000000 		.4byte	0
+ 1146 001a 00000000 		.4byte	0
+ 1147              	.LLST1:
+ 1148 001e 00000000 		.4byte	.LVL3
+ 1149 0022 14000000 		.4byte	.LVL7
+ 1150 0026 0100     		.2byte	0x1
+ 1151 0028 51       		.byte	0x51
+ 1152 0029 14000000 		.4byte	.LVL7
+ 1153 002d 44000000 		.4byte	.LFE3
+ 1154 0031 0400     		.2byte	0x4
+ 1155 0033 F3       		.byte	0xf3
+ 1156 0034 01       		.uleb128 0x1
+ 1157 0035 51       		.byte	0x51
+ 1158 0036 9F       		.byte	0x9f
+ 1159 0037 00000000 		.4byte	0
+ 1160 003b 00000000 		.4byte	0
+ 1161              	.LLST2:
+ 1162 003f 00000000 		.4byte	.LVL3
+ 1163 0043 16000000 		.4byte	.LVL8
+ 1164 0047 0100     		.2byte	0x1
+ 1165 0049 52       		.byte	0x52
+ 1166 004a 16000000 		.4byte	.LVL8
+ 1167 004e 44000000 		.4byte	.LFE3
+ARM GAS  C:\Users\Robert\AppData\Local\Temp\cclJrXLm.s 			page 26
+
+
+ 1168 0052 0100     		.2byte	0x1
+ 1169 0054 56       		.byte	0x56
+ 1170 0055 00000000 		.4byte	0
+ 1171 0059 00000000 		.4byte	0
+ 1172              	.LLST3:
+ 1173 005d 00000000 		.4byte	.LVL3
+ 1174 0061 0C000000 		.4byte	.LVL4
+ 1175 0065 0100     		.2byte	0x1
+ 1176 0067 53       		.byte	0x53
+ 1177 0068 0C000000 		.4byte	.LVL4
+ 1178 006c 44000000 		.4byte	.LFE3
+ 1179 0070 0400     		.2byte	0x4
+ 1180 0072 F3       		.byte	0xf3
+ 1181 0073 01       		.uleb128 0x1
+ 1182 0074 53       		.byte	0x53
+ 1183 0075 9F       		.byte	0x9f
+ 1184 0076 00000000 		.4byte	0
+ 1185 007a 00000000 		.4byte	0
+ 1186              	.LLST4:
+ 1187 007e 3C000000 		.4byte	.LVL15
+ 1188 0082 40000000 		.4byte	.LVL16
+ 1189 0086 0200     		.2byte	0x2
+ 1190 0088 30       		.byte	0x30
+ 1191 0089 9F       		.byte	0x9f
+ 1192 008a 42000000 		.4byte	.LVL17
+ 1193 008e 44000000 		.4byte	.LFE3
+ 1194 0092 0100     		.2byte	0x1
+ 1195 0094 50       		.byte	0x50
+ 1196 0095 00000000 		.4byte	0
+ 1197 0099 00000000 		.4byte	0
+ 1198              	.LLST5:
+ 1199 009d 10000000 		.4byte	.LVL5
+ 1200 00a1 24000000 		.4byte	.LVL11
+ 1201 00a5 0100     		.2byte	0x1
+ 1202 00a7 54       		.byte	0x54
+ 1203 00a8 26000000 		.4byte	.LVL12
+ 1204 00ac 44000000 		.4byte	.LFE3
+ 1205 00b0 0100     		.2byte	0x1
+ 1206 00b2 54       		.byte	0x54
+ 1207 00b3 00000000 		.4byte	0
+ 1208 00b7 00000000 		.4byte	0
+ 1209              	.LLST6:
+ 1210 00bb 00000000 		.4byte	.LVL18
+ 1211 00bf 20000000 		.4byte	.LVL22
+ 1212 00c3 0100     		.2byte	0x1
+ 1213 00c5 50       		.byte	0x50
+ 1214 00c6 20000000 		.4byte	.LVL22
+ 1215 00ca 2C000000 		.4byte	.LVL26
+ 1216 00ce 0100     		.2byte	0x1
+ 1217 00d0 58       		.byte	0x58
+ 1218 00d1 2C000000 		.4byte	.LVL26
+ 1219 00d5 2E000000 		.4byte	.LVL27
+ 1220 00d9 0100     		.2byte	0x1
+ 1221 00db 50       		.byte	0x50
+ 1222 00dc 2E000000 		.4byte	.LVL27
+ 1223 00e0 4E000000 		.4byte	.LVL32
+ 1224 00e4 0100     		.2byte	0x1
+ARM GAS  C:\Users\Robert\AppData\Local\Temp\cclJrXLm.s 			page 27
+
+
+ 1225 00e6 58       		.byte	0x58
+ 1226 00e7 4E000000 		.4byte	.LVL32
+ 1227 00eb 51000000 		.4byte	.LVL33-1
+ 1228 00ef 0100     		.2byte	0x1
+ 1229 00f1 50       		.byte	0x50
+ 1230 00f2 51000000 		.4byte	.LVL33-1
+ 1231 00f6 9C000000 		.4byte	.LVL46
+ 1232 00fa 0100     		.2byte	0x1
+ 1233 00fc 58       		.byte	0x58
+ 1234 00fd 9C000000 		.4byte	.LVL46
+ 1235 0101 A0000000 		.4byte	.LFE4
+ 1236 0105 0400     		.2byte	0x4
+ 1237 0107 F3       		.byte	0xf3
+ 1238 0108 01       		.uleb128 0x1
+ 1239 0109 50       		.byte	0x50
+ 1240 010a 9F       		.byte	0x9f
+ 1241 010b 00000000 		.4byte	0
+ 1242 010f 00000000 		.4byte	0
+ 1243              	.LLST7:
+ 1244 0113 00000000 		.4byte	.LVL18
+ 1245 0117 18000000 		.4byte	.LVL21
+ 1246 011b 0100     		.2byte	0x1
+ 1247 011d 51       		.byte	0x51
+ 1248 011e 18000000 		.4byte	.LVL21
+ 1249 0122 9C000000 		.4byte	.LVL46
+ 1250 0126 0100     		.2byte	0x1
+ 1251 0128 56       		.byte	0x56
+ 1252 0129 00000000 		.4byte	0
+ 1253 012d 00000000 		.4byte	0
+ 1254              	.LLST8:
+ 1255 0131 00000000 		.4byte	.LVL18
+ 1256 0135 20000000 		.4byte	.LVL22
+ 1257 0139 0100     		.2byte	0x1
+ 1258 013b 52       		.byte	0x52
+ 1259 013c 20000000 		.4byte	.LVL22
+ 1260 0140 2C000000 		.4byte	.LVL26
+ 1261 0144 0100     		.2byte	0x1
+ 1262 0146 57       		.byte	0x57
+ 1263 0147 2C000000 		.4byte	.LVL26
+ 1264 014b 2E000000 		.4byte	.LVL27
+ 1265 014f 0100     		.2byte	0x1
+ 1266 0151 52       		.byte	0x52
+ 1267 0152 2E000000 		.4byte	.LVL27
+ 1268 0156 4E000000 		.4byte	.LVL32
+ 1269 015a 0100     		.2byte	0x1
+ 1270 015c 57       		.byte	0x57
+ 1271 015d 4E000000 		.4byte	.LVL32
+ 1272 0161 51000000 		.4byte	.LVL33-1
+ 1273 0165 0100     		.2byte	0x1
+ 1274 0167 52       		.byte	0x52
+ 1275 0168 51000000 		.4byte	.LVL33-1
+ 1276 016c 9C000000 		.4byte	.LVL46
+ 1277 0170 0100     		.2byte	0x1
+ 1278 0172 57       		.byte	0x57
+ 1279 0173 9C000000 		.4byte	.LVL46
+ 1280 0177 A0000000 		.4byte	.LFE4
+ 1281 017b 0400     		.2byte	0x4
+ARM GAS  C:\Users\Robert\AppData\Local\Temp\cclJrXLm.s 			page 28
+
+
+ 1282 017d F3       		.byte	0xf3
+ 1283 017e 01       		.uleb128 0x1
+ 1284 017f 52       		.byte	0x52
+ 1285 0180 9F       		.byte	0x9f
+ 1286 0181 00000000 		.4byte	0
+ 1287 0185 00000000 		.4byte	0
+ 1288              	.LLST9:
+ 1289 0189 00000000 		.4byte	.LVL18
+ 1290 018d 0E000000 		.4byte	.LVL19
+ 1291 0191 0100     		.2byte	0x1
+ 1292 0193 53       		.byte	0x53
+ 1293 0194 0E000000 		.4byte	.LVL19
+ 1294 0198 A0000000 		.4byte	.LFE4
+ 1295 019c 0400     		.2byte	0x4
+ 1296 019e F3       		.byte	0xf3
+ 1297 019f 01       		.uleb128 0x1
+ 1298 01a0 53       		.byte	0x53
+ 1299 01a1 9F       		.byte	0x9f
+ 1300 01a2 00000000 		.4byte	0
+ 1301 01a6 00000000 		.4byte	0
+ 1302              	.LLST10:
+ 1303 01aa 8C000000 		.4byte	.LVL42
+ 1304 01ae 92000000 		.4byte	.LVL43
+ 1305 01b2 0200     		.2byte	0x2
+ 1306 01b4 30       		.byte	0x30
+ 1307 01b5 9F       		.byte	0x9f
+ 1308 01b6 96000000 		.4byte	.LVL44
+ 1309 01ba 98000000 		.4byte	.LVL45
+ 1310 01be 0200     		.2byte	0x2
+ 1311 01c0 40       		.byte	0x40
+ 1312 01c1 9F       		.byte	0x9f
+ 1313 01c2 98000000 		.4byte	.LVL45
+ 1314 01c6 A0000000 		.4byte	.LFE4
+ 1315 01ca 0100     		.2byte	0x1
+ 1316 01cc 50       		.byte	0x50
+ 1317 01cd 00000000 		.4byte	0
+ 1318 01d1 00000000 		.4byte	0
+ 1319              	.LLST11:
+ 1320 01d5 12000000 		.4byte	.LVL20
+ 1321 01d9 20000000 		.4byte	.LVL22
+ 1322 01dd 0100     		.2byte	0x1
+ 1323 01df 54       		.byte	0x54
+ 1324 01e0 20000000 		.4byte	.LVL22
+ 1325 01e4 28000000 		.4byte	.LVL24
+ 1326 01e8 0100     		.2byte	0x1
+ 1327 01ea 55       		.byte	0x55
+ 1328 01eb 2A000000 		.4byte	.LVL25
+ 1329 01ef 2C000000 		.4byte	.LVL26
+ 1330 01f3 0100     		.2byte	0x1
+ 1331 01f5 55       		.byte	0x55
+ 1332 01f6 2C000000 		.4byte	.LVL26
+ 1333 01fa 2E000000 		.4byte	.LVL27
+ 1334 01fe 0100     		.2byte	0x1
+ 1335 0200 54       		.byte	0x54
+ 1336 0201 2E000000 		.4byte	.LVL27
+ 1337 0205 4E000000 		.4byte	.LVL32
+ 1338 0209 0100     		.2byte	0x1
+ARM GAS  C:\Users\Robert\AppData\Local\Temp\cclJrXLm.s 			page 29
+
+
+ 1339 020b 55       		.byte	0x55
+ 1340 020c 4E000000 		.4byte	.LVL32
+ 1341 0210 68000000 		.4byte	.LVL37
+ 1342 0214 0100     		.2byte	0x1
+ 1343 0216 54       		.byte	0x54
+ 1344 0217 6A000000 		.4byte	.LVL38
+ 1345 021b 9C000000 		.4byte	.LVL46
+ 1346 021f 0100     		.2byte	0x1
+ 1347 0221 54       		.byte	0x54
+ 1348 0222 00000000 		.4byte	0
+ 1349 0226 00000000 		.4byte	0
+ 1350              		.section	.debug_aranges,"",%progbits
+ 1351 0000 3C000000 		.4byte	0x3c
+ 1352 0004 0200     		.2byte	0x2
+ 1353 0006 00000000 		.4byte	.Ldebug_info0
+ 1354 000a 04       		.byte	0x4
+ 1355 000b 00       		.byte	0
+ 1356 000c 0000     		.2byte	0
+ 1357 000e 0000     		.2byte	0
+ 1358 0010 00000000 		.4byte	.LFB0
+ 1359 0014 18000000 		.4byte	.LFE0-.LFB0
+ 1360 0018 00000000 		.4byte	.LFB1
+ 1361 001c 08000000 		.4byte	.LFE1-.LFB1
+ 1362 0020 00000000 		.4byte	.LFB2
+ 1363 0024 0A000000 		.4byte	.LFE2-.LFB2
+ 1364 0028 00000000 		.4byte	.LFB3
+ 1365 002c 44000000 		.4byte	.LFE3-.LFB3
+ 1366 0030 00000000 		.4byte	.LFB4
+ 1367 0034 A0000000 		.4byte	.LFE4-.LFB4
+ 1368 0038 00000000 		.4byte	0
+ 1369 003c 00000000 		.4byte	0
+ 1370              		.section	.debug_ranges,"",%progbits
+ 1371              	.Ldebug_ranges0:
+ 1372 0000 00000000 		.4byte	.LFB0
+ 1373 0004 18000000 		.4byte	.LFE0
+ 1374 0008 00000000 		.4byte	.LFB1
+ 1375 000c 08000000 		.4byte	.LFE1
+ 1376 0010 00000000 		.4byte	.LFB2
+ 1377 0014 0A000000 		.4byte	.LFE2
+ 1378 0018 00000000 		.4byte	.LFB3
+ 1379 001c 44000000 		.4byte	.LFE3
+ 1380 0020 00000000 		.4byte	.LFB4
+ 1381 0024 A0000000 		.4byte	.LFE4
+ 1382 0028 00000000 		.4byte	0
+ 1383 002c 00000000 		.4byte	0
+ 1384              		.section	.debug_line,"",%progbits
+ 1385              	.Ldebug_line0:
+ 1386 0000 05010000 		.section	.debug_str,"MS",%progbits,1
+ 1386      02007100 
+ 1386      00000201 
+ 1386      FB0E0D00 
+ 1386      01010101 
+ 1387              	.LASF25:
+ 1388 0000 74696D65 		.ascii	"timeoutMs\000"
+ 1388      6F75744D 
+ 1388      7300
+ 1389              	.LASF15:
+ARM GAS  C:\Users\Robert\AppData\Local\Temp\cclJrXLm.s 			page 30
+
+
+ 1390 000a 63797374 		.ascii	"cystatus\000"
+ 1390      61747573 
+ 1390      00
+ 1391              	.LASF38:
+ 1392 0013 433A5C55 		.ascii	"C:\\Users\\Robert\\Documents\\PSoC Creator\\product"
+ 1392      73657273 
+ 1392      5C526F62 
+ 1392      6572745C 
+ 1392      446F6375 
+ 1393 0041 696F6E5F 		.ascii	"ion_108\\PSoC Creator\\pisoc_bootloader.cydsn\000"
+ 1393      3130385C 
+ 1393      50536F43 
+ 1393      20437265 
+ 1393      61746F72 
+ 1394              	.LASF27:
+ 1395 006d 5553425F 		.ascii	"USB_Bootloader_CyBtldrCommRead\000"
+ 1395      426F6F74 
+ 1395      6C6F6164 
+ 1395      65725F43 
+ 1395      7942746C 
+ 1396              	.LASF34:
+ 1397 008c 5553425F 		.ascii	"USB_Bootloader_IsConfigurationChanged\000"
+ 1397      426F6F74 
+ 1397      6C6F6164 
+ 1397      65725F49 
+ 1397      73436F6E 
+ 1398              	.LASF12:
+ 1399 00b2 666C6F61 		.ascii	"float\000"
+ 1399      7400
+ 1400              	.LASF18:
+ 1401 00b8 5553425F 		.ascii	"USB_Bootloader_CyBtldrCommStop\000"
+ 1401      426F6F74 
+ 1401      6C6F6164 
+ 1401      65725F43 
+ 1401      7942746C 
+ 1402              	.LASF22:
+ 1403 00d7 636F756E 		.ascii	"count\000"
+ 1403      7400
+ 1404              	.LASF33:
+ 1405 00dd 5553425F 		.ascii	"USB_Bootloader_GetConfiguration\000"
+ 1405      426F6F74 
+ 1405      6C6F6164 
+ 1405      65725F47 
+ 1405      6574436F 
+ 1406              	.LASF3:
+ 1407 00fd 73686F72 		.ascii	"short unsigned int\000"
+ 1407      7420756E 
+ 1407      7369676E 
+ 1407      65642069 
+ 1407      6E7400
+ 1408              	.LASF35:
+ 1409 0110 5553425F 		.ascii	"USB_Bootloader_ReadOutEP\000"
+ 1409      426F6F74 
+ 1409      6C6F6164 
+ 1409      65725F52 
+ 1409      6561644F 
+ 1410              	.LASF20:
+ARM GAS  C:\Users\Robert\AppData\Local\Temp\cclJrXLm.s 			page 31
+
+
+ 1411 0129 70446174 		.ascii	"pData\000"
+ 1411      6100
+ 1412              	.LASF40:
+ 1413 012f 5553425F 		.ascii	"USB_Bootloader_GetEPState\000"
+ 1413      426F6F74 
+ 1413      6C6F6164 
+ 1413      65725F47 
+ 1413      65744550 
+ 1414              	.LASF21:
+ 1415 0149 73697A65 		.ascii	"size\000"
+ 1415      00
+ 1416              	.LASF5:
+ 1417 014e 6C6F6E67 		.ascii	"long unsigned int\000"
+ 1417      20756E73 
+ 1417      69676E65 
+ 1417      6420696E 
+ 1417      7400
+ 1418              	.LASF9:
+ 1419 0160 75696E74 		.ascii	"uint8\000"
+ 1419      3800
+ 1420              	.LASF1:
+ 1421 0166 756E7369 		.ascii	"unsigned char\000"
+ 1421      676E6564 
+ 1421      20636861 
+ 1421      7200
+ 1422              	.LASF13:
+ 1423 0174 646F7562 		.ascii	"double\000"
+ 1423      6C6500
+ 1424              	.LASF2:
+ 1425 017b 73686F72 		.ascii	"short int\000"
+ 1425      7420696E 
+ 1425      7400
+ 1426              	.LASF31:
+ 1427 0185 5553425F 		.ascii	"USB_Bootloader_LoadInEP\000"
+ 1427      426F6F74 
+ 1427      6C6F6164 
+ 1427      65725F4C 
+ 1427      6F616449 
+ 1428              	.LASF10:
+ 1429 019d 75696E74 		.ascii	"uint16\000"
+ 1429      313600
+ 1430              	.LASF11:
+ 1431 01a4 75696E74 		.ascii	"uint32\000"
+ 1431      333200
+ 1432              	.LASF36:
+ 1433 01ab 474E5520 		.ascii	"GNU C 4.9.3 20150303 (release) [ARM/embedded-4_9-br"
+ 1433      4320342E 
+ 1433      392E3320 
+ 1433      32303135 
+ 1433      30333033 
+ 1434 01de 616E6368 		.ascii	"anch revision 221220] -mcpu=cortex-m3 -mthumb -g -O"
+ 1434      20726576 
+ 1434      6973696F 
+ 1434      6E203232 
+ 1434      31323230 
+ 1435 0211 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 1435      66756E63 
+ARM GAS  C:\Users\Robert\AppData\Local\Temp\cclJrXLm.s 			page 32
+
+
+ 1435      74696F6E 
+ 1435      2D736563 
+ 1435      74696F6E 
+ 1436              	.LASF8:
+ 1437 0239 756E7369 		.ascii	"unsigned int\000"
+ 1437      676E6564 
+ 1437      20696E74 
+ 1437      00
+ 1438              	.LASF7:
+ 1439 0246 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 1439      206C6F6E 
+ 1439      6720756E 
+ 1439      7369676E 
+ 1439      65642069 
+ 1440              	.LASF24:
+ 1441 025d 72657443 		.ascii	"retCode\000"
+ 1441      6F646500 
+ 1442              	.LASF30:
+ 1443 0265 5553425F 		.ascii	"USB_Bootloader_EnableOutEP\000"
+ 1443      426F6F74 
+ 1443      6C6F6164 
+ 1443      65725F45 
+ 1443      6E61626C 
+ 1444              	.LASF37:
+ 1445 0280 2E5C4765 		.ascii	".\\Generated_Source\\PSoC5\\USB_Bootloader_boot.c\000"
+ 1445      6E657261 
+ 1445      7465645F 
+ 1445      536F7572 
+ 1445      63655C50 
+ 1446              	.LASF16:
+ 1447 02af 73697A65 		.ascii	"sizetype\000"
+ 1447      74797065 
+ 1447      00
+ 1448              	.LASF6:
+ 1449 02b8 6C6F6E67 		.ascii	"long long int\000"
+ 1449      206C6F6E 
+ 1449      6720696E 
+ 1449      7400
+ 1450              	.LASF26:
+ 1451 02c6 5553425F 		.ascii	"USB_Bootloader_CyBtldrCommWrite\000"
+ 1451      426F6F74 
+ 1451      6C6F6164 
+ 1451      65725F43 
+ 1451      7942746C 
+ 1452              	.LASF14:
+ 1453 02e6 63686172 		.ascii	"char\000"
+ 1453      00
+ 1454              	.LASF19:
+ 1455 02eb 5553425F 		.ascii	"USB_Bootloader_CyBtldrCommReset\000"
+ 1455      426F6F74 
+ 1455      6C6F6164 
+ 1455      65725F43 
+ 1455      7942746C 
+ 1456              	.LASF28:
+ 1457 030b 5553425F 		.ascii	"USB_Bootloader_started\000"
+ 1457      426F6F74 
+ 1457      6C6F6164 
+ARM GAS  C:\Users\Robert\AppData\Local\Temp\cclJrXLm.s 			page 33
+
+
+ 1457      65725F73 
+ 1457      74617274 
+ 1458              	.LASF39:
+ 1459 0322 5553425F 		.ascii	"USB_Bootloader_Stop\000"
+ 1459      426F6F74 
+ 1459      6C6F6164 
+ 1459      65725F53 
+ 1459      746F7000 
+ 1460              	.LASF17:
+ 1461 0336 5553425F 		.ascii	"USB_Bootloader_CyBtldrCommStart\000"
+ 1461      426F6F74 
+ 1461      6C6F6164 
+ 1461      65725F43 
+ 1461      7942746C 
+ 1462              	.LASF23:
+ 1463 0356 74696D65 		.ascii	"timeOut\000"
+ 1463      4F757400 
+ 1464              	.LASF4:
+ 1465 035e 6C6F6E67 		.ascii	"long int\000"
+ 1465      20696E74 
+ 1465      00
+ 1466              	.LASF0:
+ 1467 0367 7369676E 		.ascii	"signed char\000"
+ 1467      65642063 
+ 1467      68617200 
+ 1468              	.LASF29:
+ 1469 0373 5553425F 		.ascii	"USB_Bootloader_Start\000"
+ 1469      426F6F74 
+ 1469      6C6F6164 
+ 1469      65725F53 
+ 1469      74617274 
+ 1470              	.LASF32:
+ 1471 0388 43794465 		.ascii	"CyDelay\000"
+ 1471      6C617900 
+ 1472              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.9.3 20150303 (release) [ARM/embedded-4_9-br

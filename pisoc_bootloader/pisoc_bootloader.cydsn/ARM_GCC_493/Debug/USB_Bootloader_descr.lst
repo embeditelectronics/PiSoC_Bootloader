@@ -1,0 +1,1576 @@
+ARM GAS  C:\Users\Robert\AppData\Local\Temp\ccdzMSlD.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.file	"USB_Bootloader_descr.c"
+  15              		.text
+  16              	.Ltext0:
+  17              		.cfi_sections	.debug_frame
+  18              		.global	USB_Bootloader_MSOS_CONFIGURATION_DESCR
+  19              		.global	USB_Bootloader_MSOS_DESCRIPTOR
+  20              		.global	USB_Bootloader_TABLE
+  21              		.global	USB_Bootloader_DEVICE0_TABLE
+  22              		.global	USB_Bootloader_DEVICE0_CONFIGURATION0_TABLE
+  23              		.global	USB_Bootloader_DEVICE0_CONFIGURATION0_INTERFACE_CLASS
+  24              		.global	USB_Bootloader_DEVICE0_CONFIGURATION0_EP_SETTINGS_TABLE
+  25              		.global	USB_Bootloader_DEVICE0_CONFIGURATION0_INTERFACE0_TABLE
+  26              		.global	USB_Bootloader_DEVICE0_CONFIGURATION0_INTERFACE0_ALTERNATE0_HID_TABLE
+  27              		.global	USB_Bootloader_DEVICE0_CONFIGURATION0_INTERFACE0_ALTERNATE0_HID_OUT_RPT_TABLE
+  28              		.comm	USB_Bootloader_DEVICE0_CONFIGURATION0_INTERFACE0_ALTERNATE0_HID_OUT_BUF,65,4
+  29              		.comm	USB_Bootloader_DEVICE0_CONFIGURATION0_INTERFACE0_ALTERNATE0_HID_OUT_RPT_SCB,4,4
+  30              		.global	USB_Bootloader_DEVICE0_CONFIGURATION0_INTERFACE0_ALTERNATE0_HID_IN_RPT_TABLE
+  31              		.comm	USB_Bootloader_DEVICE0_CONFIGURATION0_INTERFACE0_ALTERNATE0_HID_IN_BUF,65,4
+  32              		.comm	USB_Bootloader_DEVICE0_CONFIGURATION0_INTERFACE0_ALTERNATE0_HID_IN_RPT_SCB,4,4
+  33              		.global	USB_Bootloader_HIDREPORT_DESCRIPTOR1
+  34              		.global	USB_Bootloader_SN_STRING_DESCRIPTOR
+  35              		.global	USB_Bootloader_STRING_DESCRIPTORS
+  36              		.global	USB_Bootloader_DEVICE0_CONFIGURATION0_DESCR
+  37              		.global	USB_Bootloader_DEVICE0_DESCR
+  38              		.section	.rodata
+  39              		.align	2
+  40              		.type	USB_Bootloader_MSOS_CONFIGURATION_DESCR, %object
+  41              		.size	USB_Bootloader_MSOS_CONFIGURATION_DESCR, 40
+  42              	USB_Bootloader_MSOS_CONFIGURATION_DESCR:
+  43 0000 28       		.byte	40
+  44 0001 00       		.byte	0
+  45 0002 00       		.byte	0
+  46 0003 00       		.byte	0
+  47 0004 00       		.byte	0
+  48 0005 01       		.byte	1
+  49 0006 04       		.byte	4
+  50 0007 00       		.byte	0
+  51 0008 01       		.byte	1
+  52 0009 00       		.byte	0
+  53 000a 00       		.byte	0
+  54 000b 00       		.byte	0
+  55 000c 00       		.byte	0
+  56 000d 00       		.byte	0
+  57 000e 00       		.byte	0
+ARM GAS  C:\Users\Robert\AppData\Local\Temp\ccdzMSlD.s 			page 2
+
+
+  58 000f 00       		.byte	0
+  59 0010 00       		.byte	0
+  60 0011 01       		.byte	1
+  61 0012 43       		.byte	67
+  62 0013 59       		.byte	89
+  63 0014 55       		.byte	85
+  64 0015 53       		.byte	83
+  65 0016 42       		.byte	66
+  66 0017 00       		.byte	0
+  67 0018 00       		.byte	0
+  68 0019 00       		.byte	0
+  69 001a 30       		.byte	48
+  70 001b 30       		.byte	48
+  71 001c 30       		.byte	48
+  72 001d 30       		.byte	48
+  73 001e 31       		.byte	49
+  74 001f 00       		.byte	0
+  75 0020 00       		.byte	0
+  76 0021 00       		.byte	0
+  77 0022 00       		.byte	0
+  78 0023 00       		.byte	0
+  79 0024 00       		.byte	0
+  80 0025 00       		.byte	0
+  81 0026 00       		.byte	0
+  82 0027 00       		.byte	0
+  83              		.type	USB_Bootloader_MSOS_DESCRIPTOR, %object
+  84              		.size	USB_Bootloader_MSOS_DESCRIPTOR, 18
+  85              	USB_Bootloader_MSOS_DESCRIPTOR:
+  86 0028 12       		.byte	18
+  87 0029 03       		.byte	3
+  88 002a 4D       		.byte	77
+  89 002b 00       		.byte	0
+  90 002c 53       		.byte	83
+  91 002d 00       		.byte	0
+  92 002e 46       		.byte	70
+  93 002f 00       		.byte	0
+  94 0030 54       		.byte	84
+  95 0031 00       		.byte	0
+  96 0032 31       		.byte	49
+  97 0033 00       		.byte	0
+  98 0034 30       		.byte	48
+  99 0035 00       		.byte	0
+ 100 0036 30       		.byte	48
+ 101 0037 00       		.byte	0
+ 102 0038 01       		.byte	1
+ 103 0039 00       		.byte	0
+ 104 003a 0000     		.space	2
+ 105              		.type	USB_Bootloader_TABLE, %object
+ 106              		.size	USB_Bootloader_TABLE, 8
+ 107              	USB_Bootloader_TABLE:
+ 108 003c 01       		.byte	1
+ 109 003d 000000   		.space	3
+ 110 0040 00000000 		.word	USB_Bootloader_DEVICE0_TABLE
+ 111              		.type	USB_Bootloader_DEVICE0_TABLE, %object
+ 112              		.size	USB_Bootloader_DEVICE0_TABLE, 16
+ 113              	USB_Bootloader_DEVICE0_TABLE:
+ 114 0044 01       		.byte	1
+ARM GAS  C:\Users\Robert\AppData\Local\Temp\ccdzMSlD.s 			page 3
+
+
+ 115 0045 000000   		.space	3
+ 116 0048 00000000 		.word	USB_Bootloader_DEVICE0_DESCR
+ 117 004c 01       		.byte	1
+ 118 004d 000000   		.space	3
+ 119 0050 00000000 		.word	USB_Bootloader_DEVICE0_CONFIGURATION0_TABLE
+ 120              		.type	USB_Bootloader_DEVICE0_CONFIGURATION0_TABLE, %object
+ 121              		.size	USB_Bootloader_DEVICE0_CONFIGURATION0_TABLE, 32
+ 122              	USB_Bootloader_DEVICE0_CONFIGURATION0_TABLE:
+ 123 0054 01       		.byte	1
+ 124 0055 000000   		.space	3
+ 125 0058 00000000 		.word	USB_Bootloader_DEVICE0_CONFIGURATION0_DESCR
+ 126 005c 02       		.byte	2
+ 127 005d 000000   		.space	3
+ 128 0060 00000000 		.word	USB_Bootloader_DEVICE0_CONFIGURATION0_EP_SETTINGS_TABLE
+ 129 0064 01       		.byte	1
+ 130 0065 000000   		.space	3
+ 131 0068 00000000 		.word	USB_Bootloader_DEVICE0_CONFIGURATION0_INTERFACE0_TABLE
+ 132 006c 00       		.byte	0
+ 133 006d 000000   		.space	3
+ 134 0070 00000000 		.word	USB_Bootloader_DEVICE0_CONFIGURATION0_INTERFACE_CLASS
+ 135              		.type	USB_Bootloader_DEVICE0_CONFIGURATION0_INTERFACE_CLASS, %object
+ 136              		.size	USB_Bootloader_DEVICE0_CONFIGURATION0_INTERFACE_CLASS, 1
+ 137              	USB_Bootloader_DEVICE0_CONFIGURATION0_INTERFACE_CLASS:
+ 138 0074 03       		.byte	3
+ 139 0075 000000   		.space	3
+ 140              		.type	USB_Bootloader_DEVICE0_CONFIGURATION0_EP_SETTINGS_TABLE, %object
+ 141              		.size	USB_Bootloader_DEVICE0_CONFIGURATION0_EP_SETTINGS_TABLE, 16
+ 142              	USB_Bootloader_DEVICE0_CONFIGURATION0_EP_SETTINGS_TABLE:
+ 143 0078 00       		.byte	0
+ 144 0079 00       		.byte	0
+ 145 007a 01       		.byte	1
+ 146 007b 03       		.byte	3
+ 147 007c 4000     		.short	64
+ 148 007e 03       		.byte	3
+ 149 007f 00       		.space	1
+ 150 0080 00       		.byte	0
+ 151 0081 00       		.byte	0
+ 152 0082 82       		.byte	-126
+ 153 0083 03       		.byte	3
+ 154 0084 4000     		.short	64
+ 155 0086 03       		.byte	3
+ 156 0087 00       		.space	1
+ 157              		.type	USB_Bootloader_DEVICE0_CONFIGURATION0_INTERFACE0_TABLE, %object
+ 158              		.size	USB_Bootloader_DEVICE0_CONFIGURATION0_INTERFACE0_TABLE, 8
+ 159              	USB_Bootloader_DEVICE0_CONFIGURATION0_INTERFACE0_TABLE:
+ 160 0088 01       		.byte	1
+ 161 0089 000000   		.space	3
+ 162 008c 00000000 		.word	USB_Bootloader_DEVICE0_CONFIGURATION0_INTERFACE0_ALTERNATE0_HID_TABLE
+ 163              		.type	USB_Bootloader_DEVICE0_CONFIGURATION0_INTERFACE0_ALTERNATE0_HID_TABLE, %object
+ 164              		.size	USB_Bootloader_DEVICE0_CONFIGURATION0_INTERFACE0_ALTERNATE0_HID_TABLE, 40
+ 165              	USB_Bootloader_DEVICE0_CONFIGURATION0_INTERFACE0_ALTERNATE0_HID_TABLE:
+ 166 0090 00       		.byte	0
+ 167 0091 000000   		.space	3
+ 168 0094 00000000 		.word	USB_Bootloader_DEVICE0_CONFIGURATION0_INTERFACE0_ALTERNATE0_HID_IN_RPT_TABLE
+ 169 0098 00       		.byte	0
+ 170 0099 000000   		.space	3
+ 171 009c 00000000 		.word	USB_Bootloader_DEVICE0_CONFIGURATION0_INTERFACE0_ALTERNATE0_HID_OUT_RPT_TABLE
+ARM GAS  C:\Users\Robert\AppData\Local\Temp\ccdzMSlD.s 			page 4
+
+
+ 172 00a0 00       		.byte	0
+ 173 00a1 000000   		.space	3
+ 174 00a4 00000000 		.word	0
+ 175 00a8 01       		.byte	1
+ 176 00a9 000000   		.space	3
+ 177 00ac 00000000 		.word	USB_Bootloader_HIDREPORT_DESCRIPTOR1
+ 178 00b0 01       		.byte	1
+ 179 00b1 000000   		.space	3
+ 180 00b4 12000000 		.word	USB_Bootloader_DEVICE0_CONFIGURATION0_DESCR+18
+ 181              		.type	USB_Bootloader_DEVICE0_CONFIGURATION0_INTERFACE0_ALTERNATE0_HID_OUT_RPT_TABLE, %object
+ 182              		.size	USB_Bootloader_DEVICE0_CONFIGURATION0_INTERFACE0_ALTERNATE0_HID_OUT_RPT_TABLE, 12
+ 183              	USB_Bootloader_DEVICE0_CONFIGURATION0_INTERFACE0_ALTERNATE0_HID_OUT_RPT_TABLE:
+ 184 00b8 4100     		.short	65
+ 185 00ba 0000     		.space	2
+ 186 00bc 00000000 		.word	USB_Bootloader_DEVICE0_CONFIGURATION0_INTERFACE0_ALTERNATE0_HID_OUT_BUF
+ 187 00c0 00000000 		.word	USB_Bootloader_DEVICE0_CONFIGURATION0_INTERFACE0_ALTERNATE0_HID_OUT_RPT_SCB
+ 188              		.type	USB_Bootloader_DEVICE0_CONFIGURATION0_INTERFACE0_ALTERNATE0_HID_IN_RPT_TABLE, %object
+ 189              		.size	USB_Bootloader_DEVICE0_CONFIGURATION0_INTERFACE0_ALTERNATE0_HID_IN_RPT_TABLE, 12
+ 190              	USB_Bootloader_DEVICE0_CONFIGURATION0_INTERFACE0_ALTERNATE0_HID_IN_RPT_TABLE:
+ 191 00c4 4100     		.short	65
+ 192 00c6 0000     		.space	2
+ 193 00c8 00000000 		.word	USB_Bootloader_DEVICE0_CONFIGURATION0_INTERFACE0_ALTERNATE0_HID_IN_BUF
+ 194 00cc 00000000 		.word	USB_Bootloader_DEVICE0_CONFIGURATION0_INTERFACE0_ALTERNATE0_HID_IN_RPT_SCB
+ 195              		.type	USB_Bootloader_HIDREPORT_DESCRIPTOR1, %object
+ 196              		.size	USB_Bootloader_HIDREPORT_DESCRIPTOR1, 40
+ 197              	USB_Bootloader_HIDREPORT_DESCRIPTOR1:
+ 198 00d0 24       		.byte	36
+ 199 00d1 00       		.byte	0
+ 200 00d2 05       		.byte	5
+ 201 00d3 01       		.byte	1
+ 202 00d4 09       		.byte	9
+ 203 00d5 00       		.byte	0
+ 204 00d6 A1       		.byte	-95
+ 205 00d7 00       		.byte	0
+ 206 00d8 09       		.byte	9
+ 207 00d9 00       		.byte	0
+ 208 00da A1       		.byte	-95
+ 209 00db 00       		.byte	0
+ 210 00dc 09       		.byte	9
+ 211 00dd 00       		.byte	0
+ 212 00de 15       		.byte	21
+ 213 00df 00       		.byte	0
+ 214 00e0 25       		.byte	37
+ 215 00e1 FF       		.byte	-1
+ 216 00e2 75       		.byte	117
+ 217 00e3 08       		.byte	8
+ 218 00e4 95       		.byte	-107
+ 219 00e5 40       		.byte	64
+ 220 00e6 91       		.byte	-111
+ 221 00e7 02       		.byte	2
+ 222 00e8 09       		.byte	9
+ 223 00e9 00       		.byte	0
+ 224 00ea 15       		.byte	21
+ 225 00eb 00       		.byte	0
+ 226 00ec 25       		.byte	37
+ 227 00ed FF       		.byte	-1
+ 228 00ee 75       		.byte	117
+ARM GAS  C:\Users\Robert\AppData\Local\Temp\ccdzMSlD.s 			page 5
+
+
+ 229 00ef 08       		.byte	8
+ 230 00f0 95       		.byte	-107
+ 231 00f1 40       		.byte	64
+ 232 00f2 81       		.byte	-127
+ 233 00f3 02       		.byte	2
+ 234 00f4 C0       		.byte	-64
+ 235 00f5 C0       		.byte	-64
+ 236 00f6 00       		.byte	0
+ 237 00f7 00       		.byte	0
+ 238              		.type	USB_Bootloader_SN_STRING_DESCRIPTOR, %object
+ 239              		.size	USB_Bootloader_SN_STRING_DESCRIPTOR, 10
+ 240              	USB_Bootloader_SN_STRING_DESCRIPTOR:
+ 241 00f8 0A       		.byte	10
+ 242 00f9 03       		.byte	3
+ 243 00fa 30       		.byte	48
+ 244 00fb 00       		.byte	0
+ 245 00fc 30       		.byte	48
+ 246 00fd 00       		.byte	0
+ 247 00fe 30       		.byte	48
+ 248 00ff 00       		.byte	0
+ 249 0100 31       		.byte	49
+ 250 0101 00       		.byte	0
+ 251 0102 0000     		.space	2
+ 252              		.type	USB_Bootloader_STRING_DESCRIPTORS, %object
+ 253              		.size	USB_Bootloader_STRING_DESCRIPTORS, 157
+ 254              	USB_Bootloader_STRING_DESCRIPTORS:
+ 255 0104 04       		.byte	4
+ 256 0105 03       		.byte	3
+ 257 0106 09       		.byte	9
+ 258 0107 04       		.byte	4
+ 259 0108 2C       		.byte	44
+ 260 0109 03       		.byte	3
+ 261 010a 43       		.byte	67
+ 262 010b 00       		.byte	0
+ 263 010c 79       		.byte	121
+ 264 010d 00       		.byte	0
+ 265 010e 70       		.byte	112
+ 266 010f 00       		.byte	0
+ 267 0110 72       		.byte	114
+ 268 0111 00       		.byte	0
+ 269 0112 65       		.byte	101
+ 270 0113 00       		.byte	0
+ 271 0114 73       		.byte	115
+ 272 0115 00       		.byte	0
+ 273 0116 73       		.byte	115
+ 274 0117 00       		.byte	0
+ 275 0118 20       		.byte	32
+ 276 0119 00       		.byte	0
+ 277 011a 53       		.byte	83
+ 278 011b 00       		.byte	0
+ 279 011c 65       		.byte	101
+ 280 011d 00       		.byte	0
+ 281 011e 6D       		.byte	109
+ 282 011f 00       		.byte	0
+ 283 0120 69       		.byte	105
+ 284 0121 00       		.byte	0
+ 285 0122 63       		.byte	99
+ARM GAS  C:\Users\Robert\AppData\Local\Temp\ccdzMSlD.s 			page 6
+
+
+ 286 0123 00       		.byte	0
+ 287 0124 6F       		.byte	111
+ 288 0125 00       		.byte	0
+ 289 0126 6E       		.byte	110
+ 290 0127 00       		.byte	0
+ 291 0128 64       		.byte	100
+ 292 0129 00       		.byte	0
+ 293 012a 75       		.byte	117
+ 294 012b 00       		.byte	0
+ 295 012c 63       		.byte	99
+ 296 012d 00       		.byte	0
+ 297 012e 74       		.byte	116
+ 298 012f 00       		.byte	0
+ 299 0130 6F       		.byte	111
+ 300 0131 00       		.byte	0
+ 301 0132 72       		.byte	114
+ 302 0133 00       		.byte	0
+ 303 0134 22       		.byte	34
+ 304 0135 03       		.byte	3
+ 305 0136 50       		.byte	80
+ 306 0137 00       		.byte	0
+ 307 0138 53       		.byte	83
+ 308 0139 00       		.byte	0
+ 309 013a 6F       		.byte	111
+ 310 013b 00       		.byte	0
+ 311 013c 43       		.byte	67
+ 312 013d 00       		.byte	0
+ 313 013e 33       		.byte	51
+ 314 013f 00       		.byte	0
+ 315 0140 20       		.byte	32
+ 316 0141 00       		.byte	0
+ 317 0142 42       		.byte	66
+ 318 0143 00       		.byte	0
+ 319 0144 6F       		.byte	111
+ 320 0145 00       		.byte	0
+ 321 0146 6F       		.byte	111
+ 322 0147 00       		.byte	0
+ 323 0148 74       		.byte	116
+ 324 0149 00       		.byte	0
+ 325 014a 6C       		.byte	108
+ 326 014b 00       		.byte	0
+ 327 014c 6F       		.byte	111
+ 328 014d 00       		.byte	0
+ 329 014e 61       		.byte	97
+ 330 014f 00       		.byte	0
+ 331 0150 64       		.byte	100
+ 332 0151 00       		.byte	0
+ 333 0152 65       		.byte	101
+ 334 0153 00       		.byte	0
+ 335 0154 72       		.byte	114
+ 336 0155 00       		.byte	0
+ 337 0156 28       		.byte	40
+ 338 0157 03       		.byte	3
+ 339 0158 45       		.byte	69
+ 340 0159 00       		.byte	0
+ 341 015a 6D       		.byte	109
+ 342 015b 00       		.byte	0
+ARM GAS  C:\Users\Robert\AppData\Local\Temp\ccdzMSlD.s 			page 7
+
+
+ 343 015c 62       		.byte	98
+ 344 015d 00       		.byte	0
+ 345 015e 65       		.byte	101
+ 346 015f 00       		.byte	0
+ 347 0160 64       		.byte	100
+ 348 0161 00       		.byte	0
+ 349 0162 69       		.byte	105
+ 350 0163 00       		.byte	0
+ 351 0164 74       		.byte	116
+ 352 0165 00       		.byte	0
+ 353 0166 20       		.byte	32
+ 354 0167 00       		.byte	0
+ 355 0168 45       		.byte	69
+ 356 0169 00       		.byte	0
+ 357 016a 6C       		.byte	108
+ 358 016b 00       		.byte	0
+ 359 016c 65       		.byte	101
+ 360 016d 00       		.byte	0
+ 361 016e 63       		.byte	99
+ 362 016f 00       		.byte	0
+ 363 0170 74       		.byte	116
+ 364 0171 00       		.byte	0
+ 365 0172 72       		.byte	114
+ 366 0173 00       		.byte	0
+ 367 0174 6F       		.byte	111
+ 368 0175 00       		.byte	0
+ 369 0176 6E       		.byte	110
+ 370 0177 00       		.byte	0
+ 371 0178 69       		.byte	105
+ 372 0179 00       		.byte	0
+ 373 017a 63       		.byte	99
+ 374 017b 00       		.byte	0
+ 375 017c 73       		.byte	115
+ 376 017d 00       		.byte	0
+ 377 017e 22       		.byte	34
+ 378 017f 03       		.byte	3
+ 379 0180 50       		.byte	80
+ 380 0181 00       		.byte	0
+ 381 0182 69       		.byte	105
+ 382 0183 00       		.byte	0
+ 383 0184 53       		.byte	83
+ 384 0185 00       		.byte	0
+ 385 0186 6F       		.byte	111
+ 386 0187 00       		.byte	0
+ 387 0188 43       		.byte	67
+ 388 0189 00       		.byte	0
+ 389 018a 20       		.byte	32
+ 390 018b 00       		.byte	0
+ 391 018c 42       		.byte	66
+ 392 018d 00       		.byte	0
+ 393 018e 6F       		.byte	111
+ 394 018f 00       		.byte	0
+ 395 0190 6F       		.byte	111
+ 396 0191 00       		.byte	0
+ 397 0192 74       		.byte	116
+ 398 0193 00       		.byte	0
+ 399 0194 6C       		.byte	108
+ARM GAS  C:\Users\Robert\AppData\Local\Temp\ccdzMSlD.s 			page 8
+
+
+ 400 0195 00       		.byte	0
+ 401 0196 6F       		.byte	111
+ 402 0197 00       		.byte	0
+ 403 0198 61       		.byte	97
+ 404 0199 00       		.byte	0
+ 405 019a 64       		.byte	100
+ 406 019b 00       		.byte	0
+ 407 019c 65       		.byte	101
+ 408 019d 00       		.byte	0
+ 409 019e 72       		.byte	114
+ 410 019f 00       		.byte	0
+ 411 01a0 00       		.byte	0
+ 412 01a1 000000   		.space	3
+ 413              		.type	USB_Bootloader_DEVICE0_CONFIGURATION0_DESCR, %object
+ 414              		.size	USB_Bootloader_DEVICE0_CONFIGURATION0_DESCR, 41
+ 415              	USB_Bootloader_DEVICE0_CONFIGURATION0_DESCR:
+ 416 01a4 09       		.byte	9
+ 417 01a5 02       		.byte	2
+ 418 01a6 29       		.byte	41
+ 419 01a7 00       		.byte	0
+ 420 01a8 01       		.byte	1
+ 421 01a9 01       		.byte	1
+ 422 01aa 04       		.byte	4
+ 423 01ab 80       		.byte	-128
+ 424 01ac FA       		.byte	-6
+ 425 01ad 09       		.byte	9
+ 426 01ae 04       		.byte	4
+ 427 01af 00       		.byte	0
+ 428 01b0 00       		.byte	0
+ 429 01b1 02       		.byte	2
+ 430 01b2 03       		.byte	3
+ 431 01b3 00       		.byte	0
+ 432 01b4 00       		.byte	0
+ 433 01b5 02       		.byte	2
+ 434 01b6 09       		.byte	9
+ 435 01b7 21       		.byte	33
+ 436 01b8 11       		.byte	17
+ 437 01b9 01       		.byte	1
+ 438 01ba 00       		.byte	0
+ 439 01bb 01       		.byte	1
+ 440 01bc 22       		.byte	34
+ 441 01bd 24       		.byte	36
+ 442 01be 00       		.byte	0
+ 443 01bf 07       		.byte	7
+ 444 01c0 05       		.byte	5
+ 445 01c1 01       		.byte	1
+ 446 01c2 03       		.byte	3
+ 447 01c3 40       		.byte	64
+ 448 01c4 00       		.byte	0
+ 449 01c5 01       		.byte	1
+ 450 01c6 07       		.byte	7
+ 451 01c7 05       		.byte	5
+ 452 01c8 82       		.byte	-126
+ 453 01c9 03       		.byte	3
+ 454 01ca 40       		.byte	64
+ 455 01cb 00       		.byte	0
+ 456 01cc 01       		.byte	1
+ARM GAS  C:\Users\Robert\AppData\Local\Temp\ccdzMSlD.s 			page 9
+
+
+ 457 01cd 000000   		.space	3
+ 458              		.type	USB_Bootloader_DEVICE0_DESCR, %object
+ 459              		.size	USB_Bootloader_DEVICE0_DESCR, 18
+ 460              	USB_Bootloader_DEVICE0_DESCR:
+ 461 01d0 12       		.byte	18
+ 462 01d1 01       		.byte	1
+ 463 01d2 00       		.byte	0
+ 464 01d3 02       		.byte	2
+ 465 01d4 00       		.byte	0
+ 466 01d5 00       		.byte	0
+ 467 01d6 00       		.byte	0
+ 468 01d7 08       		.byte	8
+ 469 01d8 B4       		.byte	-76
+ 470 01d9 04       		.byte	4
+ 471 01da 1D       		.byte	29
+ 472 01db B7       		.byte	-73
+ 473 01dc 01       		.byte	1
+ 474 01dd 30       		.byte	48
+ 475 01de 03       		.byte	3
+ 476 01df 04       		.byte	4
+ 477 01e0 80       		.byte	-128
+ 478 01e1 01       		.byte	1
+ 479 01e2 0000     		.text
+ 480              	.Letext0:
+ 481              		.file 1 ".\\Generated_Source\\PSoC5\\cytypes.h"
+ 482              		.file 2 ".\\Generated_Source\\PSoC5\\USB_Bootloader.h"
+ 483              		.file 3 ".\\Generated_Source\\PSoC5\\USB_Bootloader_descr.c"
+ 484              		.section	.debug_info,"",%progbits
+ 485              	.Ldebug_info0:
+ 486 0000 0F040000 		.4byte	0x40f
+ 487 0004 0400     		.2byte	0x4
+ 488 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 489 000a 04       		.byte	0x4
+ 490 000b 01       		.uleb128 0x1
+ 491 000c 62050000 		.4byte	.LASF51
+ 492 0010 01       		.byte	0x1
+ 493 0011 F9050000 		.4byte	.LASF52
+ 494 0015 F1030000 		.4byte	.LASF53
+ 495 0019 00000000 		.4byte	.Ldebug_line0
+ 496 001d 02       		.uleb128 0x2
+ 497 001e 01       		.byte	0x1
+ 498 001f 06       		.byte	0x6
+ 499 0020 29060000 		.4byte	.LASF0
+ 500 0024 02       		.uleb128 0x2
+ 501 0025 01       		.byte	0x1
+ 502 0026 08       		.byte	0x8
+ 503 0027 CB010000 		.4byte	.LASF1
+ 504 002b 02       		.uleb128 0x2
+ 505 002c 02       		.byte	0x2
+ 506 002d 05       		.byte	0x5
+ 507 002e 48050000 		.4byte	.LASF2
+ 508 0032 02       		.uleb128 0x2
+ 509 0033 02       		.byte	0x2
+ 510 0034 07       		.byte	0x7
+ 511 0035 83000000 		.4byte	.LASF3
+ 512 0039 02       		.uleb128 0x2
+ 513 003a 04       		.byte	0x4
+ARM GAS  C:\Users\Robert\AppData\Local\Temp\ccdzMSlD.s 			page 10
+
+
+ 514 003b 05       		.byte	0x5
+ 515 003c F0050000 		.4byte	.LASF4
+ 516 0040 02       		.uleb128 0x2
+ 517 0041 04       		.byte	0x4
+ 518 0042 07       		.byte	0x7
+ 519 0043 92020000 		.4byte	.LASF5
+ 520 0047 02       		.uleb128 0x2
+ 521 0048 08       		.byte	0x8
+ 522 0049 05       		.byte	0x5
+ 523 004a 05050000 		.4byte	.LASF6
+ 524 004e 02       		.uleb128 0x2
+ 525 004f 08       		.byte	0x8
+ 526 0050 07       		.byte	0x7
+ 527 0051 DA030000 		.4byte	.LASF7
+ 528 0055 03       		.uleb128 0x3
+ 529 0056 04       		.byte	0x4
+ 530 0057 05       		.byte	0x5
+ 531 0058 696E7400 		.ascii	"int\000"
+ 532 005c 02       		.uleb128 0x2
+ 533 005d 04       		.byte	0x4
+ 534 005e 07       		.byte	0x7
+ 535 005f CD030000 		.4byte	.LASF8
+ 536 0063 04       		.uleb128 0x4
+ 537 0064 52050000 		.4byte	.LASF9
+ 538 0068 01       		.byte	0x1
+ 539 0069 C2       		.byte	0xc2
+ 540 006a 24000000 		.4byte	0x24
+ 541 006e 04       		.uleb128 0x4
+ 542 006f 94030000 		.4byte	.LASF10
+ 543 0073 01       		.byte	0x1
+ 544 0074 C3       		.byte	0xc3
+ 545 0075 32000000 		.4byte	0x32
+ 546 0079 02       		.uleb128 0x2
+ 547 007a 04       		.byte	0x4
+ 548 007b 04       		.byte	0x4
+ 549 007c 97010000 		.4byte	.LASF11
+ 550 0080 02       		.uleb128 0x2
+ 551 0081 08       		.byte	0x8
+ 552 0082 04       		.byte	0x4
+ 553 0083 6E030000 		.4byte	.LASF12
+ 554 0087 02       		.uleb128 0x2
+ 555 0088 01       		.byte	0x1
+ 556 0089 08       		.byte	0x8
+ 557 008a 13050000 		.4byte	.LASF13
+ 558 008e 05       		.uleb128 0x5
+ 559 008f 63000000 		.4byte	0x63
+ 560 0093 02       		.uleb128 0x2
+ 561 0094 04       		.byte	0x4
+ 562 0095 07       		.byte	0x7
+ 563 0096 AE040000 		.4byte	.LASF14
+ 564 009a 06       		.uleb128 0x6
+ 565 009b 08       		.byte	0x8
+ 566 009c 02       		.byte	0x2
+ 567 009d 8D       		.byte	0x8d
+ 568 009e EB000000 		.4byte	0xeb
+ 569 00a2 07       		.uleb128 0x7
+ 570 00a3 58050000 		.4byte	.LASF15
+ARM GAS  C:\Users\Robert\AppData\Local\Temp\ccdzMSlD.s 			page 11
+
+
+ 571 00a7 02       		.byte	0x2
+ 572 00a8 8F       		.byte	0x8f
+ 573 00a9 63000000 		.4byte	0x63
+ 574 00ad 00       		.byte	0
+ 575 00ae 07       		.uleb128 0x7
+ 576 00af C0010000 		.4byte	.LASF16
+ 577 00b3 02       		.byte	0x2
+ 578 00b4 90       		.byte	0x90
+ 579 00b5 63000000 		.4byte	0x63
+ 580 00b9 01       		.byte	0x1
+ 581 00ba 07       		.uleb128 0x7
+ 582 00bb A4020000 		.4byte	.LASF17
+ 583 00bf 02       		.byte	0x2
+ 584 00c0 91       		.byte	0x91
+ 585 00c1 63000000 		.4byte	0x63
+ 586 00c5 02       		.byte	0x2
+ 587 00c6 07       		.uleb128 0x7
+ 588 00c7 2A000000 		.4byte	.LASF18
+ 589 00cb 02       		.byte	0x2
+ 590 00cc 92       		.byte	0x92
+ 591 00cd 63000000 		.4byte	0x63
+ 592 00d1 03       		.byte	0x3
+ 593 00d2 07       		.uleb128 0x7
+ 594 00d3 18050000 		.4byte	.LASF19
+ 595 00d7 02       		.byte	0x2
+ 596 00d8 93       		.byte	0x93
+ 597 00d9 6E000000 		.4byte	0x6e
+ 598 00dd 04       		.byte	0x4
+ 599 00de 07       		.uleb128 0x7
+ 600 00df 96060000 		.4byte	.LASF20
+ 601 00e3 02       		.byte	0x2
+ 602 00e4 94       		.byte	0x94
+ 603 00e5 63000000 		.4byte	0x63
+ 604 00e9 06       		.byte	0x6
+ 605 00ea 00       		.byte	0
+ 606 00eb 04       		.uleb128 0x4
+ 607 00ec 9D010000 		.4byte	.LASF21
+ 608 00f0 02       		.byte	0x2
+ 609 00f1 95       		.byte	0x95
+ 610 00f2 9A000000 		.4byte	0x9a
+ 611 00f6 06       		.uleb128 0x6
+ 612 00f7 04       		.byte	0x4
+ 613 00f8 02       		.byte	0x2
+ 614 00f9 97       		.byte	0x97
+ 615 00fa 17010000 		.4byte	0x117
+ 616 00fe 07       		.uleb128 0x7
+ 617 00ff E4000000 		.4byte	.LASF22
+ 618 0103 02       		.byte	0x2
+ 619 0104 99       		.byte	0x99
+ 620 0105 63000000 		.4byte	0x63
+ 621 0109 00       		.byte	0
+ 622 010a 07       		.uleb128 0x7
+ 623 010b 6B060000 		.4byte	.LASF23
+ 624 010f 02       		.byte	0x2
+ 625 0110 9A       		.byte	0x9a
+ 626 0111 6E000000 		.4byte	0x6e
+ 627 0115 02       		.byte	0x2
+ARM GAS  C:\Users\Robert\AppData\Local\Temp\ccdzMSlD.s 			page 12
+
+
+ 628 0116 00       		.byte	0
+ 629 0117 04       		.uleb128 0x4
+ 630 0118 EB000000 		.4byte	.LASF24
+ 631 011c 02       		.byte	0x2
+ 632 011d 9B       		.byte	0x9b
+ 633 011e F6000000 		.4byte	0xf6
+ 634 0122 06       		.uleb128 0x6
+ 635 0123 0C       		.byte	0xc
+ 636 0124 02       		.byte	0x2
+ 637 0125 9D       		.byte	0x9d
+ 638 0126 4F010000 		.4byte	0x14f
+ 639 012a 07       		.uleb128 0x7
+ 640 012b 7D000000 		.4byte	.LASF25
+ 641 012f 02       		.byte	0x2
+ 642 0130 9F       		.byte	0x9f
+ 643 0131 6E000000 		.4byte	0x6e
+ 644 0135 00       		.byte	0
+ 645 0136 07       		.uleb128 0x7
+ 646 0137 0E010000 		.4byte	.LASF26
+ 647 013b 02       		.byte	0x2
+ 648 013c A0       		.byte	0xa0
+ 649 013d 4F010000 		.4byte	0x14f
+ 650 0141 04       		.byte	0x4
+ 651 0142 07       		.uleb128 0x7
+ 652 0143 00000000 		.4byte	.LASF27
+ 653 0147 02       		.byte	0x2
+ 654 0148 A1       		.byte	0xa1
+ 655 0149 55010000 		.4byte	0x155
+ 656 014d 08       		.byte	0x8
+ 657 014e 00       		.byte	0
+ 658 014f 08       		.uleb128 0x8
+ 659 0150 04       		.byte	0x4
+ 660 0151 8E000000 		.4byte	0x8e
+ 661 0155 08       		.uleb128 0x8
+ 662 0156 04       		.byte	0x4
+ 663 0157 17010000 		.4byte	0x117
+ 664 015b 04       		.uleb128 0x4
+ 665 015c D5020000 		.4byte	.LASF28
+ 666 0160 02       		.byte	0x2
+ 667 0161 A2       		.byte	0xa2
+ 668 0162 22010000 		.4byte	0x122
+ 669 0166 06       		.uleb128 0x6
+ 670 0167 08       		.byte	0x8
+ 671 0168 02       		.byte	0x2
+ 672 0169 A5       		.byte	0xa5
+ 673 016a 85010000 		.4byte	0x185
+ 674 016e 09       		.uleb128 0x9
+ 675 016f 6300     		.ascii	"c\000"
+ 676 0171 02       		.byte	0x2
+ 677 0172 A7       		.byte	0xa7
+ 678 0173 63000000 		.4byte	0x63
+ 679 0177 00       		.byte	0
+ 680 0178 07       		.uleb128 0x7
+ 681 0179 4B040000 		.4byte	.LASF29
+ 682 017d 02       		.byte	0x2
+ 683 017e A8       		.byte	0xa8
+ 684 017f 85010000 		.4byte	0x185
+ARM GAS  C:\Users\Robert\AppData\Local\Temp\ccdzMSlD.s 			page 13
+
+
+ 685 0183 04       		.byte	0x4
+ 686 0184 00       		.byte	0
+ 687 0185 08       		.uleb128 0x8
+ 688 0186 04       		.byte	0x4
+ 689 0187 8B010000 		.4byte	0x18b
+ 690 018b 0A       		.uleb128 0xa
+ 691 018c 04       		.uleb128 0x4
+ 692 018d B8030000 		.4byte	.LASF30
+ 693 0191 02       		.byte	0x2
+ 694 0192 A9       		.byte	0xa9
+ 695 0193 66010000 		.4byte	0x166
+ 696 0197 0B       		.uleb128 0xb
+ 697 0198 63000000 		.4byte	0x63
+ 698 019c A7010000 		.4byte	0x1a7
+ 699 01a0 0C       		.uleb128 0xc
+ 700 01a1 93000000 		.4byte	0x93
+ 701 01a5 11       		.byte	0x11
+ 702 01a6 00       		.byte	0
+ 703 01a7 0D       		.uleb128 0xd
+ 704 01a8 0D000000 		.4byte	.LASF31
+ 705 01ac 03       		.byte	0x3
+ 706 01ad 26       		.byte	0x26
+ 707 01ae B8010000 		.4byte	0x1b8
+ 708 01b2 05       		.uleb128 0x5
+ 709 01b3 03       		.byte	0x3
+ 710 01b4 00000000 		.4byte	USB_Bootloader_DEVICE0_DESCR
+ 711 01b8 0E       		.uleb128 0xe
+ 712 01b9 97010000 		.4byte	0x197
+ 713 01bd 0B       		.uleb128 0xb
+ 714 01be 63000000 		.4byte	0x63
+ 715 01c2 CD010000 		.4byte	0x1cd
+ 716 01c6 0C       		.uleb128 0xc
+ 717 01c7 93000000 		.4byte	0x93
+ 718 01cb 28       		.byte	0x28
+ 719 01cc 00       		.byte	0
+ 720 01cd 0D       		.uleb128 0xd
+ 721 01ce A9020000 		.4byte	.LASF32
+ 722 01d2 03       		.byte	0x3
+ 723 01d3 39       		.byte	0x39
+ 724 01d4 DE010000 		.4byte	0x1de
+ 725 01d8 05       		.uleb128 0x5
+ 726 01d9 03       		.byte	0x3
+ 727 01da 00000000 		.4byte	USB_Bootloader_DEVICE0_CONFIGURATION0_DESCR
+ 728 01de 0E       		.uleb128 0xe
+ 729 01df BD010000 		.4byte	0x1bd
+ 730 01e3 0B       		.uleb128 0xb
+ 731 01e4 8C010000 		.4byte	0x18c
+ 732 01e8 F3010000 		.4byte	0x1f3
+ 733 01ec 0C       		.uleb128 0xc
+ 734 01ed 93000000 		.4byte	0x93
+ 735 01f1 00       		.byte	0
+ 736 01f2 00       		.byte	0
+ 737 01f3 0D       		.uleb128 0xd
+ 738 01f4 14010000 		.4byte	.LASF33
+ 739 01f8 03       		.byte	0x3
+ 740 01f9 F9       		.byte	0xf9
+ 741 01fa 04020000 		.4byte	0x204
+ARM GAS  C:\Users\Robert\AppData\Local\Temp\ccdzMSlD.s 			page 14
+
+
+ 742 01fe 05       		.uleb128 0x5
+ 743 01ff 03       		.byte	0x3
+ 744 0200 00000000 		.4byte	USB_Bootloader_DEVICE0_CONFIGURATION0_INTERFACE0_TABLE
+ 745 0204 0E       		.uleb128 0xe
+ 746 0205 E3010000 		.4byte	0x1e3
+ 747 0209 0B       		.uleb128 0xb
+ 748 020a EB000000 		.4byte	0xeb
+ 749 020e 19020000 		.4byte	0x219
+ 750 0212 0C       		.uleb128 0xc
+ 751 0213 93000000 		.4byte	0x93
+ 752 0217 01       		.byte	0x1
+ 753 0218 00       		.byte	0
+ 754 0219 0F       		.uleb128 0xf
+ 755 021a 36030000 		.4byte	.LASF34
+ 756 021e 03       		.byte	0x3
+ 757 021f 0401     		.2byte	0x104
+ 758 0221 2B020000 		.4byte	0x22b
+ 759 0225 05       		.uleb128 0x5
+ 760 0226 03       		.byte	0x3
+ 761 0227 00000000 		.4byte	USB_Bootloader_DEVICE0_CONFIGURATION0_EP_SETTINGS_TABLE
+ 762 022b 0E       		.uleb128 0xe
+ 763 022c 09020000 		.4byte	0x209
+ 764 0230 0B       		.uleb128 0xb
+ 765 0231 63000000 		.4byte	0x63
+ 766 0235 40020000 		.4byte	0x240
+ 767 0239 0C       		.uleb128 0xc
+ 768 023a 93000000 		.4byte	0x93
+ 769 023e 00       		.byte	0
+ 770 023f 00       		.byte	0
+ 771 0240 0F       		.uleb128 0xf
+ 772 0241 35060000 		.4byte	.LASF35
+ 773 0245 03       		.byte	0x3
+ 774 0246 0901     		.2byte	0x109
+ 775 0248 52020000 		.4byte	0x252
+ 776 024c 05       		.uleb128 0x5
+ 777 024d 03       		.byte	0x3
+ 778 024e 00000000 		.4byte	USB_Bootloader_DEVICE0_CONFIGURATION0_INTERFACE_CLASS
+ 779 0252 0E       		.uleb128 0xe
+ 780 0253 30020000 		.4byte	0x230
+ 781 0257 0B       		.uleb128 0xb
+ 782 0258 8C010000 		.4byte	0x18c
+ 783 025c 67020000 		.4byte	0x267
+ 784 0260 0C       		.uleb128 0xc
+ 785 0261 93000000 		.4byte	0x93
+ 786 0265 03       		.byte	0x3
+ 787 0266 00       		.byte	0
+ 788 0267 0F       		.uleb128 0xf
+ 789 0268 B8000000 		.4byte	.LASF36
+ 790 026c 03       		.byte	0x3
+ 791 026d 1101     		.2byte	0x111
+ 792 026f 79020000 		.4byte	0x279
+ 793 0273 05       		.uleb128 0x5
+ 794 0274 03       		.byte	0x3
+ 795 0275 00000000 		.4byte	USB_Bootloader_DEVICE0_CONFIGURATION0_TABLE
+ 796 0279 0E       		.uleb128 0xe
+ 797 027a 57020000 		.4byte	0x257
+ 798 027e 0B       		.uleb128 0xb
+ARM GAS  C:\Users\Robert\AppData\Local\Temp\ccdzMSlD.s 			page 15
+
+
+ 799 027f 8C010000 		.4byte	0x18c
+ 800 0283 8E020000 		.4byte	0x28e
+ 801 0287 0C       		.uleb128 0xc
+ 802 0288 93000000 		.4byte	0x93
+ 803 028c 01       		.byte	0x1
+ 804 028d 00       		.byte	0
+ 805 028e 0F       		.uleb128 0xf
+ 806 028f 9B030000 		.4byte	.LASF37
+ 807 0293 03       		.byte	0x3
+ 808 0294 1B01     		.2byte	0x11b
+ 809 0296 A0020000 		.4byte	0x2a0
+ 810 029a 05       		.uleb128 0x5
+ 811 029b 03       		.byte	0x3
+ 812 029c 00000000 		.4byte	USB_Bootloader_DEVICE0_TABLE
+ 813 02a0 0E       		.uleb128 0xe
+ 814 02a1 7E020000 		.4byte	0x27e
+ 815 02a5 0F       		.uleb128 0xf
+ 816 02a6 52040000 		.4byte	.LASF38
+ 817 02aa 03       		.byte	0x3
+ 818 02ab 2201     		.2byte	0x122
+ 819 02ad B7020000 		.4byte	0x2b7
+ 820 02b1 05       		.uleb128 0x5
+ 821 02b2 03       		.byte	0x3
+ 822 02b3 00000000 		.4byte	USB_Bootloader_TABLE
+ 823 02b7 0E       		.uleb128 0xe
+ 824 02b8 E3010000 		.4byte	0x1e3
+ 825 02bc 0B       		.uleb128 0xb
+ 826 02bd 63000000 		.4byte	0x63
+ 827 02c1 CC020000 		.4byte	0x2cc
+ 828 02c5 0C       		.uleb128 0xc
+ 829 02c6 93000000 		.4byte	0x93
+ 830 02ca 09       		.byte	0x9
+ 831 02cb 00       		.byte	0
+ 832 02cc 0D       		.uleb128 0xd
+ 833 02cd 72060000 		.4byte	.LASF39
+ 834 02d1 03       		.byte	0x3
+ 835 02d2 A3       		.byte	0xa3
+ 836 02d3 DD020000 		.4byte	0x2dd
+ 837 02d7 05       		.uleb128 0x5
+ 838 02d8 03       		.byte	0x3
+ 839 02d9 00000000 		.4byte	USB_Bootloader_SN_STRING_DESCRIPTOR
+ 840 02dd 0E       		.uleb128 0xe
+ 841 02de BC020000 		.4byte	0x2bc
+ 842 02e2 0B       		.uleb128 0xb
+ 843 02e3 63000000 		.4byte	0x63
+ 844 02e7 F2020000 		.4byte	0x2f2
+ 845 02eb 0C       		.uleb128 0xc
+ 846 02ec 93000000 		.4byte	0x93
+ 847 02f0 9C       		.byte	0x9c
+ 848 02f1 00       		.byte	0
+ 849 02f2 0D       		.uleb128 0xd
+ 850 02f3 96000000 		.4byte	.LASF40
+ 851 02f7 03       		.byte	0x3
+ 852 02f8 70       		.byte	0x70
+ 853 02f9 03030000 		.4byte	0x303
+ 854 02fd 05       		.uleb128 0x5
+ 855 02fe 03       		.byte	0x3
+ARM GAS  C:\Users\Robert\AppData\Local\Temp\ccdzMSlD.s 			page 16
+
+
+ 856 02ff 00000000 		.4byte	USB_Bootloader_STRING_DESCRIPTORS
+ 857 0303 0E       		.uleb128 0xe
+ 858 0304 E2020000 		.4byte	0x2e2
+ 859 0308 0D       		.uleb128 0xd
+ 860 0309 47020000 		.4byte	.LASF41
+ 861 030d 03       		.byte	0x3
+ 862 030e CA       		.byte	0xca
+ 863 030f 17010000 		.4byte	0x117
+ 864 0313 05       		.uleb128 0x5
+ 865 0314 03       		.byte	0x3
+ 866 0315 00000000 		.4byte	USB_Bootloader_DEVICE0_CONFIGURATION0_INTERFACE0_ALTERNATE0_HID_IN_RPT_SCB
+ 867 0319 0B       		.uleb128 0xb
+ 868 031a 63000000 		.4byte	0x63
+ 869 031e 29030000 		.4byte	0x329
+ 870 0322 0C       		.uleb128 0xc
+ 871 0323 93000000 		.4byte	0x93
+ 872 0327 40       		.byte	0x40
+ 873 0328 00       		.byte	0
+ 874 0329 0D       		.uleb128 0xd
+ 875 032a 67040000 		.4byte	.LASF42
+ 876 032e 03       		.byte	0x3
+ 877 032f CB       		.byte	0xcb
+ 878 0330 19030000 		.4byte	0x319
+ 879 0334 05       		.uleb128 0x5
+ 880 0335 03       		.byte	0x3
+ 881 0336 00000000 		.4byte	USB_Bootloader_DEVICE0_CONFIGURATION0_INTERFACE0_ALTERNATE0_HID_IN_BUF
+ 882 033a 0D       		.uleb128 0xd
+ 883 033b 4B010000 		.4byte	.LASF43
+ 884 033f 03       		.byte	0x3
+ 885 0340 D9       		.byte	0xd9
+ 886 0341 17010000 		.4byte	0x117
+ 887 0345 05       		.uleb128 0x5
+ 888 0346 03       		.byte	0x3
+ 889 0347 00000000 		.4byte	USB_Bootloader_DEVICE0_CONFIGURATION0_INTERFACE0_ALTERNATE0_HID_OUT_RPT_SCB
+ 890 034b 0D       		.uleb128 0xd
+ 891 034c 35000000 		.4byte	.LASF44
+ 892 0350 03       		.byte	0x3
+ 893 0351 DA       		.byte	0xda
+ 894 0352 19030000 		.4byte	0x319
+ 895 0356 05       		.uleb128 0x5
+ 896 0357 03       		.byte	0x3
+ 897 0358 00000000 		.4byte	USB_Bootloader_DEVICE0_CONFIGURATION0_INTERFACE0_ALTERNATE0_HID_OUT_BUF
+ 898 035c 0B       		.uleb128 0xb
+ 899 035d 63000000 		.4byte	0x63
+ 900 0361 6C030000 		.4byte	0x36c
+ 901 0365 0C       		.uleb128 0xc
+ 902 0366 93000000 		.4byte	0x93
+ 903 036a 27       		.byte	0x27
+ 904 036b 00       		.byte	0
+ 905 036c 0D       		.uleb128 0xd
+ 906 036d 23050000 		.4byte	.LASF45
+ 907 0371 03       		.byte	0x3
+ 908 0372 AC       		.byte	0xac
+ 909 0373 7D030000 		.4byte	0x37d
+ 910 0377 05       		.uleb128 0x5
+ 911 0378 03       		.byte	0x3
+ 912 0379 00000000 		.4byte	USB_Bootloader_HIDREPORT_DESCRIPTOR1
+ARM GAS  C:\Users\Robert\AppData\Local\Temp\ccdzMSlD.s 			page 17
+
+
+ 913 037d 0E       		.uleb128 0xe
+ 914 037e 5C030000 		.4byte	0x35c
+ 915 0382 0B       		.uleb128 0xb
+ 916 0383 5B010000 		.4byte	0x15b
+ 917 0387 92030000 		.4byte	0x392
+ 918 038b 0C       		.uleb128 0xc
+ 919 038c 93000000 		.4byte	0x93
+ 920 0390 00       		.byte	0
+ 921 0391 00       		.byte	0
+ 922 0392 0D       		.uleb128 0xd
+ 923 0393 E9020000 		.4byte	.LASF46
+ 924 0397 03       		.byte	0x3
+ 925 0398 D1       		.byte	0xd1
+ 926 0399 A3030000 		.4byte	0x3a3
+ 927 039d 05       		.uleb128 0x5
+ 928 039e 03       		.byte	0x3
+ 929 039f 00000000 		.4byte	USB_Bootloader_DEVICE0_CONFIGURATION0_INTERFACE0_ALTERNATE0_HID_IN_RPT_TABLE
+ 930 03a3 0E       		.uleb128 0xe
+ 931 03a4 82030000 		.4byte	0x382
+ 932 03a8 0D       		.uleb128 0xd
+ 933 03a9 B7040000 		.4byte	.LASF47
+ 934 03ad 03       		.byte	0x3
+ 935 03ae E0       		.byte	0xe0
+ 936 03af B9030000 		.4byte	0x3b9
+ 937 03b3 05       		.uleb128 0x5
+ 938 03b4 03       		.byte	0x3
+ 939 03b5 00000000 		.4byte	USB_Bootloader_DEVICE0_CONFIGURATION0_INTERFACE0_ALTERNATE0_HID_OUT_RPT_TABLE
+ 940 03b9 0E       		.uleb128 0xe
+ 941 03ba 82030000 		.4byte	0x382
+ 942 03be 0B       		.uleb128 0xb
+ 943 03bf 8C010000 		.4byte	0x18c
+ 944 03c3 CE030000 		.4byte	0x3ce
+ 945 03c7 0C       		.uleb128 0xc
+ 946 03c8 93000000 		.4byte	0x93
+ 947 03cc 04       		.byte	0x4
+ 948 03cd 00       		.byte	0
+ 949 03ce 0D       		.uleb128 0xd
+ 950 03cf D9010000 		.4byte	.LASF48
+ 951 03d3 03       		.byte	0x3
+ 952 03d4 ED       		.byte	0xed
+ 953 03d5 DF030000 		.4byte	0x3df
+ 954 03d9 05       		.uleb128 0x5
+ 955 03da 03       		.byte	0x3
+ 956 03db 00000000 		.4byte	USB_Bootloader_DEVICE0_CONFIGURATION0_INTERFACE0_ALTERNATE0_HID_TABLE
+ 957 03df 0E       		.uleb128 0xe
+ 958 03e0 BE030000 		.4byte	0x3be
+ 959 03e4 0F       		.uleb128 0xf
+ 960 03e5 75030000 		.4byte	.LASF49
+ 961 03e9 03       		.byte	0x3
+ 962 03ea 3201     		.2byte	0x132
+ 963 03ec F6030000 		.4byte	0x3f6
+ 964 03f0 05       		.uleb128 0x5
+ 965 03f1 03       		.byte	0x3
+ 966 03f2 00000000 		.4byte	USB_Bootloader_MSOS_DESCRIPTOR
+ 967 03f6 0E       		.uleb128 0xe
+ 968 03f7 97010000 		.4byte	0x197
+ 969 03fb 0F       		.uleb128 0xf
+ARM GAS  C:\Users\Robert\AppData\Local\Temp\ccdzMSlD.s 			page 18
+
+
+ 970 03fc 1F020000 		.4byte	.LASF50
+ 971 0400 03       		.byte	0x3
+ 972 0401 3D01     		.2byte	0x13d
+ 973 0403 0D040000 		.4byte	0x40d
+ 974 0407 05       		.uleb128 0x5
+ 975 0408 03       		.byte	0x3
+ 976 0409 00000000 		.4byte	USB_Bootloader_MSOS_CONFIGURATION_DESCR
+ 977 040d 0E       		.uleb128 0xe
+ 978 040e 5C030000 		.4byte	0x35c
+ 979 0412 00       		.byte	0
+ 980              		.section	.debug_abbrev,"",%progbits
+ 981              	.Ldebug_abbrev0:
+ 982 0000 01       		.uleb128 0x1
+ 983 0001 11       		.uleb128 0x11
+ 984 0002 01       		.byte	0x1
+ 985 0003 25       		.uleb128 0x25
+ 986 0004 0E       		.uleb128 0xe
+ 987 0005 13       		.uleb128 0x13
+ 988 0006 0B       		.uleb128 0xb
+ 989 0007 03       		.uleb128 0x3
+ 990 0008 0E       		.uleb128 0xe
+ 991 0009 1B       		.uleb128 0x1b
+ 992 000a 0E       		.uleb128 0xe
+ 993 000b 10       		.uleb128 0x10
+ 994 000c 17       		.uleb128 0x17
+ 995 000d 00       		.byte	0
+ 996 000e 00       		.byte	0
+ 997 000f 02       		.uleb128 0x2
+ 998 0010 24       		.uleb128 0x24
+ 999 0011 00       		.byte	0
+ 1000 0012 0B       		.uleb128 0xb
+ 1001 0013 0B       		.uleb128 0xb
+ 1002 0014 3E       		.uleb128 0x3e
+ 1003 0015 0B       		.uleb128 0xb
+ 1004 0016 03       		.uleb128 0x3
+ 1005 0017 0E       		.uleb128 0xe
+ 1006 0018 00       		.byte	0
+ 1007 0019 00       		.byte	0
+ 1008 001a 03       		.uleb128 0x3
+ 1009 001b 24       		.uleb128 0x24
+ 1010 001c 00       		.byte	0
+ 1011 001d 0B       		.uleb128 0xb
+ 1012 001e 0B       		.uleb128 0xb
+ 1013 001f 3E       		.uleb128 0x3e
+ 1014 0020 0B       		.uleb128 0xb
+ 1015 0021 03       		.uleb128 0x3
+ 1016 0022 08       		.uleb128 0x8
+ 1017 0023 00       		.byte	0
+ 1018 0024 00       		.byte	0
+ 1019 0025 04       		.uleb128 0x4
+ 1020 0026 16       		.uleb128 0x16
+ 1021 0027 00       		.byte	0
+ 1022 0028 03       		.uleb128 0x3
+ 1023 0029 0E       		.uleb128 0xe
+ 1024 002a 3A       		.uleb128 0x3a
+ 1025 002b 0B       		.uleb128 0xb
+ 1026 002c 3B       		.uleb128 0x3b
+ARM GAS  C:\Users\Robert\AppData\Local\Temp\ccdzMSlD.s 			page 19
+
+
+ 1027 002d 0B       		.uleb128 0xb
+ 1028 002e 49       		.uleb128 0x49
+ 1029 002f 13       		.uleb128 0x13
+ 1030 0030 00       		.byte	0
+ 1031 0031 00       		.byte	0
+ 1032 0032 05       		.uleb128 0x5
+ 1033 0033 35       		.uleb128 0x35
+ 1034 0034 00       		.byte	0
+ 1035 0035 49       		.uleb128 0x49
+ 1036 0036 13       		.uleb128 0x13
+ 1037 0037 00       		.byte	0
+ 1038 0038 00       		.byte	0
+ 1039 0039 06       		.uleb128 0x6
+ 1040 003a 13       		.uleb128 0x13
+ 1041 003b 01       		.byte	0x1
+ 1042 003c 0B       		.uleb128 0xb
+ 1043 003d 0B       		.uleb128 0xb
+ 1044 003e 3A       		.uleb128 0x3a
+ 1045 003f 0B       		.uleb128 0xb
+ 1046 0040 3B       		.uleb128 0x3b
+ 1047 0041 0B       		.uleb128 0xb
+ 1048 0042 01       		.uleb128 0x1
+ 1049 0043 13       		.uleb128 0x13
+ 1050 0044 00       		.byte	0
+ 1051 0045 00       		.byte	0
+ 1052 0046 07       		.uleb128 0x7
+ 1053 0047 0D       		.uleb128 0xd
+ 1054 0048 00       		.byte	0
+ 1055 0049 03       		.uleb128 0x3
+ 1056 004a 0E       		.uleb128 0xe
+ 1057 004b 3A       		.uleb128 0x3a
+ 1058 004c 0B       		.uleb128 0xb
+ 1059 004d 3B       		.uleb128 0x3b
+ 1060 004e 0B       		.uleb128 0xb
+ 1061 004f 49       		.uleb128 0x49
+ 1062 0050 13       		.uleb128 0x13
+ 1063 0051 38       		.uleb128 0x38
+ 1064 0052 0B       		.uleb128 0xb
+ 1065 0053 00       		.byte	0
+ 1066 0054 00       		.byte	0
+ 1067 0055 08       		.uleb128 0x8
+ 1068 0056 0F       		.uleb128 0xf
+ 1069 0057 00       		.byte	0
+ 1070 0058 0B       		.uleb128 0xb
+ 1071 0059 0B       		.uleb128 0xb
+ 1072 005a 49       		.uleb128 0x49
+ 1073 005b 13       		.uleb128 0x13
+ 1074 005c 00       		.byte	0
+ 1075 005d 00       		.byte	0
+ 1076 005e 09       		.uleb128 0x9
+ 1077 005f 0D       		.uleb128 0xd
+ 1078 0060 00       		.byte	0
+ 1079 0061 03       		.uleb128 0x3
+ 1080 0062 08       		.uleb128 0x8
+ 1081 0063 3A       		.uleb128 0x3a
+ 1082 0064 0B       		.uleb128 0xb
+ 1083 0065 3B       		.uleb128 0x3b
+ARM GAS  C:\Users\Robert\AppData\Local\Temp\ccdzMSlD.s 			page 20
+
+
+ 1084 0066 0B       		.uleb128 0xb
+ 1085 0067 49       		.uleb128 0x49
+ 1086 0068 13       		.uleb128 0x13
+ 1087 0069 38       		.uleb128 0x38
+ 1088 006a 0B       		.uleb128 0xb
+ 1089 006b 00       		.byte	0
+ 1090 006c 00       		.byte	0
+ 1091 006d 0A       		.uleb128 0xa
+ 1092 006e 26       		.uleb128 0x26
+ 1093 006f 00       		.byte	0
+ 1094 0070 00       		.byte	0
+ 1095 0071 00       		.byte	0
+ 1096 0072 0B       		.uleb128 0xb
+ 1097 0073 01       		.uleb128 0x1
+ 1098 0074 01       		.byte	0x1
+ 1099 0075 49       		.uleb128 0x49
+ 1100 0076 13       		.uleb128 0x13
+ 1101 0077 01       		.uleb128 0x1
+ 1102 0078 13       		.uleb128 0x13
+ 1103 0079 00       		.byte	0
+ 1104 007a 00       		.byte	0
+ 1105 007b 0C       		.uleb128 0xc
+ 1106 007c 21       		.uleb128 0x21
+ 1107 007d 00       		.byte	0
+ 1108 007e 49       		.uleb128 0x49
+ 1109 007f 13       		.uleb128 0x13
+ 1110 0080 2F       		.uleb128 0x2f
+ 1111 0081 0B       		.uleb128 0xb
+ 1112 0082 00       		.byte	0
+ 1113 0083 00       		.byte	0
+ 1114 0084 0D       		.uleb128 0xd
+ 1115 0085 34       		.uleb128 0x34
+ 1116 0086 00       		.byte	0
+ 1117 0087 03       		.uleb128 0x3
+ 1118 0088 0E       		.uleb128 0xe
+ 1119 0089 3A       		.uleb128 0x3a
+ 1120 008a 0B       		.uleb128 0xb
+ 1121 008b 3B       		.uleb128 0x3b
+ 1122 008c 0B       		.uleb128 0xb
+ 1123 008d 49       		.uleb128 0x49
+ 1124 008e 13       		.uleb128 0x13
+ 1125 008f 3F       		.uleb128 0x3f
+ 1126 0090 19       		.uleb128 0x19
+ 1127 0091 02       		.uleb128 0x2
+ 1128 0092 18       		.uleb128 0x18
+ 1129 0093 00       		.byte	0
+ 1130 0094 00       		.byte	0
+ 1131 0095 0E       		.uleb128 0xe
+ 1132 0096 26       		.uleb128 0x26
+ 1133 0097 00       		.byte	0
+ 1134 0098 49       		.uleb128 0x49
+ 1135 0099 13       		.uleb128 0x13
+ 1136 009a 00       		.byte	0
+ 1137 009b 00       		.byte	0
+ 1138 009c 0F       		.uleb128 0xf
+ 1139 009d 34       		.uleb128 0x34
+ 1140 009e 00       		.byte	0
+ARM GAS  C:\Users\Robert\AppData\Local\Temp\ccdzMSlD.s 			page 21
+
+
+ 1141 009f 03       		.uleb128 0x3
+ 1142 00a0 0E       		.uleb128 0xe
+ 1143 00a1 3A       		.uleb128 0x3a
+ 1144 00a2 0B       		.uleb128 0xb
+ 1145 00a3 3B       		.uleb128 0x3b
+ 1146 00a4 05       		.uleb128 0x5
+ 1147 00a5 49       		.uleb128 0x49
+ 1148 00a6 13       		.uleb128 0x13
+ 1149 00a7 3F       		.uleb128 0x3f
+ 1150 00a8 19       		.uleb128 0x19
+ 1151 00a9 02       		.uleb128 0x2
+ 1152 00aa 18       		.uleb128 0x18
+ 1153 00ab 00       		.byte	0
+ 1154 00ac 00       		.byte	0
+ 1155 00ad 00       		.byte	0
+ 1156              		.section	.debug_aranges,"",%progbits
+ 1157 0000 14000000 		.4byte	0x14
+ 1158 0004 0200     		.2byte	0x2
+ 1159 0006 00000000 		.4byte	.Ldebug_info0
+ 1160 000a 04       		.byte	0x4
+ 1161 000b 00       		.byte	0
+ 1162 000c 0000     		.2byte	0
+ 1163 000e 0000     		.2byte	0
+ 1164 0010 00000000 		.4byte	0
+ 1165 0014 00000000 		.4byte	0
+ 1166              		.section	.debug_line,"",%progbits
+ 1167              	.Ldebug_line0:
+ 1168 0000 6D000000 		.section	.debug_str,"MS",%progbits,1
+ 1168      02006700 
+ 1168      00000201 
+ 1168      FB0E0D00 
+ 1168      01010101 
+ 1169              	.LASF27:
+ 1170 0000 70537461 		.ascii	"pStatusBlock\000"
+ 1170      74757342 
+ 1170      6C6F636B 
+ 1170      00
+ 1171              	.LASF31:
+ 1172 000d 5553425F 		.ascii	"USB_Bootloader_DEVICE0_DESCR\000"
+ 1172      426F6F74 
+ 1172      6C6F6164 
+ 1172      65725F44 
+ 1172      45564943 
+ 1173              	.LASF18:
+ 1174 002a 61747472 		.ascii	"attributes\000"
+ 1174      69627574 
+ 1174      657300
+ 1175              	.LASF44:
+ 1176 0035 5553425F 		.ascii	"USB_Bootloader_DEVICE0_CONFIGURATION0_INTERFACE0_AL"
+ 1176      426F6F74 
+ 1176      6C6F6164 
+ 1176      65725F44 
+ 1176      45564943 
+ 1177 0068 5445524E 		.ascii	"TERNATE0_HID_OUT_BUF\000"
+ 1177      41544530 
+ 1177      5F484944 
+ 1177      5F4F5554 
+ARM GAS  C:\Users\Robert\AppData\Local\Temp\ccdzMSlD.s 			page 22
+
+
+ 1177      5F425546 
+ 1178              	.LASF25:
+ 1179 007d 636F756E 		.ascii	"count\000"
+ 1179      7400
+ 1180              	.LASF3:
+ 1181 0083 73686F72 		.ascii	"short unsigned int\000"
+ 1181      7420756E 
+ 1181      7369676E 
+ 1181      65642069 
+ 1181      6E7400
+ 1182              	.LASF40:
+ 1183 0096 5553425F 		.ascii	"USB_Bootloader_STRING_DESCRIPTORS\000"
+ 1183      426F6F74 
+ 1183      6C6F6164 
+ 1183      65725F53 
+ 1183      5452494E 
+ 1184              	.LASF36:
+ 1185 00b8 5553425F 		.ascii	"USB_Bootloader_DEVICE0_CONFIGURATION0_TABLE\000"
+ 1185      426F6F74 
+ 1185      6C6F6164 
+ 1185      65725F44 
+ 1185      45564943 
+ 1186              	.LASF22:
+ 1187 00e4 73746174 		.ascii	"status\000"
+ 1187      757300
+ 1188              	.LASF24:
+ 1189 00eb 545F5553 		.ascii	"T_USB_Bootloader_XFER_STATUS_BLOCK\000"
+ 1189      425F426F 
+ 1189      6F746C6F 
+ 1189      61646572 
+ 1189      5F584645 
+ 1190              	.LASF26:
+ 1191 010e 70446174 		.ascii	"pData\000"
+ 1191      6100
+ 1192              	.LASF33:
+ 1193 0114 5553425F 		.ascii	"USB_Bootloader_DEVICE0_CONFIGURATION0_INTERFACE0_TA"
+ 1193      426F6F74 
+ 1193      6C6F6164 
+ 1193      65725F44 
+ 1193      45564943 
+ 1194 0147 424C4500 		.ascii	"BLE\000"
+ 1195              	.LASF43:
+ 1196 014b 5553425F 		.ascii	"USB_Bootloader_DEVICE0_CONFIGURATION0_INTERFACE0_AL"
+ 1196      426F6F74 
+ 1196      6C6F6164 
+ 1196      65725F44 
+ 1196      45564943 
+ 1197 017e 5445524E 		.ascii	"TERNATE0_HID_OUT_RPT_SCB\000"
+ 1197      41544530 
+ 1197      5F484944 
+ 1197      5F4F5554 
+ 1197      5F525054 
+ 1198              	.LASF11:
+ 1199 0197 666C6F61 		.ascii	"float\000"
+ 1199      7400
+ 1200              	.LASF21:
+ 1201 019d 545F5553 		.ascii	"T_USB_Bootloader_EP_SETTINGS_BLOCK\000"
+ARM GAS  C:\Users\Robert\AppData\Local\Temp\ccdzMSlD.s 			page 23
+
+
+ 1201      425F426F 
+ 1201      6F746C6F 
+ 1201      61646572 
+ 1201      5F45505F 
+ 1202              	.LASF16:
+ 1203 01c0 616C7453 		.ascii	"altSetting\000"
+ 1203      65747469 
+ 1203      6E6700
+ 1204              	.LASF1:
+ 1205 01cb 756E7369 		.ascii	"unsigned char\000"
+ 1205      676E6564 
+ 1205      20636861 
+ 1205      7200
+ 1206              	.LASF48:
+ 1207 01d9 5553425F 		.ascii	"USB_Bootloader_DEVICE0_CONFIGURATION0_INTERFACE0_AL"
+ 1207      426F6F74 
+ 1207      6C6F6164 
+ 1207      65725F44 
+ 1207      45564943 
+ 1208 020c 5445524E 		.ascii	"TERNATE0_HID_TABLE\000"
+ 1208      41544530 
+ 1208      5F484944 
+ 1208      5F544142 
+ 1208      4C4500
+ 1209              	.LASF50:
+ 1210 021f 5553425F 		.ascii	"USB_Bootloader_MSOS_CONFIGURATION_DESCR\000"
+ 1210      426F6F74 
+ 1210      6C6F6164 
+ 1210      65725F4D 
+ 1210      534F535F 
+ 1211              	.LASF41:
+ 1212 0247 5553425F 		.ascii	"USB_Bootloader_DEVICE0_CONFIGURATION0_INTERFACE0_AL"
+ 1212      426F6F74 
+ 1212      6C6F6164 
+ 1212      65725F44 
+ 1212      45564943 
+ 1213 027a 5445524E 		.ascii	"TERNATE0_HID_IN_RPT_SCB\000"
+ 1213      41544530 
+ 1213      5F484944 
+ 1213      5F494E5F 
+ 1213      5250545F 
+ 1214              	.LASF5:
+ 1215 0292 6C6F6E67 		.ascii	"long unsigned int\000"
+ 1215      20756E73 
+ 1215      69676E65 
+ 1215      6420696E 
+ 1215      7400
+ 1216              	.LASF17:
+ 1217 02a4 61646472 		.ascii	"addr\000"
+ 1217      00
+ 1218              	.LASF32:
+ 1219 02a9 5553425F 		.ascii	"USB_Bootloader_DEVICE0_CONFIGURATION0_DESCR\000"
+ 1219      426F6F74 
+ 1219      6C6F6164 
+ 1219      65725F44 
+ 1219      45564943 
+ 1220              	.LASF28:
+ARM GAS  C:\Users\Robert\AppData\Local\Temp\ccdzMSlD.s 			page 24
+
+
+ 1221 02d5 545F5553 		.ascii	"T_USB_Bootloader_TD\000"
+ 1221      425F426F 
+ 1221      6F746C6F 
+ 1221      61646572 
+ 1221      5F544400 
+ 1222              	.LASF46:
+ 1223 02e9 5553425F 		.ascii	"USB_Bootloader_DEVICE0_CONFIGURATION0_INTERFACE0_AL"
+ 1223      426F6F74 
+ 1223      6C6F6164 
+ 1223      65725F44 
+ 1223      45564943 
+ 1224 031c 5445524E 		.ascii	"TERNATE0_HID_IN_RPT_TABLE\000"
+ 1224      41544530 
+ 1224      5F484944 
+ 1224      5F494E5F 
+ 1224      5250545F 
+ 1225              	.LASF34:
+ 1226 0336 5553425F 		.ascii	"USB_Bootloader_DEVICE0_CONFIGURATION0_EP_SETTINGS_T"
+ 1226      426F6F74 
+ 1226      6C6F6164 
+ 1226      65725F44 
+ 1226      45564943 
+ 1227 0369 41424C45 		.ascii	"ABLE\000"
+ 1227      00
+ 1228              	.LASF12:
+ 1229 036e 646F7562 		.ascii	"double\000"
+ 1229      6C6500
+ 1230              	.LASF49:
+ 1231 0375 5553425F 		.ascii	"USB_Bootloader_MSOS_DESCRIPTOR\000"
+ 1231      426F6F74 
+ 1231      6C6F6164 
+ 1231      65725F4D 
+ 1231      534F535F 
+ 1232              	.LASF10:
+ 1233 0394 75696E74 		.ascii	"uint16\000"
+ 1233      313600
+ 1234              	.LASF37:
+ 1235 039b 5553425F 		.ascii	"USB_Bootloader_DEVICE0_TABLE\000"
+ 1235      426F6F74 
+ 1235      6C6F6164 
+ 1235      65725F44 
+ 1235      45564943 
+ 1236              	.LASF30:
+ 1237 03b8 545F5553 		.ascii	"T_USB_Bootloader_LUT\000"
+ 1237      425F426F 
+ 1237      6F746C6F 
+ 1237      61646572 
+ 1237      5F4C5554 
+ 1238              	.LASF8:
+ 1239 03cd 756E7369 		.ascii	"unsigned int\000"
+ 1239      676E6564 
+ 1239      20696E74 
+ 1239      00
+ 1240              	.LASF7:
+ 1241 03da 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 1241      206C6F6E 
+ 1241      6720756E 
+ARM GAS  C:\Users\Robert\AppData\Local\Temp\ccdzMSlD.s 			page 25
+
+
+ 1241      7369676E 
+ 1241      65642069 
+ 1242              	.LASF53:
+ 1243 03f1 433A5C55 		.ascii	"C:\\Users\\Robert\\Documents\\PSoC Creator\\product"
+ 1243      73657273 
+ 1243      5C526F62 
+ 1243      6572745C 
+ 1243      446F6375 
+ 1244 041f 696F6E5F 		.ascii	"ion_108\\PSoC Creator\\pisoc_bootloader.cydsn\000"
+ 1244      3130385C 
+ 1244      50536F43 
+ 1244      20437265 
+ 1244      61746F72 
+ 1245              	.LASF29:
+ 1246 044b 705F6C69 		.ascii	"p_list\000"
+ 1246      737400
+ 1247              	.LASF38:
+ 1248 0452 5553425F 		.ascii	"USB_Bootloader_TABLE\000"
+ 1248      426F6F74 
+ 1248      6C6F6164 
+ 1248      65725F54 
+ 1248      41424C45 
+ 1249              	.LASF42:
+ 1250 0467 5553425F 		.ascii	"USB_Bootloader_DEVICE0_CONFIGURATION0_INTERFACE0_AL"
+ 1250      426F6F74 
+ 1250      6C6F6164 
+ 1250      65725F44 
+ 1250      45564943 
+ 1251 049a 5445524E 		.ascii	"TERNATE0_HID_IN_BUF\000"
+ 1251      41544530 
+ 1251      5F484944 
+ 1251      5F494E5F 
+ 1251      42554600 
+ 1252              	.LASF14:
+ 1253 04ae 73697A65 		.ascii	"sizetype\000"
+ 1253      74797065 
+ 1253      00
+ 1254              	.LASF47:
+ 1255 04b7 5553425F 		.ascii	"USB_Bootloader_DEVICE0_CONFIGURATION0_INTERFACE0_AL"
+ 1255      426F6F74 
+ 1255      6C6F6164 
+ 1255      65725F44 
+ 1255      45564943 
+ 1256 04ea 5445524E 		.ascii	"TERNATE0_HID_OUT_RPT_TABLE\000"
+ 1256      41544530 
+ 1256      5F484944 
+ 1256      5F4F5554 
+ 1256      5F525054 
+ 1257              	.LASF6:
+ 1258 0505 6C6F6E67 		.ascii	"long long int\000"
+ 1258      206C6F6E 
+ 1258      6720696E 
+ 1258      7400
+ 1259              	.LASF13:
+ 1260 0513 63686172 		.ascii	"char\000"
+ 1260      00
+ 1261              	.LASF19:
+ARM GAS  C:\Users\Robert\AppData\Local\Temp\ccdzMSlD.s 			page 26
+
+
+ 1262 0518 62756666 		.ascii	"bufferSize\000"
+ 1262      65725369 
+ 1262      7A6500
+ 1263              	.LASF45:
+ 1264 0523 5553425F 		.ascii	"USB_Bootloader_HIDREPORT_DESCRIPTOR1\000"
+ 1264      426F6F74 
+ 1264      6C6F6164 
+ 1264      65725F48 
+ 1264      49445245 
+ 1265              	.LASF2:
+ 1266 0548 73686F72 		.ascii	"short int\000"
+ 1266      7420696E 
+ 1266      7400
+ 1267              	.LASF9:
+ 1268 0552 75696E74 		.ascii	"uint8\000"
+ 1268      3800
+ 1269              	.LASF15:
+ 1270 0558 696E7465 		.ascii	"interface\000"
+ 1270      72666163 
+ 1270      6500
+ 1271              	.LASF51:
+ 1272 0562 474E5520 		.ascii	"GNU C 4.9.3 20150303 (release) [ARM/embedded-4_9-br"
+ 1272      4320342E 
+ 1272      392E3320 
+ 1272      32303135 
+ 1272      30333033 
+ 1273 0595 616E6368 		.ascii	"anch revision 221220] -mcpu=cortex-m3 -mthumb -g -O"
+ 1273      20726576 
+ 1273      6973696F 
+ 1273      6E203232 
+ 1273      31323230 
+ 1274 05c8 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 1274      66756E63 
+ 1274      74696F6E 
+ 1274      2D736563 
+ 1274      74696F6E 
+ 1275              	.LASF4:
+ 1276 05f0 6C6F6E67 		.ascii	"long int\000"
+ 1276      20696E74 
+ 1276      00
+ 1277              	.LASF52:
+ 1278 05f9 2E5C4765 		.ascii	".\\Generated_Source\\PSoC5\\USB_Bootloader_descr.c\000"
+ 1278      6E657261 
+ 1278      7465645F 
+ 1278      536F7572 
+ 1278      63655C50 
+ 1279              	.LASF0:
+ 1280 0629 7369676E 		.ascii	"signed char\000"
+ 1280      65642063 
+ 1280      68617200 
+ 1281              	.LASF35:
+ 1282 0635 5553425F 		.ascii	"USB_Bootloader_DEVICE0_CONFIGURATION0_INTERFACE_CLA"
+ 1282      426F6F74 
+ 1282      6C6F6164 
+ 1282      65725F44 
+ 1282      45564943 
+ 1283 0668 535300   		.ascii	"SS\000"
+ARM GAS  C:\Users\Robert\AppData\Local\Temp\ccdzMSlD.s 			page 27
+
+
+ 1284              	.LASF23:
+ 1285 066b 6C656E67 		.ascii	"length\000"
+ 1285      746800
+ 1286              	.LASF39:
+ 1287 0672 5553425F 		.ascii	"USB_Bootloader_SN_STRING_DESCRIPTOR\000"
+ 1287      426F6F74 
+ 1287      6C6F6164 
+ 1287      65725F53 
+ 1287      4E5F5354 
+ 1288              	.LASF20:
+ 1289 0696 624D6973 		.ascii	"bMisc\000"
+ 1289      6300
+ 1290              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.9.3 20150303 (release) [ARM/embedded-4_9-br

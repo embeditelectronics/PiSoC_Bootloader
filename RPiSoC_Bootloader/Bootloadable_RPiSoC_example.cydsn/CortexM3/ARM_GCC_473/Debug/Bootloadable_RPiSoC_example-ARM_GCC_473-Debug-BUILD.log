@@ -1,8 +1,0 @@
---------------- Build Started: 07/21/2014 17:21:35 Project: Bootloadable_RPiSoC_example, Configuration: ARM GCC 4.7.3 Debug ---------------
-The code generation step is up to date.
-The compile step is up to date, no work needs to be done.
-The link step is up to date, no work needs to be done.
-cyelftool.exe -S C:\Users\Robert\Dropbox\RPiSoC\Projects\Bootloader_RPiSoC\Bootloadable_RPiSoC_example.cydsn\CortexM3\ARM_GCC_473\Debug\Bootloadable_RPiSoC_example.elf
-Flash used: 21526 of 262144 bytes (8.2 %).
-SRAM used: 20781 of 65536 bytes (31.7 %).
---------------- Build Succeeded: 07/21/2014 17:21:36 ---------------

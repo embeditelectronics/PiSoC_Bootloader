@@ -1,0 +1,1072 @@
+Loading plugins phase: Elapsed time ==> 0s.152ms
+Initializing data phase: Elapsed time ==> 0s.000ms
+<CYPRESSTAG name="CyDsfit arguments...">
+cydsfit arguments: -.fdsnotice -.fdswarpdepfile=warp_dependencies.txt -.fdselabdepfile=elab_dependencies.txt -.fdsbldfile=generated_files.txt -p C:\Users\Robert\Documents\PSoC Creator\production_108\PSoC Creator\pisoc_bootloader.cydsn\pisoc_bootloader.cyprj -d CY8C5467AXI-LP108 -s C:\Users\Robert\Documents\PSoC Creator\production_108\PSoC Creator\pisoc_bootloader.cydsn\Generated_Source\PSoC5 -- -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE</CYPRESSTAG>
+<CYPRESSTAG name="Design elaboration results...">
+ADD: pft.M0111: information: One or more rows of flash have been configured to be protected; however, debugging has been enabled in the System DWR Editor. This means that while write restrictions are honored flash rows can still be read via SWD or JTAG. To prevent any ability to read the flash rows, disable debugging in the System DWR Editor.
+ * C:\Users\Robert\Documents\PSoC Creator\production_108\PSoC Creator\pisoc_bootloader.cydsn\pisoc_bootloader.cydwr (Enable Device Protection)
+
+</CYPRESSTAG>
+Elaboration phase: Elapsed time ==> 1s.176ms
+<CYPRESSTAG name="HDL generation results...">
+</CYPRESSTAG>
+HDL generation phase: Elapsed time ==> 0s.042ms
+<CYPRESSTAG name="Synthesis results...">
+
+     | | | | | | |
+   _________________
+  -|               |-
+  -|               |-
+  -|               |-
+  -|    CYPRESS    |-
+  -|               |-
+  -|               |-   Warp Verilog Synthesis Compiler: Version 6.3 IR 41
+  -|               |-   Copyright (C) 1991-2001 Cypress Semiconductor
+   |_______________|
+     | | | | | | |
+
+======================================================================
+Compiling:  pisoc_bootloader.v
+Program  :   C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\warp\bin/warp.exe
+Options  :    -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE -ya -.fftprj=C:\Users\Robert\Documents\PSoC Creator\production_108\PSoC Creator\pisoc_bootloader.cydsn\pisoc_bootloader.cyprj -dcpsoc3 pisoc_bootloader.v -verilog
+======================================================================
+
+======================================================================
+Compiling:  pisoc_bootloader.v
+Program  :   C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\warp\bin/warp.exe
+Options  :    -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE -ya -.fftprj=C:\Users\Robert\Documents\PSoC Creator\production_108\PSoC Creator\pisoc_bootloader.cydsn\pisoc_bootloader.cyprj -dcpsoc3 pisoc_bootloader.v -verilog
+======================================================================
+
+======================================================================
+Compiling:  pisoc_bootloader.v
+Program  :   vlogfe
+Options  :    -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE -ya -.fftprj=C:\Users\Robert\Documents\PSoC Creator\production_108\PSoC Creator\pisoc_bootloader.cydsn\pisoc_bootloader.cyprj -dcpsoc3 -verilog pisoc_bootloader.v
+======================================================================
+
+vlogfe V6.3 IR 41:  Verilog parser
+Wed May 04 20:58:37 2016
+
+
+======================================================================
+Compiling:  pisoc_bootloader.v
+Program  :   vpp
+Options  :    -yv2 -q10 pisoc_bootloader.v
+======================================================================
+
+vpp V6.3 IR 41:  Verilog Pre-Processor
+Wed May 04 20:58:37 2016
+
+Flattening file 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\cy_virtualmux_v1_0\cy_virtualmux_v1_0.v'
+Flattening file 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\ZeroTerminal\ZeroTerminal.v'
+Flattening file 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\cy_constant_v1_0\cy_constant_v1_0.v'
+
+vpp:  No errors.
+
+Library 'work' => directory 'lcpsoc3'
+General_symbol_table
+General_symbol_table
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\warp\lib\common\std.vhd'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\warp\lib\common\cypress.vhd'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\warp\lib\common\work\cypress.vif'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\warp\lib\ieee\work\stdlogic.vif'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\warp\lib\common\stdlogic\lpmpkg.vif'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\warp\lib\common\stdlogic\rtlpkg.vif'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\warp\lib\common\stdlogic\mod_cnst.vif'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\warp\lib\common\stdlogic\mod_mthv.vif'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\warp\lib\common\stdlogic\mod_genv.vif'.
+Using control file 'pisoc_bootloader.ctl'.
+
+vlogfe:  No errors.
+
+
+======================================================================
+Compiling:  pisoc_bootloader.v
+Program  :   tovif
+Options  :    -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE -ya -.fftprj=C:\Users\Robert\Documents\PSoC Creator\production_108\PSoC Creator\pisoc_bootloader.cydsn\pisoc_bootloader.cyprj -dcpsoc3 -verilog pisoc_bootloader.v
+======================================================================
+
+tovif V6.3 IR 41:  High-level synthesis
+Wed May 04 20:58:38 2016
+
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\warp\lib\common\std.vhd'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\warp\lib\common\cypress.vhd'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\warp\lib\common\work\cypress.vif'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\warp\lib\ieee\work\stdlogic.vif'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\warp\lib\common\stdlogic\lpmpkg.vif'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\warp\lib\common\stdlogic\rtlpkg.vif'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\warp\lib\common\stdlogic\mod_cnst.vif'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\warp\lib\common\stdlogic\mod_mthv.vif'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\warp\lib\common\stdlogic\mod_genv.vif'.
+Linking 'C:\Users\Robert\Documents\PSoC Creator\production_108\PSoC Creator\pisoc_bootloader.cydsn\codegentemp\pisoc_bootloader.ctl'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\cy_virtualmux_v1_0\cy_virtualmux_v1_0.v'.
+Linking 'C:\Users\Robert\Documents\PSoC Creator\production_108\PSoC Creator\pisoc_bootloader.cydsn\codegentemp\pisoc_bootloader.v'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\ZeroTerminal\ZeroTerminal.v'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\cy_constant_v1_0\cy_constant_v1_0.v'.
+
+tovif:  No errors.
+
+
+======================================================================
+Compiling:  pisoc_bootloader.v
+Program  :   topld
+Options  :    -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE -ya -.fftprj=C:\Users\Robert\Documents\PSoC Creator\production_108\PSoC Creator\pisoc_bootloader.cydsn\pisoc_bootloader.cyprj -dcpsoc3 -verilog pisoc_bootloader.v
+======================================================================
+
+topld V6.3 IR 41:  Synthesis and optimization
+Wed May 04 20:58:38 2016
+
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\warp\lib\common\std.vhd'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\warp\lib\common\cypress.vhd'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\warp\lib\common\work\cypress.vif'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\warp\lib\ieee\work\stdlogic.vif'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\warp\lib\common\stdlogic\lpmpkg.vif'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\warp\lib\common\stdlogic\rtlpkg.vif'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\warp\lib\common\stdlogic\mod_cnst.vif'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\warp\lib\common\stdlogic\mod_mthv.vif'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\warp\lib\common\stdlogic\mod_genv.vif'.
+Linking 'C:\Users\Robert\Documents\PSoC Creator\production_108\PSoC Creator\pisoc_bootloader.cydsn\codegentemp\pisoc_bootloader.ctl'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\cy_virtualmux_v1_0\cy_virtualmux_v1_0.v'.
+Linking 'C:\Users\Robert\Documents\PSoC Creator\production_108\PSoC Creator\pisoc_bootloader.cydsn\codegentemp\pisoc_bootloader.v'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\ZeroTerminal\ZeroTerminal.v'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\cy_constant_v1_0\cy_constant_v1_0.v'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\warp\lib\lcpsoc3\stdlogic\cpsoc3.vif'.
+
+----------------------------------------------------------
+Detecting unused logic.
+----------------------------------------------------------
+    User names
+	\USB_Bootloader:dma_nrq_0\
+	\USB_Bootloader:Net_1800\
+	\USB_Bootloader:dma_nrq_3\
+	\USB_Bootloader:Net_1803\
+	\USB_Bootloader:Net_1801\
+	\USB_Bootloader:dma_nrq_1\
+	\USB_Bootloader:dma_nrq_4\
+	\USB_Bootloader:Net_1804\
+	\USB_Bootloader:dma_nrq_5\
+	\USB_Bootloader:Net_1805\
+	\USB_Bootloader:dma_nrq_6\
+	\USB_Bootloader:Net_1806\
+	\USB_Bootloader:dma_nrq_7\
+	\USB_Bootloader:Net_1807\
+	\USB_Bootloader:dma_nrq_2\
+	\USB_Bootloader:Net_1802\
+
+
+Deleted 16 User equations/components.
+Deleted 0 Synthesized equations/components.
+
+------------------------------------------------------
+Alias Detection
+------------------------------------------------------
+Aliasing one to \USB_Bootloader:tmpOE__Dm_net_0\
+Aliasing \USB_Bootloader:tmpOE__Dp_net_0\ to \USB_Bootloader:tmpOE__Dm_net_0\
+Aliasing tmpOE__BOOT_MODE_net_0 to \USB_Bootloader:tmpOE__Dm_net_0\
+Aliasing tmpOE__BOOT_LED_net_0 to \USB_Bootloader:tmpOE__Dm_net_0\
+Aliasing Net_5 to \USB_Bootloader:tmpOE__Dm_net_0\
+Removing Rhs of wire one[37] = \USB_Bootloader:tmpOE__Dm_net_0\[31]
+Removing Lhs of wire \USB_Bootloader:tmpOE__Dp_net_0\[40] = one[37]
+Removing Lhs of wire tmpOE__BOOT_MODE_net_0[66] = one[37]
+Removing Lhs of wire tmpOE__BOOT_LED_net_0[72] = one[37]
+Removing Lhs of wire Net_5[73] = one[37]
+
+------------------------------------------------------
+Aliased 0 equations, 5 wires.
+------------------------------------------------------
+
+----------------------------------------------------------
+Circuit simplification
+----------------------------------------------------------
+
+Substituting virtuals - pass 1:
+
+
+----------------------------------------------------------
+Circuit simplification results:
+
+	Expanded 0 signals.
+	Turned 0 signals into soft nodes.
+	Maximum default expansion cost was set at 3.
+----------------------------------------------------------
+
+topld:  No errors.
+
+CYPRESS_DIR    : C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\warp
+Warp Program   : C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\warp\bin/warp.exe
+Warp Arguments : -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE -ya "-.fftprj=C:\Users\Robert\Documents\PSoC Creator\production_108\PSoC Creator\pisoc_bootloader.cydsn\pisoc_bootloader.cyprj" -dcpsoc3 pisoc_bootloader.v -verilog
+</CYPRESSTAG>
+Warp synthesis phase: Elapsed time ==> 0s.778ms
+<CYPRESSTAG name="Fitter results...">
+<CYPRESSTAG name="Fitter startup details...">
+cyp3fit: V3.3.0.7343, Family: PSoC3, Started at: Wednesday, 04 May 2016 20:58:38
+Options: -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE -ya -.fftprj=C:\Users\Robert\Documents\PSoC Creator\production_108\PSoC Creator\pisoc_bootloader.cydsn\pisoc_bootloader.cyprj -d CY8C5467AXI-LP108 pisoc_bootloader.v -verilog
+</CYPRESSTAG>
+<CYPRESSTAG name="Design parsing">
+Design parsing phase: Elapsed time ==> 0s.011ms
+</CYPRESSTAG>
+<CYPRESSTAG name="Tech mapping">
+<CYPRESSTAG name="Initial Mapping" icon="FILE_RPT_TECHM">
+Assigning clock USB_Bootloader_Clock_vbus to clock BUS_CLK because it is a pass-through
+<CYPRESSTAG name="Global Clock Selection" icon="FILE_RPT_TECHM">
+</CYPRESSTAG>
+<CYPRESSTAG name="UDB Clock/Enable Remapping Results">
+</CYPRESSTAG>
+ADD: pft.M0040: information: The following 2 pin(s) will be assigned a location by the fitter: \USB_Bootloader:Dm(0)\, \USB_Bootloader:Dp(0)\
+
+<CYPRESSTAG name="Duplicate Macrocell detection">
+</CYPRESSTAG>
+</CYPRESSTAG>
+<CYPRESSTAG name="Duplicate Macrocell detection">
+</CYPRESSTAG>
+<CYPRESSTAG name="Design Equations" icon="FILE_RPT_EQUATION">
+
+------------------------------------------------------------
+Design Equations
+------------------------------------------------------------
+    <CYPRESSTAG name="Pin listing">
+
+    ------------------------------------------------------------
+    Pin listing
+    ------------------------------------------------------------
+
+    Pin : Name = \USB_Bootloader:Dm(0)\
+        Attributes:
+            In Group/Port: True
+            In Sync Option: AUTO
+            Out Sync Option: AUTO
+            Interrupt generated: False
+            Interrupt mode: NONE
+            Drive mode: HI_Z_ANALOG
+            VTrip: EITHER
+            Slew: FAST
+            Input Sync needed: False
+            Output Sync needed: False
+            SC shield enabled: False
+            POR State: ANY
+            LCD Mode: COMMON
+            Register Mode: RegComb
+            CaSense Mode: NEITHER
+            Treat as pin: True
+            Is OE Registered: False
+            Uses Analog: True
+            Can contain Digital: False
+            Is SIO: False
+            SIO Output Buf: NONREGULATED
+            SIO Input Buf: SINGLE_ENDED
+            SIO HiFreq: LOW
+            SIO Hyst: DISABLED
+            SIO Vtrip: MULTIPLIER_0_5
+            SIO Multiplier Index: 0
+            SIO RefSel: VCC_IO
+            Required Capabilitites: USB_D_MINUS
+            Initial Value: 0
+            IO Voltage: 0
+        PORT MAP (
+            pa_out => \USB_Bootloader:Dm(0)\__PA ,
+            analog_term => \USB_Bootloader:Net_597\ ,
+            pad => \USB_Bootloader:Dm(0)_PAD\ );
+
+    Pin : Name = \USB_Bootloader:Dp(0)\
+        Attributes:
+            In Group/Port: True
+            In Sync Option: SYNC
+            Out Sync Option: AUTO
+            Interrupt generated: True
+            Interrupt mode: FALLING
+            Drive mode: HI_Z_ANALOG
+            VTrip: CMOS
+            Slew: FAST
+            Input Sync needed: True
+            Output Sync needed: False
+            SC shield enabled: False
+            POR State: ANY
+            LCD Mode: COMMON
+            Register Mode: RegComb
+            CaSense Mode: NEITHER
+            Treat as pin: False
+            Is OE Registered: False
+            Uses Analog: True
+            Can contain Digital: True
+            Is SIO: False
+            SIO Output Buf: NONREGULATED
+            SIO Input Buf: SINGLE_ENDED
+            SIO HiFreq: LOW
+            SIO Hyst: DISABLED
+            SIO Vtrip: MULTIPLIER_0_5
+            SIO Multiplier Index: 0
+            SIO RefSel: VCC_IO
+            Required Capabilitites: USB_D_PLUS
+            Initial Value: 0
+            IO Voltage: 0
+        PORT MAP (
+            pa_out => \USB_Bootloader:Dp(0)\__PA ,
+            analog_term => \USB_Bootloader:Net_1000\ ,
+            pad => \USB_Bootloader:Dp(0)_PAD\ );
+
+    Pin : Name = BOOT_MODE(0)
+        Attributes:
+            In Group/Port: True
+            In Sync Option: SYNC
+            Out Sync Option: AUTO
+            Interrupt generated: False
+            Interrupt mode: NONE
+            Drive mode: RES_PULL_UP
+            VTrip: CMOS
+            Slew: FAST
+            Input Sync needed: True
+            Output Sync needed: False
+            SC shield enabled: False
+            POR State: ANY
+            LCD Mode: COMMON
+            Register Mode: RegComb
+            CaSense Mode: NEITHER
+            Treat as pin: True
+            Is OE Registered: False
+            Uses Analog: False
+            Can contain Digital: True
+            Is SIO: False
+            SIO Output Buf: NONREGULATED
+            SIO Input Buf: SINGLE_ENDED
+            SIO HiFreq: LOW
+            SIO Hyst: DISABLED
+            SIO Vtrip: MULTIPLIER_0_5
+            SIO Multiplier Index: 0
+            SIO RefSel: VCC_IO
+            Required Capabilitites: DIGITAL, ROUTABLE
+            Initial Value: 1
+            IO Voltage: 0
+        PORT MAP (
+            pa_out => BOOT_MODE(0)__PA ,
+            pad => BOOT_MODE(0)_PAD );
+        Properties:
+        {
+        }
+
+    Pin : Name = BOOT_LED(0)
+        Attributes:
+            In Group/Port: True
+            In Sync Option: AUTO
+            Out Sync Option: NOSYNC
+            Interrupt generated: False
+            Interrupt mode: NONE
+            Drive mode: CMOS_OUT
+            VTrip: EITHER
+            Slew: FAST
+            Input Sync needed: False
+            Output Sync needed: False
+            SC shield enabled: False
+            POR State: ANY
+            LCD Mode: COMMON
+            Register Mode: RegComb
+            CaSense Mode: NEITHER
+            Treat as pin: True
+            Is OE Registered: False
+            Uses Analog: False
+            Can contain Digital: True
+            Is SIO: False
+            SIO Output Buf: NONREGULATED
+            SIO Input Buf: SINGLE_ENDED
+            SIO HiFreq: LOW
+            SIO Hyst: DISABLED
+            SIO Vtrip: MULTIPLIER_0_5
+            SIO Multiplier Index: 0
+            SIO RefSel: VCC_IO
+            Required Capabilitites: DIGITAL
+            Initial Value: 0
+            IO Voltage: 0
+        PORT MAP (
+            pa_out => BOOT_LED(0)__PA ,
+            input => __ONE__ ,
+            pad => BOOT_LED(0)_PAD );
+        Properties:
+        {
+        }
+    </CYPRESSTAG>
+    <CYPRESSTAG name="Macrocell listing" icon="FILE_RPT_EQUATION">
+
+    ------------------------------------------------------------
+    Macrocell listing
+    ------------------------------------------------------------
+
+    MacroCell: Name=__ONE__, Mode=(Combinatorial)
+        Total # of inputs        : 0
+        Total # of product terms : 0
+            Clock Enable: True
+        Main Equation            : 0 pterms
+        !(
+            0
+        );
+        Output = __ONE__ (fanout=1)
+    </CYPRESSTAG>
+    <CYPRESSTAG name="Datapath listing">
+    </CYPRESSTAG>
+    <CYPRESSTAG name="Status register listing">
+    </CYPRESSTAG>
+    <CYPRESSTAG name="StatusI register listing">
+    </CYPRESSTAG>
+    <CYPRESSTAG name="Sync listing">
+    </CYPRESSTAG>
+    <CYPRESSTAG name="Control register listing">
+    </CYPRESSTAG>
+    <CYPRESSTAG name="Count7 listing">
+    </CYPRESSTAG>
+    <CYPRESSTAG name="DRQ listing">
+    </CYPRESSTAG>
+    <CYPRESSTAG name="Interrupt listing">
+
+    ------------------------------------------------------------
+    Interrupt listing
+    ------------------------------------------------------------
+
+    interrupt: Name =\USB_Bootloader:ep_0\
+        PORT MAP (
+            interrupt => \USB_Bootloader:ept_int_0\ );
+        Properties:
+        {
+            int_type = "10"
+        }
+
+    interrupt: Name =\USB_Bootloader:bus_reset\
+        PORT MAP (
+            interrupt => \USB_Bootloader:Net_81\ );
+        Properties:
+        {
+            int_type = "10"
+        }
+
+    interrupt: Name =\USB_Bootloader:arb_int\
+        PORT MAP (
+            interrupt => \USB_Bootloader:Net_79\ );
+        Properties:
+        {
+            int_type = "10"
+        }
+
+    interrupt: Name =\USB_Bootloader:ep_2\
+        PORT MAP (
+            interrupt => \USB_Bootloader:ept_int_2\ );
+        Properties:
+        {
+            int_type = "10"
+        }
+
+    interrupt: Name =\USB_Bootloader:ep_1\
+        PORT MAP (
+            interrupt => \USB_Bootloader:ept_int_1\ );
+        Properties:
+        {
+            int_type = "10"
+        }
+
+    interrupt: Name =\USB_Bootloader:dp_int\
+        PORT MAP (
+            interrupt => \USB_Bootloader:Net_1010\ );
+        Properties:
+        {
+            int_type = "10"
+        }
+
+    interrupt: Name =\USB_Bootloader:ord_int\
+        PORT MAP (
+            interrupt => \USB_Bootloader:Net_95\ );
+        Properties:
+        {
+            int_type = "10"
+        }
+
+    interrupt: Name =\USB_Bootloader:sof_int\
+        PORT MAP (
+            interrupt => Net_9 );
+        Properties:
+        {
+            int_type = "10"
+        }
+    </CYPRESSTAG>
+</CYPRESSTAG>
+<CYPRESSTAG name="Technology mapping summary" expanded>
+
+------------------------------------------------------------
+Technology mapping summary
+------------------------------------------------------------
+
+Resource Type                 : Used : Free :  Max :  % Used
+============================================================
+Digital Clocks                :    0 :    8 :    8 :  0.00 %
+Analog Clocks                 :    0 :    4 :    4 :  0.00 %
+CapSense Buffers              :    0 :    2 :    2 :  0.00 %
+Interrupts                    :    8 :   24 :   32 : 25.00 %
+IO                            :    4 :   68 :   72 :  5.56 %
+Segment LCD                   :    0 :    1 :    1 :  0.00 %
+I2C                           :    0 :    1 :    1 :  0.00 %
+USB                           :    1 :    0 :    1 : 100.00 %
+DMA Channels                  :    0 :   24 :   24 :  0.00 %
+Timer                         :    0 :    4 :    4 :  0.00 %
+UDB                           :      :      :      :        
+  Macrocells                  :    1 :  191 :  192 :  0.52 %
+  Unique P-terms              :    0 :  384 :  384 :  0.00 %
+  Total P-terms               :    0 :      :      :        
+  Datapath Cells              :    0 :   24 :   24 :  0.00 %
+  Status Cells                :    0 :   24 :   24 :  0.00 %
+  Control Cells               :    0 :   24 :   24 :  0.00 %
+Opamp                         :    0 :    2 :    2 :  0.00 %
+Comparator                    :    0 :    4 :    4 :  0.00 %
+LPF                           :    0 :    2 :    2 :  0.00 %
+SAR ADC                       :    0 :    1 :    1 :  0.00 %
+Analog (SC/CT) Blocks         :    0 :    2 :    2 :  0.00 %
+DAC                           :      :      :      :        
+  VIDAC                       :    0 :    2 :    2 :  0.00 %
+</CYPRESSTAG>
+Technology Mapping: Elapsed time ==> 0s.011ms
+Tech mapping phase: Elapsed time ==> 0s.078ms
+</CYPRESSTAG>
+<CYPRESSTAG name="Analog Placement">
+Initial Analog Placement Results:
+IO_0@[IOP=(12)][IoId=(0)] : BOOT_LED(0) (fixed)
+IO_0@[IOP=(15)][IoId=(0)] : BOOT_MODE(0) (fixed)
+IO_7@[IOP=(15)][IoId=(7)] : \USB_Bootloader:Dm(0)\ (fixed)
+IO_6@[IOP=(15)][IoId=(6)] : \USB_Bootloader:Dp(0)\ (fixed)
+USB[0]@[FFB(USB,0)] : \USB_Bootloader:USB\
+Analog Placement phase: Elapsed time ==> 0s.023ms
+</CYPRESSTAG>
+<CYPRESSTAG name="Analog Routing">
+Analog Routing phase: Elapsed time ==> 0s.000ms
+</CYPRESSTAG>
+<CYPRESSTAG name="Analog Code Generation">
+============ Analog Final Answer Routes ============
+Dump of CyAnalogRoutingResultsDB
+Map of net to items {
+}
+Map of item to net {
+}
+Mux Info {
+}
+Dump of CyP35AnalogRoutingResultsDB
+IsVddaHalfUsedForComp = False
+IsVddaHalfUsedForSar0 = False
+IsVddaHalfUsedForSar1 = False
+Analog Code Generation phase: Elapsed time ==> 0s.386ms
+</CYPRESSTAG>
+<CYPRESSTAG name="Digital Placement">
+<CYPRESSTAG name="Detailed placement messages">
+I2659: No Constrained paths were found. The placer will run in non-timing driven mode.
+I2076: Total run-time: 0.5 sec.
+
+</CYPRESSTAG>
+<CYPRESSTAG name="PLD Packing">
+<CYPRESSTAG name="PLD Packing Summary" expanded>
+
+------------------------------------------------------------
+PLD Packing Summary
+------------------------------------------------------------
+            Resource Type : Used : Free :  Max :  % Used
+    ====================================================
+                     PLDs :    1 :   47 :   48 :   2.08%
+
+<CYPRESSTAG name="PLD Statistics">
+
+        PLD Resource Type :     Average/LAB
+    =======================================
+                   Inputs :            0.00
+                   Pterms :            0.00
+               Macrocells :            1.00
+</CYPRESSTAG>
+<CYPRESSTAG name="Packed PLD Contents">
+Packed PLD Contents not displayed at this verbose level.</CYPRESSTAG>
+</CYPRESSTAG>
+PLD Packing: Elapsed time ==> 0s.000ms
+</CYPRESSTAG>
+<CYPRESSTAG name="Partitioning">
+<CYPRESSTAG name="Initial Partitioning Summary">
+Initial Partitioning Summary not displayed at this verbose level.</CYPRESSTAG>
+<CYPRESSTAG name="Final Partitioning Summary">
+Final Partitioning Summary not displayed at this verbose level.</CYPRESSTAG>
+Partitioning: Elapsed time ==> 0s.013ms
+</CYPRESSTAG>
+<CYPRESSTAG name="Simulated Annealing">
+Annealing: Elapsed time ==> 0s.001ms
+<CYPRESSTAG name="Simulated Annealing Results">
+The seed used for moves was 114161200.
+Inital cost was 160, final cost is 160 (0.00% improvement).</CYPRESSTAG>
+</CYPRESSTAG>
+<CYPRESSTAG name="Final Placement Summary">
+
+------------------------------------------------------------
+Final Placement Summary
+------------------------------------------------------------
+
+       Resource Type :      Count : Avg Inputs : Avg Outputs
+    ========================================================
+                 UDB :          1 :       0.00 :       1.00
+<CYPRESSTAG name="Final Placement Details">
+<CYPRESSTAG name="Component Details">
+
+------------------------------------------------------------
+Component Placement Details
+------------------------------------------------------------
+UDB [UDB=(0,0)] is empty.
+UDB [UDB=(0,1)] is empty.
+UDB [UDB=(0,2)] is empty.
+UDB [UDB=(0,3)] is empty.
+UDB [UDB=(0,4)] is empty.
+UDB [UDB=(0,5)] is empty.
+UDB [UDB=(1,0)] is empty.
+UDB [UDB=(1,1)] is empty.
+UDB [UDB=(1,2)] is empty.
+UDB [UDB=(1,3)] contents:
+LAB@[UDB=(1,3)][LB=0] #macrocells=1, #inputs=0, #pterms=0
+{
+    [McSlotId=0]:     MacroCell: Name=__ONE__, Mode=(Combinatorial) @ [UDB=(1,3)][LB=0][MC=0]
+        Total # of inputs        : 0
+        Total # of product terms : 0
+            Clock Enable: True
+        Main Equation            : 0 pterms
+        !(
+            0
+        );
+        Output = __ONE__ (fanout=1)
+        Properties               : 
+        {
+        }
+
+    [McSlotId=1]: (empty)
+    [McSlotId=2]: (empty)
+    [McSlotId=3]: (empty)
+}
+
+UDB [UDB=(1,4)] is empty.
+UDB [UDB=(1,5)] is empty.
+UDB [UDB=(2,0)] is empty.
+UDB [UDB=(2,1)] is empty.
+UDB [UDB=(2,2)] is empty.
+UDB [UDB=(2,3)] is empty.
+UDB [UDB=(2,4)] is empty.
+UDB [UDB=(2,5)] is empty.
+UDB [UDB=(3,0)] is empty.
+UDB [UDB=(3,1)] is empty.
+UDB [UDB=(3,2)] is empty.
+UDB [UDB=(3,3)] is empty.
+UDB [UDB=(3,4)] is empty.
+UDB [UDB=(3,5)] is empty.
+Intr container @ [IntrContainer=(0)]: 
+  Intr@ [IntrContainer=(0)][IntrId=(0)] 
+    interrupt: Name =\USB_Bootloader:ep_1\
+        PORT MAP (
+            interrupt => \USB_Bootloader:ept_int_1\ );
+        Properties:
+        {
+            int_type = "10"
+        }
+  Intr@ [IntrContainer=(0)][IntrId=(1)] 
+    interrupt: Name =\USB_Bootloader:ep_2\
+        PORT MAP (
+            interrupt => \USB_Bootloader:ept_int_2\ );
+        Properties:
+        {
+            int_type = "10"
+        }
+  Intr@ [IntrContainer=(0)][IntrId=(12)] 
+    interrupt: Name =\USB_Bootloader:dp_int\
+        PORT MAP (
+            interrupt => \USB_Bootloader:Net_1010\ );
+        Properties:
+        {
+            int_type = "10"
+        }
+  Intr@ [IntrContainer=(0)][IntrId=(21)] 
+    interrupt: Name =\USB_Bootloader:sof_int\
+        PORT MAP (
+            interrupt => Net_9 );
+        Properties:
+        {
+            int_type = "10"
+        }
+  Intr@ [IntrContainer=(0)][IntrId=(22)] 
+    interrupt: Name =\USB_Bootloader:arb_int\
+        PORT MAP (
+            interrupt => \USB_Bootloader:Net_79\ );
+        Properties:
+        {
+            int_type = "10"
+        }
+  Intr@ [IntrContainer=(0)][IntrId=(23)] 
+    interrupt: Name =\USB_Bootloader:bus_reset\
+        PORT MAP (
+            interrupt => \USB_Bootloader:Net_81\ );
+        Properties:
+        {
+            int_type = "10"
+        }
+  Intr@ [IntrContainer=(0)][IntrId=(24)] 
+    interrupt: Name =\USB_Bootloader:ep_0\
+        PORT MAP (
+            interrupt => \USB_Bootloader:ept_int_0\ );
+        Properties:
+        {
+            int_type = "10"
+        }
+  Intr@ [IntrContainer=(0)][IntrId=(25)] 
+    interrupt: Name =\USB_Bootloader:ord_int\
+        PORT MAP (
+            interrupt => \USB_Bootloader:Net_95\ );
+        Properties:
+        {
+            int_type = "10"
+        }
+Drq container @ [DrqContainer=(0)]: empty
+Port 0 is empty
+Port 1 is empty
+Port 2 is empty
+Port 3 is empty
+Port 4 is empty
+Port 5 is empty
+Port 6 is empty
+Port 12 contains the following IO cells:
+[IoId=0]: 
+Pin : Name = BOOT_LED(0)
+    Attributes:
+        In Group/Port: True
+        In Sync Option: AUTO
+        Out Sync Option: NOSYNC
+        Interrupt generated: False
+        Interrupt mode: NONE
+        Drive mode: CMOS_OUT
+        VTrip: EITHER
+        Slew: FAST
+        Input Sync needed: False
+        Output Sync needed: False
+        SC shield enabled: False
+        POR State: ANY
+        LCD Mode: COMMON
+        Register Mode: RegComb
+        CaSense Mode: NEITHER
+        Treat as pin: True
+        Is OE Registered: False
+        Uses Analog: False
+        Can contain Digital: True
+        Is SIO: False
+        SIO Output Buf: NONREGULATED
+        SIO Input Buf: SINGLE_ENDED
+        SIO HiFreq: LOW
+        SIO Hyst: DISABLED
+        SIO Vtrip: MULTIPLIER_0_5
+        SIO Multiplier Index: 0
+        SIO RefSel: VCC_IO
+        Required Capabilitites: DIGITAL
+        Initial Value: 0
+        IO Voltage: 0
+    PORT MAP (
+        pa_out => BOOT_LED(0)__PA ,
+        input => __ONE__ ,
+        pad => BOOT_LED(0)_PAD );
+    Properties:
+    {
+    }
+
+Port 15 generates interrupt for logical port:
+    logicalport: Name =\USB_Bootloader:Dp\
+        PORT MAP (
+            in_clock_en => one ,
+            in_reset => zero ,
+            out_clock_en => one ,
+            out_reset => zero ,
+            interrupt => \USB_Bootloader:Net_1010\ ,
+            in_clock => ClockBlock_BUS_CLK );
+        Properties:
+        {
+            drive_mode = "000"
+            ibuf_enabled = "0"
+            id = "505c0a94-b084-4ba1-ab81-7e953d4d2343/618a72fc-5ddd-4df5-958f-a3d55102db42"
+            init_dr_st = "0"
+            input_buffer_sel = "00"
+            input_clk_en = 0
+            input_sync = "1"
+            input_sync_mode = "0"
+            intr_mode = "10"
+            invert_in_clock = 0
+            invert_in_clock_en = 0
+            invert_in_reset = 0
+            invert_out_clock = 0
+            invert_out_clock_en = 0
+            invert_out_reset = 0
+            io_voltage = ""
+            layout_mode = "CONTIGUOUS"
+            oe_conn = "0"
+            oe_reset = 0
+            oe_sync = "0"
+            output_clk_en = 0
+            output_clock_mode = "0"
+            output_conn = "0"
+            output_mode = "0"
+            output_reset = 0
+            output_sync = "0"
+            ovt_hyst_trim = "0"
+            ovt_needed = "0"
+            ovt_slew_control = "00"
+            pa_in_clock = -1
+            pa_in_clock_en = -1
+            pa_in_reset = -1
+            pa_out_clock = -1
+            pa_out_clock_en = -1
+            pa_out_reset = -1
+            pin_aliases = ""
+            pin_mode = "I"
+            por_state = 4
+            port_alias_group = ""
+            port_alias_required = 0
+            sio_group_cnt = 0
+            sio_hifreq = ""
+            sio_hyst = "1"
+            sio_ibuf = "00000000"
+            sio_info = "00"
+            sio_obuf = "00000000"
+            sio_refsel = "00000000"
+            sio_vohsel = ""
+            sio_vtrip = "00000000"
+            slew_rate = "0"
+            spanning = 0
+            sw_only = 0
+            use_annotation = "0"
+            vtrip = "00"
+            width = 1
+        }
+    and contains the following IO cells:
+[IoId=0]: 
+Pin : Name = BOOT_MODE(0)
+    Attributes:
+        In Group/Port: True
+        In Sync Option: SYNC
+        Out Sync Option: AUTO
+        Interrupt generated: False
+        Interrupt mode: NONE
+        Drive mode: RES_PULL_UP
+        VTrip: CMOS
+        Slew: FAST
+        Input Sync needed: True
+        Output Sync needed: False
+        SC shield enabled: False
+        POR State: ANY
+        LCD Mode: COMMON
+        Register Mode: RegComb
+        CaSense Mode: NEITHER
+        Treat as pin: True
+        Is OE Registered: False
+        Uses Analog: False
+        Can contain Digital: True
+        Is SIO: False
+        SIO Output Buf: NONREGULATED
+        SIO Input Buf: SINGLE_ENDED
+        SIO HiFreq: LOW
+        SIO Hyst: DISABLED
+        SIO Vtrip: MULTIPLIER_0_5
+        SIO Multiplier Index: 0
+        SIO RefSel: VCC_IO
+        Required Capabilitites: DIGITAL, ROUTABLE
+        Initial Value: 1
+        IO Voltage: 0
+    PORT MAP (
+        pa_out => BOOT_MODE(0)__PA ,
+        pad => BOOT_MODE(0)_PAD );
+    Properties:
+    {
+    }
+
+[IoId=6]: 
+Pin : Name = \USB_Bootloader:Dp(0)\
+    Attributes:
+        In Group/Port: True
+        In Sync Option: SYNC
+        Out Sync Option: AUTO
+        Interrupt generated: True
+        Interrupt mode: FALLING
+        Drive mode: HI_Z_ANALOG
+        VTrip: CMOS
+        Slew: FAST
+        Input Sync needed: True
+        Output Sync needed: False
+        SC shield enabled: False
+        POR State: ANY
+        LCD Mode: COMMON
+        Register Mode: RegComb
+        CaSense Mode: NEITHER
+        Treat as pin: False
+        Is OE Registered: False
+        Uses Analog: True
+        Can contain Digital: True
+        Is SIO: False
+        SIO Output Buf: NONREGULATED
+        SIO Input Buf: SINGLE_ENDED
+        SIO HiFreq: LOW
+        SIO Hyst: DISABLED
+        SIO Vtrip: MULTIPLIER_0_5
+        SIO Multiplier Index: 0
+        SIO RefSel: VCC_IO
+        Required Capabilitites: USB_D_PLUS
+        Initial Value: 0
+        IO Voltage: 0
+    PORT MAP (
+        pa_out => \USB_Bootloader:Dp(0)\__PA ,
+        analog_term => \USB_Bootloader:Net_1000\ ,
+        pad => \USB_Bootloader:Dp(0)_PAD\ );
+    Properties:
+    {
+    }
+
+[IoId=7]: 
+Pin : Name = \USB_Bootloader:Dm(0)\
+    Attributes:
+        In Group/Port: True
+        In Sync Option: AUTO
+        Out Sync Option: AUTO
+        Interrupt generated: False
+        Interrupt mode: NONE
+        Drive mode: HI_Z_ANALOG
+        VTrip: EITHER
+        Slew: FAST
+        Input Sync needed: False
+        Output Sync needed: False
+        SC shield enabled: False
+        POR State: ANY
+        LCD Mode: COMMON
+        Register Mode: RegComb
+        CaSense Mode: NEITHER
+        Treat as pin: True
+        Is OE Registered: False
+        Uses Analog: True
+        Can contain Digital: False
+        Is SIO: False
+        SIO Output Buf: NONREGULATED
+        SIO Input Buf: SINGLE_ENDED
+        SIO HiFreq: LOW
+        SIO Hyst: DISABLED
+        SIO Vtrip: MULTIPLIER_0_5
+        SIO Multiplier Index: 0
+        SIO RefSel: VCC_IO
+        Required Capabilitites: USB_D_MINUS
+        Initial Value: 0
+        IO Voltage: 0
+    PORT MAP (
+        pa_out => \USB_Bootloader:Dm(0)\__PA ,
+        analog_term => \USB_Bootloader:Net_597\ ,
+        pad => \USB_Bootloader:Dm(0)_PAD\ );
+    Properties:
+    {
+    }
+
+CAN 2.0b group 0: empty
+Cache group 0: empty
+CapSense group 0: empty
+Clock group 0: 
+    Clock Block @ F(Clock,0): 
+    clockblockcell: Name =ClockBlock
+        PORT MAP (
+            imo => ClockBlock_IMO ,
+            pllout => ClockBlock_PLL_OUT ,
+            ilo => ClockBlock_ILO ,
+            clk_100k => ClockBlock_100k ,
+            clk_1k => ClockBlock_1k ,
+            clk_32k => ClockBlock_32k ,
+            xtal => ClockBlock_XTAL ,
+            clk_32k_xtal => ClockBlock_XTAL_32KHZ ,
+            clk_sync => ClockBlock_MASTER_CLK ,
+            clk_bus_glb => ClockBlock_BUS_CLK ,
+            clk_bus => ClockBlock_BUS_CLK_local );
+        Properties:
+        {
+        }
+Comparator group 0: empty
+Digital Filter Block group 0: empty
+Delta-Sigma ADC group 0: empty
+Decimator group 0: empty
+EMIF group 0: empty
+I2C group 0: empty
+Segment LCD group 0: empty
+LVD group 0: empty
+PM group 0: empty
+Analog (SC/CT) Blocks group 0: empty
+SPC group 0: empty
+Timer group 0: empty
+USB group 0: 
+    USB Block @ F(USB,0): 
+    usbcell: Name =\USB_Bootloader:USB\
+        PORT MAP (
+            dp => \USB_Bootloader:Net_1000\ ,
+            dm => \USB_Bootloader:Net_597\ ,
+            sof_int => Net_9 ,
+            arb_int => \USB_Bootloader:Net_79\ ,
+            usb_int => \USB_Bootloader:Net_81\ ,
+            ept_int_8 => \USB_Bootloader:ept_int_8\ ,
+            ept_int_7 => \USB_Bootloader:ept_int_7\ ,
+            ept_int_6 => \USB_Bootloader:ept_int_6\ ,
+            ept_int_5 => \USB_Bootloader:ept_int_5\ ,
+            ept_int_4 => \USB_Bootloader:ept_int_4\ ,
+            ept_int_3 => \USB_Bootloader:ept_int_3\ ,
+            ept_int_2 => \USB_Bootloader:ept_int_2\ ,
+            ept_int_1 => \USB_Bootloader:ept_int_1\ ,
+            ept_int_0 => \USB_Bootloader:ept_int_0\ ,
+            ord_int => \USB_Bootloader:Net_95\ ,
+            dma_req_7 => \USB_Bootloader:dma_req_7\ ,
+            dma_req_6 => \USB_Bootloader:dma_req_6\ ,
+            dma_req_5 => \USB_Bootloader:dma_req_5\ ,
+            dma_req_4 => \USB_Bootloader:dma_req_4\ ,
+            dma_req_3 => \USB_Bootloader:dma_req_3\ ,
+            dma_req_2 => \USB_Bootloader:dma_req_2\ ,
+            dma_req_1 => \USB_Bootloader:dma_req_1\ ,
+            dma_req_0 => \USB_Bootloader:dma_req_0\ ,
+            dma_termin => \USB_Bootloader:Net_824\ );
+        Properties:
+        {
+            cy_registers = ""
+        }
+VIDAC group 0: empty
+Opamp group 0: empty
+CapSense Buffers group 0: empty
+Vref group 0: empty
+LPF group 0: empty
+SAR ADC group 0: empty
+</CYPRESSTAG>
+<CYPRESSTAG name="Port Configuration Details">
+
+------------------------------------------------------------
+Port Configuration report
+------------------------------------------------------------
+     |     |       | Interrupt |                  |                        | 
+Port | Pin | Fixed |      Type |       Drive Mode |                   Name | Connections
+-----+-----+-------+-----------+------------------+------------------------+----------------------------------
+  12 |   0 |     * |      NONE |         CMOS_OUT |            BOOT_LED(0) | In(__ONE__)
+-----+-----+-------+-----------+------------------+------------------------+----------------------------------
+  15 |   0 |     * |      NONE |      RES_PULL_UP |           BOOT_MODE(0) | 
+     |   6 |       |   FALLING |      HI_Z_ANALOG | \USB_Bootloader:Dp(0)\ | Analog(\USB_Bootloader:Net_1000\)
+     |   7 |       |      NONE |      HI_Z_ANALOG | \USB_Bootloader:Dm(0)\ | Analog(\USB_Bootloader:Net_597\)
+--------------------------------------------------------------------------------------------------------------
+</CYPRESSTAG>
+</CYPRESSTAG>
+</CYPRESSTAG>
+Digital component placer commit/Report: Elapsed time ==> 0s.001ms
+Digital Placement phase: Elapsed time ==> 0s.787ms
+</CYPRESSTAG>
+<CYPRESSTAG name="Digital Routing">
+Routing successful.
+Digital Routing phase: Elapsed time ==> 1s.026ms
+</CYPRESSTAG>
+<CYPRESSTAG name="Bitstream and API generation">
+Bitstream and API generation phase: Elapsed time ==> 0s.220ms
+</CYPRESSTAG>
+<CYPRESSTAG name="Bitstream verification">
+Bitstream verification phase: Elapsed time ==> 0s.031ms
+</CYPRESSTAG>
+<CYPRESSTAG name="Static timing analysis">
+Timing report is in pisoc_bootloader_timing.html.
+Static timing analysis phase: Elapsed time ==> 0s.204ms
+</CYPRESSTAG>
+<CYPRESSTAG name="Data reporting">
+Data reporting phase: Elapsed time ==> 0s.000ms
+</CYPRESSTAG>
+<CYPRESSTAG name="Database update...">
+Design database save phase: Elapsed time ==> 0s.125ms
+</CYPRESSTAG>
+cydsfit: Elapsed time ==> 2s.909ms
+</CYPRESSTAG>
+Fitter phase: Elapsed time ==> 2s.956ms
+API generation phase: Elapsed time ==> 1s.466ms
+Dependency generation phase: Elapsed time ==> 0s.014ms
+Cleanup phase: Elapsed time ==> 0s.000ms
